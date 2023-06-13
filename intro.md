@@ -1,11 +1,11 @@
-# Welcome to your Jupyter Book
+# Welcome
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
-
-Check out the content pages bundled with this sample book to see more.
+This Jupyter Book covers several deep-learning topics building slowly from basic concepts to more 
+advanced usages. The materials in this book initiated originally from the teaching syllabus for the 
+deep learning course taught at [Brain and Behaviour Master programme](https://www.uni-giessen.de/de/studium/studienangebot/master/mbb?set_language=de) 
+taught at [Justus-Liebig University of Giessen](https://www.uni-giessen.de/jlyou/en/index.html). 
+While some examples are tailored for *Experimental Psychologists* and *Cognitive Neuroscientists*, 
+the content should be useful to anyone interested in deep learning.
 
 ```{tableofcontents}
 ```

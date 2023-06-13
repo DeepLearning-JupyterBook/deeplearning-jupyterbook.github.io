@@ -1,14 +1,15 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: My sample book
-author: The Jupyter Book Community
+title: Deep Learning for Experimental Psychologists and Cognitive Neuroscientists
+author: Arash Akbarinia
 logo: logo.png
+copyright: "2023"  # Copyright year to be placed in the footer
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: 'off'
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -21,8 +22,8 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
+  url: https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/  # Online location of your book
+  path_to_book: /  # Optional path to your book, relative to the repository root
   branch: master  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
@@ -30,3 +31,7 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  favicon: imgs/icon.png
+
+launch_buttons:
+  colab_url: "https://colab.research.google.com"

@@ -1,0 +1,947 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Activation Maps &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/activation';</script>
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Kernel Lesioning" href="lesion.html" />
+    <link rel="prev" title="6. Interpretability Techniques" href="interpretability_techniques.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdowns/environment_setup.html">0. Environment Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/activation.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/activation.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/activation.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Activation Maps</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-hooks">3. Forward Hooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-call">4. Forward call</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">5. Visualisation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#early-layer">Early layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeper-layer">Deeper layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">6. Systematic experiments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="activation-maps">
+<h1>Activation Maps<a class="headerlink" href="#activation-maps" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/activation.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
+<p>This tutorial showcases how to obtain kernels’ responses (also known as activation maps) at different depths of a deep neural network. We study that in pretrained networks trained on ImageNet.</p>
+<p>There are several techniques that we can exercise to learn about the representation a network has learnt during its training:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/lesion.ipynb">lesioning</a> individual or ensemble of kernels,</p></li>
+<li><p>probing intermediate layers by <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/linear_classifier_probe.ipynb">linear classifiers</a>,</p></li>
+<li><p>directly measuring unit’s response (<strong>this notebook</strong>).</p></li>
+</ul>
+<p>In neuroscience, we have learnt a lot from measuring the response of a neuron when the organism is exposed to specific stimuli. The neural coding technique can reveal the relationship between the stimulus and the individual or ensemble neuronal responses. For instance, the seminal study of Hubel and Wiesel in which oriented bars were shown to cats and the response of V1 neurons was recorded using implanted electrodes.</p>
+<img src="https://www.researchgate.net/publication/337360115/figure/fig4/AS:826941796012034@1574169696239/Left-Experimental-setup-from-Hubel-Wiesel-136-137-adapted-from-253-Chapter-11.ppm"  width="600" height="200">
+<p>A similar technique can be used in artificial neurons to learn more about the representation a network has learnt during its training. <strong>Obtaining response maps is much easier in deep networks</strong>:</p>
+<ul class="simple">
+<li><p>we can show them numerous stimuli,</p></li>
+<li><p>we have access to all units.</p></li>
+</ul>
+<p>Example articles that use this technique:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jov.arvojournals.org/article.aspx?articleid=2778843">Contrast sensitivity functions in autoencoders</a></p></li>
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S004269892100016X">Color for object recognition: Hue and chroma sensitivity in the deep features of convolutional neural networks</a></p></li>
+</ul>
+<section id="packages">
+<h2>0. Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h2>
+<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> provides a portable way of using operating system-dependent functionality, e.g., modifying files/folders.</p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a> is a package that collects several modules for working with URLs.</p></li>
+<li><p><a class="reference external" href="https://pillow.readthedocs.io/en/stable/">PIL</a> is a fast image processing designed for general applications.</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil_image</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">torch_transforms</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="device">
+<h3>device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h3>
+<p>Choosing CPU or GPU based on the availability of the hardware.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stimuli">
+<h2>1. Stimuli<a class="headerlink" href="#stimuli" title="Permalink to this heading">#</a></h2>
+<p>In this tutorial, we use natural images as our stimuli, but one can show artificial networks any type of stimuli.</p>
+<p>We load four images from the internet and show them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of image URLs</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://github.com/pytorch/hub/raw/master/images/dog.jpg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://farm4.staticflickr.com/3418/3368475823_74f3d3e9f9_z.jpg&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;http://farm3.staticflickr.com/2431/3908162999_5b5cd7c1b7_z.jpg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://farm8.staticflickr.com/7069/6903096875_042efb5ee7_z.jpg&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Openning the image and visualising it</span>
+<span class="n">input_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">pil_image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Original images&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">input_images</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">img_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74dddc0473f0ae2c5c46939e1e136b7fa75ba3ce7bb2e2e888748c0da8d7f449.png" src="../_images/74dddc0473f0ae2c5c46939e1e136b7fa75ba3ce7bb2e2e888748c0da8d7f449.png" />
+</div>
+</div>
+<section id="torch-tensors">
+<h3>Torch Tensors<a class="headerlink" href="#torch-tensors" title="Permalink to this heading">#</a></h3>
+<p>Before inputting a network with our images we:</p>
+<ol class="arabic simple">
+<li><p><strong>resize</strong> them to what the image size that the pretrained network was trained on,</p></li>
+<li><p><strong>normalise</strong> them to the range of values that the pretrained network was trained on.</p></li>
+</ol>
+<p>While these two steps are not strictly speaking mandatory, it’s sensible to measure the response of kernels under similar conditions that the network is meant to function.</p>
+<p>In the end, we visualise the tensor images (after inverting the normalisation). This is often a good exercise to do to ensure what we show to networks is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the training size of ImageNet pretrained networks</span>
+<span class="n">target_size</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="c1"># mean and std values of ImageNet pretrained networks</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">]</span>
+<span class="n">std</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]</span>
+
+<span class="c1"># the list of transformation functions</span>
+<span class="n">transforsm</span> <span class="o">=</span> <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="n">target_size</span><span class="p">,</span> <span class="n">target_size</span><span class="p">)),</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="n">std</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">torch_imgs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">transforsm</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">input_images</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input tensor shape:&quot;</span><span class="p">,</span> <span class="n">torch_imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># visualising the torch images</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Resized images&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">torch_imgs</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">img_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># inversing the normalisation by multiplying to std and adding mean</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input tensor shape: torch.Size([4, 3, 224, 224])
+</pre></div>
+</div>
+<img alt="../_images/e89a6a3f5c6b3cdc491e0601ec9160863a6a09937b8a0784673e3319cf3be9a3.png" src="../_images/e89a6a3f5c6b3cdc491e0601ec9160863a6a09937b8a0784673e3319cf3be9a3.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="network">
+<h2>2. Network<a class="headerlink" href="#network" title="Permalink to this heading">#</a></h2>
+<p>We use <a class="reference external" href="https://pytorch.org/vision/stable/models.html">torchvision.models</a> to obtain networks pretrained on ImageNet.</p>
+<p>In this tutorial, we focus on the <code class="docutils literal notranslate"><span class="pre">ResNet</span></code> architectures, but the logic of computing activation maps remains the same for all other convolutional neural networks (CNN).</p>
+<p>Remember that you must call <code class="docutils literal notranslate"><span class="pre">network.eval()</span></code> to set dropout and batch normalisation layers to evaluation mode before recording activation maps. Failing to do this will yield inconsistent results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet50_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># getting the name of layers, which we use later to obtain their activation maps</span>
+<span class="n">layer_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">named_children</span><span class="p">()]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">layer_names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;conv1&#39;, &#39;bn1&#39;, &#39;relu&#39;, &#39;maxpool&#39;, &#39;layer1&#39;, &#39;layer2&#39;, &#39;layer3&#39;, &#39;layer4&#39;, &#39;avgpool&#39;, &#39;fc&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="forward-hooks">
+<h2>3. Forward Hooks<a class="headerlink" href="#forward-hooks" title="Permalink to this heading">#</a></h2>
+<p>PyTorch allows inspecting/modifying the output and gradient output of a layer using <strong>hooks</strong>. In this tutorial, we use forward hooks to inspect the output of a layer. To do so, we call the <code class="docutils literal notranslate"><span class="pre">register_forward_hook</span></code> for every layer that we want to inspect:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">register_forward_hook</span></code> registers a forward hook on the module.</p></li>
+<li><p>The hook will be called every time after <code class="docutils literal notranslate"><span class="pre">forward()</span></code> has computed an output.</p></li>
+<li><p>It returns a handle that can be used to remove the added hook by calling <code class="docutils literal notranslate"><span class="pre">handle.remove()</span></code>.</p></li>
+</ul>
+<p>The hook should have the following signature:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>hook(module, args, output) -&gt; None or modified output
+</pre></div>
+</div>
+<p>In our example, we have implemented this in the <code class="docutils literal notranslate"><span class="pre">activation</span></code> function that stores the outputs in a <code class="docutils literal notranslate"><span class="pre">dict</span></code>.</p>
+<p>In our example, we only access the first tier of layers/modules that are accessible by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>layer = getattr(model, layer_name)
+</pre></div>
+</div>
+<p>Essentially, we can only access one of these ten layers:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;conv1&#39;, &#39;bn1&#39;, &#39;relu&#39;, &#39;maxpool&#39;, &#39;layer1&#39;, &#39;layer2&#39;, &#39;layer3&#39;, &#39;layer4&#39;, &#39;avgpool&#39;, &#39;fc&#39;]
+</pre></div>
+</div>
+<p>However, many times a network consists of several nested modules. Often, we also want to record the activation maps of those layer. For instance, <code class="docutils literal notranslate"><span class="pre">layer1-4</span></code> of <code class="docutils literal notranslate"><span class="pre">ResNet</span></code> contains several residual blocks. To access those nested layers:</p>
+<ul class="simple">
+<li><p>Access the parent module, for example, by calling the <code class="docutils literal notranslate"><span class="pre">getattr</span></code> module or simply by getting the correct index from the list of <code class="docutils literal notranslate"><span class="pre">network.children()</span></code>.</p></li>
+<li><p>Iterate this process until the layer is directly accessible and it’s not nested within another module.</p></li>
+</ul>
+<p><strong>Excercie</strong>: create hooks for residual blocks of ResNet or hidden layers of any other network you’re interested to explore.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">activation</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">acts_dict</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Storing the output of a module/layer in the dict that is passed as an argument.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">hook</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">input_x</span><span class="p">,</span> <span class="n">output_y</span><span class="p">):</span>
+        <span class="n">acts_dict</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">output_y</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">hook</span>
+
+<span class="k">def</span> <span class="nf">create_hooks</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layers</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;For the given model it creates a hook for all specified layers.&quot;&quot;&quot;</span>
+    <span class="n">acts_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="n">hooks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">layer_name</span> <span class="ow">in</span> <span class="n">layers</span><span class="p">:</span>
+        <span class="c1"># accessing the layer/module from the network</span>
+        <span class="n">layer</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">layer_name</span><span class="p">)</span>
+        <span class="n">hooks</span><span class="p">[</span><span class="n">layer_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">layer</span><span class="o">.</span><span class="n">register_forward_hook</span><span class="p">(</span><span class="n">activation</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">acts_dict</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">acts_dict</span><span class="p">,</span> <span class="n">hooks</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we create the hooks for three layers <code class="docutils literal notranslate"><span class="pre">['maxpool',</span> <span class="pre">'layer2',</span> <span class="pre">'fc']</span></code> of our network. The activation maps are filled in when we call the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function of the networks</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">acts_dict</span><span class="p">,</span> <span class="n">hooks</span> <span class="o">=</span> <span class="n">create_hooks</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;maxpool&#39;</span><span class="p">,</span> <span class="s1">&#39;layer2&#39;</span><span class="p">,</span> <span class="s1">&#39;fc&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="forward-call">
+<h2>4. Forward call<a class="headerlink" href="#forward-call" title="Permalink to this heading">#</a></h2>
+<p>Next, we simply input the <code class="docutils literal notranslate"><span class="pre">network</span></code> with our input stimuli <code class="docutils literal notranslate"><span class="pre">torch_imgs</span></code>. <strong>Note</strong>: we’re not really interested in the output of the network per see, but rather the activation maps that are filled in the <code class="docutils literal notranslate"><span class="pre">acts_dict</span></code> after the <code class="docutils literal notranslate"><span class="pre">forward</span></code> call.</p>
+<p><strong>Important</strong> If you call the network once again with a new set of stimuli, the data in <code class="docutils literal notranslate"><span class="pre">acts_dict</span></code> gets overwritten. Therefore, if you need that information you have to make a copy of then in another variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">_</span> <span class="o">=</span> <span class="n">network</span><span class="p">(</span><span class="n">torch_imgs</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisation">
+<h2>5. Visualisation<a class="headerlink" href="#visualisation" title="Permalink to this heading">#</a></h2>
+<p>Let’s look at the obtained activation maps. First, we just print the shape of obtained activation maps:</p>
+<ul class="simple">
+<li><p>The first dimension for all examined layers is 4 corresponding to the number of images.</p></li>
+<li><p>The second dimension corresponds to the number of kernels (e.g., <code class="docutils literal notranslate"><span class="pre">maxpool</span></code> has 64 kernels).</p></li>
+<li><p>The third and fourth are the spatial resolution (note that the <code class="docutils literal notranslate"><span class="pre">fc</span></code> layer doesn’t have any spatial content).</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">layer_acts</span> <span class="ow">in</span> <span class="n">acts_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">layer_acts</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>maxpool torch.Size([4, 64, 56, 56])
+layer2 torch.Size([4, 512, 28, 28])
+fc torch.Size([4, 1000])
+</pre></div>
+</div>
+</div>
+</div>
+<section id="early-layer">
+<h3>Early layer<a class="headerlink" href="#early-layer" title="Permalink to this heading">#</a></h3>
+<p>Next, we visualise the activation maps of the <code class="docutils literal notranslate"><span class="pre">maxpool</span></code> layer to have some intuitions about the obtained responses. We can observe excitation by low-level features such as:</p>
+<ul class="simple">
+<li><p>Some of the kernels get activated by certain colours.</p></li>
+<li><p>Other kernels get activated by edges.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">maxpool</span></code> corresponds to an early layer of ResNet50, therefore the features that kernels are responsive to are also basic features.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layer_act</span> <span class="o">=</span> <span class="n">acts_dict</span><span class="p">[</span><span class="s1">&#39;maxpool&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">layer_acts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer_act</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Image </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">layer_acts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="n">cols</span>
+    <span class="k">for</span> <span class="n">kernel_ind</span><span class="p">,</span> <span class="n">kernel_act</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer_acts</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">kernel_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">kernel_act</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;K=</span><span class="si">%.3d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">kernel_ind</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/91070bf7733a64c72930bd6d132dd9fdda16fd1f77d85dfa291b5f3dcfbe584b.png" src="../_images/91070bf7733a64c72930bd6d132dd9fdda16fd1f77d85dfa291b5f3dcfbe584b.png" />
+<img alt="../_images/f455287c8063f73d13fa9c7f0d91c1b8d6ce78db074f2e2861908e0b24f965d8.png" src="../_images/f455287c8063f73d13fa9c7f0d91c1b8d6ce78db074f2e2861908e0b24f965d8.png" />
+<img alt="../_images/d219989679a6b8f81a62c8e584ac8ce59f9a4afe7fdeba663cd38a9efbb0de92.png" src="../_images/d219989679a6b8f81a62c8e584ac8ce59f9a4afe7fdeba663cd38a9efbb0de92.png" />
+<img alt="../_images/15726cd201a84ed77d14f0b580f3453538e9250aa614fa6571dcc8f1ca5f1c53.png" src="../_images/15726cd201a84ed77d14f0b580f3453538e9250aa614fa6571dcc8f1ca5f1c53.png" />
+</div>
+</div>
+</section>
+<section id="deeper-layer">
+<h3>Deeper layer<a class="headerlink" href="#deeper-layer" title="Permalink to this heading">#</a></h3>
+<p>Let’s visualise the activation maps of a deeper layer <code class="docutils literal notranslate"><span class="pre">layer2</span></code> for one of the images. Overall, we can observe that the activation maps are not as simple as an earlier layer. Kernels in <code class="docutils literal notranslate"><span class="pre">layer2</span></code> respond to different patterns and textures. The set of features that excite a kernel becomes more complex as we go deeper into a network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">layer_act</span> <span class="o">=</span> <span class="n">acts_dict</span><span class="p">[</span><span class="s1">&#39;layer2&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">layer_acts</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer_act</span><span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">56</span><span class="p">))</span>
+    <span class="n">cols</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">rows</span> <span class="o">=</span> <span class="n">layer_acts</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="n">cols</span>
+    <span class="k">for</span> <span class="n">kernel_ind</span><span class="p">,</span> <span class="n">kernel_act</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer_acts</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">kernel_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">kernel_act</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;K=</span><span class="si">%.3d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">kernel_ind</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/cec625020ee4d952868c381de6fcd0af2b85e0124b15c773f649be0bcb235447.png" src="../_images/cec625020ee4d952868c381de6fcd0af2b85e0124b15c773f649be0bcb235447.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="systematic-experiments">
+<h2>6. Systematic experiments<a class="headerlink" href="#systematic-experiments" title="Permalink to this heading">#</a></h2>
+<p>While visualisation of activation maps for natural images is interesting and results in some intuition about the underlying representation of deep networks, it’s more informative to check the activation maps with respect to a specific feature (i.e., dependent variable) and keep all other parameters fixed (i.e., independent variables).</p>
+<p><strong>Quantitative</strong> assessment: the activation maps we visualised above contain spatial resolution. To report the degree of excitation one could use different techniques such as:</p>
+<ul class="simple">
+<li><p>Statistics of the entire activation map (e.g., mean or median).</p></li>
+<li><p>Statistics on pixels corresponding to the foreground stimuli. This is only possible if we have a segmentation map of input pixels (e.g., in the case of generated stimuli).</p></li>
+<li><p>Thresholding the activation maps and counting the number of pixels that meet this criterion.</p></li>
+</ul>
+<p><strong>Questions to explore</strong>: recording the activation map is a powerful technique and one can perform many interesting experiments with it. Below are a few example exercises:</p>
+<ol class="arabic simple">
+<li><p><strong>Colour</strong></p>
+<ul class="simple">
+<li><p>Plot a circle in the middle of a grey background.</p></li>
+<li><p>Change the colour of the circle systematically across the hue spectrum.</p></li>
+<li><p>Measure the activation of kernels.</p></li>
+<li><p>Are there kernels that get highly excited in the presence of certain colours?</p></li>
+<li><p>Are colour kernels more present in early or deeper layers?</p></li>
+</ul>
+</li>
+<li><p><strong>Size</strong></p>
+<ul class="simple">
+<li><p>Plot different geometrical shapes in the middle of a grey background.</p></li>
+<li><p>Change the size of those shapes systematically.</p></li>
+<li><p>Measure the activation of kernels.</p></li>
+<li><p>Plot the level of activation as a function of stimuli size.</p></li>
+<li><p>Do artificial kernels show a preference for a certain size?</p></li>
+<li><p>Does The size preference of kernels change as a function of layer?</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="interpretability_techniques.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">6. Interpretability Techniques</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lesion.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Kernel Lesioning</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-hooks">3. Forward Hooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#forward-call">4. Forward call</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisation">5. Visualisation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#early-layer">Early layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deeper-layer">Deeper layer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">6. Systematic experiments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Arash Akbarinia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

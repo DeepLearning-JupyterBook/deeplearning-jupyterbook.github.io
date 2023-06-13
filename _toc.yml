@@ -3,7 +3,28 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts:
+  - caption: Prerequisites
+    chapters:
+    - file: markdowns/environment_setup
+  - caption: Tutorials
+    chapters:
+    - file: notebooks/basic_operations
+    - file: notebooks/build_DNN_project
+    - file: notebooks/optimisation_learning
+    - file: notebooks/vision
+    - file: notebooks/generative_models
+      sections:
+      - file: notebooks/gan
+      - file: notebooks/vae
+      - file: notebooks/dpm
+    - file: notebooks/interpretability_techniques
+      sections:
+      - file: notebooks/activation
+      - file: notebooks/lesion
+      - file: notebooks/linear_classifier_probe
+  - caption: Assignments
+    chapters:
+    - file: notebooks/assignment1
+    - file: notebooks/assignment2
+    - file: notebooks/assignment3

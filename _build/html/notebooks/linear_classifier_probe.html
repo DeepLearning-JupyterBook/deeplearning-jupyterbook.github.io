@@ -1,0 +1,1221 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Probing by linear classifiers &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/linear_classifier_probe';</script>
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment-1" href="assignment1.html" />
+    <link rel="prev" title="Kernel Lesioning" href="lesion.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdowns/environment_setup.html">0. Environment Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Probing by linear classifiers</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/linear_classifier_probe.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/linear_classifier_probe.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/linear_classifier_probe.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Probing by linear classifiers</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-dataset">Train dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-samples">Visualise samples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-dataset">Test dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">3. Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-accuracy">Loss – accuracy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">4. Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">5. Systematic experiments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="probing-by-linear-classifiers">
+<h1>Probing by linear classifiers<a class="headerlink" href="#probing-by-linear-classifiers" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/linear_classifier_probe.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
+<p>This tutorial showcases how to use linear classifiers to interpret the representation encoded in different layers of a deep neural network. We study that in pretrained networks trained on ImageNet.</p>
+<p>There are several techniques that we can exercise to learn about the representation a network has learnt during its training:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/lesion.ipynb">lesioning</a> individual or ensemble of kernels,</p></li>
+<li><p>recording <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/activation.ipynb">activation maps</a> individual or ensemble of kernels,</p></li>
+<li><p>probing intermediate layers by linear classifiers (<strong>this notebook</strong>).</p></li>
+</ul>
+<p>To assess whether a certain feature is encoded in the representation learnt by a network, we can check its discrimination power for that said feature. We cannot directly ask the pretrained network about the feature of interest, therefore we interpret the learnt representation using a linear classifier. We extract features from a frozen pretrained network, and only the weights of the linear classifier are optimised during the training.</p>
+<img src="https://www.dropbox.com/s/gbzkp0y8x24jrk2/csf_pipeline.png?dl=1">
+<p>In this technique:</p>
+<ul class="simple">
+<li><p>We can extract features at any layer.</p></li>
+<li><p>Often the extracted features have a large dimensionality because of the spatial resolution, one can reduce this by adaptive pooling mechanism without learning any parameters.</p></li>
+<li><p>We must make sure, the obtained results are not due to (or biased by) the training procedure of the linear classifier.</p></li>
+</ul>
+<p>Example articles that use this technique:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1610.01644">Understanding intermediate layers using linear classifier probes</a></p></li>
+<li><p><a class="reference external" href="https://www.biorxiv.org/content/10.1101/2023.01.06.523034v2.abstract">Contrast Sensitivity Function in Deep Networks</a></p></li>
+</ul>
+<section id="packages">
+<h2>0. Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h2>
+<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> provides a portable way of using operating system-dependent functionality, e.g., modifying files/folders.</p></li>
+<li><p><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> is a leading computer vision library.</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">torch_transforms</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="device">
+<h3>device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h3>
+<p>Choosing CPU or GPU based on the availability of the hardware.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stimuli">
+<h2>1. Stimuli<a class="headerlink" href="#stimuli" title="Permalink to this heading">#</a></h2>
+<p>We study contrast discrimination. Our final goal is to measure the <a class="reference external" href="https://en.wikipedia.org/wiki/Contrast_(vision)#Contrast_sensitivity">contrast sensitivity function (CSF)</a> of deep networks and check whether it resembles the CSF of humans.</p>
+<section id="train-dataset">
+<h3>Train dataset<a class="headerlink" href="#train-dataset" title="Permalink to this heading">#</a></h3>
+<p>We use our geometrical drawing dataset for training. This time the dataset returns two images that are identical in all aspects except their level of contrast. The task of network is to identify which image has a higher contrast.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;ellipse&quot;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;rectangle&quot;</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">create_random_shape</span><span class="p">(</span><span class="n">img_size</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;This function generates geometrical shapes on top of a background image.&quot;&quot;&quot;</span>
+    <span class="c1"># choosing a colour for the shape, there is a slim chance of being identical to the background,</span>
+    <span class="c1"># we can consider this the noise in our dataset!</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">128</span>
+
+    <span class="n">colour</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
+    <span class="n">point1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># drawing a random geometrical shape</span>
+    <span class="n">shape_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span>
+    <span class="c1"># when the thickness is negative, the shape is drawn filled</span>
+    <span class="n">thickness</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="k">if</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># circle</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># ellipse</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># rectangle</span>
+        <span class="n">point2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">shape_ind</span>
+
+
+<span class="k">def</span> <span class="nf">_adjust_contrast</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">amount</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">amount</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">ContrastDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_imgs</span><span class="p">,</span> <span class="n">target_size</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        num_imgs : int</span>
+<span class="sd">            The number of samples in the dataset.</span>
+<span class="sd">        target_size : int</span>
+<span class="sd">            The spatial resolution of generated images.  </span>
+<span class="sd">        transform : List, optional</span>
+<span class="sd">            The list of transformation functions,</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_imgs</span> <span class="o">=</span> <span class="n">num_imgs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="n">target_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_imgs</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_idx</span><span class="p">):</span>
+        <span class="c1"># our routine doesn&#39;t need the idx, which is the sample number</span>
+        <span class="n">img1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">create_random_shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">)</span>
+        <span class="c1"># we make two images, one with high-contrast and another with low-contrast</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">img1</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">img1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">rnd_contrasts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.04</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="c1"># network&#39;s task is to find which image has a higher contrast</span>
+        <span class="n">gt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">rnd_contrasts</span><span class="p">)</span>
+
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">_adjust_contrast</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">rnd_contrasts</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">_adjust_contrast</span><span class="p">(</span><span class="n">img2</span><span class="p">,</span> <span class="n">rnd_contrasts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
+            <span class="n">img1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img1</span><span class="p">)</span>
+            <span class="n">img2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">img1</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">img2</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">gt</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="torch-tensors">
+<h3>Torch Tensors<a class="headerlink" href="#torch-tensors" title="Permalink to this heading">#</a></h3>
+<p>Before inputting a network with our images we <strong>normalise</strong> them to the range of values that the pretrained network was trained on.</p>
+<p>While this step is not strictly speaking mandatory, it’s sensible to measure the response of kernels under similar conditions that the network is meant to function.</p>
+<p>In the end, we visualise the tensor images (after inverting the normalisation). This is often a good exercise to do to ensure what we show to networks is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the training size of ImageNet pretrained networks</span>
+<span class="n">target_size</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="c1"># mean and std values of ImageNet pretrained networks</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">]</span>
+<span class="n">std</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]</span>
+
+<span class="c1"># the list of transformation functions</span>
+<span class="n">transform</span> <span class="o">=</span> <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="n">std</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">num_imgs</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">train_db</span> <span class="o">=</span> <span class="n">ContrastDataset</span><span class="p">(</span><span class="n">num_imgs</span><span class="p">,</span> <span class="n">target_size</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
+
+<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">32</span>
+<span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+    <span class="n">train_db</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualise-samples">
+<h3>Visualise samples<a class="headerlink" href="#visualise-samples" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">img_i1</span><span class="p">,</span> <span class="n">img_i2</span><span class="p">,</span> <span class="n">gt_i</span> <span class="o">=</span> <span class="n">train_db</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1"># image should be detached from gradient and converted to numpy &quot;detach().cpu().numpy()&quot;</span>
+    <span class="c1"># the axis should change to &lt;width, height, channel&gt; &quot;transpose(1, 2, 0)&quot;</span>
+    <span class="c1"># the normalisation should be inverted for visualisation purposes &quot;* std + mean&quot;</span>
+    <span class="n">img_i1</span> <span class="o">=</span> <span class="n">img_i1</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span>
+    <span class="n">img_i2</span> <span class="o">=</span> <span class="n">img_i2</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span>
+    <span class="n">img_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">img_i1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">target_size</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">img_i2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_i</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GT=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;left&#39;</span> <span class="k">if</span> <span class="n">gt_i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;right&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/070c0b87d6f68a59a9b2272a86bc8d371c85831192aa5cb478b23aa00797d8c3.png" src="../_images/070c0b87d6f68a59a9b2272a86bc8d371c85831192aa5cb478b23aa00797d8c3.png" />
+</div>
+</div>
+</section>
+<section id="test-dataset">
+<h3>Test dataset<a class="headerlink" href="#test-dataset" title="Permalink to this heading">#</a></h3>
+<p>We opted for the contrast detection task similar to the ModelFest dataset, aiming to measure the networks’ contrast sensitivity function (CSF) as closely as possible to human psychophysics. Each trial consisted of two intervals, where one interval showed an image with a non-zero contrast modulated sinusoidal gratings, and the other showed an image of the uniform grey background of <span class="math notranslate nohighlight">\(0\%\)</span> contrast.</p>
+<p>During testing at each trial, we make a new instance of our <code class="docutils literal notranslate"><span class="pre">GratingsDataset</span></code>, each time increasing/decreasing the contrast levels passed to the initialiser depending on the performance of the network. In other words, the sinusoidal grating contrast is adjusted with a staircase procedure until the network reached <span class="math notranslate nohighlight">\(75\%\)</span> correct - the same threshold typically assumed in human experiments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sinusoid_grating</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">lambda_wave</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">img_size</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">]:</span>
+        <span class="n">img_size</span> <span class="o">=</span> <span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">)</span>
+    <span class="c1"># Generate Sinusoid grating</span>
+    <span class="c1"># sz: size of generated image (width, height)</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">img_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">img_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">))</span>
+    <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">radius</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">radius</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+
+    <span class="n">stimuli</span> <span class="o">=</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">omega</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">omega</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">/</span> <span class="n">lambda_wave</span> <span class="o">+</span> <span class="n">rho</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">stimuli</span>
+
+<span class="k">class</span> <span class="nc">GratingsDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_size</span><span class="p">,</span> <span class="n">contrasts</span><span class="p">,</span> <span class="n">sf</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        ----------</span>
+<span class="sd">        target_size : int</span>
+<span class="sd">            The spatial resolution of generated images.  </span>
+<span class="sd">        transform : List, optional</span>
+<span class="sd">            The list of transformation functions,</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="n">target_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">contrasts</span> <span class="o">=</span> <span class="n">contrasts</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sf</span> <span class="o">=</span> <span class="n">sf</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">thetas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">+</span> <span class="mf">1e-3</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">thetas</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
+        <span class="n">theta</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">thetas</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">omega</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)]</span>
+        <span class="n">lambda_wave</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">sf</span><span class="p">)</span>
+        <span class="c1"># generating the gratings</span>
+        <span class="n">sinusoid_param</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;amp&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">contrasts</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;omega&#39;</span><span class="p">:</span> <span class="n">omega</span><span class="p">,</span> <span class="s1">&#39;rho&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;img_size&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">,</span> <span class="s1">&#39;lambda_wave&#39;</span><span class="p">:</span> <span class="n">lambda_wave</span>
+        <span class="p">}</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">sinusoid_grating</span><span class="p">(</span><span class="o">**</span><span class="n">sinusoid_param</span><span class="p">)</span>
+        <span class="n">sinusoid_param</span><span class="p">[</span><span class="s1">&#39;amp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">contrasts</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">sinusoid_grating</span><span class="p">(</span><span class="o">**</span><span class="n">sinusoid_param</span><span class="p">)</span>
+
+        <span class="c1"># if the target size is even, the generated stimuli is 1 pixel larger.</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">img1</span> <span class="o">=</span> <span class="n">img1</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">img2</span> <span class="o">=</span> <span class="n">img2</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+        <span class="c1"># multiply by a Gaussian</span>
+        <span class="n">radius</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">)</span>
+        <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span> <span class="n">radius</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        
+        <span class="n">sigma</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">/</span> <span class="mi">6</span>
+        <span class="n">gauss_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="n">sigma</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+        
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">mod</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">gauss_img</span> <span class="o">=</span> <span class="n">gauss_img</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">gauss_img</span> <span class="o">=</span> <span class="n">gauss_img</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">gauss_img</span><span class="p">)</span>
+        
+        <span class="n">img1</span> <span class="o">*=</span> <span class="n">gauss_img</span>
+        <span class="n">img2</span> <span class="o">*=</span> <span class="n">gauss_img</span>
+            
+        <span class="c1"># bringing the image in the range of 0-1</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="p">(</span><span class="n">img1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="p">(</span><span class="n">img2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+            
+        <span class="c1"># converting it to 3 channel</span>
+        <span class="n">img1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">img1</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">img2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="n">img2</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">],</span> <span class="mi">3</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
+            <span class="n">img1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img1</span><span class="p">)</span>
+            <span class="n">img2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img2</span><span class="p">)</span>
+
+        <span class="n">gt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">contrasts</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">img1</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">img2</span><span class="o">.</span><span class="n">float</span><span class="p">(),</span> <span class="n">gt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">contrasts</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">test_db</span> <span class="o">=</span> <span class="n">GratingsDataset</span><span class="p">(</span><span class="n">target_size</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">contrasts</span><span class="o">=</span><span class="n">contrasts</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="n">sf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">12</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">img_i1</span><span class="p">,</span> <span class="n">img_i2</span><span class="p">,</span> <span class="n">gt_i</span> <span class="o">=</span> <span class="n">test_db</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="c1"># image should be detached from gradient and converted to numpy &quot;detach().cpu().numpy()&quot;</span>
+    <span class="c1"># the axis should change to &lt;width, height, channel&gt; &quot;transpose(1, 2, 0)&quot;</span>
+    <span class="c1"># the normalisation should be inverted for visualisation purposes &quot;* std + mean&quot;</span>
+    <span class="n">img_i1</span> <span class="o">=</span> <span class="n">img_i1</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span>
+    <span class="n">img_i2</span> <span class="o">=</span> <span class="n">img_i2</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span>
+    <span class="n">img_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">img_i1</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">target_size</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">img_i2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_i</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GT=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39;left&#39;</span> <span class="k">if</span> <span class="n">gt_i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;right&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div>
+</div>
+<img alt="../_images/2b08dbdc2ca20395c543c5961c99cc6640e2a58fd3d5546186d9347b5d9f8379.png" src="../_images/2b08dbdc2ca20395c543c5961c99cc6640e2a58fd3d5546186d9347b5d9f8379.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="network">
+<h2>2. Network<a class="headerlink" href="#network" title="Permalink to this heading">#</a></h2>
+<p>The structure of our network is quite similar to <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/vision.ipynb">transfer learning</a> we saw in an earlier class. The main difference is that:</p>
+<ul class="simple">
+<li><p>in <code class="docutils literal notranslate"><span class="pre">LinearProbe</span></code> the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function receives two images,</p></li>
+<li><p>it extracts features from the pretrained network for each image independently,</p></li>
+<li><p>it concatenates the extract features and inputs it to the linear classifier that perform a 2AFC.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">LinearProbe</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">LinearProbe</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="n">pretrained</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pretrained</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet50_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">pretrained</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="n">pretrained</span><span class="o">.</span><span class="n">children</span><span class="p">())[:</span><span class="mi">6</span><span class="p">])</span>
+            <span class="n">pretrained</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span> <span class="o">=</span> <span class="n">pretrained</span>
+        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+            <span class="n">p</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="n">feature_size</span> <span class="o">=</span> <span class="mi">512</span> <span class="o">*</span> <span class="mi">28</span> <span class="o">*</span> <span class="mi">28</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">feature_size</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">x2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_extractor</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">start_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="training">
+<h2>3. Training<a class="headerlink" href="#training" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">topk</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)):</span>
+    <span class="sd">&quot;&quot;&quot;Computes the accuracy over the k top predictions for the specified values of k&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+        <span class="n">maxk</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">topk</span><span class="p">)</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span>
+
+        <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">topk</span><span class="p">:</span>
+            <span class="n">correct_k</span> <span class="o">=</span> <span class="n">correct</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">keepdim</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct_k</span><span class="o">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">100.0</span> <span class="o">/</span> <span class="n">batch_size</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">res</span>
+
+
+<span class="k">def</span> <span class="nf">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">db_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="p">):</span>
+    <span class="c1"># usually the code for train/test has a large overlap.</span>
+    <span class="n">is_train</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">optimiser</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
+
+    <span class="c1"># model should be in train/eval model accordingly</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span> <span class="k">if</span> <span class="n">is_train</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+    <span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">set_grad_enabled</span><span class="p">(</span><span class="n">is_train</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">batch_ind</span><span class="p">,</span> <span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">db_loader</span><span class="p">):</span>
+            <span class="c1"># moving the image and GT to device</span>
+            <span class="n">img1</span> <span class="o">=</span> <span class="n">img1</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">img2</span> <span class="o">=</span> <span class="n">img2</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+            <span class="c1"># calling the network</span>
+            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img1</span><span class="p">,</span> <span class="n">img2</span><span class="p">)</span>
+            <span class="n">outputs</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">out</span> <span class="k">for</span> <span class="n">out</span> <span class="ow">in</span> <span class="n">output</span><span class="p">])</span>
+
+            <span class="c1"># computing the loss function</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+            <span class="n">losses</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img1</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
+            <span class="c1"># computing the accuracy</span>
+            <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+            <span class="n">accuracies</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">acc</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img1</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
+
+            <span class="k">if</span> <span class="n">is_train</span><span class="p">:</span>
+                <span class="c1"># compute gradient and do SGD step</span>
+                <span class="n">optimiser</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                <span class="n">optimiser</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">accuracies</span><span class="p">,</span> <span class="n">losses</span><span class="p">,</span> <span class="n">outputs</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">linear_probe</span> <span class="o">=</span> <span class="n">LinearProbe</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">linear_probe</span><span class="o">.</span><span class="n">fc</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
+<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
+    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
+    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
+<span class="p">)</span>
+
+<span class="c1"># doing epoch</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
+    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">linear_probe</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+     
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.3d</span><span class="s1">] loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[000] loss=115.6556     acc=69.50
+[001] loss=237.9370     acc=71.20
+[002] loss=268.4674     acc=72.60
+[003] loss=83.7455     acc=84.90
+[004] loss=67.7514     acc=85.40
+[005] loss=46.6342     acc=89.10
+[006] loss=91.8471     acc=84.70
+[007] loss=63.2980     acc=88.30
+[008] loss=51.8716     acc=89.50
+[009] loss=29.2941     acc=93.50
+</pre></div>
+</div>
+</div>
+</div>
+<section id="loss-accuracy">
+<h3>Loss – accuracy<a class="headerlink" href="#loss-accuracy" title="Permalink to this heading">#</a></h3>
+<p>We’re not really interested in the outcome of training, this is just a tool that allows us to do the testing (e.g., psychophysics). Nevertheless, we must ensure that the linear classifier is learning to perform the task.</p>
+<p><strong>Note</strong>: if the linear classifier never learns this task (after different hyper-parameter tuning), we can conclude that our feature of interest (in this example contrast) is not encoded in the representation of the network.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Contrast Discriminator Training&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Accuracy&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]),</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Loss&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Epochs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b386054403d4c86dbb40a657956a6df4437c51ad89ae5bd5e2d42d74e3f87be6.png" src="../_images/b386054403d4c86dbb40a657956a6df4437c51ad89ae5bd5e2d42d74e3f87be6.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="testing">
+<h2>4. Testing<a class="headerlink" href="#testing" title="Permalink to this heading">#</a></h2>
+<p>We test the network with a staircase paradigm. At every spatial frequency</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[1, 2, 4, 7, 8, 14, 16, 28, 32, 56, 112]
+</pre></div>
+</div>
+<p>We test the network with two images, one with 0% contrast and another with positive contrast. We gradually adjust the level of contrast till networks reach <span class="math notranslate nohighlight">\(75\%\)</span> accuracy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">midpoint</span><span class="p">(</span><span class="n">acc</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">th</span><span class="p">,</span> <span class="n">ep</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">):</span>
+    <span class="n">diff_acc</span> <span class="o">=</span> <span class="n">acc</span> <span class="o">-</span> <span class="n">th</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">diff_acc</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">ep</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+    <span class="k">elif</span> <span class="n">diff_acc</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">new_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">mid</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">low</span><span class="p">,</span> <span class="n">new_mid</span><span class="p">,</span> <span class="n">mid</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">new_mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">mid</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">return</span> <span class="n">mid</span><span class="p">,</span> <span class="n">new_mid</span><span class="p">,</span> <span class="n">high</span>
+
+<span class="k">def</span> <span class="nf">_sensitivity_sf</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">sf</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Computing the psychometric function for given spatial frequency.&quot;&quot;&quot;</span>
+    <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">high</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">low</span> <span class="o">+</span> <span class="n">high</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+
+    <span class="n">res_sf</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">attempt_i</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="c1"># th=0.749 because test samples are 16, 12 correct equals 0.75 and test stops</span>
+    <span class="n">th</span> <span class="o">=</span> <span class="mf">0.749</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">db_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
+            <span class="n">GratingsDataset</span><span class="p">(</span><span class="n">target_size</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">,</span> <span class="n">contrasts</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">mid</span><span class="p">],</span> <span class="n">sf</span><span class="o">=</span><span class="n">sf</span><span class="p">),</span>
+            <span class="n">batch_size</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">num_workers</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
+        <span class="p">)</span>
+
+        <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">db_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">accuracy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="mi">100</span>
+        <span class="n">res_sf</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">sf</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">,</span> <span class="n">mid</span><span class="p">]))</span>
+        <span class="n">new_low</span><span class="p">,</span> <span class="n">new_mid</span><span class="p">,</span> <span class="n">new_high</span> <span class="o">=</span> <span class="n">midpoint</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">th</span><span class="o">=</span><span class="n">th</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_mid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">attempt_i</span> <span class="o">==</span> <span class="mi">20</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">low</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">new_low</span><span class="p">,</span> <span class="n">new_mid</span><span class="p">,</span> <span class="n">new_high</span>
+        <span class="n">attempt_i</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">res_sf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># spatial frequencies</span>
+<span class="n">sfs</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">target_size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">target_size</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="n">sensitivities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sfs</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;spatial frequency&#39;</span><span class="p">,</span> <span class="n">sfs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">res_i</span> <span class="o">=</span> <span class="n">_sensitivity_sf</span><span class="p">(</span><span class="n">linear_probe</span><span class="p">,</span> <span class="n">sfs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">sensitivities</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="n">res_i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>spatial frequency 1
+spatial frequency 2
+spatial frequency 4
+spatial frequency 7
+spatial frequency 8
+spatial frequency 14
+spatial frequency 16
+spatial frequency 28
+spatial frequency 32
+spatial frequency 56
+spatial frequency 112
+</pre></div>
+</div>
+</div>
+</div>
+<section id="results">
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h3>
+<p>We plot the contrast sensitivity as a function of spatial frequency. The results of our current training suggest this network is more sensitive to spatial frequency 8 cycles per image.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sfs</span><span class="p">,</span> <span class="n">sensitivities</span><span class="p">,</span> <span class="s1">&#39;-x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Spatial frequency&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Contrast sensitivity&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7941de30d0b785b6237f2f68fd41057625d86b6c4fe4596d09cc458922c1116f.png" src="../_images/7941de30d0b785b6237f2f68fd41057625d86b6c4fe4596d09cc458922c1116f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="systematic-experiments">
+<h2>5. Systematic experiments<a class="headerlink" href="#systematic-experiments" title="Permalink to this heading">#</a></h2>
+<p>Using a linear classifier to probe the internal representation of pretrained networks:</p>
+<ul class="simple">
+<li><p>allows for unifying the psychophysical experiments of biological and artificial systems,</p></li>
+<li><p>is not limited to measuring the contrast sensitivity function of a network, and it can be used for other psychophysics.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="lesion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Kernel Lesioning</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="assignment1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment-1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-dataset">Train dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-samples">Visualise samples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-dataset">Test dataset</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training">3. Training</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-accuracy">Loss – accuracy</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#testing">4. Testing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">5. Systematic experiments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Arash Akbarinia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
