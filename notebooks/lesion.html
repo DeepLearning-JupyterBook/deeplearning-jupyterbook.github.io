@@ -1,0 +1,1338 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Kernel Lesioning &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/lesion';</script>
+    <link rel="shortcut icon" href="../_static/icon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Probing by linear classifiers" href="linear_classifier_probe.html" />
+    <link rel="prev" title="Activation Maps" href="activation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdowns/environment_setup.html">0. Environment Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+
+
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/lesion.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/lesion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/lesion.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Kernel Lesioning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesion-weights">3. Lesion weights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-effect">4. Measuring the effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline">Baseline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesioned-network">Lesioned network</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">5. Systematic experiments</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="kernel-lesioning">
+<h1>Kernel Lesioning<a class="headerlink" href="#kernel-lesioning" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/lesion.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
+<p>This tutorial showcases how to lesion individual or ensemble of kernels in a deep neural network. We study that in pretrained networks trained on ImageNet.</p>
+<p>There are several techniques that we can exercise to learn about the representation a network has learnt during its training:</p>
+<ul class="simple">
+<li><p>recording <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/activation.ipynb">activation maps</a> individual or ensemble of kernels,</p></li>
+<li><p>probing intermediate layers by <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/linear_classifier_probe.ipynb">linear classifiers</a>,</p></li>
+<li><p>lesioning (<strong>this notebook</strong>).</p></li>
+</ul>
+<p>In neuroscience, the behaviour of the system (humans/animals) is studied when part of a brain is lesioned (either deliberately or because of brain damage). This technique can reveal the functional role of a unit.</p>
+<p>A similar technique can be used in artificial neurons to learn more about the representation a network has learnt during its training. <strong>Performing lesioning is much easier in deep networks</strong>:</p>
+<ul class="simple">
+<li><p>We can deliberately lesion one or more kernels.</p></li>
+<li><p>We can test the system before and after lesioning.</p></li>
+<li><p>We can consider different lesioning paradigms (e.g., setting to zero or noise).</p></li>
+<li><p>We can test with numerous stimuli.</p></li>
+</ul>
+<p>Example articles that use this technique:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0042698920300766">Deciphering image contrast in object classification deep networks</a></p></li>
+<li><p><a class="reference external" href="https://www.science.org/doi/full/10.1126/sciadv.abl8913">Brain-like functional specialization emerges spontaneously in deep neural networks</a></p></li>
+</ul>
+<section id="packages">
+<h2>0. Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h2>
+<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/os.html">os</a> provides a portable way of using operating system-dependent functionality, e.g., modifying files/folders.</p></li>
+<li><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">requests</a> is a package that collects several modules for working with URLs.</p></li>
+<li><p><a class="reference external" href="https://pillow.readthedocs.io/en/stable/">PIL</a> is a fast image processing designed for general applications.</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">pil_image</span>
+
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">import</span> <span class="nn">torchvision.transforms</span> <span class="k">as</span> <span class="nn">torch_transforms</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="device">
+<h3>device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h3>
+<p>Choosing CPU or GPU based on the availability of the hardware.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="stimuli">
+<h2>1. Stimuli<a class="headerlink" href="#stimuli" title="Permalink to this heading">#</a></h2>
+<p>In this tutorial, we use natural images as our stimuli, but one can show artificial networks any type of stimuli.</p>
+<p>We load four images from the internet and show them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># list of image URLs</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;https://github.com/pytorch/hub/raw/master/images/dog.jpg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://farm4.staticflickr.com/3418/3368475823_74f3d3e9f9_z.jpg&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;http://farm3.staticflickr.com/2431/3908162999_5b5cd7c1b7_z.jpg&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;http://farm8.staticflickr.com/7069/6903096875_042efb5ee7_z.jpg&#39;</span>
+<span class="p">]</span>
+
+<span class="c1"># Openning the image and visualising it</span>
+<span class="n">input_images</span> <span class="o">=</span> <span class="p">[</span><span class="n">pil_image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Original images&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">input_images</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">img_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/74dddc0473f0ae2c5c46939e1e136b7fa75ba3ce7bb2e2e888748c0da8d7f449.png" src="../_images/74dddc0473f0ae2c5c46939e1e136b7fa75ba3ce7bb2e2e888748c0da8d7f449.png" />
+</div>
+</div>
+<section id="torch-tensors">
+<h3>Torch Tensors<a class="headerlink" href="#torch-tensors" title="Permalink to this heading">#</a></h3>
+<p>Before inputting a network with our images we:</p>
+<ol class="arabic simple">
+<li><p><strong>resize</strong> them to what the image size that the pretrained network was trained on,</p></li>
+<li><p><strong>normalise</strong> them to the range of values that the pretrained network was trained on.</p></li>
+</ol>
+<p>While these two steps are not strictly speaking mandatory, it’s sensible to measure the response of kernels under similar conditions that the network is meant to function.</p>
+<p>In the end, we visualise the tensor images (after inverting the normalisation). This is often a good exercise to do to ensure what we show to networks is correct.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the training size of ImageNet pretrained networks</span>
+<span class="n">target_size</span> <span class="o">=</span> <span class="mi">224</span>
+<span class="c1"># mean and std values of ImageNet pretrained networks</span>
+<span class="n">mean</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">]</span>
+<span class="n">std</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]</span>
+
+<span class="c1"># the list of transformation functions</span>
+<span class="n">transforsm</span> <span class="o">=</span> <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">((</span><span class="n">target_size</span><span class="p">,</span> <span class="n">target_size</span><span class="p">)),</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
+    <span class="n">torch_transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="o">=</span><span class="n">std</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">torch_imgs</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">transforsm</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">input_images</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input tensor shape:&quot;</span><span class="p">,</span> <span class="n">torch_imgs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># visualising the torch images</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Resized images&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">torch_imgs</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">img_ind</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># inversing the normalisation by multiplying to std and adding mean</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+Clipping input data to the valid range for imshow with RGB data ([0..1] for floats or [0..255] for integers).
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input tensor shape: torch.Size([4, 3, 224, 224])
+</pre></div>
+</div>
+<img alt="../_images/e89a6a3f5c6b3cdc491e0601ec9160863a6a09937b8a0784673e3319cf3be9a3.png" src="../_images/e89a6a3f5c6b3cdc491e0601ec9160863a6a09937b8a0784673e3319cf3be9a3.png" />
+</div>
+</div>
+</section>
+<section id="performance">
+<h3>Performance<a class="headerlink" href="#performance" title="Permalink to this heading">#</a></h3>
+<p>Often the impact of lesioning is measured by computing the performance of the network. For instance, how much accuracy in object recognition is dropped if kernel X is lesioned? In order to simulate this in this notebook, we download the ImageNet labels to print the predicted labels of network</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download ImageNet labels</span>
+<span class="o">!</span>wget https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt
+
+<span class="c1"># Read the categories</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;imagenet_classes.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-05-31 14:59:49--  https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt
+Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.109.133, 185.199.110.133, 185.199.108.133, ...
+Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.109.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 10472 (10K) [text/plain]
+Saving to: ‘imagenet_classes.txt.1’
+
+imagenet_classes.tx 100%[===================&gt;]  10,23K  --.-KB/s    in 0s      
+
+2023-05-31 14:59:49 (40,5 MB/s) - ‘imagenet_classes.txt.1’ saved [10472/10472]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="network">
+<h2>2. Network<a class="headerlink" href="#network" title="Permalink to this heading">#</a></h2>
+<p>We use <a class="reference external" href="https://pytorch.org/vision/stable/models.html">torchvision.models</a> to obtain networks pretrained on ImageNet.</p>
+<p>In this tutorial, we focus on the <code class="docutils literal notranslate"><span class="pre">ResNet</span></code> architectures, but the logic of computing activation maps remains the same for all other convolutional neural networks (CNN).</p>
+<p>Remember that you must call <code class="docutils literal notranslate"><span class="pre">network.eval()</span></code> to set dropout and batch normalisation layers to evaluation mode before recording activation maps. Failing to do this will yield inconsistent results.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet50_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="c1"># getting the name of layers, which we use later to lesion</span>
+<span class="k">for</span> <span class="n">layer_name</span><span class="p">,</span> <span class="n">layer_weights</span> <span class="ow">in</span> <span class="n">network</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">layer_name</span><span class="p">,</span> <span class="n">layer_weights</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conv1.weight torch.Size([64, 3, 7, 7])
+bn1.weight torch.Size([64])
+bn1.bias torch.Size([64])
+bn1.running_mean torch.Size([64])
+bn1.running_var torch.Size([64])
+bn1.num_batches_tracked torch.Size([])
+layer1.0.conv1.weight torch.Size([64, 64, 1, 1])
+layer1.0.bn1.weight torch.Size([64])
+layer1.0.bn1.bias torch.Size([64])
+layer1.0.bn1.running_mean torch.Size([64])
+layer1.0.bn1.running_var torch.Size([64])
+layer1.0.bn1.num_batches_tracked torch.Size([])
+layer1.0.conv2.weight torch.Size([64, 64, 3, 3])
+layer1.0.bn2.weight torch.Size([64])
+layer1.0.bn2.bias torch.Size([64])
+layer1.0.bn2.running_mean torch.Size([64])
+layer1.0.bn2.running_var torch.Size([64])
+layer1.0.bn2.num_batches_tracked torch.Size([])
+layer1.0.conv3.weight torch.Size([256, 64, 1, 1])
+layer1.0.bn3.weight torch.Size([256])
+layer1.0.bn3.bias torch.Size([256])
+layer1.0.bn3.running_mean torch.Size([256])
+layer1.0.bn3.running_var torch.Size([256])
+layer1.0.bn3.num_batches_tracked torch.Size([])
+layer1.0.downsample.0.weight torch.Size([256, 64, 1, 1])
+layer1.0.downsample.1.weight torch.Size([256])
+layer1.0.downsample.1.bias torch.Size([256])
+layer1.0.downsample.1.running_mean torch.Size([256])
+layer1.0.downsample.1.running_var torch.Size([256])
+layer1.0.downsample.1.num_batches_tracked torch.Size([])
+layer1.1.conv1.weight torch.Size([64, 256, 1, 1])
+layer1.1.bn1.weight torch.Size([64])
+layer1.1.bn1.bias torch.Size([64])
+layer1.1.bn1.running_mean torch.Size([64])
+layer1.1.bn1.running_var torch.Size([64])
+layer1.1.bn1.num_batches_tracked torch.Size([])
+layer1.1.conv2.weight torch.Size([64, 64, 3, 3])
+layer1.1.bn2.weight torch.Size([64])
+layer1.1.bn2.bias torch.Size([64])
+layer1.1.bn2.running_mean torch.Size([64])
+layer1.1.bn2.running_var torch.Size([64])
+layer1.1.bn2.num_batches_tracked torch.Size([])
+layer1.1.conv3.weight torch.Size([256, 64, 1, 1])
+layer1.1.bn3.weight torch.Size([256])
+layer1.1.bn3.bias torch.Size([256])
+layer1.1.bn3.running_mean torch.Size([256])
+layer1.1.bn3.running_var torch.Size([256])
+layer1.1.bn3.num_batches_tracked torch.Size([])
+layer1.2.conv1.weight torch.Size([64, 256, 1, 1])
+layer1.2.bn1.weight torch.Size([64])
+layer1.2.bn1.bias torch.Size([64])
+layer1.2.bn1.running_mean torch.Size([64])
+layer1.2.bn1.running_var torch.Size([64])
+layer1.2.bn1.num_batches_tracked torch.Size([])
+layer1.2.conv2.weight torch.Size([64, 64, 3, 3])
+layer1.2.bn2.weight torch.Size([64])
+layer1.2.bn2.bias torch.Size([64])
+layer1.2.bn2.running_mean torch.Size([64])
+layer1.2.bn2.running_var torch.Size([64])
+layer1.2.bn2.num_batches_tracked torch.Size([])
+layer1.2.conv3.weight torch.Size([256, 64, 1, 1])
+layer1.2.bn3.weight torch.Size([256])
+layer1.2.bn3.bias torch.Size([256])
+layer1.2.bn3.running_mean torch.Size([256])
+layer1.2.bn3.running_var torch.Size([256])
+layer1.2.bn3.num_batches_tracked torch.Size([])
+layer2.0.conv1.weight torch.Size([128, 256, 1, 1])
+layer2.0.bn1.weight torch.Size([128])
+layer2.0.bn1.bias torch.Size([128])
+layer2.0.bn1.running_mean torch.Size([128])
+layer2.0.bn1.running_var torch.Size([128])
+layer2.0.bn1.num_batches_tracked torch.Size([])
+layer2.0.conv2.weight torch.Size([128, 128, 3, 3])
+layer2.0.bn2.weight torch.Size([128])
+layer2.0.bn2.bias torch.Size([128])
+layer2.0.bn2.running_mean torch.Size([128])
+layer2.0.bn2.running_var torch.Size([128])
+layer2.0.bn2.num_batches_tracked torch.Size([])
+layer2.0.conv3.weight torch.Size([512, 128, 1, 1])
+layer2.0.bn3.weight torch.Size([512])
+layer2.0.bn3.bias torch.Size([512])
+layer2.0.bn3.running_mean torch.Size([512])
+layer2.0.bn3.running_var torch.Size([512])
+layer2.0.bn3.num_batches_tracked torch.Size([])
+layer2.0.downsample.0.weight torch.Size([512, 256, 1, 1])
+layer2.0.downsample.1.weight torch.Size([512])
+layer2.0.downsample.1.bias torch.Size([512])
+layer2.0.downsample.1.running_mean torch.Size([512])
+layer2.0.downsample.1.running_var torch.Size([512])
+layer2.0.downsample.1.num_batches_tracked torch.Size([])
+layer2.1.conv1.weight torch.Size([128, 512, 1, 1])
+layer2.1.bn1.weight torch.Size([128])
+layer2.1.bn1.bias torch.Size([128])
+layer2.1.bn1.running_mean torch.Size([128])
+layer2.1.bn1.running_var torch.Size([128])
+layer2.1.bn1.num_batches_tracked torch.Size([])
+layer2.1.conv2.weight torch.Size([128, 128, 3, 3])
+layer2.1.bn2.weight torch.Size([128])
+layer2.1.bn2.bias torch.Size([128])
+layer2.1.bn2.running_mean torch.Size([128])
+layer2.1.bn2.running_var torch.Size([128])
+layer2.1.bn2.num_batches_tracked torch.Size([])
+layer2.1.conv3.weight torch.Size([512, 128, 1, 1])
+layer2.1.bn3.weight torch.Size([512])
+layer2.1.bn3.bias torch.Size([512])
+layer2.1.bn3.running_mean torch.Size([512])
+layer2.1.bn3.running_var torch.Size([512])
+layer2.1.bn3.num_batches_tracked torch.Size([])
+layer2.2.conv1.weight torch.Size([128, 512, 1, 1])
+layer2.2.bn1.weight torch.Size([128])
+layer2.2.bn1.bias torch.Size([128])
+layer2.2.bn1.running_mean torch.Size([128])
+layer2.2.bn1.running_var torch.Size([128])
+layer2.2.bn1.num_batches_tracked torch.Size([])
+layer2.2.conv2.weight torch.Size([128, 128, 3, 3])
+layer2.2.bn2.weight torch.Size([128])
+layer2.2.bn2.bias torch.Size([128])
+layer2.2.bn2.running_mean torch.Size([128])
+layer2.2.bn2.running_var torch.Size([128])
+layer2.2.bn2.num_batches_tracked torch.Size([])
+layer2.2.conv3.weight torch.Size([512, 128, 1, 1])
+layer2.2.bn3.weight torch.Size([512])
+layer2.2.bn3.bias torch.Size([512])
+layer2.2.bn3.running_mean torch.Size([512])
+layer2.2.bn3.running_var torch.Size([512])
+layer2.2.bn3.num_batches_tracked torch.Size([])
+layer2.3.conv1.weight torch.Size([128, 512, 1, 1])
+layer2.3.bn1.weight torch.Size([128])
+layer2.3.bn1.bias torch.Size([128])
+layer2.3.bn1.running_mean torch.Size([128])
+layer2.3.bn1.running_var torch.Size([128])
+layer2.3.bn1.num_batches_tracked torch.Size([])
+layer2.3.conv2.weight torch.Size([128, 128, 3, 3])
+layer2.3.bn2.weight torch.Size([128])
+layer2.3.bn2.bias torch.Size([128])
+layer2.3.bn2.running_mean torch.Size([128])
+layer2.3.bn2.running_var torch.Size([128])
+layer2.3.bn2.num_batches_tracked torch.Size([])
+layer2.3.conv3.weight torch.Size([512, 128, 1, 1])
+layer2.3.bn3.weight torch.Size([512])
+layer2.3.bn3.bias torch.Size([512])
+layer2.3.bn3.running_mean torch.Size([512])
+layer2.3.bn3.running_var torch.Size([512])
+layer2.3.bn3.num_batches_tracked torch.Size([])
+layer3.0.conv1.weight torch.Size([256, 512, 1, 1])
+layer3.0.bn1.weight torch.Size([256])
+layer3.0.bn1.bias torch.Size([256])
+layer3.0.bn1.running_mean torch.Size([256])
+layer3.0.bn1.running_var torch.Size([256])
+layer3.0.bn1.num_batches_tracked torch.Size([])
+layer3.0.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.0.bn2.weight torch.Size([256])
+layer3.0.bn2.bias torch.Size([256])
+layer3.0.bn2.running_mean torch.Size([256])
+layer3.0.bn2.running_var torch.Size([256])
+layer3.0.bn2.num_batches_tracked torch.Size([])
+layer3.0.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.0.bn3.weight torch.Size([1024])
+layer3.0.bn3.bias torch.Size([1024])
+layer3.0.bn3.running_mean torch.Size([1024])
+layer3.0.bn3.running_var torch.Size([1024])
+layer3.0.bn3.num_batches_tracked torch.Size([])
+layer3.0.downsample.0.weight torch.Size([1024, 512, 1, 1])
+layer3.0.downsample.1.weight torch.Size([1024])
+layer3.0.downsample.1.bias torch.Size([1024])
+layer3.0.downsample.1.running_mean torch.Size([1024])
+layer3.0.downsample.1.running_var torch.Size([1024])
+layer3.0.downsample.1.num_batches_tracked torch.Size([])
+layer3.1.conv1.weight torch.Size([256, 1024, 1, 1])
+layer3.1.bn1.weight torch.Size([256])
+layer3.1.bn1.bias torch.Size([256])
+layer3.1.bn1.running_mean torch.Size([256])
+layer3.1.bn1.running_var torch.Size([256])
+layer3.1.bn1.num_batches_tracked torch.Size([])
+layer3.1.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.1.bn2.weight torch.Size([256])
+layer3.1.bn2.bias torch.Size([256])
+layer3.1.bn2.running_mean torch.Size([256])
+layer3.1.bn2.running_var torch.Size([256])
+layer3.1.bn2.num_batches_tracked torch.Size([])
+layer3.1.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.1.bn3.weight torch.Size([1024])
+layer3.1.bn3.bias torch.Size([1024])
+layer3.1.bn3.running_mean torch.Size([1024])
+layer3.1.bn3.running_var torch.Size([1024])
+layer3.1.bn3.num_batches_tracked torch.Size([])
+layer3.2.conv1.weight torch.Size([256, 1024, 1, 1])
+layer3.2.bn1.weight torch.Size([256])
+layer3.2.bn1.bias torch.Size([256])
+layer3.2.bn1.running_mean torch.Size([256])
+layer3.2.bn1.running_var torch.Size([256])
+layer3.2.bn1.num_batches_tracked torch.Size([])
+layer3.2.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.2.bn2.weight torch.Size([256])
+layer3.2.bn2.bias torch.Size([256])
+layer3.2.bn2.running_mean torch.Size([256])
+layer3.2.bn2.running_var torch.Size([256])
+layer3.2.bn2.num_batches_tracked torch.Size([])
+layer3.2.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.2.bn3.weight torch.Size([1024])
+layer3.2.bn3.bias torch.Size([1024])
+layer3.2.bn3.running_mean torch.Size([1024])
+layer3.2.bn3.running_var torch.Size([1024])
+layer3.2.bn3.num_batches_tracked torch.Size([])
+layer3.3.conv1.weight torch.Size([256, 1024, 1, 1])
+layer3.3.bn1.weight torch.Size([256])
+layer3.3.bn1.bias torch.Size([256])
+layer3.3.bn1.running_mean torch.Size([256])
+layer3.3.bn1.running_var torch.Size([256])
+layer3.3.bn1.num_batches_tracked torch.Size([])
+layer3.3.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.3.bn2.weight torch.Size([256])
+layer3.3.bn2.bias torch.Size([256])
+layer3.3.bn2.running_mean torch.Size([256])
+layer3.3.bn2.running_var torch.Size([256])
+layer3.3.bn2.num_batches_tracked torch.Size([])
+layer3.3.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.3.bn3.weight torch.Size([1024])
+layer3.3.bn3.bias torch.Size([1024])
+layer3.3.bn3.running_mean torch.Size([1024])
+layer3.3.bn3.running_var torch.Size([1024])
+layer3.3.bn3.num_batches_tracked torch.Size([])
+layer3.4.conv1.weight torch.Size([256, 1024, 1, 1])
+layer3.4.bn1.weight torch.Size([256])
+layer3.4.bn1.bias torch.Size([256])
+layer3.4.bn1.running_mean torch.Size([256])
+layer3.4.bn1.running_var torch.Size([256])
+layer3.4.bn1.num_batches_tracked torch.Size([])
+layer3.4.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.4.bn2.weight torch.Size([256])
+layer3.4.bn2.bias torch.Size([256])
+layer3.4.bn2.running_mean torch.Size([256])
+layer3.4.bn2.running_var torch.Size([256])
+layer3.4.bn2.num_batches_tracked torch.Size([])
+layer3.4.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.4.bn3.weight torch.Size([1024])
+layer3.4.bn3.bias torch.Size([1024])
+layer3.4.bn3.running_mean torch.Size([1024])
+layer3.4.bn3.running_var torch.Size([1024])
+layer3.4.bn3.num_batches_tracked torch.Size([])
+layer3.5.conv1.weight torch.Size([256, 1024, 1, 1])
+layer3.5.bn1.weight torch.Size([256])
+layer3.5.bn1.bias torch.Size([256])
+layer3.5.bn1.running_mean torch.Size([256])
+layer3.5.bn1.running_var torch.Size([256])
+layer3.5.bn1.num_batches_tracked torch.Size([])
+layer3.5.conv2.weight torch.Size([256, 256, 3, 3])
+layer3.5.bn2.weight torch.Size([256])
+layer3.5.bn2.bias torch.Size([256])
+layer3.5.bn2.running_mean torch.Size([256])
+layer3.5.bn2.running_var torch.Size([256])
+layer3.5.bn2.num_batches_tracked torch.Size([])
+layer3.5.conv3.weight torch.Size([1024, 256, 1, 1])
+layer3.5.bn3.weight torch.Size([1024])
+layer3.5.bn3.bias torch.Size([1024])
+layer3.5.bn3.running_mean torch.Size([1024])
+layer3.5.bn3.running_var torch.Size([1024])
+layer3.5.bn3.num_batches_tracked torch.Size([])
+layer4.0.conv1.weight torch.Size([512, 1024, 1, 1])
+layer4.0.bn1.weight torch.Size([512])
+layer4.0.bn1.bias torch.Size([512])
+layer4.0.bn1.running_mean torch.Size([512])
+layer4.0.bn1.running_var torch.Size([512])
+layer4.0.bn1.num_batches_tracked torch.Size([])
+layer4.0.conv2.weight torch.Size([512, 512, 3, 3])
+layer4.0.bn2.weight torch.Size([512])
+layer4.0.bn2.bias torch.Size([512])
+layer4.0.bn2.running_mean torch.Size([512])
+layer4.0.bn2.running_var torch.Size([512])
+layer4.0.bn2.num_batches_tracked torch.Size([])
+layer4.0.conv3.weight torch.Size([2048, 512, 1, 1])
+layer4.0.bn3.weight torch.Size([2048])
+layer4.0.bn3.bias torch.Size([2048])
+layer4.0.bn3.running_mean torch.Size([2048])
+layer4.0.bn3.running_var torch.Size([2048])
+layer4.0.bn3.num_batches_tracked torch.Size([])
+layer4.0.downsample.0.weight torch.Size([2048, 1024, 1, 1])
+layer4.0.downsample.1.weight torch.Size([2048])
+layer4.0.downsample.1.bias torch.Size([2048])
+layer4.0.downsample.1.running_mean torch.Size([2048])
+layer4.0.downsample.1.running_var torch.Size([2048])
+layer4.0.downsample.1.num_batches_tracked torch.Size([])
+layer4.1.conv1.weight torch.Size([512, 2048, 1, 1])
+layer4.1.bn1.weight torch.Size([512])
+layer4.1.bn1.bias torch.Size([512])
+layer4.1.bn1.running_mean torch.Size([512])
+layer4.1.bn1.running_var torch.Size([512])
+layer4.1.bn1.num_batches_tracked torch.Size([])
+layer4.1.conv2.weight torch.Size([512, 512, 3, 3])
+layer4.1.bn2.weight torch.Size([512])
+layer4.1.bn2.bias torch.Size([512])
+layer4.1.bn2.running_mean torch.Size([512])
+layer4.1.bn2.running_var torch.Size([512])
+layer4.1.bn2.num_batches_tracked torch.Size([])
+layer4.1.conv3.weight torch.Size([2048, 512, 1, 1])
+layer4.1.bn3.weight torch.Size([2048])
+layer4.1.bn3.bias torch.Size([2048])
+layer4.1.bn3.running_mean torch.Size([2048])
+layer4.1.bn3.running_var torch.Size([2048])
+layer4.1.bn3.num_batches_tracked torch.Size([])
+layer4.2.conv1.weight torch.Size([512, 2048, 1, 1])
+layer4.2.bn1.weight torch.Size([512])
+layer4.2.bn1.bias torch.Size([512])
+layer4.2.bn1.running_mean torch.Size([512])
+layer4.2.bn1.running_var torch.Size([512])
+layer4.2.bn1.num_batches_tracked torch.Size([])
+layer4.2.conv2.weight torch.Size([512, 512, 3, 3])
+layer4.2.bn2.weight torch.Size([512])
+layer4.2.bn2.bias torch.Size([512])
+layer4.2.bn2.running_mean torch.Size([512])
+layer4.2.bn2.running_var torch.Size([512])
+layer4.2.bn2.num_batches_tracked torch.Size([])
+layer4.2.conv3.weight torch.Size([2048, 512, 1, 1])
+layer4.2.bn3.weight torch.Size([2048])
+layer4.2.bn3.bias torch.Size([2048])
+layer4.2.bn3.running_mean torch.Size([2048])
+layer4.2.bn3.running_var torch.Size([2048])
+layer4.2.bn3.num_batches_tracked torch.Size([])
+fc.weight torch.Size([1000, 2048])
+fc.bias torch.Size([1000])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lesion-weights">
+<h2>3. Lesion weights<a class="headerlink" href="#lesion-weights" title="Permalink to this heading">#</a></h2>
+<p>We can implement the lesioning simply by changing the weights of a kernel:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>model.state_dict()[layer_name][kernel_ind] = 0
+</pre></div>
+</div>
+<p>The code snippet above sets all the weights of kernel number <code class="docutils literal notranslate"><span class="pre">kernel_ind</span></code> at layer <code class="docutils literal notranslate"><span class="pre">layer_name</span></code> to 0. Other possibilities include:</p>
+<ul class="simple">
+<li><p>setting the weights to random numbers,</p></li>
+<li><p>setting the weights to a random constant.</p></li>
+</ul>
+<p><strong>Note</strong>: the original model is modified and any future calling of this model will include the previous lesioning. Therefore, if you want to lesion one kernel at a time, you should each time load the original weights first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lesion_kernels</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">kernels</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Lesioning one or several kernels of a network.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">kernel</span> <span class="ow">in</span> <span class="n">kernels</span><span class="p">:</span>
+        <span class="n">layer_name</span><span class="p">,</span> <span class="n">kernel_ind</span> <span class="o">=</span> <span class="n">kernel</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()[</span><span class="n">layer_name</span><span class="p">][</span><span class="n">kernel_ind</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="measuring-the-effect">
+<h2>4. Measuring the effect<a class="headerlink" href="#measuring-the-effect" title="Permalink to this heading">#</a></h2>
+<section id="baseline">
+<h3>Baseline<a class="headerlink" href="#baseline" title="Permalink to this heading">#</a></h3>
+<p>To correctly interpret the effect of a lesioning, often you compare it to a baseline (the performance with the full network). Therefore, we first print the network predictions without any lesioning.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">network</span><span class="p">(</span><span class="n">torch_imgs</span><span class="o">.</span><span class="n">cuda</span><span class="p">())</span>
+<span class="c1"># The first dimension of our output tensor corresponds to different images, therefore we have to apply the softmax to dim=1</span>
+<span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># looping through all probabilities and printing the outputs</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">probabilities</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reporting image number </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">img_ind</span><span class="p">)</span>
+    <span class="n">top5_prob</span><span class="p">,</span> <span class="n">top5_catid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">top5_prob</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">categories</span><span class="p">[</span><span class="n">top5_catid</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">top5_prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reporting image number 0
+	 Samoyed 0.94
+	 Pomeranian 0.01
+	 Great Pyrenees 0.01
+	 white wolf 0.01
+	 keeshond 0.01
+Reporting image number 1
+	 tricycle 0.29
+	 barrow 0.24
+	 go-kart 0.14
+	 racer 0.03
+	 lawn mower 0.03
+Reporting image number 2
+	 Saluki 0.29
+	 Afghan hound 0.24
+	 bloodhound 0.14
+	 miniature pinscher 0.07
+	 black-and-tan coonhound 0.03
+Reporting image number 3
+	 tusker 0.84
+	 Indian elephant 0.13
+	 African elephant 0.03
+	 hippopotamus 0.00
+	 warthog 0.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lesioned-network">
+<h3>Lesioned network<a class="headerlink" href="#lesioned-network" title="Permalink to this heading">#</a></h3>
+<p>We lesion a few arbitrary kernels across different layers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet50_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+
+<span class="n">network</span> <span class="o">=</span> <span class="n">lesion_kernels</span><span class="p">(</span><span class="n">network</span><span class="p">,</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;conv1.weight&#39;</span><span class="p">,</span> <span class="mi">11</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;conv1.weight&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;layer1.0.conv3.weight&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;layer1.1.conv2.weight&#39;</span><span class="p">,</span> <span class="mi">47</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;layer2.0.conv1.weight&#39;</span><span class="p">,</span> <span class="mi">63</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;layer2.2.conv1.weight&#39;</span><span class="p">,</span> <span class="mi">111</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;layer3.0.conv2.weight&#39;</span><span class="p">,</span> <span class="mi">153</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;layer3.1.conv3.weight&#39;</span><span class="p">,</span> <span class="mi">175</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;layer4.0.conv1.weight&#39;</span><span class="p">,</span> <span class="mi">253</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;layer4.1.conv2.weight&#39;</span><span class="p">,</span> <span class="mi">342</span><span class="p">]</span>
+<span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We check the weights of one of those layers to ensure the weights are indeed set to zero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">network</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()[</span><span class="s1">&#39;conv1.weight&#39;</span><span class="p">][</span><span class="mi">11</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([[[0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.]],
+
+        [[0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.]],
+
+        [[0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.],
+         [0., 0., 0., 0., 0., 0., 0.]]], device=&#39;cuda:0&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<p>We print again the networks’ predictions. We can observe:</p>
+<ul class="simple">
+<li><p>For two of those images (first and last), the output doesn’t change much.</p></li>
+<li><p>However, for the other two the order of top-2 items changes. For instance, in the second image previously <em>tricycle</em> was the first prediction, but now it’s <em>go-kart</em>, suggesting the lesioned kernels have inhibited certain features useful in the detection of tricycle.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="n">network</span><span class="p">(</span><span class="n">torch_imgs</span><span class="o">.</span><span class="n">cuda</span><span class="p">())</span>
+<span class="c1"># The first dimension of our output tensor corresponds to different images, therefore we have to apply the softmax to dim=1</span>
+<span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># looping through all probabilities and printing the outputs</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">probability</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">probabilities</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Reporting image number </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">img_ind</span><span class="p">)</span>
+    <span class="n">top5_prob</span><span class="p">,</span> <span class="n">top5_catid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">probability</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">top5_prob</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1"> </span><span class="si">%s</span><span class="s1"> </span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">categories</span><span class="p">[</span><span class="n">top5_catid</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">top5_prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reporting image number 0
+	 Samoyed 0.95
+	 Pomeranian 0.02
+	 Great Pyrenees 0.01
+	 white wolf 0.00
+	 keeshond 0.00
+Reporting image number 1
+	 go-kart 0.72
+	 tricycle 0.11
+	 racer 0.03
+	 lawn mower 0.03
+	 barrow 0.02
+Reporting image number 2
+	 Afghan hound 0.25
+	 parachute 0.09
+	 ballplayer 0.07
+	 EntleBucher 0.06
+	 racket 0.06
+Reporting image number 3
+	 tusker 0.84
+	 Indian elephant 0.13
+	 African elephant 0.03
+	 hippopotamus 0.00
+	 sandbar 0.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="systematic-experiments">
+<h2>5. Systematic experiments<a class="headerlink" href="#systematic-experiments" title="Permalink to this heading">#</a></h2>
+<p>While qualitatively checking the effect of kernel lesioning is interesting and results in some intuition about the underlying representation of deep networks, it’s more informative to measure their effect <strong>quantitatively</strong>. Therefore often:</p>
+<ul class="simple">
+<li><p>We compute the performance (e.g., accuracy) over the entire validation set.</p></li>
+<li><p>We lesion one kernel at a time to measure the influence of a particular kernel.</p></li>
+<li><p>Alternatively, we accumulate lesioned kernels systematically by their order of importance, for instance,</p>
+<ol class="arabic simple">
+<li><p>We lesion the kernel that causes the biggest impact</p></li>
+<li><p>While keeping that kernel lesioned we search for the kernel with the second biggest impact.</p></li>
+<li><p>We continue this procedure until the performance is dropped to a certain threshold.</p></li>
+</ol>
+</li>
+</ul>
+<p>It must be noted that the effect of lessening kernels is not accumulative as there are overlaps between the representation of different features. For example:</p>
+<ul class="simple">
+<li><p>Lesioning kernels 1 and 2 (one at a time) results in 2 and 5% performance drops respectively.</p></li>
+<li><p>Lesioing bot kernels 1 and 2 does not result in a 7% performance drop,</p></li>
+<li><p>Because for example, they both encode a similar colour representation.</p></li>
+</ul>
+<p><strong>Questions to explore</strong>: kernel lesioning is a powerful technique and one can perform many interesting experiments with it. Below are a few example exercises:</p>
+<ol class="arabic simple">
+<li><p><strong>Colour</strong></p>
+<ul class="simple">
+<li><p>In the geometrical shape detection, create a test set in which all shapes have a certain colour.</p></li>
+<li><p>Lesion one kernel at a time across all layers.</p></li>
+<li><p>Measure the performance.</p></li>
+<li><p>Are there kernels whose lesions cause significant performance drops?</p></li>
+<li><p>Are colour kernels more present in early or deeper layers?</p></li>
+</ul>
+</li>
+<li><p><strong>Size</strong></p>
+<ul class="simple">
+<li><p>In the geometrical shape detection, create a test set in which all shapes have a certain size.</p></li>
+<li><p>Lesion one kernel at a time across all layers.</p></li>
+<li><p>Measure the performance.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="activation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Activation Maps</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="linear_classifier_probe.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Probing by linear classifiers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stimuli">1. Stimuli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#torch-tensors">Torch Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network">2. Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lesion-weights">3. Lesion weights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-the-effect">4. Measuring the effect</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline">Baseline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lesioned-network">Lesioned network</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#systematic-experiments">5. Systematic experiments</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Arash Akbarinia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
