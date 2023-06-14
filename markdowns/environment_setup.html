@@ -397,9 +397,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">cuda error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">CUDA error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
@@ -421,11 +425,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="environment-setup">
 <h1>0. Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h1>
-<p>To run deep learning code, one needs to install different libraries. In this tutorial, we will
-see how to set up a deep learning environment.</p>
+<p>To run deep learning code on your local computer, one needs to install different libraries. In this
+tutorial, we will see how to set up a deep learning environment.</p>
+<section id="operating-systems">
+<h2>Operating systems<a class="headerlink" href="#operating-systems" title="Permalink to this heading">#</a></h2>
+<p>In order to run the code on GPU, install the latest CUDA Driver for your native operating system.</p>
 <section id="windows">
-<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h2>
-<p>If you’re a Windows user, install <a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">The Windows Subsystem for Linux (WSL)</a>.</p>
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
+<p>If you’re a Windows user, install
+<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">The Windows Subsystem for Linux (WSL)</a>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>wsl --install
 </pre></div>
 </div>
@@ -437,14 +445,14 @@ The first time you have to update all packages:</p>
 </div>
 <p>Python is already installed in WSL.</p>
 <section id="libgl-error">
-<h3>libgl error<a class="headerlink" href="#libgl-error" title="Permalink to this heading">#</a></h3>
+<h4>libgl error<a class="headerlink" href="#libgl-error" title="Permalink to this heading">#</a></h4>
 <p>To use some of the computer vision libraries in WSL you need to install <code class="docutils literal notranslate"><span class="pre">libgl</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install --yes libgl1-mesa-dev
 </pre></div>
 </div>
 </section>
 <section id="cuda-error">
-<h3>cuda error<a class="headerlink" href="#cuda-error" title="Permalink to this heading">#</a></h3>
+<h4>CUDA error<a class="headerlink" href="#cuda-error" title="Permalink to this heading">#</a></h4>
 <p>If your notebooks crash when calling the <code class="docutils literal notranslate"><span class="pre">cuda()</span></code> function and get this error:
 <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">load</span> <span class="pre">library</span> <span class="pre">libcudnn_cnn_infer.so.8.</span></code> The solution is to add the library to
 <a class="reference external" href="https://discuss.pytorch.org/t/libcudnn-cnn-infer-so-8-library-can-not-found/164661"><em>.bashrc file</em></a>.</p>
@@ -456,13 +464,18 @@ this line to the end of the file:</p>
 <p>Restart all Ubuntu terminals and the issue should be resolved.</p>
 </section>
 </section>
+<section id="linux-and-macos">
+<h3>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this heading">#</a></h3>
+<p>There are no extra preparations you need to do.</p>
+</section>
+</section>
 <section id="virtual-environment">
 <h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h2>
 <p>A virtual environment is a modular solution to install an independent set of packages for
 different purposes. A “virtual environment” is essentially a single folder that does not affect
 the whole system and can easily be deleted.</p>
-<p>To install a virtual environment with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you should follow [the official installation guide]
-(<a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/</a>).</p>
+<p>To install a virtual environment with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you should follow
+<a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">the official installation guide</a>.</p>
 <p>Pip is a package-management system written in Python and is used to install and manage software
 packages. To install on your system:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install python3-pip
@@ -488,9 +501,12 @@ with the name “mbb” in the home directory:</p>
 </pre></div>
 </div>
 <p>If activated successfully, you see on the left side of your terminal the name <code class="docutils literal notranslate"><span class="pre">(mbb)</span></code>.</p>
-<p><span style="color:red"><strong>Important Note</strong></span>. You must always remember to activate the virtual
+<div class="important admonition">
+<p class="admonition-title">Important Note</p>
+<p>You must always remember to activate the virtual
 environment, for example, before installing any package with pip. Otherwise, it’s installing it in
 another environment.</p>
+</div>
 <p>Keep in mind that you can activate the same environment in multiple terminals. This is handy
 for installing packages in one terminal and using the environment in another terminal.</p>
 <p>A virtual environment can be deactivated by command:</p>
@@ -585,9 +601,13 @@ often easy and correct pip installation commands can be found by googling.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">cuda error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">CUDA error</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
