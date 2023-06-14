@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Deep Generative Models &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>6. Interpretation Techniques &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/generative_models';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/interpretation_techniques';</script>
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generative Adversarial Networks" href="gan.html" />
-    <link rel="prev" title="4. Vision" href="vision.html" />
+    <link rel="next" title="Activation Maps" href="activation.html" />
+    <link rel="prev" title="Diffusion Probabilistic Models" href="dpm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Deep Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">6. Interpretation Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/generative_models.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/interpretation_techniques.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/generative_models.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/interpretation_techniques.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/generative_models.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/interpretation_techniques.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -416,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>5. Deep Generative Models</h1>
+    <h1>6. Interpretation Techniques</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,13 +430,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="deep-generative-models">
-<h1>5. Deep Generative Models<a class="headerlink" href="#deep-generative-models" title="Permalink to this heading">#</a></h1>
-<p>Generative models learn the distribution of data to generate new samples. We will explore three major generative models:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="interpretation-techniques">
+<h1>6. Interpretation Techniques<a class="headerlink" href="#interpretation-techniques" title="Permalink to this heading">#</a></h1>
+<p>There are several techniques that we can exercise to learn about the representation a network has learnt during its training:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="gan.html"><span class="doc std std-doc">Generative Adversarial Networks (GAN)</span></a></p></li>
-<li><p><a class="reference internal" href="vae.html"><span class="doc std std-doc">Variational Autoencoders (VAE)</span></a></p></li>
-<li><p><a class="reference internal" href="dpm.html"><span class="doc std std-doc">Diffusion Probabilistic Models (DPM)</span></a></p></li>
+<li><p><a class="reference internal" href="activation.html"><span class="doc std std-doc">Recording activation maps individual or ensemble of kernels</span></a></p></li>
+<li><p><a class="reference internal" href="lesion.html"><span class="doc std std-doc">Lesioning individual or ensemble of kernels</span></a></p></li>
+<li><p><a class="reference internal" href="linear_classifier_probe.html"><span class="doc std std-doc">Probing intermediate layers by linear classifiers</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -474,20 +474,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="vision.html"
+       href="dpm.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">4. Vision</p>
+        <p class="prev-next-title">Diffusion Probabilistic Models</p>
       </div>
     </a>
     <a class="right-next"
-       href="gan.html"
+       href="activation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generative Adversarial Networks</p>
+        <p class="prev-next-title">Activation Maps</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

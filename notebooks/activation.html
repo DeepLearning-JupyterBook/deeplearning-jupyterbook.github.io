@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Kernel Lesioning" href="lesion.html" />
-    <link rel="prev" title="6. Interpretability Techniques" href="interpretability_techniques.html" />
+    <link rel="prev" title="6. Interpretation Techniques" href="interpretation_techniques.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,11 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -201,9 +201,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -458,14 +458,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="activation-maps">
 <h1>Activation Maps<a class="headerlink" href="#activation-maps" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/activation.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
 <p>This tutorial showcases how to obtain kernels’ responses (also known as activation maps) at different depths of a deep neural network. We study that in pretrained networks trained on ImageNet.</p>
-<p>There are several techniques that we can exercise to learn about the representation a network has learnt during its training:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/lesion.ipynb">lesioning</a> individual or ensemble of kernels,</p></li>
-<li><p>probing intermediate layers by <a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/linear_classifier_probe.ipynb">linear classifiers</a>,</p></li>
-<li><p>directly measuring unit’s response (<strong>this notebook</strong>).</p></li>
-</ul>
 <p>In neuroscience, we have learnt a lot from measuring the response of a neuron when the organism is exposed to specific stimuli. The neural coding technique can reveal the relationship between the stimulus and the individual or ensemble neuronal responses. For instance, the seminal study of Hubel and Wiesel in which oriented bars were shown to cats and the response of V1 neurons was recorded using implanted electrodes.</p>
 <img src="https://www.researchgate.net/publication/337360115/figure/fig4/AS:826941796012034@1574169696239/Left-Experimental-setup-from-Hubel-Wiesel-136-137-adapted-from-253-Chapter-11.ppm"  width="600" height="200">
 <p>A similar technique can be used in artificial neurons to learn more about the representation a network has learnt during its training. <strong>Obtaining response maps is much easier in deep networks</strong>:</p>
@@ -839,12 +832,12 @@ fc torch.Size([4, 1000])
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="interpretability_techniques.html"
+       href="interpretation_techniques.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">6. Interpretability Techniques</p>
+        <p class="prev-next-title">6. Interpretation Techniques</p>
       </div>
     </a>
     <a class="right-next"

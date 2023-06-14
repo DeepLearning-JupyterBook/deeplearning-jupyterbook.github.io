@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Vision" href="vision.html" />
-    <link rel="prev" title="2. Deep neural networks" href="build_DNN_project.html" />
+    <link rel="prev" title="2. Quick Start" href="quick_start.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,11 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
 
@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -194,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -203,9 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -476,7 +476,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimisation-and-learning">
 <h1>3. Optimisation and Learning<a class="headerlink" href="#optimisation-and-learning" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/optimisation_learning.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
 <p>This tutorial focuses on how representation/knowledge is learnt in deep neural networks.</p>
 <p>In the beginning, the network’s weights are initialised from random distributions (e.g., uniform or Gaussian). Throughout the <em>learning process</em>, they get tuned to a set of useful features to perform the task they are being optimised to.</p>
 <p>Broadly speaking, the learning process consists of:</p>
@@ -485,7 +484,7 @@ document.write(`
 <li><p>Using the backpropagation algorithm to compute the gradient of the loss function with respect to all network parameters.</p></li>
 <li><p>Updating the weights by stepping in the direction of the gradient for a given parameter.</p></li>
 </ol>
-<p>These three steps correspond to the following lines of code, typically implemented in any deep learning project (e.g., <a class="reference external" href="https://github.com/ArashAkbarinia/mbb/blob/main/notebooks/build_DNN_project.ipynb">building a DNN project notebook</a> that we saw in the previous class.)</p>
+<p>These three steps correspond to the following lines of code, typically implemented in any deep learning project (e.g., <a class="reference internal" href="quick_start.html"><span class="doc std std-doc">geometrical shape classification</span></a> that we saw in the previous class.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
     <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
     <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
@@ -945,7 +944,7 @@ To answer these questions, we will look at a few simple binary classification to
 <p>Let’s make a prediction using our model without any training. How good <em>untrained features</em> can do in this binary classification problem?</p>
 <p>In this tutorial, we look at the linear dataset.
 <strong>Question</strong>: is there a performance difference on other datasets?</p>
-<p>To input our model with the test datasets, we have to first convert them from <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code> to <code class="docutils literal notranslate"><span class="pre">torch</span> <span class="pre">tensors</span></code>. We simply do that by calling the <code class="docutils literal notranslate"><span class="pre">torch.tensor</span></code> function. Note that this toy example is very small and we don’t need to pass the data to the model in different batches. Therefore, we don’t need to use the dataloader routines (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) common to deep learning projects (e.g., <a class="reference external" href="https://github.com/ArashAkbarinia/mbb/blob/main/notebooks/build_DNN_project.ipynb">building a DNN project notebook</a> that we studied in the previous class).</p>
+<p>To input our model with the test datasets, we have to first convert them from <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code> to <code class="docutils literal notranslate"><span class="pre">torch</span> <span class="pre">tensors</span></code>. We simply do that by calling the <code class="docutils literal notranslate"><span class="pre">torch.tensor</span></code> function. Note that this toy example is very small and we don’t need to pass the data to the model in different batches. Therefore, we don’t need to use the dataloader routines (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) common to deep learning projects (e.g., <a class="reference internal" href="quick_start.html"><span class="doc std std-doc">geometrical shape classification</span></a> that we studied in the previous class).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">which_db</span> <span class="o">=</span> <span class="s1">&#39;linear_data&#39;</span>
@@ -1216,12 +1215,12 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="build_DNN_project.html"
+       href="quick_start.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">2. Deep neural networks</p>
+        <p class="prev-next-title">2. Quick Start</p>
       </div>
     </a>
     <a class="right-next"

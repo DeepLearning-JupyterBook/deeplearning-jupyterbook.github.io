@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Assignment-1 &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>1. Warming-up &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -61,7 +61,7 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/assignment1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/warmup';</script>
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment-1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Warming-up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
 </ul>
@@ -258,7 +258,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/assignment1.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/warmup.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/assignment1.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/warmup.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +336,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/assignment1.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/warmup.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -418,7 +418,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment-1</h1>
+    <h1>1. Warming-up</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -451,9 +451,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-1">
-<h1>Assignment-1<a class="headerlink" href="#assignment-1" title="Permalink to this heading">#</a></h1>
-<p>The idea of this assignment is to familiase yourself with a pretrained network on ImageNet performing an object recognition.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="warming-up">
+<h1>1. Warming-up<a class="headerlink" href="#warming-up" title="Permalink to this heading">#</a></h1>
+<p>The idea of this assignment is to familiarise yourself with a pretrained network on ImageNet performing object recognition.</p>
 <p>We first import all necessary packages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -469,7 +469,6 @@ document.write(`
 
 <span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
-<span class="kn">import</span> <span class="nn">urllib</span>
 </pre></div>
 </div>
 </div>
@@ -849,15 +848,10 @@ fc.bias torch.Size([1000])
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download an example image from the pytorch website</span>
-<span class="kn">import</span> <span class="nn">urllib</span>
-<span class="n">url</span><span class="p">,</span> <span class="n">filename</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;https://github.com/pytorch/hub/raw/master/images/dog.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;dog.jpg&quot;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span> <span class="n">urllib</span><span class="o">.</span><span class="n">URLopener</span><span class="p">()</span><span class="o">.</span><span class="n">retrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
-<span class="k">except</span><span class="p">:</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pytorch/hub/raw/master/images/dog.jpg&quot;</span>
 
 <span class="c1"># Openning the image and visualising it</span>
-<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-<span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span>
-<span class="n">input_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
 <span class="n">input_image</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">input_image</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">input_image</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">5</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -972,8 +966,8 @@ Eskimo dog 0.007829354144632816
 </section>
 <section id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
-<p>Please do the following questions and submit it by <strong>Thursday April 27 at 23h59 O’clock</strong>.
-The submission is a <strong>notebook (.ipynb)</strong> it cna inlclude code, comments, written texts, and plots.</p>
+<p>Please do the following questions and submit it by <strong>Thursday, April 27 at 23h59 O’clock</strong>.
+The submission is a <strong>notebook (.ipynb)</strong> it can include code, comments, written texts, and plots.</p>
 <section id="plot-all-the-kernels-of-the-first-layer">
 <h3>1. Plot all the kernels of the first layer.<a class="headerlink" href="#plot-all-the-kernels-of-the-first-layer" title="Permalink to this heading">#</a></h3>
 <p>You can access the wights of the first layer from the parameters <code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code> whose size is <code class="docutils literal notranslate"><span class="pre">torch.Size([64,</span> <span class="pre">3,</span> <span class="pre">7,</span> <span class="pre">7])</span></code>.

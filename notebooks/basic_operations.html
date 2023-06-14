@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Deep neural networks" href="build_DNN_project.html" />
+    <link rel="next" title="2. Quick Start" href="quick_start.html" />
     <link rel="prev" title="0. Environment Setup" href="../markdowns/environment_setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,11 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -201,9 +201,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -480,8 +480,8 @@ First, we import all necessary packages.</p>
 </div>
 <section id="input-image">
 <h2>Input image<a class="headerlink" href="#input-image" title="Permalink to this heading">#</a></h2>
-<p>Reading an image from URL.
-One can pass the path of a local image to <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function as well.</p>
+<p>Reading an image from a URL.
+One can pass the path of a local image to the <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function as well.</p>
 <p><code class="docutils literal notranslate"><span class="pre">skimage</span></code> (scikit-image) is a collection of algorithms for image processing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -489,7 +489,6 @@ One can pass the path of a local image to <code class="docutils literal notransl
     <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/295087.jpg&#39;</span><span class="p">,</span>
     <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/35008.jpg&#39;</span>
 <span class="p">]</span>
-
 
 <span class="c1"># we use list comprehensions to quickly load images</span>
 <span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
@@ -521,7 +520,7 @@ Image type: uint8
 </div>
 </div>
 </div>
-<p>Plotting each RGB channel separately. We define a function so we can call it for each image easiliy.</p>
+<p>Plotting each RGB channel separately. We define a function so we can call it for each image easily.</p>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> (plt) to create a figure and add three subplots to it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -560,9 +559,9 @@ Image type: uint8
 </section>
 <section id="tensor">
 <h2>Tensor<a class="headerlink" href="#tensor" title="Permalink to this heading">#</a></h2>
-<p>In this tutorial we’ll use <code class="docutils literal notranslate"><span class="pre">torch</span></code> as one of the franeworks that supports basic operations.</p>
+<p>In this tutorial, we’ll use <code class="docutils literal notranslate"><span class="pre">torch</span></code> as one of the frameworks that support basic operations.</p>
 <p><code class="docutils literal notranslate"><span class="pre">torch</span></code> expects images in a different format, the type should be <code class="docutils literal notranslate"><span class="pre">float</span></code> and channels should proceed the spatial dimension, i.e., <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>.</p>
-<p>Furthermore, <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions are designed for Tensors of 4D, where the first dimension corresponds to different images <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>. In our example b equals 2 as we have loaded two images.</p>
+<p>Furthermore, <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions are designed for Tensors of 4D, where the first dimension corresponds to different images <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>. In our example, b equals 2 as we have loaded two images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converting the images from uint8 to float and create a torch tensor</span>
@@ -707,7 +706,7 @@ Image type: uint8
 <p>Now we check similar operations in <code class="docutils literal notranslate"><span class="pre">torch</span></code>. Note, torch functions are designed to be integrated into a network, but for we use them here on single images to learn better basic operations.</p>
 <section id="id1">
 <h4>Edge detection<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
-<p>We use <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function to convolve a tensor with a kernel. Please note at this stage we only have defined the convoluton function that we call a few lined below.</p>
+<p>We use the <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function to convolve a tensor with a kernel. Please note at this stage we only have defined the convolution function that we call a few lines below.</p>
 <p>We set <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> as we don’t want to update the parameters.</p>
 <p>After printing the <code class="docutils literal notranslate"><span class="pre">weights</span></code> of the kernel, we see that they are from a random distribution.</p>
 <p><code class="docutils literal notranslate"><span class="pre">torch_conv.weight.shape</span></code> returns a 4D shape, (1, 3, 3, 3) corresponding to (out_channels, in_channels, kernel_size, kernel_size).</p>
@@ -763,7 +762,7 @@ tensor([[[[ 1.,  0., -1.],
 </div>
 </div>
 </div>
-<p>We call the <code class="docutils literal notranslate"><span class="pre">torch_conv</span></code> function we defined to obtain edges in torch.</p>
+<p>We call the <code class="docutils literal notranslate"><span class="pre">torch_conv</span></code> function we defined to obtain edges in the torch.</p>
 <p>The output size is <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">W,</span> <span class="pre">H)</span></code>, 2 corresponds to two images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -779,7 +778,7 @@ tensor([[[[ 1.,  0., -1.],
 </div>
 </div>
 <p>Converting the torch outputs to numpy for visualisation.</p>
-<p><strong>Question</strong> why does the results look quite different from what we obtained from open-cv?</p>
+<p><strong>Question</strong> Why do the results look quite different from what we obtained from open-cv?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">torch_edges</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
@@ -802,11 +801,11 @@ tensor([[[[ 1.,  0., -1.],
 </section>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<p>Below are a list of exercises helping you to practive what we learnt above.</p>
+<p>Below is a list of exercises helping you to practice what we learnt above.</p>
 <section id="pooling">
 <h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Process an image with max-ppoling in PyTorch, try different kernel-sizes (e.g., 3x3, 7x7, 15x15, etc.). Plot the outputs.</p></li>
+<li><p>Process an image with max-pooling in PyTorch, and try different kernel sizes (e.g., 3x3, 7x7, 15x15, etc.). Plot the outputs.</p></li>
 <li><p>Do the same with avg-pooling.</p></li>
 <li><p>Reflect on differences between avg and max pooling as a function of kernel size.</p></li>
 </ol>
@@ -862,11 +861,11 @@ tensor([[[[ 1.,  0., -1.],
       </div>
     </a>
     <a class="right-next"
-       href="build_DNN_project.html"
+       href="quick_start.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. Deep neural networks</p>
+        <p class="prev-next-title">2. Quick Start</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -164,11 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">Generative Adversarial Networks</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretability_techniques.html">6. Interpretability Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../notebooks/linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -201,9 +201,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -398,11 +398,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">CUDA error</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
 </ul>
 </li>
@@ -444,15 +440,15 @@ The first time you have to update all packages:</p>
 </pre></div>
 </div>
 <p>Python is already installed in WSL.</p>
-<section id="libgl-error">
-<h4>libgl error<a class="headerlink" href="#libgl-error" title="Permalink to this heading">#</a></h4>
+<div class="error admonition">
+<p class="admonition-title">libgl error</p>
 <p>To use some of the computer vision libraries in WSL you need to install <code class="docutils literal notranslate"><span class="pre">libgl</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install --yes libgl1-mesa-dev
 </pre></div>
 </div>
-</section>
-<section id="cuda-error">
-<h4>CUDA error<a class="headerlink" href="#cuda-error" title="Permalink to this heading">#</a></h4>
+</div>
+<div class="error admonition">
+<p class="admonition-title">CUDA error</p>
 <p>If your notebooks crash when calling the <code class="docutils literal notranslate"><span class="pre">cuda()</span></code> function and get this error:
 <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">load</span> <span class="pre">library</span> <span class="pre">libcudnn_cnn_infer.so.8.</span></code> The solution is to add the library to
 <a class="reference external" href="https://discuss.pytorch.org/t/libcudnn-cnn-infer-so-8-library-can-not-found/164661"><em>.bashrc file</em></a>.</p>
@@ -462,13 +458,14 @@ this line to the end of the file:</p>
 </pre></div>
 </div>
 <p>Restart all Ubuntu terminals and the issue should be resolved.</p>
-</section>
+</div>
 </section>
 <section id="linux-and-macos">
 <h3>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this heading">#</a></h3>
 <p>There are no extra preparations you need to do.</p>
 </section>
 </section>
+<hr class="docutils" />
 <section id="virtual-environment">
 <h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h2>
 <p>A virtual environment is a modular solution to install an independent set of packages for
@@ -524,11 +521,14 @@ for installing packages in one terminal and using the environment in another ter
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install torch torchvision torchaudio
 </pre></div>
 </div>
+<div class="error admonition">
+<p class="admonition-title">ImportError: No module named X</p>
 <p>Importantly, if you get an <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">X</span></code> in a Python script. The solution is
 often easy and correct pip installation commands can be found by googling.</p>
 <p>For instance <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">cv2</span></code> can be resolved by installing <code class="docutils literal notranslate"><span class="pre">opencv-python</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install opencv-python 
 </pre></div>
+</div>
 </div>
 </section>
 </section>
@@ -602,11 +602,7 @@ often easy and correct pip installation commands can be found by googling.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#libgl-error">libgl error</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cuda-error">CUDA error</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
 </ul>
 </li>
