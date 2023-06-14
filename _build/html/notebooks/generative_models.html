@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Generative Models &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>5. Deep Generative Models &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Generative Adversarial Networks (GAN)" href="gan.html" />
+    <link rel="next" title="Generative Adversarial Networks" href="gan.html" />
     <link rel="prev" title="4. Vision" href="vision.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -164,11 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Deep Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,7 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -201,9 +201,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -416,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>5. Generative Models</h1>
+    <h1>5. Deep Generative Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,13 +430,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="generative-models">
-<h1>5. Generative Models<a class="headerlink" href="#generative-models" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="deep-generative-models">
+<h1>5. Deep Generative Models<a class="headerlink" href="#deep-generative-models" title="Permalink to this heading">#</a></h1>
 <p>Generative models learn the distribution of data to generate new samples. We will explore three major generative models:</p>
 <ul class="simple">
-<li><p>Generative Adversarial Networks (GAN)</p></li>
-<li><p>Variational Autoencoders (VAE)</p></li>
-<li><p>Diffusion Probabilistic Models (DPM)</p></li>
+<li><p><a class="reference internal" href="gan.html"><span class="doc std std-doc">Generative Adversarial Networks (GAN)</span></a></p></li>
+<li><p><a class="reference internal" href="vae.html"><span class="doc std std-doc">Variational Autoencoders (VAE)</span></a></p></li>
+<li><p><a class="reference internal" href="dpm.html"><span class="doc std std-doc">Diffusion Probabilistic Models (DPM)</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
@@ -487,7 +487,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Generative Adversarial Networks (GAN)</p>
+        <p class="prev-next-title">Generative Adversarial Networks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

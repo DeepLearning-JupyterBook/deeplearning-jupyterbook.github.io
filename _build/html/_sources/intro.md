@@ -16,8 +16,6 @@ can be executed on Google Colab by directly clicking on the <i class="fa-sharp f
 top of each notebook. All materials are also available in our
 [GitHub repository <i class="fab fa-github"></i>](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io), 
 clone it to run it locally on your computer.
-
-
 ```
 
 ```{admonition} Please give feedback!

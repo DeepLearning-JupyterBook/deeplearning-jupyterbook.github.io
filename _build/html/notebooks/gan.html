@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Generative Adversarial Networks (GAN) &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>Generative Adversarial Networks &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Deep Autoencoders" href="vae.html" />
-    <link rel="prev" title="5. Generative Models" href="generative_models.html" />
+    <link rel="prev" title="5. Deep Generative Models" href="generative_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,11 +166,11 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build_DNN_project.html">2. Deep neural networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="generative_models.html">5. Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Generative Adversarial Networks (GAN)</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Generative Adversarial Networks</a></li>
 
 
 
@@ -185,7 +185,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models (DPM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -194,7 +194,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretability_techniques.html">6. Interpretability Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
@@ -203,9 +203,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignment1.html">Assignment-1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment2.html">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -420,7 +420,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Generative Adversarial Networks (GAN)</h1>
+    <h1>Generative Adversarial Networks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -430,7 +430,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Generative Adversarial Networks (GAN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Generative Adversarial Networks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">arguments</a></li>
@@ -470,9 +470,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="generative-adversarial-networks-gan">
-<h1>Generative Adversarial Networks (GAN)<a class="headerlink" href="#generative-adversarial-networks-gan" title="Permalink to this heading">#</a></h1>
-<p><a class="reference external" href="https://colab.research.google.com/github/ArashAkbarinia/mbb/blob/main/notebooks/gan.ipynb"><img alt="" src="https://colab.research.google.com/assets/colab-badge.png" /></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="generative-adversarial-networks">
+<h1>Generative Adversarial Networks<a class="headerlink" href="#generative-adversarial-networks" title="Permalink to this heading">#</a></h1>
 <p>The materials in this notebook are inspired from:</p>
 <ul class="simple">
 <li><p>code</p>
@@ -494,15 +493,15 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="http://yann.lecun.com/exdb/mnist/">MNIST</a>: grey-scale digit recognition from 0 to 9.</p></li>
 </ul>
-<img src="https://www.researchgate.net/publication/306056875/figure/fig1/AS:393921575309346@1470929630835/Example-images-from-the-MNIST-dataset.png"  width="400" height="200">
+<img src="https://www.researchgate.net/publication/306056875/figure/fig1/AS:393921575309346@1470929630835/Example-images-from-the-MNIST-dataset.png"  width="300" height="300">
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/zalandoresearch/fashion-mnist">Fashion-MNIST</a> grey-scale image recognition among 10 categories.</p></li>
 </ul>
-<img src="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png"  width="400" height="200">
+<img src="https://github.com/zalandoresearch/fashion-mnist/raw/master/doc/img/fashion-mnist-sprite.png"  width="300" height="300">
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.cs.toronto.edu/~kriz/cifar.html">CIFAR10</a>: object recognition among 10 categories.</p></li>
 </ul>
-<img src="https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png"  width="400" height="200"></section>
+<img src="https://production-media.paperswithcode.com/datasets/4fdf2b82-2bc3-4f97-ba51-400322b228b1.png"  width="300" height="300"></section>
 <section class="tex2jax_ignore mathjax_ignore" id="packages">
 <h1>0. Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h1>
 <p>Let’s start with all the necessary packages to implement this tutorial.</p>
@@ -1191,7 +1190,7 @@ Discriminator(
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">5. Generative Models</p>
+        <p class="prev-next-title">5. Deep Generative Models</p>
       </div>
     </a>
     <a class="right-next"
@@ -1221,7 +1220,7 @@ Discriminator(
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Generative Adversarial Networks (GAN)</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Generative Adversarial Networks</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">arguments</a></li>

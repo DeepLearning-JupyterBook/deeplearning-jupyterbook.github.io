@@ -23,13 +23,17 @@ The first time you have to update all packages:
 
 Python is already installed in WSL.
 
-#### libgl error
+```{admonition} libgl error
+:class: error
 
 To use some of the computer vision libraries in WSL you need to install `libgl`:
 
     sudo apt install --yes libgl1-mesa-dev
+```
+    
 
-#### CUDA error
+```{admonition} CUDA error
+:class: error
 
 If your notebooks crash when calling the `cuda()` function and get this error: 
 `Could not load library libcudnn_cnn_infer.so.8.` The solution is to add the library to 
@@ -41,10 +45,13 @@ this line to the end of the file:
     export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
 
 Restart all Ubuntu terminals and the issue should be resolved.
+```
 
 ### Linux and macOS
 
 There are no extra preparations you need to do.
+
+***
 
 ## Virtual environment
 
@@ -106,9 +113,12 @@ To run the tutorial codes, we will use the PyTorch framework that can be install
 
     pip install torch torchvision torchaudio
 
+```{admonition} ImportError: No module named X
+:class: error
 Importantly, if you get an `ImportError: No module named X` in a Python script. The solution is
 often easy and correct pip installation commands can be found by googling.
 
 For instance `ImportError: No module named cv2` can be resolved by installing `opencv-python`:
 
     pip install opencv-python 
+```
