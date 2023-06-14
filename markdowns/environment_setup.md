@@ -1,11 +1,16 @@
 # 0. Environment Setup
 
-To run deep learning code, one needs to install different libraries. In this tutorial, we will 
-see how to set up a deep learning environment.
+To run deep learning code on your local computer, one needs to install different libraries. In this 
+tutorial, we will see how to set up a deep learning environment.
 
-## Windows
+## Operating systems
 
-If you're a Windows user, install [The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install).
+In order to run the code on GPU, install the latest CUDA Driver for your native operating system.
+
+### Windows
+
+If you're a Windows user, install 
+[The Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
     wsl --install
 
@@ -18,13 +23,13 @@ The first time you have to update all packages:
 
 Python is already installed in WSL.
 
-### libgl error
+#### libgl error
 
 To use some of the computer vision libraries in WSL you need to install `libgl`:
 
     sudo apt install --yes libgl1-mesa-dev
 
-### cuda error
+#### CUDA error
 
 If your notebooks crash when calling the `cuda()` function and get this error: 
 `Could not load library libcudnn_cnn_infer.so.8.` The solution is to add the library to 
@@ -37,6 +42,9 @@ this line to the end of the file:
 
 Restart all Ubuntu terminals and the issue should be resolved.
 
+### Linux and macOS
+
+There are no extra preparations you need to do.
 
 ## Virtual environment
 
@@ -45,8 +53,8 @@ different purposes. A "virtual environment" is essentially a single folder that 
 the whole system and can easily be deleted.
 
 
-To install a virtual environment with `pip`, you should follow [the official installation guide]
-(https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
+To install a virtual environment with `pip`, you should follow 
+[the official installation guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/).
 
 Pip is a package-management system written in Python and is used to install and manage software 
 packages. To install on your system:
@@ -73,9 +81,13 @@ To access this environment, you should activate it in the terminal:
 
 If activated successfully, you see on the left side of your terminal the name `(mbb)`.
 
-<span style="color:red">**Important Note**</span>. You must always remember to activate the virtual 
+```{admonition} Important Note
+:class: important
+You must always remember to activate the virtual 
 environment, for example, before installing any package with pip. Otherwise, it's installing it in 
 another environment.
+
+``` 
 
 Keep in mind that you can activate the same environment in multiple terminals. This is handy
 for installing packages in one terminal and using the environment in another terminal.
