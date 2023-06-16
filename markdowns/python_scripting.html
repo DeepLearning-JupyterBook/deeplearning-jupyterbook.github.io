@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Assignment 2 &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>Python Scripting &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/assignment2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'markdowns/python_scripting';</script>
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Assignment 3" href="assignment3.html" />
-    <link rel="prev" title="1. Warming-up" href="warmup.html" />
+    <link rel="next" title="TensorBoard" href="../notebooks/tensorboard.html" />
+    <link rel="prev" title="7. Big Projects" href="../notebooks/big_projects.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,23 +159,23 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../markdowns/environment_setup.html">0. Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_setup.html">0. Environment Setup</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/quick_start.html">2. Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/vision.html">4. Vision</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">Generative Adversarial Networks</a></li>
 
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/vae.html">Deep Autoencoders</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,18 +192,24 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/activation.html">Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/lesion.html">Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/linear_classifier_probe.html">Probing by linear classifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../notebooks/big_projects.html">7. Big Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Python Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/tensorboard.html">TensorBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html">Working with Servers</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Assignment 2</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignment3.html">Assignment 3</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -250,37 +256,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/assignment2.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="../_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -306,7 +281,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/assignment2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fmarkdowns/python_scripting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -336,7 +311,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/assignment2.ipynb" target="_blank"
+      <li><a href="../_sources/markdowns/python_scripting.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +321,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -418,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment 2</h1>
+    <h1>Python Scripting</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -428,11 +403,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">Prerequisite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloader-from-a-directory">1. Dataloader from a directory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-colour-for-the-train-and-test-set">2. Different colour for the train and test set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extend-the-geometrical-shapes">3. Extend the geometrical shapes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-module">Python Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -444,48 +418,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-2">
-<h1>Assignment 2<a class="headerlink" href="#assignment-2" title="Permalink to this heading">#</a></h1>
-<p>The objective of this assignment is to familiarise yourself with datasets and data loaders while exploring a real deep learning project. We will use the PyTorch framework to implement this.</p>
-<section id="prerequisite">
-<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Permalink to this heading">#</a></h2>
-<p>In the class, we worked on the notebook that <a class="reference external" href="https://github.com/ArashAkbarinia/mbb/blob/main/notebooks/build_DNN_project.ipynb">building a DNN project</a>.
-The assignment is the continuation of that notebook.</p>
-</section>
-<section id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
-<p>Please do the following questions and submit it by <strong>Thursday May 4 at 23h59 O’clock</strong>.
-The submission is one or more <strong>notebook (.ipynb)</strong> files that can include code, comments, written texts, and plots.</p>
-</section>
-<section id="dataloader-from-a-directory">
-<h2>1. Dataloader from a directory<a class="headerlink" href="#dataloader-from-a-directory" title="Permalink to this heading">#</a></h2>
-<p>As discusses in <a class="reference external" href="https://github.com/ArashAkbarinia/mbb/blob/main/notebooks/build_DNN_project.ipynb">building a DNN project</a> we cannot load all images in the memory.</p>
-<p>Change the code in order to load the dataset on the fly from this <a class="reference external" href="https://www.dropbox.com/s/rltbecab0zx1zep/shape_set.zip?dl=0">zip file</a> (this is the same set of images we had loaded all in the memory).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-scripting">
+<h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Permalink to this heading">#</a></h1>
+<p>We use the same code as we studied in our last session (Notebook:
+<a class="reference internal" href="../notebooks/linear_classifier_probe.html"><span class="doc std std-doc">Probing with Linear Classifiers</span></a>). We convert the
+code into a Python package named <a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/tree/master/src/deepcsf"><code class="docutils literal notranslate"><span class="pre">deepcsf</span></code></a>.</p>
+<p>To execute this code, first, we have to activate our virtual environment containing necessary
+packages like PyTorch (check the <a class="reference internal" href="environment_setup.html"><span class="doc std std-doc">environment setup tutorial</span></a>).</p>
+<p>Assuming you are already in the <em>server</em> directory where the <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> module is, to train a
+network:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py
+</pre></div>
+</div>
+<p>And to test the trained network:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py --test_net &lt;CHECKPOINT_PATH&gt;
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">CHECKPOINT_PATH</span></code> is the path to the saved checkpoint in the training script, by default, it’s saved
+at <code class="docutils literal notranslate"><span class="pre">csf_out/checkpoint.pth.tar</span></code>.</p>
+<section id="python-module">
+<h2>Python Module<a class="headerlink" href="#python-module" title="Permalink to this heading">#</a></h2>
+<p>Jupyter Notebook provides an interactive programming environment. This is very useful in several
+scenarios such as:</p>
 <ul class="simple">
-<li><p>Download and extract the zip file into one directory.</p></li>
-<li><p>The directory contains two subfolders of train and test and two csv files for their corresponding groound-truths.</p></li>
-<li><p>The dataloader should receive the path to this directory as an argument and read images in the <code class="docutils literal notranslate"><span class="pre">getitem</span></code>function and return them.</p></li>
+<li><p>prototyping ideas</p></li>
+<li><p>exploring data</p></li>
+<li><p>plotting results</p></li>
+<li><p>demo codes</p></li>
+<li><p>etc.</p></li>
 </ul>
-</section>
-<section id="different-colour-for-the-train-and-test-set">
-<h2>2. Different colour for the train and test set<a class="headerlink" href="#different-colour-for-the-train-and-test-set" title="Permalink to this heading">#</a></h2>
-<p>Change the <a class="reference external" href="https://github.com/ArashAkbarinia/mbb/blob/main/notebooks/build_DNN_project.ipynb">building a DNN project</a> notebook so the training set always has achromatic backgrounds (grey scale) and the test set is always colourful background.</p>
+<p>However, training real-world deep networks often consist of a larger magnitude of code which
+is difficult to manage in Notebooks. To this end, we should create Python modules and scripts:</p>
 <ul class="simple">
-<li><p>The dataloader function should receive an argument which specifies what types of background to use.</p></li>
-<li><p>Does the network generalise from the training set to test set?</p></li>
-<li><p>Change the sets (train colourful backgrounds, test grey backgrounds) and perform similar experiments.</p></li>
-<li><p>Do similar experiments with the foreground geometrical shapes.</p></li>
+<li><p><strong>Python script</strong>: is an executable file that can be executed in the terminal, e.g.,
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;SCRIPT_PATH&gt;.py</span></code>.</p></li>
+<li><p><strong>Python module</strong>: contains function definitions similar to a third-party library or a package.</p></li>
 </ul>
-<p><strong>Bonus</strong>: if the network doesn’t learn the task with above mentioned manipulations, play with number of epochs or the design of architecture untill it obtains high accuracy in the test set.</p>
+<p>In this tutorial, we have created a minimal Python package called <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> following this
+structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python_script/
+└── deepcsf/                # Python package
+    └── __init__.py         # __init__.py is required to import the directory as a package
+    └── csf_main.py         # training/testing routines
+    └── dataloader.py       # dataset-related code
+    └── models.py           # the architecture of the network
+    └── utils.py            # common utility functions
+└── main.py                 # executable script
+</pre></div>
+</div>
+<p><strong>NOTE</strong>: This tutorial contains a single Python package and a single script, a more complex project
+often contains several packages and scripts.</p>
+<section id="arguments">
+<h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">#</a></h3>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/argparse.html">argparse</a> module makes it easy to write
+user-friendly command-line interfaces. Our <code class="docutils literal notranslate"><span class="pre">main.py</span></code> module receives several arguments. We can see
+the list of arguments by calling:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py --help
+</pre></div>
+</div>
+<p>Which outputs:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>usage: main.py [-h] [--epochs EPOCHS] [--initial_epoch INITIAL_EPOCH] [--batch_size BATCH_SIZE]
+               [--train_samples TRAIN_SAMPLES] [--num_workers NUM_WORKERS] [--lr LR] 
+               [--momentum MOMENTUM] [--weight_decay WEIGHT_DECAY] [--out_dir OUT_DIR] 
+               [--test_net TEST_NET] [--resume RESUME]
+
+options:
+  -h, --help            show this help message and exit
+  --epochs EPOCHS       number of epochs of training
+  --initial_epoch INITIAL_EPOCH
+                        the staring epoch
+  --batch_size BATCH_SIZE
+                        size of the batches
+  --train_samples TRAIN_SAMPLES
+                        Number of train samples at each epoch
+  --num_workers NUM_WORKERS
+                        Number of CPU workers
+  --lr LR               SGD: learning rate
+  --momentum MOMENTUM   SGD: momentum
+  --weight_decay WEIGHT_DECAY
+                        SGD: weight decay
+  --out_dir OUT_DIR     the output directory
+  --test_net TEST_NET   the path to test network
+  --resume RESUME       the path to training checkpoint
+</pre></div>
+</div>
 </section>
-<section id="extend-the-geometrical-shapes">
-<h2>3. Extend the geometrical shapes<a class="headerlink" href="#extend-the-geometrical-shapes" title="Permalink to this heading">#</a></h2>
-<p>Currently our dataset contains only 3 geometrical shapes. Add one or more geomtrical shapes to it, e.g., square and triangle.</p>
-<ul class="simple">
-<li><p>Change the data generation routines to add at least one new geometrical shape.</p></li>
-<li><p>Visualise the new dataset.</p></li>
-<li><p>Change the network/training code to train a network with a new dataset.</p></li>
-</ul>
 </section>
 </section>
 
@@ -502,7 +519,7 @@ The submission is one or more <strong>notebook (.ipynb)</strong> files that can 
         },
         kernelOptions: {
             name: "python3",
-            path: "./notebooks"
+            path: "./markdowns"
         },
         predefinedOutput: true
     }
@@ -521,20 +538,20 @@ The submission is one or more <strong>notebook (.ipynb)</strong> files that can 
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="warmup.html"
+       href="../notebooks/big_projects.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Warming-up</p>
+        <p class="prev-next-title">7. Big Projects</p>
       </div>
     </a>
     <a class="right-next"
-       href="assignment3.html"
+       href="../notebooks/tensorboard.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 3</p>
+        <p class="prev-next-title">TensorBoard</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -556,11 +573,10 @@ The submission is one or more <strong>notebook (.ipynb)</strong> files that can 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">Prerequisite</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloader-from-a-directory">1. Dataloader from a directory</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#different-colour-for-the-train-and-test-set">2. Different colour for the train and test set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extend-the-geometrical-shapes">3. Extend the geometrical shapes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-module">Python Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
