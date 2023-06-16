@@ -93,7 +93,6 @@ If activated successfully, you see on the left side of your terminal the name `(
 You must always remember to activate the virtual 
 environment, for example, before installing any package with pip. Otherwise, it's installing it in 
 another environment.
-
 ``` 
 
 Keep in mind that you can activate the same environment in multiple terminals. This is handy
