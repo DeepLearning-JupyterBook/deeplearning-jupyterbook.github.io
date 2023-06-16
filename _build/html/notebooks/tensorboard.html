@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>0. Environment Setup &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>TensorBoard &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -61,12 +61,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'markdowns/environment_setup';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tensorboard';</script>
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1. Basic Operations" href="../notebooks/basic_operations.html" />
-    <link rel="prev" title="Welcome" href="../intro.html" />
+    <link rel="next" title="Working with Servers" href="../markdowns/server.html" />
+    <link rel="prev" title="Python Scripting" href="../markdowns/python_scripting.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,24 +158,24 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">0. Environment Setup</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../markdowns/environment_setup.html">0. Environment Setup</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/basic_operations.html">1. Basic Operations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/quick_start.html">2. Quick Start</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/optimisation_learning.html">3. Optimisation and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">Generative Adversarial Networks</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
 
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/vae.html">Deep Autoencoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
 
 
 
@@ -183,7 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">Diffusion Probabilistic Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,24 +192,24 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/activation.html">Activation Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/lesion.html">Kernel Lesioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/linear_classifier_probe.html">Probing by linear classifiers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="python_scripting.html">Python Scripting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/tensorboard.html">TensorBoard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="server.html">Working with Servers</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">Python Scripting</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">TensorBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">Working with Servers</a></li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
 </ul>
 
     </div>
@@ -256,6 +256,37 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/tensorboard.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -281,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fmarkdowns/environment_setup.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tensorboard.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -311,7 +342,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/markdowns/environment_setup.md" target="_blank"
+      <li><a href="../_sources/notebooks/tensorboard.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -393,7 +424,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>0. Environment Setup</h1>
+    <h1>TensorBoard</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,17 +434,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creation">Creation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation">Activation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring">Monitoring</a></li>
 </ul>
             </nav>
         </div>
@@ -425,118 +447,72 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="environment-setup">
-<h1>0. Environment Setup<a class="headerlink" href="#environment-setup" title="Permalink to this heading">#</a></h1>
-<p>To run deep learning code on your local computer, one needs to install different libraries. In this
-tutorial, we will see how to set up a deep learning environment.</p>
-<section id="operating-systems">
-<h2>Operating systems<a class="headerlink" href="#operating-systems" title="Permalink to this heading">#</a></h2>
-<p>In order to run the code on GPU, install the latest CUDA Driver for your native operating system.</p>
-<section id="windows">
-<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">#</a></h3>
-<p>If you’re a Windows user, install
-<a class="reference external" href="https://learn.microsoft.com/en-us/windows/wsl/install">The Windows Subsystem for Linux (WSL)</a>.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>wsl --install
+  <section class="tex2jax_ignore mathjax_ignore" id="tensorboard">
+<h1>TensorBoard<a class="headerlink" href="#tensorboard" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.tensorflow.org/tensorboard/">TensorBoard</a> provides the visualisation and tooling needed for machine learning experimentation:</p>
+<ul class="simple">
+<li><p>Tracking and visualising metrics such as loss and accuracy</p></li>
+<li><p>Visualising the model graph (ops and layers)</p></li>
+<li><p>Viewing histograms of weights, biases, or other tensors as they change over time</p></li>
+<li><p>Projecting embeddings to a lower dimensional space</p></li>
+<li><p>Displaying images, text, and audio data.</p></li>
+</ul>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">#</a></h2>
+<p>In the <a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/tree/master/src/deepcsf/csf_main.py">csf_main.py</a> we have used TensorBoard to:</p>
+<ul class="simple">
+<li><p>log accuracy and loss values</p></li>
+<li><p>show batch images</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">SummaryWriter</span></code> class is your main entry to log data for consumption and visualisation by
+TensorBoard. So, we import it:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from torch.utils.tensorboard import SummaryWriter
 </pre></div>
 </div>
-<p>Follow the instructions and reboot your system.</p>
-<p>After that, you simply open the WLS terminal (the penguin icon).
-The first time you have to update all packages:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt update &amp;&amp; upgrade
+<p>At the start, we initialise two instances of <code class="docutils literal notranslate"><span class="pre">SummaryWriter</span></code> for train and testing, each logging in
+their corresponding directories:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>args.tb_writers = dict()
+for mode in [&#39;train&#39;, &#39;test&#39;]:
+    args.tb_writers[mode] = SummaryWriter(os.path.join(args.out_dir, mode))
 </pre></div>
 </div>
-<p>Python is already installed in WSL.</p>
-<div class="error admonition">
-<p class="admonition-title">libgl error</p>
-<p>To use some of the computer vision libraries in WSL you need to install <code class="docutils literal notranslate"><span class="pre">libgl</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install --yes libgl1-mesa-dev
-</pre></div>
-</div>
-</div>
-<div class="error admonition">
-<p class="admonition-title">CUDA error</p>
-<p>If your notebooks crash when calling the <code class="docutils literal notranslate"><span class="pre">cuda()</span></code> function and get this error:
-<code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">load</span> <span class="pre">library</span> <span class="pre">libcudnn_cnn_infer.so.8.</span></code> The solution is to add the library to
-<a class="reference external" href="https://discuss.pytorch.org/t/libcudnn-cnn-infer-so-8-library-can-not-found/164661"><em>.bashrc file</em></a>.</p>
-<p>Go to your file browser, navigate to <code class="docutils literal notranslate"><span class="pre">Linux/Ubuntu/home/&lt;user_name&gt;</span></code>, open the <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>file and add
-this line to the end of the file:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
-</pre></div>
-</div>
-<p>Restart all Ubuntu terminals and the issue should be resolved.</p>
-</div>
+<p>We add new accuracy/loss by calling the <code class="docutils literal notranslate"><span class="pre">add_scalar</span></code> function and add new images by calling the
+<code class="docutils literal notranslate"><span class="pre">add_image</span></code> function.</p>
+<img src="https://pytorch.org/docs/stable/_images/add_scalar.png"  width="400" height="200">
+<img src="https://pytorch.org/docs/stable/_images/add_image.png"  width="400" height="200">
+<p><code class="docutils literal notranslate"><span class="pre">SummaryWriter</span></code> contains several <code class="docutils literal notranslate"><span class="pre">add_&lt;SOMETHING&gt;</span></code> functions
+(<a class="reference external" href="https://pytorch.org/docs/stable/tensorboard.html">https://pytorch.org/docs/stable/tensorboard.html</a>), most of them with a similar set of arguments:</p>
+<ul class="simple">
+<li><p>tag (data identifier)</p></li>
+<li><p>value (e.g., a floating number in case of scalar and a tensor in case of image)</p></li>
+<li><p>step (allowing to browse the same tag at different time steps)</p></li>
+</ul>
+<p>At the end of the programme, it’s recommended to close the <code class="docutils literal notranslate"><span class="pre">SummaryWriter</span></code> by calling the <code class="docutils literal notranslate"><span class="pre">close()</span></code>
+function.</p>
 </section>
-<section id="linux-and-macos">
-<h3>Linux and macOS<a class="headerlink" href="#linux-and-macos" title="Permalink to this heading">#</a></h3>
-<p>There are no extra preparations you need to do.</p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="virtual-environment">
-<h2>Virtual environment<a class="headerlink" href="#virtual-environment" title="Permalink to this heading">#</a></h2>
-<p>A virtual environment is a modular solution to install an independent set of packages for
-different purposes. A “virtual environment” is essentially a single folder that does not affect
-the whole system and can easily be deleted.</p>
-<p>To install a virtual environment with <code class="docutils literal notranslate"><span class="pre">pip</span></code>, you should follow
-<a class="reference external" href="https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/">the official installation guide</a>.</p>
-<p>Pip is a package-management system written in Python and is used to install and manage software
-packages. To install on your system:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install python3-pip
+<section id="monitoring">
+<h2>Monitoring<a class="headerlink" href="#monitoring" title="Permalink to this heading">#</a></h2>
+<p>We can open the TensorBoard in our browser by calling</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>tensorboard --logdir &lt;LOG_DIR&gt; --port &lt;PORT_NUMBER&gt;
 </pre></div>
 </div>
-<p>Next, we install the virtual environment:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m pip install --user venv
+<p>In our project, by default, the TensorBoard files are saved at <em>csf_out/train/</em> and <em>csf_out/test/</em>
+folder. If we specify the <code class="docutils literal notranslate"><span class="pre">&lt;LOG_DIR&gt;</span></code> as the parent directory (<em>csf_out/</em>), TensorBoards in all
+subdirectories will be also visualised:</p>
+<ul class="simple">
+<li><p>This is a very useful tool to compare different conditions (e.g., train/test,
+different experiments) at the same time.</p></li>
+<li><p>If there are too many nested TensorBoards, it might become too slow.</p></li>
+</ul>
+<p>The value for <code class="docutils literal notranslate"><span class="pre">&lt;PORT_NUMBER&gt;</span></code> is a four-digit number, e.g., 6006.:</p>
+<ul class="simple">
+<li><p>If the port number is already occupied by another process, use another number.</p></li>
+<li><p>You can have several TensorBoards open at different ports.</p></li>
+</ul>
+<p>Finally, we can see the TensorBoard in our browser under this URL</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http://localhost:&lt;PORT_NUMBER&gt;/
 </pre></div>
 </div>
-<section id="creation">
-<h3>Creation<a class="headerlink" href="#creation" title="Permalink to this heading">#</a></h3>
-<p>To create a virtual environment, you use the command <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">&lt;path_dir&gt;</span></code> where &lt;path_dir&gt;
-is the directory to install the virtual environment. For instance to create a virtual environment
-with the name “mbb” in the home directory:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m venv ~/mbb
-</pre></div>
-</div>
-</section>
-<section id="activation">
-<h3>Activation<a class="headerlink" href="#activation" title="Permalink to this heading">#</a></h3>
-<p>To access this environment, you should activate it in the terminal:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ~/mbb/bin/activate
-</pre></div>
-</div>
-<p>If activated successfully, you see on the left side of your terminal the name <code class="docutils literal notranslate"><span class="pre">(mbb)</span></code>.</p>
-<div class="important admonition">
-<p class="admonition-title">Important Note</p>
-<p>You must always remember to activate the virtual
-environment, for example, before installing any package with pip. Otherwise, it’s installing it in
-another environment.</p>
-</div>
-<p>Keep in mind that you can activate the same environment in multiple terminals. This is handy
-for installing packages in one terminal and using the environment in another terminal.</p>
-<p>A virtual environment can be deactivated by command:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>deactivate
-</pre></div>
-</div>
-</section>
-<section id="installing-packages">
-<h3>Installing packages<a class="headerlink" href="#installing-packages" title="Permalink to this heading">#</a></h3>
-<p>Installing packages with pip is very easy. For instance, to install <code class="docutils literal notranslate"><span class="pre">jupyterlab</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install jupyterlab notebook
-</pre></div>
-</div>
-<p>To run the tutorial codes, we will use the PyTorch framework that can be installed:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install torch torchvision torchaudio
-</pre></div>
-</div>
-<div class="error admonition">
-<p class="admonition-title">ImportError: No module named X</p>
-<p>Importantly, if you get an <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">X</span></code> in a Python script. The solution is
-often easy and correct pip installation commands can be found by googling.</p>
-<p>For instance <code class="docutils literal notranslate"><span class="pre">ImportError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">cv2</span></code> can be resolved by installing <code class="docutils literal notranslate"><span class="pre">opencv-python</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install opencv-python 
-</pre></div>
-</div>
-</div>
-</section>
 </section>
 </section>
 
@@ -553,7 +529,7 @@ often easy and correct pip installation commands can be found by googling.</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./markdowns"
+            path: "./notebooks"
         },
         predefinedOutput: true
     }
@@ -572,20 +548,20 @@ often easy and correct pip installation commands can be found by googling.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../markdowns/python_scripting.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome</p>
+        <p class="prev-next-title">Python Scripting</p>
       </div>
     </a>
     <a class="right-next"
-       href="../notebooks/basic_operations.html"
+       href="../markdowns/server.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1. Basic Operations</p>
+        <p class="prev-next-title">Working with Servers</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -607,17 +583,8 @@ often easy and correct pip installation commands can be found by googling.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operating-systems">Operating systems</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux-and-macos">Linux and macOS</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#virtual-environment">Virtual environment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creation">Creation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation">Activation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-packages">Installing packages</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring">Monitoring</a></li>
 </ul>
   </nav></div>
 

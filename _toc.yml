@@ -23,6 +23,11 @@ parts:
       - file: notebooks/activation
       - file: notebooks/lesion
       - file: notebooks/linear_classifier_probe
+    - file: notebooks/big_projects
+      sections:
+      - file: markdowns/python_scripting
+      - file: notebooks/tensorboard
+      - file: markdowns/server
   - caption: Assignments
     chapters:
     - file: notebooks/assignments/warmup
