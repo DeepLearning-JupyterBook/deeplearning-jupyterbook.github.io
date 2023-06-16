@@ -281,6 +281,23 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/edit/master//markdowns/python_scripting.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
       <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fmarkdowns/python_scripting.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
@@ -403,8 +420,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-module">Python Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package">Python Package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execution">Execution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dumping-arguments">Dumping arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-checkpoints">Saving Checkpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resuming-training">Resuming training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-a-network">Testing a network</a></li>
 </ul>
 </li>
 </ul>
@@ -420,24 +445,6 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-scripting">
 <h1>Python Scripting<a class="headerlink" href="#python-scripting" title="Permalink to this heading">#</a></h1>
-<p>We use the same code as we studied in our last session (Notebook:
-<a class="reference internal" href="../notebooks/linear_classifier_probe.html"><span class="doc std std-doc">Probing with Linear Classifiers</span></a>). We convert the
-code into a Python package named <a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/tree/master/src/deepcsf"><code class="docutils literal notranslate"><span class="pre">deepcsf</span></code></a>.</p>
-<p>To execute this code, first, we have to activate our virtual environment containing necessary
-packages like PyTorch (check the <a class="reference internal" href="environment_setup.html"><span class="doc std std-doc">environment setup tutorial</span></a>).</p>
-<p>Assuming you are already in the <em>server</em> directory where the <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> module is, to train a
-network:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py
-</pre></div>
-</div>
-<p>And to test the trained network:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py --test_net &lt;CHECKPOINT_PATH&gt;
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">CHECKPOINT_PATH</span></code> is the path to the saved checkpoint in the training script, by default, it’s saved
-at <code class="docutils literal notranslate"><span class="pre">csf_out/checkpoint.pth.tar</span></code>.</p>
-<section id="python-module">
-<h2>Python Module<a class="headerlink" href="#python-module" title="Permalink to this heading">#</a></h2>
 <p>Jupyter Notebook provides an interactive programming environment. This is very useful in several
 scenarios such as:</p>
 <ul class="simple">
@@ -454,20 +461,48 @@ is difficult to manage in Notebooks. To this end, we should create Python module
 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">&lt;SCRIPT_PATH&gt;.py</span></code>.</p></li>
 <li><p><strong>Python module</strong>: contains function definitions similar to a third-party library or a package.</p></li>
 </ul>
-<p>In this tutorial, we have created a minimal Python package called <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> following this
-structure:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>python_script/
-└── deepcsf/                # Python package
-    └── __init__.py         # __init__.py is required to import the directory as a package
-    └── csf_main.py         # training/testing routines
-    └── dataloader.py       # dataset-related code
-    └── models.py           # the architecture of the network
-    └── utils.py            # common utility functions
+<p>In this tutorial, we will create a minimal Python package from the same code as we studied in our
+last session (Notebook: <a class="reference internal" href="../notebooks/linear_classifier_probe.html"><span class="doc std std-doc">Probing with Linear Classifiers</span></a>).
+This example measures the contrast sensitivity function (CSF) of deep neural networks, therefore,
+we have named the package as
+<a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/tree/master/src/"><code class="docutils literal notranslate"><span class="pre">deepcsf</span></code></a>.</p>
+<section id="python-package">
+<h2>Python Package<a class="headerlink" href="#python-package" title="Permalink to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> Python package consists of the following structure:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>src/
+├── deepcsf/                # Python package
+│   ├── __init__.py         # __init__.py is required to import the directory as a package
+│   ├── csf_main.py         # training/testing routines
+│   ├── dataloader.py       # dataset-related code
+│   ├── models.py           # the architecture of the network
+│   └── utils.py            # common utility functions
 └── main.py                 # executable script
 </pre></div>
 </div>
-<p><strong>NOTE</strong>: This tutorial contains a single Python package and a single script, a more complex project
-often contains several packages and scripts.</p>
+<p>Essentially, we have split the code in our notebook into several Python modules each containing
+a particular functionality.</p>
+<div class="note admonition">
+<p class="admonition-title">Nested packages</p>
+<p>This tutorial contains a single Python package and a single script, a more complex project
+often contains several packages and scripts. This is an easy process: split out the functionality
+you want into separate folders and include an empty __init__.py file.</p>
+</div>
+<section id="execution">
+<h3>Execution<a class="headerlink" href="#execution" title="Permalink to this heading">#</a></h3>
+<p>To execute this code, first, we have to activate our virtual environment containing necessary
+packages like PyTorch (check the <a class="reference internal" href="environment_setup.html"><span class="doc std std-doc">environment setup tutorial</span></a>).</p>
+<p>In your terminal, navigate to the <em>src</em> directory where the <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> package is. To train a
+network:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py
+</pre></div>
+</div>
+<p>And to test the trained network:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py --test_net &lt;CHECKPOINT_PATH&gt;
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">CHECKPOINT_PATH</span></code> is the path to the saved checkpoint in the training script, by default, it’s saved
+at <code class="docutils literal notranslate"><span class="pre">csf_out/checkpoint.pth.tar</span></code>.</p>
+</section>
 <section id="arguments">
 <h3>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading">#</a></h3>
 <p>The <a class="reference external" href="https://docs.python.org/3/library/argparse.html">argparse</a> module makes it easy to write
@@ -500,6 +535,121 @@ options:
   --out_dir OUT_DIR     the output directory
   --test_net TEST_NET   the path to test network
   --resume RESUME       the path to training checkpoint
+</pre></div>
+</div>
+<p>In order to pass an argument to our script, we first specify the argument name followed by its value
+. Similarly, to pass several arguments we separate them by an empty space, for example:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python main.py --batch_size 32 --epochs 10
+</pre></div>
+</div>
+<p>Specifies a <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> of 32 and 10 <code class="docutils literal notranslate"><span class="pre">epochs</span></code>.</p>
+<p>Adding arguments to your script is very easy, for instance:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># make an instance of ArgumentParser</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
+<span class="c1"># The add_argument() method attaches individual argument specifications to the parser.</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--epochs&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;number of epochs of training&quot;</span><span class="p">)</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--batch_size&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;size of the batches&quot;</span><span class="p">)</span>
+<span class="c1"># The parse_args() method runs the parser and places the extracted data in an argparse.Namespace object.</span>
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="hint admonition">
+<p class="admonition-title">Make use of the full potential of argparse</p>
+<p>The argparse module offers several useful features, including:</p>
+<ul class="simple">
+<li><p>Type of argument (e.g., string, float, boolean, etc.)</p></li>
+<li><p>Whether an argument is optional or required</p></li>
+<li><p>Limiting the list of values to predefined choices</p></li>
+<li><p>etc.</p></li>
+</ul>
+<p>An explanation of these features goes beyond the scope of this tutorial. Please check the official
+<a class="reference external" href="https://docs.python.org/3/library/argparse.html">argparse documentation</a>.</p>
+</div>
+</section>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading">#</a></h2>
+<p>The core functionality of our Python script <code class="docutils literal notranslate"><span class="pre">deepcsf</span></code> is identical to its corresponding Jupyter
+notebook. However, we have added a few functionalities in <code class="docutils literal notranslate"><span class="pre">csf_main.py</span></code> to save/load models and
+log the progress, which we go through it in this section.</p>
+<section id="dumping-arguments">
+<h3>Dumping arguments<a class="headerlink" href="#dumping-arguments" title="Permalink to this heading">#</a></h3>
+<p>We store the value of all variables in <code class="docutils literal notranslate"><span class="pre">argparse.Namespace</span></code> in a JSON file. This is handy in several
+scenarios, for instance when running multiple experiments using the same code with different
+parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">save_arguments</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Dumping all arguments in a JSON file&quot;&quot;&quot;</span>
+    <span class="n">json_file_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">out_dir</span><span class="p">,</span> <span class="s1">&#39;args.json&#39;</span><span class="p">)</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file_name</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">_get_kwargs</span><span class="p">()),</span> <span class="n">fp</span><span class="p">,</span> <span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="saving-checkpoints">
+<h3>Saving Checkpoints<a class="headerlink" href="#saving-checkpoints" title="Permalink to this heading">#</a></h3>
+<p>We should save the weights of our network and parameters for optimiser frequently (e.g., at the end
+of each epoch):</p>
+<ol class="arabic simple">
+<li><p>To resume training,</p></li>
+<li><p>To test the network with new stimuli.</p></li>
+</ol>
+<p>Often a <code class="docutils literal notranslate"><span class="pre">dict</span></code> is stored containing <strong>all</strong> variables that are required to load a network/optimiser
+again. In our example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">utils</span><span class="o">.</span><span class="n">save_checkpoint</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="c1"># to know to which epoch this checkpoint belongs</span>
+        <span class="s1">&#39;epoch&#39;</span><span class="p">:</span> <span class="n">epoch</span><span class="p">,</span>
+        <span class="c1"># related variables to create the network and load its weights</span>
+        <span class="s1">&#39;network&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;arch&#39;</span><span class="p">:</span> <span class="n">arch</span><span class="p">,</span>
+            <span class="s1">&#39;layer&#39;</span><span class="p">:</span> <span class="n">layer</span><span class="p">,</span>
+            <span class="c1"># state_dict() contains the network&#39;s weights</span>
+            <span class="s1">&#39;state_dict&#39;</span><span class="p">:</span> <span class="n">network</span><span class="o">.</span><span class="n">state_dict</span><span class="p">()</span>
+        <span class="p">},</span>
+        <span class="c1"># to normalise input signal correctly</span>
+        <span class="s1">&#39;preprocessing&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">mean</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">std</span><span class="p">},</span>
+        <span class="c1"># parameters of optimiser are required to resume training</span>
+        <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span>
+        <span class="c1"># to input network with a correct input size</span>
+        <span class="s1">&#39;target_size&#39;</span><span class="p">:</span> <span class="n">args</span><span class="o">.</span><span class="n">target_size</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="c1"># the directory where the checkpoint is saved</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">out_dir</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Checkpoints should be complete!</p>
+<p>Double-check that you are saving all the necessary parameters/variables before starting a long
+training process. It would be very painful not to be able to use a network trained for several days!</p>
+</div>
+</section>
+<section id="resuming-training">
+<h3>Resuming training<a class="headerlink" href="#resuming-training" title="Permalink to this heading">#</a></h3>
+<p>Resuming training from a given checkpoint is a desirable feature (e.g., because the training process
+was interrupted, or because you want to obtain better performance). When you resume the training
+from a checkpoint, you should load all the necessary variables from the checkpoint. For example in our code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># if resuming a previously training process</span>
+<span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">resume</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="c1"># openning the checkpoint file</span>
+    <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">resume</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+    <span class="c1"># loading the network with the weights from the checkpoint</span>
+    <span class="n">network</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;network&#39;</span><span class="p">][</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+    <span class="c1"># setting the epoch to the checkpoint epoch</span>
+    <span class="n">args</span><span class="o">.</span><span class="n">initial_epoch</span> <span class="o">=</span> <span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;epoch&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="c1"># loading the optimiser parameters from the checkpoint</span>
+    <span class="n">optimizer</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;optimizer&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="testing-a-network">
+<h3>Testing a network<a class="headerlink" href="#testing-a-network" title="Permalink to this heading">#</a></h3>
+<p>To test a network we only need to load the weights of the network and several other stored variables
+such as the optimiser state is irrelevant. From our example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">checkpoint</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">test_net</span><span class="p">,</span> <span class="n">map_location</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">load_state_dict</span><span class="p">(</span><span class="n">checkpoint</span><span class="p">[</span><span class="s1">&#39;network&#39;</span><span class="p">][</span><span class="s1">&#39;state_dict&#39;</span><span class="p">])</span>
+<span class="n">network</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+<span class="n">network</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -573,8 +723,16 @@ options:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-module">Python Module</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-package">Python Package</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execution">Execution</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">Arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logging">Logging</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dumping-arguments">Dumping arguments</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-checkpoints">Saving Checkpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resuming-training">Resuming training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#testing-a-network">Testing a network</a></li>
 </ul>
 </li>
 </ul>
