@@ -10,6 +10,10 @@ parts:
   - caption: Tutorials
     chapters:
     - file: notebooks/basic_operations
+      sections:
+      - file: notebooks/convolution
+      - file: notebooks/pooling
+      - file: notebooks/activation_function
     - file: notebooks/quick_start
     - file: notebooks/optimisation_learning
     - file: notebooks/vision
