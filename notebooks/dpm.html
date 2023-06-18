@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Diffusion Probabilistic Models &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>5.3. Diffusion Probabilistic Models &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="6. Interpretation Techniques" href="interpretation_techniques.html" />
-    <link rel="prev" title="Deep Autoencoders" href="vae.html" />
+    <link rel="prev" title="5.2. Deep Autoencoders" href="vae.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,19 +165,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vae.html">5.2. Deep Autoencoders</a></li>
 
 
 
@@ -185,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Diffusion Probabilistic Models</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">5.3. Diffusion Probabilistic Models</a></li>
 
 
 
@@ -194,16 +200,16 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="activation.html">6.1. Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesion.html">6.2. Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">Python Scripting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensorboard.html">TensorBoard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">Working with Servers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">7.1. Python Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorboard.html">7.2. TensorBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">7.3. Working with Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -443,7 +449,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Diffusion Probabilistic Models</h1>
+    <h1>5.3. Diffusion Probabilistic Models</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -453,7 +459,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diffusion Probabilistic Models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.3. Diffusion Probabilistic Models</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">arguments</a></li>
@@ -488,7 +494,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="diffusion-probabilistic-models">
-<h1>Diffusion Probabilistic Models<a class="headerlink" href="#diffusion-probabilistic-models" title="Permalink to this heading">#</a></h1>
+<h1>5.3. Diffusion Probabilistic Models<a class="headerlink" href="#diffusion-probabilistic-models" title="Permalink to this heading">#</a></h1>
 <p>The materials in this notebook are inspired from:</p>
 <ul class="simple">
 <li><p>code</p>
@@ -1143,7 +1149,7 @@ Files already downloaded and verified
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Deep Autoencoders</p>
+        <p class="prev-next-title">5.2. Deep Autoencoders</p>
       </div>
     </a>
     <a class="right-next"
@@ -1173,7 +1179,7 @@ Files already downloaded and verified
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Diffusion Probabilistic Models</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">5.3. Diffusion Probabilistic Models</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#device">device</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arguments">arguments</a></li>

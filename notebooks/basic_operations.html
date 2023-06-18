@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Quick Start" href="quick_start.html" />
+    <link rel="next" title="1.1. Convolution" href="convolution.html" />
     <link rel="prev" title="0. Environment Setup" href="../markdowns/environment_setup.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,19 +163,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Basic Operations</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Basic Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="gan.html">Generative Adversarial Networks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="vae.html">Deep Autoencoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vae.html">5.2. Deep Autoencoders</a></li>
 
 
 
@@ -183,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="dpm.html">Diffusion Probabilistic Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dpm.html">5.3. Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,16 +198,16 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="activation.html">Activation Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lesion.html">Kernel Lesioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">Probing by linear classifiers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="activation.html">6.1. Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lesion.html">6.2. Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">Python Scripting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tensorboard.html">TensorBoard</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">Working with Servers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">7.1. Python Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tensorboard.html">7.2. TensorBoard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">7.3. Working with Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -428,9 +434,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -446,32 +450,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">Convolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-cv">Open-CV</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge detection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image blurring</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">PyTorch</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Edge detection</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling">Pooling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-function">Activation function</a></li>
-</ul>
-</li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -483,364 +461,64 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="basic-operations">
 <h1>1. Basic Operations<a class="headerlink" href="#basic-operations" title="Permalink to this heading">#</a></h1>
-<p>In this notebook, we’ll explore different basic operations, such as convolution and pooling, common to all deep neural networks.
-First, we import all necessary packages.</p>
+<p>A deep neural network consists of multiple layers of linear and nonlinear operations. For instance, let’s print the layers of <code class="docutils literal notranslate"><span class="pre">AlexNet</span></code> to check what constitutes its architectures:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">skimage</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="input-image">
-<h2>Input image<a class="headerlink" href="#input-image" title="Permalink to this heading">#</a></h2>
-<p>Reading an image from a URL.
-One can pass the path of a local image to the <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function as well.</p>
-<p><code class="docutils literal notranslate"><span class="pre">skimage</span></code> (scikit-image) is a collection of algorithms for image processing.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/295087.jpg&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/35008.jpg&#39;</span>
-<span class="p">]</span>
-
-<span class="c1"># we use list comprehensions to quickly load images</span>
-<span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
-
-<span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision</span>
+<span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">alexnet</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bb883ad8853becb36b285eeeceaabce8242286ffb2c9750172a0d669f865d68b.png" src="../_images/bb883ad8853becb36b285eeeceaabce8242286ffb2c9750172a0d669f865d68b.png" />
-</div>
-</div>
-<p>An RGB image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h,</span> <span class="pre">3)</span></code>, the third dimension corresponds to RGB (colour) channels). A grey-scale image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h)</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image size:&quot;</span><span class="p">,</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image type:&quot;</span><span class="p">,</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Image size: (481, 3)
-Image type: uint8
-</pre></div>
-</div>
-</div>
-</div>
-<p>Plotting each RGB channel separately. We define a function so we can call it for each image easily.</p>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> (plt) to create a figure and add three subplots to it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_3channels</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
-    <span class="n">channel_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">]</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">channel_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/fce4ef1ebba50a0905dfba42b8dce97796f1b0d13890ca075552dd1c2a7864ce.png" src="../_images/fce4ef1ebba50a0905dfba42b8dce97796f1b0d13890ca075552dd1c2a7864ce.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c59cb3c3bb7fa55441e0df5c7f6215034a05d781b139e2f77ea5fad49f62268a.png" src="../_images/c59cb3c3bb7fa55441e0df5c7f6215034a05d781b139e2f77ea5fad49f62268a.png" />
-</div>
-</div>
-</section>
-<section id="tensor">
-<h2>Tensor<a class="headerlink" href="#tensor" title="Permalink to this heading">#</a></h2>
-<p>In this tutorial, we’ll use <code class="docutils literal notranslate"><span class="pre">torch</span></code> as one of the frameworks that support basic operations.</p>
-<p><code class="docutils literal notranslate"><span class="pre">torch</span></code> expects images in a different format, the type should be <code class="docutils literal notranslate"><span class="pre">float</span></code> and channels should proceed the spatial dimension, i.e., <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>.</p>
-<p>Furthermore, <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions are designed for Tensors of 4D, where the first dimension corresponds to different images <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>. In our example, b equals 2 as we have loaded two images.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converting the images from uint8 to float and create a torch tensor</span>
-<span class="n">torch_tensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">255</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
-<span class="c1"># permuting the tensor to place the RGB channles as the first dimension</span>
-<span class="n">torch_tensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="n">torch_tensor</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">torch_tensor</span> <span class="ow">in</span> <span class="n">torch_tensors</span><span class="p">]</span>
-<span class="c1"># stacking both images into one 4D tensor</span>
-<span class="n">torch_tensors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor size:&quot;</span><span class="p">,</span> <span class="n">torch_tensors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tensor size: torch.Size([2, 3, 321, 481])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AlexNet(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(11, 11), stride=(4, 4), padding=(2, 2))
+    (1): ReLU(inplace=True)
+    (2): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (3): Conv2d(64, 192, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2))
+    (4): ReLU(inplace=True)
+    (5): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (6): Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (7): ReLU(inplace=True)
+    (8): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (9): ReLU(inplace=True)
+    (10): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=(6, 6))
+  (classifier): Sequential(
+    (0): Dropout(p=0.5, inplace=False)
+    (1): Linear(in_features=9216, out_features=4096, bias=True)
+    (2): ReLU(inplace=True)
+    (3): Dropout(p=0.5, inplace=False)
+    (4): Linear(in_features=4096, out_features=4096, bias=True)
+    (5): ReLU(inplace=True)
+    (6): Linear(in_features=4096, out_features=1000, bias=True)
+  )
+)
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="convolution">
-<h2>Convolution<a class="headerlink" href="#convolution" title="Permalink to this heading">#</a></h2>
-<p>We’ll check different implementations for the convolution.</p>
-<section id="open-cv">
-<h3>Open-CV<a class="headerlink" href="#open-cv" title="Permalink to this heading">#</a></h3>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">filter2D</span></code> function of the opencv (<code class="docutils literal notranslate"><span class="pre">cv2</span></code>) that implements the convolution.</p>
-<section id="edge-detection">
-<h4>Edge detection<a class="headerlink" href="#edge-detection" title="Permalink to this heading">#</a></h4>
-<p>First we design a simple edge kernel sensitive to vertical edges.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">edge_kernel</span><span class="p">)</span>
-</pre></div>
+<p>We can notice that the entire architecture consists of six different types of layers:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Conv2d</span></code> (a convolution layer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReLU</span></code> (a type of activation function)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxPool2d</span></code> (a type of pooling operation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AdaptiveAvgPool2d</span></code> (a type of pooling operation)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dropout</span></code> (a dropout layer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Linear</span></code> (a linear layer)</p></li>
+</ul>
+<p>The goal of this chapter is to familiarise you with these basic operations that appear in all deep neural networks and how you can use them to design your architecture.
+In the coming notebooks, we will learn about these operations:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="convolution.html"><span class="doc std std-doc">Convolution</span></a></p></li>
+<li><p><a class="reference internal" href="pooling.html"><span class="doc std std-doc">Pooling</span></a></p></li>
+<li><p><a class="reference internal" href="activation_function.html"><span class="doc std std-doc">Activation function</span></a></p></li>
+</ul>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1  0 -1]
- [ 1  0 -1]
- [ 1  0 -1]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">edge_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Showing the obtained edges. The output might appear visually distorted becasuse the edges in all RGB channels might not coincide.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ff8fd0ab04bfefe596a3d8c4676a914ac033ad8262d02e781531ce5fa5c7a9c4.png" src="../_images/ff8fd0ab04bfefe596a3d8c4676a914ac033ad8262d02e781531ce5fa5c7a9c4.png" />
-</div>
-</div>
-<p>We can show the edges at each channel separately.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/1eebea88c34b82eaabcaa0169444696c423ea823f19dd67a3113f6a3580c8d1a.png" src="../_images/1eebea88c34b82eaabcaa0169444696c423ea823f19dd67a3113f6a3580c8d1a.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/07d1685df165a8e814e4f82318a850482ef8b60be15e9fac2809e3ff9a62d9c1.png" src="../_images/07d1685df165a8e814e4f82318a850482ef8b60be15e9fac2809e3ff9a62d9c1.png" />
-</div>
-</div>
-<p><strong>Question</strong>: play with different kernel sizes (instead of current 3x3), what is the effect of larger kernel size?</p>
-</section>
-<section id="image-blurring">
-<h4>Image blurring<a class="headerlink" href="#image-blurring" title="Permalink to this heading">#</a></h4>
-<p>We define a kernel whose output is the average of the window.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="n">avg_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">kernel_size</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">kernel_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">avg_kernel</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.04 0.04 0.04 0.04 0.04]
- [0.04 0.04 0.04 0.04 0.04]
- [0.04 0.04 0.04 0.04 0.04]
- [0.04 0.04 0.04 0.04 0.04]
- [0.04 0.04 0.04 0.04 0.04]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blurred_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">avg_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Showing the blurred images.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blurred_imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c8e17dc2faab28a5be3e5401fdf862489b9a2be02207516954a1debbe28065f6.png" src="../_images/c8e17dc2faab28a5be3e5401fdf862489b9a2be02207516954a1debbe28065f6.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="pytorch">
-<h3>PyTorch<a class="headerlink" href="#pytorch" title="Permalink to this heading">#</a></h3>
-<p>Now we check similar operations in <code class="docutils literal notranslate"><span class="pre">torch</span></code>. Note, torch functions are designed to be integrated into a network, but for we use them here on single images to learn better basic operations.</p>
-<section id="id1">
-<h4>Edge detection<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function to convolve a tensor with a kernel. Please note at this stage we only have defined the convolution function that we call a few lines below.</p>
-<p>We set <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> as we don’t want to update the parameters.</p>
-<p>After printing the <code class="docutils literal notranslate"><span class="pre">weights</span></code> of the kernel, we see that they are from a random distribution.</p>
-<p><code class="docutils literal notranslate"><span class="pre">torch_conv.weight.shape</span></code> returns a 4D shape, (1, 3, 3, 3) corresponding to (out_channels, in_channels, kernel_size, kernel_size).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[[[ 0.0328, -0.0133, -0.0254],
-          [ 0.1297,  0.1521,  0.0434],
-          [-0.0979, -0.1316,  0.0315]],
-
-         [[ 0.0675,  0.1457,  0.1762],
-          [ 0.1196,  0.1220,  0.1605],
-          [ 0.1153,  0.1224, -0.1157]],
-
-         [[ 0.0583,  0.1224, -0.1108],
-          [ 0.1153,  0.1674,  0.0534],
-          [ 0.1229,  0.1017, -0.1408]]]])
-torch.Size([1, 3, 3, 3])
-</pre></div>
-</div>
-</div>
-</div>
-<p>We fill in the weights with the edge kernel we defined earlier.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[[[ 1.,  0., -1.],
-          [ 1.,  0., -1.],
-          [ 1.,  0., -1.]],
-
-         [[ 1.,  0., -1.],
-          [ 1.,  0., -1.],
-          [ 1.,  0., -1.]],
-
-         [[ 1.,  0., -1.],
-          [ 1.,  0., -1.],
-          [ 1.,  0., -1.]]]])
-</pre></div>
-</div>
-</div>
-</div>
-<p>We call the <code class="docutils literal notranslate"><span class="pre">torch_conv</span></code> function we defined to obtain edges in the torch.</p>
-<p>The output size is <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">W,</span> <span class="pre">H)</span></code>, 2 corresponds to two images.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_edges</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_edges</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 1, 319, 479])
-</pre></div>
-</div>
-</div>
-</div>
-<p>Converting the torch outputs to numpy for visualisation.</p>
-<p><strong>Question</strong> Why do the results look quite different from what we obtained from open-cv?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">torch_edges</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-<span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">torch_edges_np</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-
-<span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">torch_edges_np</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/8be7163d6e4d359cf9f56172250d340024632f06423cc929b49c36a21084e5dc.png" src="../_images/8be7163d6e4d359cf9f56172250d340024632f06423cc929b49c36a21084e5dc.png" />
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
-<p>Below is a list of exercises helping you to practice what we learnt above.</p>
-<section id="pooling">
-<h3>Pooling<a class="headerlink" href="#pooling" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Process an image with max-pooling in PyTorch, and try different kernel sizes (e.g., 3x3, 7x7, 15x15, etc.). Plot the outputs.</p></li>
-<li><p>Do the same with avg-pooling.</p></li>
-<li><p>Reflect on differences between avg and max pooling as a function of kernel size.</p></li>
-</ol>
-</section>
-<section id="activation-function">
-<h3>Activation function<a class="headerlink" href="#activation-function" title="Permalink to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p>Process the output of edge detection convolution in PyTorch with an activation function (e.g., ReLU or Sigmoid). Plot the outputs.</p></li>
-<li><p>Reflect on which activation function might be better for the edge-detection problem.</p></li>
-</ol>
-</section>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -884,11 +562,11 @@ tensor([[[[ 1.,  0., -1.],
       </div>
     </a>
     <a class="right-next"
-       href="quick_start.html"
+       href="convolution.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. Quick Start</p>
+        <p class="prev-next-title">1.1. Convolution</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -901,38 +579,6 @@ tensor([[[[ 1.,  0., -1.],
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolution">Convolution</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-cv">Open-CV</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge detection</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image blurring</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">PyTorch</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Edge detection</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling">Pooling</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activation-function">Activation function</a></li>
-</ul>
-</li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

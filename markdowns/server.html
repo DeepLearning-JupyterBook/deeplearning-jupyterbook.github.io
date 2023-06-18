@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Working with Servers &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>7.3. Working with Servers &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1. Warming-up" href="../notebooks/assignments/warmup.html" />
-    <link rel="prev" title="TensorBoard" href="../notebooks/tensorboard.html" />
+    <link rel="prev" title="7.2. TensorBoard" href="../notebooks/tensorboard.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,19 +163,25 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/basic_operations.html">1. Basic Operations</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/basic_operations.html">1. Basic Operations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/convolution.html">1.1. Convolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/pooling.html">1.2. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/activation_function.html">1.3. Activation Function</a></li>
+
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">Generative Adversarial Networks</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
 
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/vae.html">Deep Autoencoders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/vae.html">5.2. Deep Autoencoders</a></li>
 
 
 
@@ -183,7 +189,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">Diffusion Probabilistic Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/dpm.html">5.3. Diffusion Probabilistic Models</a></li>
 
 
 
@@ -192,16 +198,16 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/activation.html">Activation Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/lesion.html">Kernel Lesioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/linear_classifier_probe.html">Probing by linear classifiers</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/activation.html">6.1. Activation Maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/lesion.html">6.2. Kernel Lesioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../notebooks/big_projects.html">7. Big Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="python_scripting.html">Python Scripting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../notebooks/tensorboard.html">TensorBoard</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Working with Servers</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../notebooks/big_projects.html">7. Big Projects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="python_scripting.html">7.1. Python Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/tensorboard.html">7.2. TensorBoard</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">7.3. Working with Servers</a></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +416,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Working with Servers</h1>
+    <h1>7.3. Working with Servers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -440,7 +446,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-servers">
-<h1>Working with Servers<a class="headerlink" href="#working-with-servers" title="Permalink to this heading">#</a></h1>
+<h1>7.3. Working with Servers<a class="headerlink" href="#working-with-servers" title="Permalink to this heading">#</a></h1>
 <p>In a real deep learning project, we often need to run our code on a server computer with powerful
 GPUs.</p>
 <section id="connection">
@@ -567,7 +573,7 @@ browser. There are two options.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">TensorBoard</p>
+        <p class="prev-next-title">7.2. TensorBoard</p>
       </div>
     </a>
     <a class="right-next"
