@@ -34,7 +34,7 @@ html:
   use_edit_page_button: true
   favicon: imgs/icon.png
   analytics:
-    google_analytics_id = 'G-BXYWD71FWS'
+    google_analytics_id = G-BXYWD71FWS
 
 launch_buttons:
   colab_url: "https://colab.research.google.com"
