@@ -32,6 +32,10 @@ parts:
       - file: markdowns/python_scripting
       - file: notebooks/tensorboard
       - file: markdowns/server
+    - file: notebooks/other_modalities
+      sections:
+      - file: notebooks/audio_classification
+      - file: notebooks/text_classification
   - caption: Assignments
     chapters:
     - file: notebooks/assignments/warmup
