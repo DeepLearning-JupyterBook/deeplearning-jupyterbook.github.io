@@ -12,8 +12,8 @@ the content should be useful to anyone interested in deep learning.
 
 ```{admonition} Play with notebooks!
 The best way to learn the presented materials is by getting your hands dirty! All Jupyter Notebooks 
-can be executed on Google Colab by directly clicking on the <i class="fa-sharp fa-solid fa-rocket"></i> icon on 
-top of each notebook. All materials are also available in our
+can be executed on Google Colab by directly clicking on the <i class="fa-sharp fa-solid fa-rocket"></i> 
+icon on top of each notebook. All materials are also available in our
 [GitHub repository <i class="fab fa-github"></i>](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io), 
 clone it to run it locally on your computer.
 ```
@@ -23,7 +23,7 @@ clone it to run it locally on your computer.
 Please report any issues/bugs/typos/etc. you notice. Either go the
 <i class="fab fa-github"></i> [issue tracker](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues) 
 or directly click on the  <i class="fab fa-github"></i> icon on top of each page and then 
-'open issue`. We also accept requests for new materials, and of course, we highly appreciate it if you
+"open issue". We also accept requests for new materials, and of course, we highly appreciate it if you
 decide to contribute by pull requests <i class="fa-regular fa-face-smile"></i>.
 ```
 
