@@ -36,6 +36,7 @@ parts:
       sections:
       - file: notebooks/audio_classification
       - file: notebooks/text_classification
+      - file: notebooks/clip
   - caption: Assignments
     chapters:
     - file: notebooks/assignments/warmup
