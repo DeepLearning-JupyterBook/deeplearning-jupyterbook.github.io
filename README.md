@@ -1,4 +1,5 @@
 [![Jupyter Book Badge](https://raw.githubusercontent.com/executablebooks/jupyter-book/master/docs/images/badge.svg)](https://deeplearning-jupyterbook.github.io/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 # Deep Learning for Experimental Psychologists and Cognitive Neuroscientists
 
