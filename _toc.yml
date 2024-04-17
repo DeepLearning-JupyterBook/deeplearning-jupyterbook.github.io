@@ -43,3 +43,6 @@ parts:
     - file: notebooks/assignments/warmup
     - file: notebooks/assignments/dataloader
     - file: notebooks/assignments/optimisation_learning
+  - caption: Python course
+    chapters:
+      - file: notebooks/python_course/dataTypes
