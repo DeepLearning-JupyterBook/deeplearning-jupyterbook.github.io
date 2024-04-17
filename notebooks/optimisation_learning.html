@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3. Optimisation and Learning &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
@@ -19,42 +18,41 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BXYWD71FWS"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -62,16 +60,20 @@
                 gtag('js', new Date());
                 gtag('config', 'G-BXYWD71FWS');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-BXYWD71FWS');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/optimisation_learning';</script>
-    <link rel="shortcut icon" href="../_static/icon.png"/>
+    <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="4. Vision" href="vision.html" />
@@ -85,7 +87,15 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -120,11 +130,14 @@ const thebe_selector_output = ".output, .cell_output"
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,9 +152,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -151,12 +166,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Deep Learning for Experimental Psychologists and Cognitive Neuroscientists - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Deep Learning for Experimental Psychologists and Cognitive Neuroscientists - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -231,6 +257,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Python course</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="python_course/dataTypes.html">Welcome to our first session: DataTypes</a></li>
 </ul>
 
     </div>
@@ -432,20 +462,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -514,10 +546,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="optimisation-and-learning">
-<h1>3. Optimisation and Learning<a class="headerlink" href="#optimisation-and-learning" title="Permalink to this heading">#</a></h1>
+<h1>3. Optimisation and Learning<a class="headerlink" href="#optimisation-and-learning" title="Link to this heading">#</a></h1>
 <p>This tutorial focuses on how representation/knowledge is learnt in deep neural networks.</p>
 <p>In the beginning, the network’s weights are initialised from random distributions (e.g., uniform or Gaussian). Throughout the <em>learning process</em>, they get tuned to a set of useful features to perform the task they are being optimised to.</p>
 <p>Broadly speaking, the learning process consists of:</p>
@@ -526,7 +558,7 @@ document.write(`
 <li><p>Using the backpropagation algorithm to compute the gradient of the loss function with respect to all network parameters.</p></li>
 <li><p>Updating the weights by stepping in the direction of the gradient for a given parameter.</p></li>
 </ol>
-<p>These three steps correspond to the following lines of code, typically implemented in any deep learning project (e.g., <a class="reference internal" href="quick_start.html"><span class="doc std std-doc">geometrical shape classification</span></a> that we saw in the previous class.)</p>
+<p>These three steps correspond to the following lines of code, typically implemented in any deep learning project (e.g., <a class="reference internal" href="quick_start.html"><span class="std std-doc">geometrical shape classification</span></a> that we saw in the previous class.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
     <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
     <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
@@ -542,9 +574,9 @@ document.write(`
 To answer these questions, we will look at a few simple binary classification toy examples.</p></li>
 </ul>
 <section id="preparation">
-<h2>0. Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">#</a></h2>
+<h2>0. Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
 <section id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h3>
+<h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h3>
 <p>Let’s start with all the necessary packages to implement this tutorial.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main Python package for scientific computing. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
@@ -567,7 +599,7 @@ To answer these questions, we will look at a few simple binary classification to
 </div>
 </section>
 <section id="device">
-<h3>Device<a class="headerlink" href="#device" title="Permalink to this heading">#</a></h3>
+<h3>Device<a class="headerlink" href="#device" title="Link to this heading">#</a></h3>
 <p>To execute our code, we choose CPU or GPU based on the hardware availability. We check this by calling the <code class="docutils literal notranslate"><span class="pre">torch.cuda.is_available()</span></code> function that returns whether a CUDA driver is available.</p>
 <p>In this toy example, even the CPU would be sufficient. although it will be fairly slow. However, in real-world applications, a GPU is always necessary.</p>
 <div class="cell docutils container">
@@ -580,7 +612,7 @@ To answer these questions, we will look at a few simple binary classification to
 </section>
 </section>
 <section id="dataset">
-<h2>1. Dataset<a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h2>
+<h2>1. Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
 <p>We define four datasets of 2D points (inspired by <a class="reference external" href="https://playground.tensorflow.org/">Tensorflow Playground</a> and <a class="reference external" href="https://cs.stanford.edu/people/karpathy/convnetjs/demo/classify2d.html">ConvnetJS Demo</a>):</p>
 <ol class="arabic simple">
 <li><p><em>Linear</em>: the data points are linearly separable.</p></li>
@@ -590,7 +622,7 @@ To answer these questions, we will look at a few simple binary classification to
 </ol>
 <p>The task is <strong>binary classification</strong>: the network has to learn to which category each point belongs.</p>
 <section id="dataset-utility-functions">
-<h3>Dataset utility functions<a class="headerlink" href="#dataset-utility-functions" title="Permalink to this heading">#</a></h3>
+<h3>Dataset utility functions<a class="headerlink" href="#dataset-utility-functions" title="Link to this heading">#</a></h3>
 <p>We define a set of utility functions to generate our four datasets. All data generator functions return two variables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">points</span></code> is a list of <code class="docutils literal notranslate"><span class="pre">n</span></code> points with their <span class="math notranslate nohighlight">\((x, y)\)</span> coordinates. The shape of this array is <span class="math notranslate nohighlight">\(n \times 2\)</span>.</p></li>
@@ -600,14 +632,14 @@ To answer these questions, we will look at a few simple binary classification to
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">random_2d</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;&quot;Generates a dataset of 2D points in the range of [-1, 1] with a random label assigned to them.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;&quot;Generates a dataset of 2D points in the range of [-1, 1] with a random label assigned to them.&quot;&quot;&quot;</span>
     <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">num_points</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">points</span><span class="p">,</span> <span class="n">labels</span>
 
 
 <span class="k">def</span> <span class="nf">circular_2d</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generated a dataset of circular 2D points.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generated a dataset of circular 2D points.&quot;&quot;&quot;</span>
     <span class="n">half_num_pts</span> <span class="o">=</span> <span class="n">num_points</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="c1"># Those with label 0 have a radius in the range of [0.1, 0.3]</span>
     <span class="c1"># Those with label 1 have a radius in the range of [0.5, 0.7]</span>
@@ -621,7 +653,7 @@ To answer these questions, we will look at a few simple binary classification to
     <span class="k">return</span> <span class="n">points</span><span class="p">,</span> <span class="n">labels</span>
 
 <span class="k">def</span> <span class="nf">spiral_2d</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generates a dataset of spiral 2D points.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates a dataset of spiral 2D points.&quot;&quot;&quot;</span>
     <span class="n">half_num_pts</span> <span class="o">=</span> <span class="n">num_points</span> <span class="o">//</span> <span class="mi">2</span>
     <span class="n">points</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="p">[]</span>
@@ -640,7 +672,7 @@ To answer these questions, we will look at a few simple binary classification to
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">points</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">linear_2d</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generates a dataset of 2D poins that are linearly seperable.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generates a dataset of 2D poins that are linearly seperable.&quot;&quot;&quot;</span>
     <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
     <span class="c1"># The boundary line.</span>
     <span class="n">line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">]])</span>
@@ -657,7 +689,7 @@ To answer these questions, we will look at a few simple binary classification to
 <p><strong>Bonus Python question</strong>: The code for <code class="docutils literal notranslate"><span class="pre">spiral_2d</span></code> can be written in a nicer parametric way to avoid double-for-loops. Can you implement that?</p>
 </section>
 <section id="visualising-the-dataset">
-<h3>Visualising the dataset<a class="headerlink" href="#visualising-the-dataset" title="Permalink to this heading">#</a></h3>
+<h3>Visualising the dataset<a class="headerlink" href="#visualising-the-dataset" title="Link to this heading">#</a></h3>
 <p>We create the <code class="docutils literal notranslate"><span class="pre">plot_db</span></code> function that plots all the points of a dataset using the <code class="docutils literal notranslate"><span class="pre">scatter</span></code> function from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. The points are colour coded according to their labels.:</p>
 <ul class="simple">
 <li><p>Points with label <span style="color:red"><strong>0</strong></span> are in <span style="color:red"><strong>red</strong></span>.</p></li>
@@ -717,7 +749,7 @@ To answer these questions, we will look at a few simple binary classification to
 </div>
 </section>
 <section id="train-test-splits">
-<h3>Train/test splits<a class="headerlink" href="#train-test-splits" title="Permalink to this heading">#</a></h3>
+<h3>Train/test splits<a class="headerlink" href="#train-test-splits" title="Link to this heading">#</a></h3>
 <p>For each dataset, we split the sampled points into two sets:</p>
 <ul class="simple">
 <li><p><strong>train</strong> containing 90% of the points.</p></li>
@@ -772,12 +804,12 @@ To answer these questions, we will look at a few simple binary classification to
 <p><strong>Python bonus question</strong>: we have used identical 4 lines of code to plot full/train/test datasets. Make the code nicer by creating a function for plotting four datasets. Call this function three times for full/train/test sets.</p>
 </section>
 <section id="evaluation">
-<h3>Evaluation<a class="headerlink" href="#evaluation" title="Permalink to this heading">#</a></h3>
+<h3>Evaluation<a class="headerlink" href="#evaluation" title="Link to this heading">#</a></h3>
 <p>We define accuracy as the metric to report the performance of an algorithm in correctly classifying the points into two categories. We define a function to compute the <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> of the output in comparison to the ground truth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Calculate accuracy (a classification metric)&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate accuracy (a classification metric)&quot;&quot;&quot;</span>
     <span class="n">correct</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="c1"># torch.eq() calculates where two tensors are equal</span>
     <span class="n">acc</span> <span class="o">=</span> <span class="p">(</span><span class="n">correct</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_pred</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span> 
     <span class="k">return</span> <span class="n">acc</span>
@@ -788,7 +820,7 @@ To answer these questions, we will look at a few simple binary classification to
 </section>
 </section>
 <section id="model">
-<h2>2. Model<a class="headerlink" href="#model" title="Permalink to this heading">#</a></h2>
+<h2>2. Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
 <p>We have successfully created our datasets. Next, we design a simple network.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">Simple2DNetwork</span></code> is a subclass of the <code class="docutils literal notranslate"><span class="pre">nn.Module</span></code>. It must implement the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function.</p></li>
@@ -853,7 +885,7 @@ To answer these questions, we will look at a few simple binary classification to
 <p>This implementation is useful when prototyping very simple networks. As soon as the network becomes a bit more complicated (e.g., the weight-initialisation/nonlinearity if statement), one has to create a <code class="docutils literal notranslate"><span class="pre">class</span></code> as we did in the previous cell.</p>
 </section>
 <section id="loss">
-<h2>3. Loss<a class="headerlink" href="#loss" title="Permalink to this heading">#</a></h2>
+<h2>3. Loss<a class="headerlink" href="#loss" title="Link to this heading">#</a></h2>
 <p>How do we know if the output of our network is good or bad? We need a metric to quantify how close the output is to ground truth. A <em>loss</em> function calculates the error of the output. The smaller the better.</p>
 <p><strong>Loss function</strong> measures the degree of dissimilarity of obtained result to the target value, and it is the loss function that we want to minimise during training. To calculate the loss we make a prediction using the inputs of our given data sample and compare it against the true data label value.</p>
 <p>There are several loss functions implemented in deep learning frameworks (e.g. <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#loss-functions">PyTorch Loss Functions</a>. Going through all of them is beyond the purpose of this tutorial. We only look at four of those in this tutorial:</p>
@@ -900,13 +932,13 @@ To answer these questions, we will look at a few simple binary classification to
 </div>
 </div>
 <section id="custom-loss">
-<h3>Custom loss<a class="headerlink" href="#custom-loss" title="Permalink to this heading">#</a></h3>
+<h3>Custom loss<a class="headerlink" href="#custom-loss" title="Link to this heading">#</a></h3>
 <p>On many occasions, one needs to implement its own loss function. For instance, imagine circular data (e.g., hue or angle). In these scenarios, the error between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(2 \pi\)</span> degree should be 0. If we use the above-mentioned loss, the error would be the maximum error.</p>
 <p><strong>Question</strong> for one of the regression loss functions (e.g., MSE) implement its circular version.</p>
 </section>
 </section>
 <section id="optimizer">
-<h2>4. Optimizer<a class="headerlink" href="#optimizer" title="Permalink to this heading">#</a></h2>
+<h2>4. Optimizer<a class="headerlink" href="#optimizer" title="Link to this heading">#</a></h2>
 <p><img alt="" src="https://1349742019-files.gitbook.io/~/files/v0/b/gitbook-legacy-files/o/assets%2F-LGHUhl6VYqrZm4Re77O%2F-LGHay3_3SD1W_7T7wut%2F-LGHb1O2LFqXqdQwZ0Hi%2FScreen%20Shot%202018-06-29%20at%204.19.11%20PM.png?alt=media&amp;token=379fb74a-9549-4156-847f-0b7006357c16" /></p>
 <p>If you are on top of a large valley and want to navigate to the bottom of it (in this picture the lake), what would be the best strategy? It is very hard to see an optimal way. So we use an iterative method, to improve it every time.</p>
 <ol class="arabic simple">
@@ -920,7 +952,7 @@ To answer these questions, we will look at a few simple binary classification to
 </ol>
 <p>There are several different optimizers. Read more about them <a class="reference external" href="https://sisyphus.gitbook.io/project/deep-learning-basics/basics/optimization">here</a>.</p>
 <section id="pytorch-gradients">
-<h3>PyTorch gradients<a class="headerlink" href="#pytorch-gradients" title="Permalink to this heading">#</a></h3>
+<h3>PyTorch gradients<a class="headerlink" href="#pytorch-gradients" title="Link to this heading">#</a></h3>
 <p>To compute those gradients, <em>PyTorch</em> has a built-in differentiation engine called <code class="docutils literal notranslate"><span class="pre">torch.autograd</span></code>. It supports the automatic computation of gradients for any computational graph.</p>
 <p>We can only obtain the <code class="docutils literal notranslate"><span class="pre">grad</span></code> properties for the leaf nodes of the computational graph, which have the <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> property set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. For all other nodes in our graph, gradients will not be available.</p>
 <p>By default, all tensors with <code class="docutils literal notranslate"><span class="pre">requires_grad=True</span></code> are tracking their computational history and support gradient computation. For instance, if we print the weights of one layer in our model:</p>
@@ -943,7 +975,7 @@ To answer these questions, we will look at a few simple binary classification to
 </ul>
 </section>
 <section id="constructing-an-optimizer">
-<h3>Constructing an optimizer<a class="headerlink" href="#constructing-an-optimizer" title="Permalink to this heading">#</a></h3>
+<h3>Constructing an optimizer<a class="headerlink" href="#constructing-an-optimizer" title="Link to this heading">#</a></h3>
 <p>In this toy example, we create an instance of the Stochastic Gradient Descent (SGD) optimizer.</p>
 <p><code class="docutils literal notranslate"><span class="pre">torch.optim.SGD</span></code> requires at least two arguments:</p>
 <ul class="simple">
@@ -970,7 +1002,7 @@ To answer these questions, we will look at a few simple binary classification to
 </section>
 </section>
 <section id="weights-initialisation">
-<h2>5. Weights initialisation<a class="headerlink" href="#weights-initialisation" title="Permalink to this heading">#</a></h2>
+<h2>5. Weights initialisation<a class="headerlink" href="#weights-initialisation" title="Link to this heading">#</a></h2>
 <p>In the valley picture, depending on where you’re standing you might see different paths. Your <strong>initial position</strong> can influence your journey and where you end up. Correspondingly, in neural networks, the initial weights of all layers can have an impact on the learning outcome. While this is outside of the scope of this tutorial. We just look at a few <strong>weight initialization</strong> techniques to familiarise ourselves with this possibility. <a class="reference external" href="https://pytorch.org/docs/stable/nn.init.html">torch.nn.init</a> supports several diferent initilisation techniques.</p>
 <p>A few cells back where we defined our model, we used these few lines to support two initialisation, namely, <code class="docutils literal notranslate"><span class="pre">uniform</span></code> and <code class="docutils literal notranslate"><span class="pre">xavier_normal</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">weight_init</span> <span class="o">==</span> <span class="s1">&#39;uniform&#39;</span><span class="p">:</span>
@@ -982,11 +1014,11 @@ To answer these questions, we will look at a few simple binary classification to
 </pre></div>
 </div>
 <section id="untrained-features">
-<h3>Untrained features<a class="headerlink" href="#untrained-features" title="Permalink to this heading">#</a></h3>
+<h3>Untrained features<a class="headerlink" href="#untrained-features" title="Link to this heading">#</a></h3>
 <p>Let’s make a prediction using our model without any training. How good <em>untrained features</em> can do in this binary classification problem?</p>
 <p>In this tutorial, we look at the linear dataset.
 <strong>Question</strong>: is there a performance difference on other datasets?</p>
-<p>To input our model with the test datasets, we have to first convert them from <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code> to <code class="docutils literal notranslate"><span class="pre">torch</span> <span class="pre">tensors</span></code>. We simply do that by calling the <code class="docutils literal notranslate"><span class="pre">torch.tensor</span></code> function. Note that this toy example is very small and we don’t need to pass the data to the model in different batches. Therefore, we don’t need to use the dataloader routines (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) common to deep learning projects (e.g., <a class="reference internal" href="quick_start.html"><span class="doc std std-doc">geometrical shape classification</span></a> that we studied in the previous class).</p>
+<p>To input our model with the test datasets, we have to first convert them from <code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">arrays</span></code> to <code class="docutils literal notranslate"><span class="pre">torch</span> <span class="pre">tensors</span></code>. We simply do that by calling the <code class="docutils literal notranslate"><span class="pre">torch.tensor</span></code> function. Note that this toy example is very small and we don’t need to pass the data to the model in different batches. Therefore, we don’t need to use the dataloader routines (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) common to deep learning projects (e.g., <a class="reference internal" href="quick_start.html"><span class="std std-doc">geometrical shape classification</span></a> that we studied in the previous class).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">which_db</span> <span class="o">=</span> <span class="s1">&#39;linear_data&#39;</span>
@@ -1053,7 +1085,7 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
 <p>We obtain an accuracy close to the chance level (<span class="math notranslate nohighlight">\(50\%\)</span>) demonstrating that the untrained features cannot solve the task and they need to be tuned.</p>
 </section>
 <section id="xavier-normal-distribution">
-<h3>Xavier Normal Distribution<a class="headerlink" href="#xavier-normal-distribution" title="Permalink to this heading">#</a></h3>
+<h3>Xavier Normal Distribution<a class="headerlink" href="#xavier-normal-distribution" title="Link to this heading">#</a></h3>
 <p>Let’s fill in our model with <a class="reference external" href="https://pytorch.org/docs/stable/nn.init.html#torch.nn.init.xavier_normal_">xavier_normal</a> and check whether the initial performance would be different. The initial performance is still at the chance level.</p>
 <p><strong>Question</strong>: investigate whether the initialisation technique has an impact on the training.</p>
 <div class="cell docutils container">
@@ -1076,14 +1108,14 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
 </section>
 </section>
 <section id="backpropagation">
-<h2>6. Backpropagation<a class="headerlink" href="#backpropagation" title="Permalink to this heading">#</a></h2>
+<h2>6. Backpropagation<a class="headerlink" href="#backpropagation" title="Link to this heading">#</a></h2>
 <p>Backpropagation computes the gradient of a loss function with respect to the weights of the network for a single input–output example, and does so efficiently, computing the gradient one layer at a time, iterating backwards from the last layer to avoid redundant calculations of intermediate terms in the chain rule <a class="reference external" href="https://en.wikipedia.org/wiki/Backpropagation">(Wikipedia)</a>. For a more detailed walkthrough of this process, check out this video on <a class="reference external" href="https://www.youtube.com/watch?v=tIeHLnjs5U8">backpropagation from 3Blue1Brown</a>.</p>
 <p><img alt="" src="https://www.researchgate.net/publication/356390636/figure/fig2/AS:1094521567875074&#64;1637965685089/An-overview-of-backpropagation-a-Role-of-backpropagation-in-a-neural-network-b.ppm" /></p>
 <p>Intuitively, to update layers’ weights, we need to determine the effect of changing weights for a given layer on the final error (also known as the partial derivative of the error function with respect to that weight). To do that we can use the <strong>chain rule</strong> to propagate error gradients backwards through the network.</p>
 <p>PyTorch does that for us by calling the <code class="docutils literal notranslate"><span class="pre">loss.backward()</span></code> function.</p>
 </section>
 <section id="the-full-picture">
-<h2>7. The full picture<a class="headerlink" href="#the-full-picture" title="Permalink to this heading">#</a></h2>
+<h2>7. The full picture<a class="headerlink" href="#the-full-picture" title="Link to this heading">#</a></h2>
 <p>We have all the building blocks for training our network. Now we can check how loss, optimizer and backpropagation come to the full picture. The entire processing pipeline can be summarised in five points:</p>
 <ol class="arabic simple">
 <li><p><strong>Forward pass</strong>: make a prediction with the current set of weights. In the code language, <code class="docutils literal notranslate"><span class="pre">prediction</span> <span class="pre">=</span> <span class="pre">model(input_data)</span></code> which calls the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function of our model.</p></li>
@@ -1130,7 +1162,7 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
 </div>
 <p><a id='traintest_script'></a></p>
 <section id="train-test-one-a-single-dataset">
-<h3>Train/test one a single dataset<a class="headerlink" href="#train-test-one-a-single-dataset" title="Permalink to this heading">#</a></h3>
+<h3>Train/test one a single dataset<a class="headerlink" href="#train-test-one-a-single-dataset" title="Link to this heading">#</a></h3>
 <p>Let’s train our network on the <em>circular_data</em> with the <em>L1</em> loss.</p>
 <p><strong>Questions</strong> play with other datasets and loss functions:</p>
 <ul class="simple">
@@ -1193,7 +1225,7 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
 </div>
 </section>
 <section id="reporting-results">
-<h3>Reporting results<a class="headerlink" href="#reporting-results" title="Permalink to this heading">#</a></h3>
+<h3>Reporting results<a class="headerlink" href="#reporting-results" title="Link to this heading">#</a></h3>
 <p>We can see that the accuracy steadily increases and loss decreases as a function of epoch number. In this toy example network reaches almost perfect accuracy in about 600-700 epochs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1250,11 +1282,10 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="quick_start.html"
@@ -1274,10 +1305,7 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1285,6 +1313,7 @@ tensor([0, 1, 0, 1, 1, 0, 0, 1, 1, 0], device=&#39;cuda:0&#39;)
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1346,6 +1375,7 @@ By Arash Akbarinia
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2023.
@@ -1372,8 +1402,8 @@ By Arash Akbarinia
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
