@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>1.1. Convolution &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
@@ -18,41 +19,42 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-BXYWD71FWS"></script>
     <script>
                 window.dataLayer = window.dataLayer || [];
@@ -60,20 +62,16 @@
                 gtag('js', new Date());
                 gtag('config', 'G-BXYWD71FWS');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){ dataLayer.push(arguments); }
-                gtag('js', new Date());
-                gtag('config', 'G-BXYWD71FWS');
-            </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/convolution';</script>
-    <link rel="icon" href="../_static/icon.png"/>
+    <link rel="shortcut icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.2. Pooling" href="pooling.html" />
@@ -87,15 +85,7 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -130,14 +120,11 @@
 </form></div>
   </div>
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -152,11 +139,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="../intro.html">
-  
   
   
   
@@ -166,23 +151,12 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Deep Learning for Experimental Psychologists and Cognitive Neuroscientists - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Deep Learning for Experimental Psychologists and Cognitive Neuroscientists - Home"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -260,7 +234,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python course</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="python_course/dataTypes.html">Welcome to our first session: DataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_course/dataTypes.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python_course/modules.html">Modules and NumPy Arrays</a></li>
 </ul>
 
     </div>
@@ -462,22 +437,20 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -539,18 +512,18 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="convolution">
-<h1>1.1. Convolution<a class="headerlink" href="#convolution" title="Link to this heading">#</a></h1>
+<h1>1.1. Convolution<a class="headerlink" href="#convolution" title="Permalink to this heading">#</a></h1>
 <p>Convolution is a ubiquitous operation in deep networks, therefore the popular term convolutional neural networks (CNN). This notebook provides a short introduction to convolution.</p>
 <p>Convolution is the process of adding each element of the signal (e.g., image) to its local neighbours, weighted by the kernel. A kernel defines the dimension of a window that is slid across all elements of the input, therefore the convolution of a signal with a kernel is referred to as <strong>sliding window</strong> operation.</p>
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif" >
 <p>Convolution is a popular operation in signal processing (e.g., classical image processing algorithms), and therefore its implemented in several libraries. We explore a few of those implementations in this notebook.</p>
 <section id="preparation">
-<h2>0. Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<h2>0. Preparation<a class="headerlink" href="#preparation" title="Permalink to this heading">#</a></h2>
 <section id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h3>
+<h3>Packages<a class="headerlink" href="#packages" title="Permalink to this heading">#</a></h3>
 <p>Let’s start with all the necessary packages to implement this tutorial.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
@@ -576,7 +549,7 @@ document.write(`
 </div>
 </section>
 <section id="input-image">
-<h3>Input image<a class="headerlink" href="#input-image" title="Link to this heading">#</a></h3>
+<h3>Input image<a class="headerlink" href="#input-image" title="Permalink to this heading">#</a></h3>
 <p>In our example, we work with images to see the effect of convolution on them. First, we read
 two images by their URL using the <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function. Next, we visualise the images
 using <code class="docutils literal notranslate"><span class="pre">matplotlibt</span></code> routines.</p>
@@ -656,10 +629,10 @@ Image type: uint8
 </section>
 </section>
 <section id="open-cv">
-<h2>1. Open-CV<a class="headerlink" href="#open-cv" title="Link to this heading">#</a></h2>
+<h2>1. Open-CV<a class="headerlink" href="#open-cv" title="Permalink to this heading">#</a></h2>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">filter2D</span></code> function of the OpenCV (<code class="docutils literal notranslate"><span class="pre">cv2</span></code>) that implements the convolution.</p>
 <section id="edge-detection">
-<h3>Edge detection<a class="headerlink" href="#edge-detection" title="Link to this heading">#</a></h3>
+<h3>Edge detection<a class="headerlink" href="#edge-detection" title="Permalink to this heading">#</a></h3>
 <p>First, we design a simple edge kernel sensitive to vertical edges.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,7 +701,7 @@ Image type: uint8
 <p><strong>Question</strong>: play with different kernel sizes (instead of current 3x3), what is the effect of larger kernel size?</p>
 </section>
 <section id="image-blurring">
-<h3>Image blurring<a class="headerlink" href="#image-blurring" title="Link to this heading">#</a></h3>
+<h3>Image blurring<a class="headerlink" href="#image-blurring" title="Permalink to this heading">#</a></h3>
 <p>We define a kernel whose output is the average of the window.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,10 +746,10 @@ Image type: uint8
 </section>
 </section>
 <section id="pytorch">
-<h2>2. PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h2>
+<h2>2. PyTorch<a class="headerlink" href="#pytorch" title="Permalink to this heading">#</a></h2>
 <p>Now we check similar operations in <code class="docutils literal notranslate"><span class="pre">torch</span></code>. Note, torch functions are designed to be integrated into a network, but we use them here on single images to learn better basic operations.</p>
 <section id="tensor">
-<h3>Tensor<a class="headerlink" href="#tensor" title="Link to this heading">#</a></h3>
+<h3>Tensor<a class="headerlink" href="#tensor" title="Permalink to this heading">#</a></h3>
 <p>In this tutorial, we’ll use <code class="docutils literal notranslate"><span class="pre">torch</span></code> as one of the frameworks that implement convolution.</p>
 <p><code class="docutils literal notranslate"><span class="pre">torch</span></code> expects images in a different format, the type should be <code class="docutils literal notranslate"><span class="pre">float</span></code> and channels should proceed the spatial dimension, i.e., <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>.</p>
 <p>Furthermore, <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions are designed for Tensors of 4D, where the first dimension corresponds to different images <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>. In our example, b equals 2 as we have loaded two images.</p>
@@ -800,7 +773,7 @@ Image type: uint8
 </div>
 </section>
 <section id="id1">
-<h3>Edge detection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>Edge detection<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>We use the <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function to convolve a tensor with a kernel. Please note at this stage we only have defined the convolution function that we call a few lines below.</p>
 <p>We set <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> as we don’t want to update the parameters.</p>
 <p>After printing the <code class="docutils literal notranslate"><span class="pre">weights</span></code> of the kernel, we see that they are from a random distribution.</p>
@@ -899,7 +872,7 @@ tensor([[[[ 1.,  0., -1.],
 </section>
 </section>
 <section id="kernel-size">
-<h2>3. Kernel size<a class="headerlink" href="#kernel-size" title="Link to this heading">#</a></h2>
+<h2>3. Kernel size<a class="headerlink" href="#kernel-size" title="Permalink to this heading">#</a></h2>
 <p>Kernels often have a window of an odd size to facilitate the centring of the kernel on top of each pixel.
 The size of the kernel at each dimension can be specified accordingly by passing a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> to the <code class="docutils literal notranslate"><span class="pre">kernel_size</span></code> argument. For instance:</p>
 <ul class="simple">
@@ -908,14 +881,14 @@ The size of the kernel at each dimension can be specified accordingly by passing
 <li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(5,</span> <span class="pre">1)</span></code> performs convolution only over rows.</p></li>
 </ul>
 <section id="times-1-convolution">
-<h3><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution<a class="headerlink" href="#times-1-convolution" title="Link to this heading">#</a></h3>
+<h3><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution<a class="headerlink" href="#times-1-convolution" title="Permalink to this heading">#</a></h3>
 <p>A <span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution ignores the spatial resolution and only convolves over the depth of
 the input signal. This is a very useful convolution to expand/shrink the number of channels/kernels
 without affecting the spatial resolution.</p>
 </section>
 </section>
 <section id="padding">
-<h2>4. Padding<a class="headerlink" href="#padding" title="Link to this heading">#</a></h2>
+<h2>4. Padding<a class="headerlink" href="#padding" title="Permalink to this heading">#</a></h2>
 <p>Computing convolution for border pixels is not possible without padding. Remember convolution
 is computed by overlaying the centre of the kernel on top of each pixel. This causes an issue for
 border pixels because part of the kernels goes beyond the spatial resolution of the input image.
@@ -947,12 +920,12 @@ add <code class="docutils literal notranslate"><span class="pre">padding=1</span
 </div>
 </section>
 <section id="downsampling">
-<h2>5. Downsampling<a class="headerlink" href="#downsampling" title="Link to this heading">#</a></h2>
+<h2>5. Downsampling<a class="headerlink" href="#downsampling" title="Permalink to this heading">#</a></h2>
 <p>One way to gradually downsample the input signal is to perform convolution without padding
 which reduces the spatial resolution by <span class="math notranslate nohighlight">\(\frac{kernel\_size}{2} + 1\)</span> as we saw in our example
 without padding.</p>
 <section id="stride">
-<h3>Stride<a class="headerlink" href="#stride" title="Link to this heading">#</a></h3>
+<h3>Stride<a class="headerlink" href="#stride" title="Permalink to this heading">#</a></h3>
 <p>In the convolution operation, we can systematically skip input pixels (e.g., every other one) to
 downsample the input. This is used in several seminal architectures such as <code class="docutils literal notranslate"><span class="pre">ResNet</span></code>.</p>
 <p>Similar to kernel size the value of stride (jumping pixels) can be defined
@@ -996,7 +969,7 @@ two at both dimensions.</p>
 </section>
 <hr class="docutils" />
 <section id="exercises">
-<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h2>
 <p>Below is a list of exercises helping you to practice what we learnt above.</p>
 <ol class="arabic simple">
 <li><p>Implement the image deblurring in the <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p></li>
@@ -1005,7 +978,7 @@ two at both dimensions.</p>
 </section>
 <hr class="docutils" />
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_(image_processing)">Wikipedia Kernel (image processing</a></p></li>
 </ol>
@@ -1037,10 +1010,11 @@ two at both dimensions.</p>
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="basic_operations.html"
@@ -1060,7 +1034,10 @@ two at both dimensions.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1068,7 +1045,6 @@ two at both dimensions.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1123,7 +1099,6 @@ By Arash Akbarinia
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2023.
@@ -1150,8 +1125,8 @@ By Arash Akbarinia
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
