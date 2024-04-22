@@ -46,3 +46,4 @@ parts:
   - caption: Python course
     chapters:
       - file: notebooks/python_course/dataTypes
+      - file: notebooks/python_course/modules
