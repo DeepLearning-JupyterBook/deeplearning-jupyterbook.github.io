@@ -47,3 +47,4 @@ parts:
     chapters:
       - file: notebooks/python_course/dataTypes
       - file: notebooks/python_course/modules
+      - file: notebooks/python_course/conditions
