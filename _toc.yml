@@ -48,3 +48,4 @@ parts:
       - file: notebooks/python_course/dataTypes
       - file: notebooks/python_course/modules
       - file: notebooks/python_course/conditions
+      - file: notebooks/python_course/loops
