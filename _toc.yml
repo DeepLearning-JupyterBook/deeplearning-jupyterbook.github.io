@@ -43,10 +43,15 @@ parts:
     - file: notebooks/assignments/warmup
     - file: notebooks/assignments/dataloader
     - file: notebooks/assignments/optimisation_learning
+  - caption: Student projects
+    chapters:
+    - file: notebooks/student_projects/deep-learning-with-dobble
   - caption: Python course
     chapters:
-      - file: notebooks/python_course/dataTypes
-      - file: notebooks/python_course/modules
-      - file: notebooks/python_course/conditions
-      - file: notebooks/python_course/loops
-      - file: notebooks/python_course/plotting
+      - file: notebooks/python_course/beginners.ipynb
+        sections:
+        - file: notebooks/python_course/dataTypes
+        - file: notebooks/python_course/modules
+        - file: notebooks/python_course/conditions
+        - file: notebooks/python_course/loops
+        - file: notebooks/python_course/plotting
