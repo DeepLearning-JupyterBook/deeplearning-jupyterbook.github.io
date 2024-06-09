@@ -55,3 +55,4 @@ parts:
         - file: notebooks/python_course/conditions
         - file: notebooks/python_course/loops
         - file: notebooks/python_course/plotting
+        - file: notebooks/python_course/functions
