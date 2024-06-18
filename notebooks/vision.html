@@ -70,13 +70,11 @@
                 gtag('config', 'G-BXYWD71FWS');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/vision';</script>
     <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Deep Generative Models" href="generative_models.html" />
+    <link rel="next" title="4.1. Image Classification" href="image_classification.html" />
     <link rel="prev" title="3. Optimisation and Learning" href="optimisation_learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,7 +196,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="networks_building_blocks.html">1. Network’s Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
@@ -206,8 +204,17 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. Vision</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
@@ -232,19 +239,19 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">6.1. Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">6.2. Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">7.1. Python Scripting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensorboard.html">7.2. TensorBoard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">7.3. Working with Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="audio_classification.html">8.1. Audio Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_classification.html">8.2. Text Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clip.html">8.3. Language – Vision</a></li>
@@ -264,12 +271,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python course</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginner course</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginners</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_course/dataTypes.html">Data Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/modules.html">Modules and NumPy Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/conditions.html">Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -492,9 +500,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -510,48 +516,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">dataset-utility functions.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">Dataset visualisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-functions">transform functions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloaders">Dataloaders</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">2. Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">network</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-routines">3. Train/test routines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functoin">loss-functoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-utility-functions">Training utility functions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-with-uniform-background">4. Experiments with uniform background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplenet">SimpleNet</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-one-output">Visualising one output</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-with-noise">5. Experiment With Noise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SimpleNet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfernet">TransferNet</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">6. Discussion</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -563,919 +527,13 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="vision">
 <h1>4. Vision<a class="headerlink" href="#vision" title="Link to this heading">#</a></h1>
-<p>In this notebook, we build on the <a class="reference internal" href="quick_start.html"><span class="std std-doc">geometrical shape classification project</span></a> that we studied a few weeks ago. The network’s output for our classification problem was one label for the whole image. We change the code to implement <em>semantic segmentation</em> – one label per pixel.</p>
-<p>We have to change:</p>
+<p>In this chapter, we will explore different computer visoin networks:</p>
 <ul class="simple">
-<li><p><strong>dataset</strong>: to create ground truth for each pixel.</p></li>
-<li><p><strong>network</strong>: to output a matrix with the exact spatial resolution as input.</p></li>
+<li><p><a class="reference internal" href="image_classification.html"><span class="std std-doc">Image Classification</span></a></p></li>
+<li><p><a class="reference internal" href="image_segmentation.html"><span class="std std-doc">Image Segmentation</span></a></p></li>
 </ul>
-<hr class="docutils" />
-<section id="packages">
-<h2>0. Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h2>
-<p>Let’s start with all the necessary packages to implement this tutorial.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
-<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
-<li><p><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> is a leading computer vision library.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">random</span>
-
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-<span class="kn">import</span> <span class="nn">torchvision</span>
-
-<span class="kn">import</span> <span class="nn">cv2</span>
-</pre></div>
+<div class="toctree-wrapper compound">
 </div>
-</div>
-</div>
-<p>Choosing CPU or GPU based on the availability of the hardware.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<hr class="docutils" />
-<section id="dataset">
-<h2>1. Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
-<p>The first step is to get the data ready. In this tutorial, we create our dataset on the fly, i.e., we generate images containing simple geometrical shapes. Our dataset contains three types of shapes:</p>
-<ul class="simple">
-<li><p>circle</p></li>
-<li><p>ellipse</p></li>
-<li><p>rectangle</p></li>
-</ul>
-<p><span style="color:blue"><strong>Update:</strong></span> All other pixels belong to the <em>background</em> category.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels_map</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;background&#39;</span><span class="p">,</span>
-    <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span>
-    <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;ellipse&quot;</span><span class="p">,</span>
-    <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;rectangle&quot;</span>
-<span class="p">}</span>
-<span class="c1"># we define a set of colours that help us to visualise the labels</span>
-<span class="n">labels_colours</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;background&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-    <span class="s1">&#39;circle&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-    <span class="s1">&#39;ellipse&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-    <span class="s1">&#39;rectangle&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">]</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="dataset-utility-functions">
-<h3>dataset-utility functions.<a class="headerlink" href="#dataset-utility-functions" title="Link to this heading">#</a></h3>
-<p>First, we create all the utility functions to generate a set of images.</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">create_random_background</span></code> simply creates a square matrix of size <code class="docutils literal notranslate"><span class="pre">(s,</span> <span class="pre">s,</span> <span class="pre">3)</span></code>, the third dimension corresponds to RGB channels.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">create_random_shape</span></code> uses <code class="docutils literal notranslate"><span class="pre">cv2</span></code> functions to draw geometrical shapes on top of an image.</p></li>
-</ul>
-<p><span style="color:blue"><strong>Update:</strong></span></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">create_random_shape</span></code> returns a matrix for the ground truth. Every pixel is labelled according to the object it belongs to.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">tile_img</span></code> divides an image into four tiles and calls <code class="docutils literal notranslate"><span class="pre">create_random_shape</span></code> to draw one shape on top of the background for each section.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_random_background</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions creates a background image.&quot;&quot;&quot;</span>
-    <span class="c1"># if the random value larger than 0.5, the background will be random noise, otherwise, random uniform</span>
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">create_random_shape</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filled</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions generates geometrical shapes on top of a background image.&quot;&quot;&quot;</span>
-    <span class="c1"># choosing a colour for the shape, there is a slim chance of being identical to the background,</span>
-    <span class="c1"># we can consider this the noise in our dataset!</span>
-    <span class="n">colour</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
-    <span class="n">thickness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-    <span class="n">point1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-    
-    <span class="c1"># drawing a random geomterical shape, we start from 1, because category 0 belongs to background</span>
-    <span class="n">shape_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span>
-    <span class="c1"># when the tickness is negative, the shape is drawn filled</span>
-    <span class="n">thickness</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">filled</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    
-    <span class="c1"># the ground-truth in a single channel image with the same spatial resolusion as the input image </span>
-    <span class="n">gt_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    
-    <span class="k">if</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># circle</span>
-        <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-        <span class="n">gt_mat</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">gt_mat</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">shape_ind</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1"># ellipse</span>
-        <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
-        <span class="p">]</span>
-        <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-        <span class="n">gt_mat</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">gt_mat</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">shape_ind</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># rectangle</span>
-        <span class="n">point2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-        <span class="n">gt_mat</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">gt_mat</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">shape_ind</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">gt_mat</span>
-
-<span class="k">def</span> <span class="nf">tile_img</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filled</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Crops the image into tiles and draw a geometrical shape on top of each tile&quot;&quot;&quot;</span>
-    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span>
-    <span class="c1"># the ground-truth in a single channel image with the same spatial resolusion as the input image </span>
-    <span class="n">gt_mat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="n">num_grids</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">tile_rows</span> <span class="o">=</span> <span class="n">rows</span> <span class="o">//</span> <span class="n">num_grids</span>
-    <span class="n">tile_cols</span> <span class="o">=</span> <span class="n">cols</span> <span class="o">//</span> <span class="n">num_grids</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">tile_rows</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">cols</span><span class="p">,</span> <span class="n">tile_cols</span><span class="p">):</span>
-            <span class="n">tile_img</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">tile_rows</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="n">tile_cols</span><span class="p">]</span>
-            <span class="n">tile_img</span><span class="p">,</span> <span class="n">tile_gt</span> <span class="o">=</span> <span class="n">create_random_shape</span><span class="p">(</span><span class="n">tile_img</span><span class="p">,</span> <span class="n">filled</span><span class="p">)</span>
-            <span class="n">gt_mat</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">tile_rows</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="n">tile_cols</span><span class="p">]</span> <span class="o">=</span> <span class="n">tile_gt</span>
-    <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">gt_mat</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>For visualisation purposes, it’s useful to see all pixels belonging to the same category with the same colour. For example, all the rectangles in blue irrespective of their surface colour. Therefore we implement the <code class="docutils literal notranslate"><span class="pre">label2colour</span></code> function that loops through all the available labels in the image and colours them according to the colours we defined earlier.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">label2colour</span><span class="p">(</span><span class="n">gt_mat</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Colouring a label image for visualisation purposes&quot;&quot;&quot;</span>
-    <span class="n">coloured_img</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="o">*</span><span class="n">gt_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">gt_mat</span><span class="p">):</span>
-        <span class="n">colour</span> <span class="o">=</span> <span class="n">labels_colours</span><span class="p">[</span><span class="n">labels_map</span><span class="p">[</span><span class="n">label</span><span class="p">]]</span>
-        <span class="n">coloured_img</span><span class="p">[</span><span class="n">gt_mat</span> <span class="o">==</span> <span class="n">label</span><span class="p">]</span> <span class="o">=</span> <span class="n">colour</span>
-    <span class="k">return</span> <span class="n">coloured_img</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="dataset-visualisation">
-<h3>Dataset visualisation<a class="headerlink" href="#dataset-visualisation" title="Link to this heading">#</a></h3>
-<p>Let’s have a look at a few images that our dataset generates. We use <code class="docutils literal notranslate"><span class="pre">plt</span></code> from the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library to create a figure and a grid of <span class="math notranslate nohighlight">\(5 \times 5\)</span> subplots. Each insert contains two images</p>
-<ul class="simple">
-<li><p>The left image is the RGB image (network’s input).</p></li>
-<li><p>The right image is the coloured ground-truth image.</p></li>
-</ul>
-<p>Note that:</p>
-<ul class="simple">
-<li><p>In the RGB image, geometrical shapes and backgrounds can have an arbitrary colour.</p></li>
-<li><p>In the ground-truth image, the background is always black, circles red, ellipses green, and rectangles blue. <strong>This is just for visualisation and the ground truth to compute loss is the label number, 0 to 3 correspondingly</strong>.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definying the parametrs of the dataset</span>
-<span class="n">img_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># whether the geometrical shapes are only the contour or filled</span>
-<span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># the probability of the backgroud being a uniform colour or a noisy image</span>
-
-<span class="c1"># plot 25 of the images</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
-    <span class="c1"># retrieving a random image with its corresponding ground-truth</span>
-    <span class="n">img</span><span class="p">,</span> <span class="n">gt</span> <span class="o">=</span> <span class="n">tile_img</span><span class="p">(</span><span class="n">create_random_background</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">),</span> <span class="n">filled</span><span class="p">)</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># concatanating the image with the coloured labels.</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">img</span><span class="p">,</span> <span class="n">label2colour</span><span class="p">(</span><span class="n">gt</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/a22dcf62daaa161aeae1ee2661e6de84129d2115b885b2a3dcdcc77d133ba71b.png" src="../_images/a22dcf62daaa161aeae1ee2661e6de84129d2115b885b2a3dcdcc77d133ba71b.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definying the parametrs of the dataset</span>
-<span class="n">img_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># whether the geometrical shapes are only the contour or filled</span>
-<span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># the probability of the backgroud being a uniform colour or a noisy image</span>
-
-<span class="c1"># plot 25 of the images</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">25</span><span class="p">):</span>
-    <span class="c1"># retrieving a random image with its corresponding ground-truth</span>
-    <span class="n">img</span><span class="p">,</span> <span class="n">gt</span> <span class="o">=</span> <span class="n">tile_img</span><span class="p">(</span><span class="n">create_random_background</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">),</span> <span class="n">filled</span><span class="p">)</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1"># concatanating the image with the coloured labels.</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">img</span><span class="p">,</span> <span class="n">label2colour</span><span class="p">(</span><span class="n">gt</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/2ee36aca248045856821b44a38e383dea9fa5f20512667a890188f69ab3f7fa3.png" src="../_images/2ee36aca248045856821b44a38e383dea9fa5f20512667a890188f69ab3f7fa3.png" />
-</div>
-</div>
-</section>
-<section id="pytorch-data-pipeline">
-<h3>PyTorch Data Pipeline<a class="headerlink" href="#pytorch-data-pipeline" title="Link to this heading">#</a></h3>
-<p>Now, that we have created our dataset, we have to create PyTorch dataloaders.</p>
-<p>In this example, we’re creating a simple dataloader class <code class="docutils literal notranslate"><span class="pre">ShapeDataset</span></code> that inherits the <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> class. It has to implement two functions:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">__len__</span></code> (return the number of samples in the dataset)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> that yield the approperiate data.</p></li>
-</ul>
-<p>Usually, the datasets used in deep-learning projects are huge (e.g., ImageNet contains 1.5 million images). Therefore, we cannot load all images in the memory and we read each image dynamically in the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function.</p>
-<p>One can create any sort of custom dataset with the same structure as our toy example. The initialisation function (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>) receives all the necessary parameters to create a dataset. Usually, the passed variables are stored as class variables to use later on in the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function. Sometimes the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function has to prepare data paths, e.g., to read the name of all image files in a folder (<strong>important</strong> not the images themselves that are heavy for the memory but only their paths to load later).</p>
-<p>The argument <code class="docutils literal notranslate"><span class="pre">transform</span></code> is typically part of any dataset. <code class="docutils literal notranslate"><span class="pre">transform</span></code> contains a predefined set of functions that are sequentially executed on an image. Typical examples of such functions include:</p>
-<ul class="simple">
-<li><p>Conversion to torch tensor</p></li>
-<li><p>Normalising the input image</p></li>
-<li><p>Data augmentations such as random cropping or flipping of an image.</p></li>
-<li><p>etc.</p></li>
-</ul>
-<p><span style="color:blue"><strong>Update:</strong></span> given our dataset is grounded on random generated shapes, in this toy example:</p>
-<ul class="simple">
-<li><p>We can create the sample directly in the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> functoin.</p></li>
-<li><p>We don’t need data augmentation.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PyTorch dataset</span>
-<span class="k">class</span> <span class="nc">ShapeDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_imgs</span><span class="p">,</span> <span class="n">target_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">num_imgs</span> <span class="o">=</span> <span class="n">num_imgs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span> <span class="o">=</span> <span class="n">target_size</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="n">bg_uniform_vs_noise</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
-
-    <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_imgs</span>
-
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_idx</span><span class="p">):</span>
-        <span class="c1"># our routine doesn&#39;t need the idx, which is the sample number</span>
-        <span class="n">img</span><span class="p">,</span> <span class="n">gt</span> <span class="o">=</span> <span class="n">tile_img</span><span class="p">(</span><span class="n">create_random_background</span><span class="p">(</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">target_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">bg_uniform_vs_noise</span>
-        <span class="p">),</span> <span class="n">filled</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
-            <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-        <span class="c1"># ground truth should also be converted to tensor</span>
-        <span class="c1"># the crossentropy loss expects the &quot;long&quot; data type</span>
-        <span class="n">gt</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">gt</span><span class="p">)</span><span class="o">.</span><span class="n">long</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">gt</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="transform-functions">
-<h4>transform functions<a class="headerlink" href="#transform-functions" title="Link to this heading">#</a></h4>
-<p>In this toy example, we define only two necessary transformation functions:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ToTensor</span></code> The data must be converted to torch tensors by calling the <code class="docutils literal notranslate"><span class="pre">ToTensor</span></code> function.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Ǹormalize</span></code> Deep networks are trained better and faster when the data is centred at 0. For this reason, we apply the <code class="docutils literal notranslate"><span class="pre">Normalize</span></code> functions with specific <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code>.</p></li>
-</ul>
-<p>In our example we have only used the functions defined by the <code class="docutils literal notranslate"><span class="pre">torchvision.transforms</span></code> package, but one can (and will need to) implement its own set of transform functions as well.</p>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">torchvision.transforms.Compose</span></code> receives a list of functions that will be executed sequentially. ### transform functions</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make the pytorch datasets</span>
-<span class="n">mean</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">std</span> <span class="o">=</span> <span class="mf">0.25</span>
-<span class="n">transform</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
-    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
-    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span>
-<span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="dataloaders">
-<h4>Dataloaders<a class="headerlink" href="#dataloaders" title="Link to this heading">#</a></h4>
-<p>The dataloaders (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) allow us to handle large datasets in several batches.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> class receives a number of parameters, such as:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code> how many samples (images) to process at every batch. Batches are useful to speed up the processing pipeline as they are computed in one go in GPU. Batches are also important to compute the Stochastic gradient descent.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_workers</span></code> defines the number of CPU threads to preprocess the data before inputting it to GPU. Typically for large batches, we need more CPU threads to speed up the preprocessing. In practice, one has to find the balance between the computational efficiency of its GPU and CPU.</p></li>
-</ul>
-<p><strong>Note</strong>: these parameters don’t have to be identical in train/test scenarios. For example,</p>
-<ul class="simple">
-<li><p>We often can afford larger <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> in test time because gradients don’t need to be computed.</p></li>
-<li><p>We also don’t want to <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> the data at test time, contrary to this, we often want to <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> the training samples.</p></li>
-</ul>
-<p><span style="color:blue"><strong>Update</strong></span> We have to pass two new parameters to the <code class="docutils literal notranslate"><span class="pre">ShapeDataset</span></code> class</p>
-<ul class="simple">
-<li><p>Number of samples, which we set to 1000 for both train and test</p></li>
-<li><p>The probability of the background being uniform or noisy, which we set to 1, therefore always uniform background.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">num_train_imgs</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">num_train_imgs</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-    <span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">)</span>
-
-<span class="n">num_test_imgs</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">num_test_imgs</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-<span class="n">val_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-    <span class="n">val_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-</section>
-<hr class="docutils" />
-<section id="model">
-<h2>2. Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
-<p>Now that we have successfully generated our images and created appropriate PyTorch dataloaders, we can define our network.</p>
-<section id="architecture">
-<h3>architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
-<p>The task we’re modelling is relatively simple and we don’t need a complex network. Our model inherits the <code class="docutils literal notranslate"><span class="pre">torch.nn.Module</span></code> class and has to at least implement one function <code class="docutils literal notranslate"><span class="pre">forward</span></code>.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">forward</span></code> function is called when we input a network with data. In our example, the network receives only one input (a batch of images), but the <code class="docutils literal notranslate"><span class="pre">forward</span></code> function can receive multiple arguments which are necessary for several use cases, e.g.,</p>
-<ul class="simple">
-<li><p>pairs of images to compare whether they are similar,</p></li>
-<li><p>triple images to find the odd one out.</p></li>
-</ul>
-<p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, we define the architecture. In this case, the feature processing part consists of three convolutional blocks followed by batch normalisation, ReLU rectification and max pooling. The classifier is a linear function.</p>
-<p><span style="color:blue"><strong>Update:</strong></span> For the classification task the spatial resolution was gradually decreasing in the <code class="docutils literal notranslate"><span class="pre">features</span></code>. For segmentation, we have to bring back the resolution to the original size. Two options exist:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">torch.nn.functional.interpolate</span></code> <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.functional.interpolate.html">the interpolation function</a></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">torch.nn.ConvTranspose2d</span></code> <a class="reference external" href="https://pytorch.org/docs/stable/generated/torch.nn.ConvTranspose2d.html">transposed convolution operator</a></p></li>
-</ul>
-<p>In our example, we combine both.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## creating model</span>
-<span class="k">class</span> <span class="nc">SimpleNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># in=3, out=16</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="c1"># it must be the same as out of prvious layer</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># in=16 (it must be the same as out of previous layer)</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="c1"># 64 comes from the output of the self.features</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="c1"># storing the spatial resolution of input</span>
-        <span class="n">size</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-        <span class="c1"># the input x is processed with the network</span>
-        <span class="c1"># x shape is &lt;B, 3, 128, 128&gt;</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="c1"># x shape is &lt;B, 64, 15, 15&gt;</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="c1"># x shape is &lt;B, 16, 63, 63&gt;</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">,</span> <span class="n">align_corners</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="c1"># x shape is &lt;B, 16, 128, 128&gt;</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="c1"># x shape is &lt;1, 16, 128, 128&gt;</span>
-        <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="network">
-<h3>network<a class="headerlink" href="#network" title="Link to this heading">#</a></h3>
-<p>Next we make an instance of our previously defined architecture.
-We move the model to GPU and print the model.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## makign the model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SimpleNet(
-  (features): Sequential(
-    (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (1): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU(inplace=True)
-    (3): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (4): Conv2d(16, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (5): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (6): ReLU(inplace=True)
-    (7): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-    (8): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
-    (9): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (10): ReLU(inplace=True)
-    (11): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
-  )
-  (decoder): Sequential(
-    (0): ConvTranspose2d(64, 32, kernel_size=(3, 3), stride=(2, 2))
-    (1): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (2): ReLU(inplace=True)
-    (3): ConvTranspose2d(32, 16, kernel_size=(3, 3), stride=(2, 2))
-    (4): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-    (5): ReLU(inplace=True)
-  )
-  (classifier): Conv2d(16, 4, kernel_size=(1, 1), stride=(1, 1))
-)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="train-test-routines">
-<h2>3. Train/test routines<a class="headerlink" href="#train-test-routines" title="Link to this heading">#</a></h2>
-<p>We have our dataset and model ready. It’s time to start the training and validate what the network learns.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="loss-functoin">
-<h3>loss-functoin<a class="headerlink" href="#loss-functoin" title="Link to this heading">#</a></h3>
-<p>Loss functoins defines how good is the network output with respect to the ground-truth. In our toy example, the ground-truth is <strong>semi-supervised</strong> (i.e., we have defined it but indirectly by means of the quations for geometrical shapes; we didn’t have to labarously label each image ourself).</p>
-<p>Our ground-truth is a set of categories (i.e., three classes of geometrical shapes). A suitable loss function for this scenario is the categorical cross entropy. We create <code class="docutils literal notranslate"><span class="pre">nn.CrossEntropyLoss</span></code>and move it to device (CPU or CUDA).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="training-utility-functions">
-<h3>Training utility functions<a class="headerlink" href="#training-utility-functions" title="Link to this heading">#</a></h3>
-<p>We define a function to compute the <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> of the output with respect to ground truth. Sometimes, it’s useful to ignore certain types of pixels from accuracy/loss computation. In our scenario it’s useful to ignore background pixels because:</p>
-<ul class="simple">
-<li><p>we’re more interested in whether the network can successfully segment the foreground objects,</p></li>
-<li><p>the number of pixels in the background is much more than in the foreground and it can dominate the accuracy.</p></li>
-</ul>
-<p>Note:</p>
-<ul class="simple">
-<li><p>We have ignored the background only in reporting accuracy. So, actually, the loss function uses the background pixels as well.</p></li>
-<li><p>Sometimes you want to reduce the importance of certain pixels instead of ignoring them altogether. To achieve that we can have different weights for different types of pixels.</p></li>
-</ul>
-<p><strong>Question</strong> Change the loss function to ignore background pixels or treat background pixels with a lower weight.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">ignore_label</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the accuracy over all pixels.&quot;&quot;&quot;</span>
-    <span class="c1"># to compute accuracy over all pixels including background pass ignore_label=-1</span>
-    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
-        <span class="n">pred</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">correct</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">correct</span><span class="o">.</span><span class="n">float</span><span class="p">()[</span><span class="n">target</span><span class="o">!=</span><span class="n">ignore_label</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Next we define a utility function <code class="docutils literal notranslate"><span class="pre">epoch_loop</span></code> that can be called at each epoch (epoch informally means processing all samples in the dataset one time).</p>
-<p>Typically, a large portion of code is identical for training and testin, therefore it’s recommendable to have one single functoin for both. Exclusive code for training or testing can be easily separated bay an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. In our example, only at training do the following three steps:</p>
-<ol class="arabic simple">
-<li><p>computing the gradient <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad</span></code></p></li>
-<li><p>backpropogating the loss <code class="docutils literal notranslate"><span class="pre">loss.backward</span></code></p></li>
-<li><p>Optimising the weights <code class="docutils literal notranslate"><span class="pre">optimizer.step</span></code></p></li>
-</ol>
-<p><font color='red'><strong>Important</strong></font>: when evaluating a model <code class="docutils literal notranslate"><span class="pre">eval()</span></code> function must be called, otherwise the parameters of the model will be updated!</p>
-<p><font color='red'><strong>Important</strong></font>: <code class="docutils literal notranslate"><span class="pre">torch.set_grad_enabled</span></code> must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> during training and <code class="docutils literal notranslate"><span class="pre">False</span></code> during testing.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">db_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="p">):</span>
-    <span class="c1"># usually the code for train/test has a large overlap.</span>
-    <span class="n">is_train</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">optimiser</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
-
-    <span class="c1"># model should be in train/eval model accordingly</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span> <span class="k">if</span> <span class="n">is_train</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
-    
-    <span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">set_grad_enabled</span><span class="p">(</span><span class="n">is_train</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">batch_ind</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">db_loader</span><span class="p">):</span>
-            <span class="c1"># moving the image and GT to device</span>
-            <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-            <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-            <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-            
-            <span class="c1"># computing the loss function</span>
-            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-            <span class="n">losses</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
-            <span class="c1"># computing the accuracy</span>
-            <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-            <span class="n">accuracies</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">acc</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
-            
-            <span class="k">if</span> <span class="n">is_train</span><span class="p">:</span>
-                <span class="c1"># compute gradient and do SGD step</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">accuracies</span><span class="p">,</span> <span class="n">losses</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<hr class="docutils" />
-<section id="experiments-with-uniform-background">
-<h2>4. Experiments with uniform background<a class="headerlink" href="#experiments-with-uniform-background" title="Link to this heading">#</a></h2>
-<p>We have everything (dataset, model, loss/optimiser), so we can start the training/testing loop.</p>
-<p>In this toy example we perform 10 epochs (i.e., we process each sample in the dataset 10 times).</p>
-<section id="simplenet">
-<h3>SimpleNet<a class="headerlink" href="#simplenet" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
-<span class="p">)</span>
-
-<span class="c1"># doing epoch</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="n">val_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
-    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-    
-    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.2d</span><span class="s1">] Train     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">    [</span><span class="si">%.2d</span><span class="s1">] Test     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
-          <span class="p">(</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-          <span class="p">))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[00] Train     loss=0.2905     acc=0.06    [00] Test     loss=0.2555     acc=0.34
-[01] Train     loss=0.1852     acc=0.32    [01] Test     loss=0.1593     acc=0.32
-[02] Train     loss=0.1555     acc=0.37    [02] Test     loss=0.1498     acc=0.35
-[03] Train     loss=0.1444     acc=0.37    [03] Test     loss=0.1354     acc=0.37
-[04] Train     loss=0.1411     acc=0.36    [04] Test     loss=0.1474     acc=0.34
-[05] Train     loss=0.1394     acc=0.38    [05] Test     loss=0.1411     acc=0.36
-[06] Train     loss=0.1391     acc=0.38    [06] Test     loss=0.1364     acc=0.36
-[07] Train     loss=0.1380     acc=0.38    [07] Test     loss=0.1378     acc=0.37
-[08] Train     loss=0.1350     acc=0.39    [08] Test     loss=0.1326     acc=0.39
-[09] Train     loss=0.1386     acc=0.41    [09] Test     loss=0.1284     acc=0.43
-</pre></div>
-</div>
-</div>
-</div>
-<section id="visualising-one-output">
-<h4>Visualising one output<a class="headerlink" href="#visualising-one-output" title="Link to this heading">#</a></h4>
-<p>Let’s have a look at a sample output of our network.</p>
-<p><strong>Question</strong>: create a visualisation functoin that plots inut-image, ground-truth and model-output side-by side.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">batch_ind</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
-    <span class="c1"># moving the image and GT to device</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-    <span class="k">break</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Input image&#39;</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">label2colour</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">label2colour</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model output&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Model output&#39;)
-</pre></div>
-</div>
-<img alt="../_images/dad20be8924485eec7c25d3130e0d8ebf95953a6da5fd140e9fc51083665544d.png" src="../_images/dad20be8924485eec7c25d3130e0d8ebf95953a6da5fd140e9fc51083665544d.png" />
-</div>
-</div>
-</section>
-</section>
-<section id="transfer-learning">
-<h3>Transfer learning<a class="headerlink" href="#transfer-learning" title="Link to this heading">#</a></h3>
-<p>We define a new class for our network to use transfer learning. <code class="docutils literal notranslate"><span class="pre">TransferNet</span></code> uses the feature extraction from <code class="docutils literal notranslate"><span class="pre">resnet18</span></code> pretrained on ImageNet (object recognition).</p>
-<p><strong>Question</strong>:</p>
-<ul class="simple">
-<li><p>extract features from <code class="docutils literal notranslate"><span class="pre">resnet18</span></code> at a different layer (shallower or deeper) how would the results change?</p></li>
-<li><p>extract fatures from a different pretrained network.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## creating model</span>
-<span class="k">class</span> <span class="nc">TransferNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">fine_tune</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="n">pretrained</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">torchvision</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet18_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span><span class="o">*</span><span class="nb">list</span><span class="p">(</span><span class="n">pretrained</span><span class="o">.</span><span class="n">children</span><span class="p">())[:</span><span class="mi">7</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
-            <span class="n">p</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="n">fine_tune</span>
-        <span class="c1"># features_kernels is the number of kernels from our pretrained network.</span>
-        <span class="n">features_kernels</span> <span class="o">=</span> <span class="mi">256</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="n">features_kernels</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-        <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="c1"># storing the spatial resolution of input</span>
-        <span class="n">size</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-        <span class="c1"># the input x is processed with the network</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">interpolate</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">size</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;bilinear&quot;</span><span class="p">,</span> <span class="n">align_corners</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Training the <code class="docutils literal notranslate"><span class="pre">TreansferNet</span></code> under identical conditions as <code class="docutils literal notranslate"><span class="pre">SimpleNet</span></code>. We can observe that it obtains much higher accuracy. Suggesting pretrained weights has been useful for our segmentation task.</p>
-<p><strong>Question</strong>: plot the accuacy/loss of <code class="docutils literal notranslate"><span class="pre">SimpleNet</span></code> and <code class="docutils literal notranslate"><span class="pre">TransferNet</span></code> to have a better comparison.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">transfer_model</span> <span class="o">=</span> <span class="n">TransferNet</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">),</span> <span class="n">fine_tune</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">transfer_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">]}]</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
-<span class="p">)</span>
-
-<span class="c1"># doing epoch</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="n">val_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
-    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">transfer_model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-    
-    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">transfer_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.2d</span><span class="s1">] Train     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">    [</span><span class="si">%.2d</span><span class="s1">] Test     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
-          <span class="p">(</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-          <span class="p">))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[00] Train     loss=0.2710     acc=0.16    [00] Test     loss=0.1584     acc=0.40
-[01] Train     loss=0.1352     acc=0.59    [01] Test     loss=0.1106     acc=0.74
-[02] Train     loss=0.1015     acc=0.74    [02] Test     loss=0.0926     acc=0.75
-[03] Train     loss=0.0915     acc=0.76    [03] Test     loss=0.0846     acc=0.79
-[04] Train     loss=0.0894     acc=0.77    [04] Test     loss=0.0821     acc=0.76
-[05] Train     loss=0.0817     acc=0.79    [05] Test     loss=0.0775     acc=0.78
-[06] Train     loss=0.0800     acc=0.80    [06] Test     loss=0.0747     acc=0.79
-[07] Train     loss=0.0780     acc=0.80    [07] Test     loss=0.0734     acc=0.83
-[08] Train     loss=0.0735     acc=0.82    [08] Test     loss=0.0702     acc=0.86
-[09] Train     loss=0.0720     acc=0.81    [09] Test     loss=0.0704     acc=0.80
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="experiment-with-noise">
-<h2>5. Experiment With Noise<a class="headerlink" href="#experiment-with-noise" title="Link to this heading">#</a></h2>
-<p>Let’s experiment with a more complex dataset with noisy backgrounds.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mf">0.5</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">8</span>
-<span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-    <span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">)</span>
-
-<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
-<span class="n">val_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
-    <span class="n">val_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<section id="id1">
-<h3>SimpleNet<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
-<span class="p">)</span>
-
-<span class="c1"># doing epoch</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="n">val_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
-    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-    
-    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.2d</span><span class="s1">] Train     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">    [</span><span class="si">%.2d</span><span class="s1">] Test     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
-          <span class="p">(</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-          <span class="p">))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[00] Train     loss=0.2983     acc=0.03    [00] Test     loss=0.3716     acc=0.35
-[01] Train     loss=0.1865     acc=0.31    [01] Test     loss=0.1630     acc=0.33
-[02] Train     loss=0.1564     acc=0.37    [02] Test     loss=0.1747     acc=0.34
-[03] Train     loss=0.1462     acc=0.37    [03] Test     loss=0.1899     acc=0.37
-[04] Train     loss=0.1664     acc=0.35    [04] Test     loss=0.1592     acc=0.34
-[05] Train     loss=0.1443     acc=0.37    [05] Test     loss=0.1435     acc=0.35
-[06] Train     loss=0.1371     acc=0.37    [06] Test     loss=0.1328     acc=0.37
-[07] Train     loss=0.1387     acc=0.37    [07] Test     loss=0.1304     acc=0.39
-[08] Train     loss=0.1319     acc=0.40    [08] Test     loss=0.1285     acc=0.41
-[09] Train     loss=0.1328     acc=0.42    [09] Test     loss=0.1374     acc=0.42
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">batch_ind</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
-    <span class="c1"># moving the image and GT to device</span>
-    <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-    <span class="k">break</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="n">std</span> <span class="o">+</span> <span class="n">mean</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Input image&#39;</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">label2colour</span><span class="p">(</span><span class="n">target</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ground truth&#39;</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">label2colour</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()))</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model output&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Model output&#39;)
-</pre></div>
-</div>
-<img alt="../_images/f09e8f29128c49192accbca5617a51b75c5b333e40d5e3d98f5478ab669ee6cd.png" src="../_images/f09e8f29128c49192accbca5617a51b75c5b333e40d5e3d98f5478ab669ee6cd.png" />
-</div>
-</div>
-</section>
-<section id="transfernet">
-<h3>TransferNet<a class="headerlink" href="#transfernet" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">transfer_model</span> <span class="o">=</span> <span class="n">TransferNet</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">transfer_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()</span> <span class="k">if</span> <span class="n">p</span><span class="o">.</span><span class="n">requires_grad</span><span class="p">]}]</span>
-<span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
-<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
-<span class="p">)</span>
-
-<span class="c1"># doing epoch</span>
-<span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="n">val_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
-<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
-    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">transfer_model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
-    
-    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">transfer_model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-    
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.2d</span><span class="s1">] Train     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">    [</span><span class="si">%.2d</span><span class="s1">] Test     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
-          <span class="p">(</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-          <span class="p">))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
-    <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[00] Train     loss=0.2910     acc=0.04    [00] Test     loss=0.2203     acc=0.23
-[01] Train     loss=0.2052     acc=0.28    [01] Test     loss=0.1863     acc=0.33
-[02] Train     loss=0.1643     acc=0.47    [02] Test     loss=0.1448     acc=0.53
-[03] Train     loss=0.1354     acc=0.59    [03] Test     loss=0.1172     acc=0.69
-[04] Train     loss=0.1169     acc=0.69    [04] Test     loss=0.1113     acc=0.65
-[05] Train     loss=0.1077     acc=0.71    [05] Test     loss=0.1052     acc=0.68
-[06] Train     loss=0.1069     acc=0.72    [06] Test     loss=0.1035     acc=0.76
-[07] Train     loss=0.1011     acc=0.74    [07] Test     loss=0.0976     acc=0.78
-[08] Train     loss=0.1004     acc=0.73    [08] Test     loss=0.0988     acc=0.68
-[09] Train     loss=0.0996     acc=0.74    [09] Test     loss=0.0947     acc=0.79
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="discussion">
-<h2>6. Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
-<p>Overall, we observe that the pretrained network is useful for our segmentation task. <strong>Questions</strong>:</p>
-<ul class="simple">
-<li><p>We didn’t fine-tune the pretrained weights. Play with that. Consider lower-learning-rate for those layers. How the results would change?</p></li>
-<li><p>Increase the complexity of your task (e.g., more geometrical shapes). Is the benefit of a pretrained network more evident?</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1518,11 +576,11 @@ We move the model to GPU and print the model.</p>
       </div>
     </a>
     <a class="right-next"
-       href="generative_models.html"
+       href="image_classification.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5. Deep Generative Models</p>
+        <p class="prev-next-title">4.1. Image Classification</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1533,54 +591,7 @@ We move the model to GPU and print the model.</p>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">dataset-utility functions.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">Dataset visualisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-functions">transform functions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloaders">Dataloaders</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">2. Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">network</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-routines">3. Train/test routines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functoin">loss-functoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-utility-functions">Training utility functions</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiments-with-uniform-background">4. Experiments with uniform background</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simplenet">SimpleNet</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-one-output">Visualising one output</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-learning">Transfer learning</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-with-noise">5. Experiment With Noise</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">SimpleNet</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfernet">TransferNet</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">6. Discussion</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
