@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Basic Operations &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>1. Network’s Building Blocks &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -70,7 +70,7 @@
                 gtag('config', 'G-BXYWD71FWS');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/basic_operations';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/networks_building_blocks';</script>
     <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -196,7 +196,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Basic Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Network’s Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
@@ -204,8 +204,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
@@ -230,19 +234,19 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">6.1. Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">6.2. Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">7.1. Python Scripting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensorboard.html">7.2. TensorBoard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">7.3. Working with Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="audio_classification.html">8.1. Audio Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_classification.html">8.2. Text Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clip.html">8.3. Language – Vision</a></li>
@@ -262,12 +266,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python course</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginner course</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginners</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_course/dataTypes.html">Data Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/modules.html">Modules and NumPy Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/conditions.html">Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -324,7 +329,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/basic_operations.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/blob/master/notebooks/networks_building_blocks.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -372,7 +377,7 @@
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/edit/master//notebooks/basic_operations.ipynb" target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/edit/master//notebooks/networks_building_blocks.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -389,7 +394,7 @@
       
       
       
-      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/basic_operations.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues/new?title=Issue%20on%20page%20%2Fnotebooks/networks_building_blocks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -419,7 +424,7 @@
       
       
       
-      <li><a href="../_sources/notebooks/basic_operations.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/networks_building_blocks.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -501,7 +506,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Basic Operations</h1>
+    <h1>1. Network’s Building Blocks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -515,8 +520,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="basic-operations">
-<h1>1. Basic Operations<a class="headerlink" href="#basic-operations" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="network-s-building-blocks">
+<h1>1. Network’s Building Blocks<a class="headerlink" href="#network-s-building-blocks" title="Link to this heading">#</a></h1>
 <p>A deep neural network consists of multiple layers of linear and nonlinear operations. For instance, let’s print the layers of <code class="docutils literal notranslate"><span class="pre">AlexNet</span></code> to check what constitutes its architectures:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

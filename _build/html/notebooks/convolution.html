@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -77,7 +77,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="1.2. Pooling" href="pooling.html" />
-    <link rel="prev" title="1. Basic Operations" href="basic_operations.html" />
+    <link rel="prev" title="1. Network’s Building Blocks" href="networks_building_blocks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,7 +198,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="basic_operations.html">1. Basic Operations</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="networks_building_blocks.html">1. Network’s Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
@@ -206,8 +206,12 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vision.html">4. Vision</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="generative_models.html">5. Deep Generative Models</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="gan.html">5.1. Generative Adversarial Networks</a></li>
 
 
@@ -232,19 +236,19 @@
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="interpretation_techniques.html">6. Interpretation Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="activation.html">6.1. Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">6.2. Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">6.3. Probing by linear classifiers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">7. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/python_scripting.html">7.1. Python Scripting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tensorboard.html">7.2. TensorBoard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../markdowns/server.html">7.3. Working with Servers</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">8. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="audio_classification.html">8.1. Audio Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="text_classification.html">8.2. Text Classification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clip.html">8.3. Language – Vision</a></li>
@@ -264,12 +268,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python course</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginner course</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="python_course/beginners.html">Beginners</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="python_course/dataTypes.html">Data Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/modules.html">Modules and NumPy Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/conditions.html">Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
 </ul>
 </li>
 </ul>
@@ -569,7 +574,6 @@ document.write(`
 <li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
 <li><p><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> is a leading computer vision library.</p></li>
 <li><p><a class="reference external" href="https://scikit-image.org/">skimage</a> is a collection of image processing algorithms.</p></li>
-<li><p><a class="reference external" href="https://requests.readthedocs.io/en/latest/">request</a> is a simple HTTP library.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -579,8 +583,6 @@ document.write(`
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
 <span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 </pre></div>
 </div>
 </div>
@@ -599,7 +601,7 @@ using <code class="docutils literal notranslate"><span class="pre">matplotlibt</
 <span class="p">]</span>
 
 <span class="c1"># we use list comprehensions to quickly load images</span>
-<span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">))</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
+<span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
 
 <span class="c1"># visualising both images we loaded</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
@@ -610,7 +612,7 @@ using <code class="docutils literal notranslate"><span class="pre">matplotlibt</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d4f1a00304162be47b14ef8be729042d5c0e4e6296914e314fc9c6bc46c02a69.png" src="../_images/d4f1a00304162be47b14ef8be729042d5c0e4e6296914e314fc9c6bc46c02a69.png" />
+<img alt="../_images/a702dd60629edfd8559d359ddd1ce49107b43f98c296e9b2c32d4a1645e25dab.png" src="../_images/a702dd60629edfd8559d359ddd1ce49107b43f98c296e9b2c32d4a1645e25dab.png" />
 </div>
 </div>
 <p>An RGB image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h,</span> <span class="pre">3)</span></code>, and the third dimension corresponds to RGB (colour) channels). A grey-scale image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h)</span></code>.</p>
@@ -651,7 +653,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/263500dd4245fdd689a823acedadfece32ef644584e840543aa36defa1530bfd.png" src="../_images/263500dd4245fdd689a823acedadfece32ef644584e840543aa36defa1530bfd.png" />
+<img alt="../_images/9dde11ed457e64f86c35cd8123cddfeeefa0698023707c29f8d1711fde5a8bb7.png" src="../_images/9dde11ed457e64f86c35cd8123cddfeeefa0698023707c29f8d1711fde5a8bb7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +663,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/201e4f31cdff52290a2d8d41839e41ded3e6089a7f6a14b111264129192e0c20.png" src="../_images/201e4f31cdff52290a2d8d41839e41ded3e6089a7f6a14b111264129192e0c20.png" />
+<img alt="../_images/56107c05bcf51a1afd174508722f573b278b8f3b5e3e5307d5463d3a1d50a6d3.png" src="../_images/56107c05bcf51a1afd174508722f573b278b8f3b5e3e5307d5463d3a1d50a6d3.png" />
 </div>
 </div>
 </section>
@@ -712,7 +714,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4dd63c9087481e5f35c9fd9c36a7ea95047af0e8a45cb13abf5d24abf2d24ac5.png" src="../_images/4dd63c9087481e5f35c9fd9c36a7ea95047af0e8a45cb13abf5d24abf2d24ac5.png" />
+<img alt="../_images/3b2147b2c44e61884eaa326ce72e4cea8f7be35718015c21d367c8ab2d394a1b.png" src="../_images/3b2147b2c44e61884eaa326ce72e4cea8f7be35718015c21d367c8ab2d394a1b.png" />
 </div>
 </div>
 <p>We can show the edges at each channel separately.</p>
@@ -723,7 +725,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9a83b8943cdb7e3cfb966d5947fe21174c50bdabb8c8e71b90ee737b5c735f8e.png" src="../_images/9a83b8943cdb7e3cfb966d5947fe21174c50bdabb8c8e71b90ee737b5c735f8e.png" />
+<img alt="../_images/a2492c4ded239bbc67429ee60ec9bb68bd25bbbe0075e7a69d65a4f9fabb47b0.png" src="../_images/a2492c4ded239bbc67429ee60ec9bb68bd25bbbe0075e7a69d65a4f9fabb47b0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -733,7 +735,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f3753c6ed14e001a76dae6776d906d97b2492d4e41d2b38aca81d6b7cd8bfbe0.png" src="../_images/f3753c6ed14e001a76dae6776d906d97b2492d4e41d2b38aca81d6b7cd8bfbe0.png" />
+<img alt="../_images/c8c4871f680cafc0769b04ffccec5df852c76ed6558d557297ca67d029a4cbf6.png" src="../_images/c8c4871f680cafc0769b04ffccec5df852c76ed6558d557297ca67d029a4cbf6.png" />
 </div>
 </div>
 <p><strong>Question</strong>: play with different kernel sizes (instead of current 3x3), what is the effect of larger kernel size?</p>
@@ -778,7 +780,7 @@ Image type: uint8
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/34f4ef17f5ecaf07db5682a7d1d601ae85eec4eeb0cdc19b1201cfa5bf82c1a4.png" src="../_images/34f4ef17f5ecaf07db5682a7d1d601ae85eec4eeb0cdc19b1201cfa5bf82c1a4.png" />
+<img alt="../_images/4836b876211a01a2edbed8f1bfc1b0fe0f0b4185f60b2817050ee399213497b2.png" src="../_images/4836b876211a01a2edbed8f1bfc1b0fe0f0b4185f60b2817050ee399213497b2.png" />
 </div>
 </div>
 </section>
@@ -1018,7 +1020,7 @@ two at both dimensions.</p>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_(image_processing)">Wikipedia Kernel (image processing</a></p></li>
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_(image_processing)">Wikipedia Kernel (image processing)</a></p></li>
 </ol>
 </section>
 </section>
@@ -1054,12 +1056,12 @@ two at both dimensions.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="basic_operations.html"
+       href="networks_building_blocks.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1. Basic Operations</p>
+        <p class="prev-next-title">1. Network’s Building Blocks</p>
       </div>
     </a>
     <a class="right-next"

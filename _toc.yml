@@ -9,7 +9,7 @@ parts:
     - file: markdowns/environment_setup
   - caption: Tutorials
     chapters:
-    - file: notebooks/basic_operations
+    - file: notebooks/networks_building_blocks
       sections:
       - file: notebooks/convolution
       - file: notebooks/pooling
@@ -17,6 +17,9 @@ parts:
     - file: notebooks/quick_start
     - file: notebooks/optimisation_learning
     - file: notebooks/vision
+      sections:
+      - file: notebooks/image_classification
+      - file: notebooks/image_segmentation
     - file: notebooks/generative_models
       sections:
       - file: notebooks/gan
