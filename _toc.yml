@@ -59,3 +59,5 @@ parts:
         - file: notebooks/python_course/loops
         - file: notebooks/python_course/plotting
         - file: notebooks/python_course/functions
+        - file: notebooks/python_course/moduleObjects
+        - file: notebooks/python_course/inheritance
