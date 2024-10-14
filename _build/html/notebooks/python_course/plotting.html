@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -206,6 +206,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../image_segmentation.html">4.2. Image Segmentation</a></li>
 </ul>
 </li>
@@ -273,6 +278,8 @@
 <li class="toctree-l2"><a class="reference internal" href="loops.html">Loops</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduleObjects.html">Modules and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inheritance.html">Inheritance</a></li>
 </ul>
 </li>
 </ul>
@@ -757,7 +764,9 @@ A common colormap is the <code class="docutils literal notranslate"><span class=
 <p>We can also add labels to the axes and a title to the plot, add a label to the plot itself and change the size of the plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#to add a label and later a legend to a plot, we need to add the label argument to the plot function.</span>
+<div class="highlight-ipython2 notranslate"><div class="highlight"><pre><span></span><span class="c1">#to change the size of the plot, we can use the following function</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># NOTE: this has to be called before the plot function, otherwise no effect</span>
+<span class="c1">#to add a label and later a legend to a plot, we need to add the label argument to the plot function.</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;y = x^2&#39;</span><span class="p">)</span>
 <span class="c1">#to add that plot-label, we need to call the following function</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -765,8 +774,6 @@ A common colormap is the <code class="docutils literal notranslate"><span class=
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simple plot&#39;</span><span class="p">)</span>
-<span class="c1">#to change the size of the plot, we can use the following function</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
