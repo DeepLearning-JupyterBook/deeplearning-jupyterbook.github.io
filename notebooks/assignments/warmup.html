@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Warming-up &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>A1. Warming-up &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -70,11 +70,13 @@
                 gtag('config', 'G-BXYWD71FWS');
             </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/assignments/warmup';</script>
     <link rel="icon" href="../../_static/icon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Dataloaders" href="dataloader.html" />
+    <link rel="next" title="A2. Dataloaders" href="dataloader.html" />
     <link rel="prev" title="9. Reinforcement Learning" href="../reinforcement_learning.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -198,14 +200,20 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../networks_building_blocks.html">1. Network’s Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../convolution.html">1.1. Convolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pooling.html">1.2. Pooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../activation_function.html">1.3. Activation Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../activation_function.html">1.2. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pooling.html">1.3. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="../image_segmentation.html">4.2. Image Segmentation</a></li>
 </ul>
 </li>
@@ -256,9 +264,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student projects</span></p>
 <ul class="nav bd-sidenav">
@@ -273,6 +281,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python_course/plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../python_course/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_course/moduleObjects.html">Modules and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../python_course/inheritance.html">Inheritance</a></li>
 </ul>
 </li>
 </ul>
@@ -508,7 +518,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Warming-up</h1>
+    <h1>A1. Warming-up</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -518,16 +528,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet">ResNet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image">Loading an image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-image-to-tensor">Transforming the image to tensor.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-the-model">Executing the model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assesing-the-output">Assesing the output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-resnet">Working with ResNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-s-parameters">Model’s Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image">Loading an Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-image-into-a-tensor">Transforming the Image into a Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-model">Running the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-the-output">Assessing the Output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-the-kernels-of-the-first-layer">1. Plot all the kernels of the first layer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-input-batch-to-load-4-different-images">2. Change <code class="docutils literal notranslate"><span class="pre">input_batch</span></code> to load 4 different images.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-first-layer">3. Add noise to the first layer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-input-image">4. Add noise to input image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-kernels-of-the-first-layer">1. Visualise Kernels of the First Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multiple-images">2. Load Multiple Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-a-different-architecture">3. Explore a Different Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-questions-optional">Bonus Questions (Optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-first-layer">4. Add Noise to the First Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-input-image">5. Add Noise to the Input Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolve-with-a-single-kernel">6. Convolve with a Single Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-an-activation-function">7. Apply an Activation Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-operation">8. Pooling Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-layer">9. Linear Layer</a></li>
 </ul>
 </li>
 </ul>
@@ -541,37 +560,35 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="warming-up">
-<h1>1. Warming-up<a class="headerlink" href="#warming-up" title="Link to this heading">#</a></h1>
-<p>The idea of this assignment is to familiarise yourself with a pretrained network on ImageNet performing object recognition.</p>
-<p>We first import all necessary packages.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="a1-warming-up">
+<h1>A1. Warming-up<a class="headerlink" href="#a1-warming-up" title="Link to this heading">#</a></h1>
+<p>The purpose of this assignment is to help you become familiar with a pretrained network designed for object recognition on ImageNet. Specifically, we will explore the building blocks of this network, such as convolutional layers, activation functions, pooling, and linear layers, and understand how each layer contributes to the network’s functionality.</p>
+<p>Let’s begin by importing all necessary packages for the assignment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import required libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">torch</span>
 <span class="kn">from</span> <span class="nn">torchvision</span> <span class="kn">import</span> <span class="n">transforms</span><span class="p">,</span> <span class="n">models</span>
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
-
 <span class="kn">import</span> <span class="nn">cv2</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-
-<span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="resnet">
-<h2>ResNet<a class="headerlink" href="#resnet" title="Link to this heading">#</a></h2>
-<p>We will particularly look at ResNet, but similar analaysis could be conducted for other networks.</p>
-<p>By calling <code class="docutils literal notranslate"><span class="pre">weights=models.ResNet50_Weights.IMAGENET1K_V2</span></code> we obtain the weights of the network pretrained on ImageNet.</p>
-<p>We move the model to evaluation model to ensur weights are not updated.</p>
+<section id="working-with-resnet">
+<h2>Working with ResNet<a class="headerlink" href="#working-with-resnet" title="Link to this heading">#</a></h2>
+<p>In this assignment, we’ll explore <strong>ResNet</strong>, <a class="reference external" href="https://arxiv.org/abs/1512.03385">a popular deep learning architecture</a> for image recognition. ResNet is known for its unique design, which helps it learn complex patterns in images. Here, we’ll use a pretrained ResNet18 model, which is trained on the large ImageNet dataset. By using a pretrained model, we can quickly experiment with a powerful network without needing to train it ourselves.</p>
+<p>We can load the model with pretrained weights by specifying <code class="docutils literal notranslate"><span class="pre">weights=models.ResNet18_Weights.IMAGENET1K_V1</span></code>, which refers to weights trained on 1000 ImageNet classes. Since we don’t want to update these weights during testing, we set the model to evaluation mode using <code class="docutils literal notranslate"><span class="pre">.eval()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet50</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet50_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V2</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the pretrained ResNet18 model with ImageNet weights</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">resnet18</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ResNet18_Weights</span><span class="o">.</span><span class="n">IMAGENET1K_V1</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># Set model to evaluation mode, so weights are not updated</span>
+
+<span class="c1"># Print the model’s architecture to understand its structure</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -583,497 +600,343 @@ document.write(`
   (relu): ReLU(inplace=True)
   (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
   (layer1): Sequential(
-    (0): Bottleneck(
-      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
       (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-      (downsample): Sequential(
-        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      )
     )
-    (1): Bottleneck(
-      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BasicBlock(
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
       (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (2): Bottleneck(
-      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
     )
   )
   (layer2): Sequential(
-    (0): Bottleneck(
-      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (0): BasicBlock(
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
       (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer3): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (downsample): Sequential(
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): BasicBlock(
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    )
+  )
+  (layer4): Sequential(
+    (0): BasicBlock(
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (downsample): Sequential(
         (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
         (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       )
     )
-    (1): Bottleneck(
-      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (2): Bottleneck(
-      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (3): Bottleneck(
-      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-  )
-  (layer3): Sequential(
-    (0): Bottleneck(
-      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-      (downsample): Sequential(
-        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
-        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      )
-    )
-    (1): Bottleneck(
-      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (2): Bottleneck(
-      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (3): Bottleneck(
-      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (4): Bottleneck(
-      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (5): Bottleneck(
-      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-  )
-  (layer4): Sequential(
-    (0): Bottleneck(
-      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+    (1): BasicBlock(
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (relu): ReLU(inplace=True)
-      (downsample): Sequential(
-        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
-        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      )
-    )
-    (1): Bottleneck(
-      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
       (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
       (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
-    )
-    (2): Bottleneck(
-      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
-      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
-      (relu): ReLU(inplace=True)
     )
   )
   (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))
-  (fc): Linear(in_features=2048, out_features=1000, bias=True)
+  (fc): Linear(in_features=512, out_features=1000, bias=True)
 )
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can look at the parameters of the model by calling the</p>
+</section>
+<section id="model-s-parameters">
+<h2>Model’s Parameters<a class="headerlink" href="#model-s-parameters" title="Link to this heading">#</a></h2>
+<p>To understand what’s happening inside the network, let’s look at its parameters. Each layer has parameters, such as weights and biases, which are adjusted during training. We can check the names and shapes of these parameters to better understand how information flows through the network.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">param</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop through each parameter in the model</span>
+<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+    <span class="c1"># Print the name and shape of each parameter</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">name</span><span class="si">:</span><span class="s1">&lt;28</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">param</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conv1.weight torch.Size([64, 3, 7, 7])
-bn1.weight torch.Size([64])
-bn1.bias torch.Size([64])
-layer1.0.conv1.weight torch.Size([64, 64, 1, 1])
-layer1.0.bn1.weight torch.Size([64])
-layer1.0.bn1.bias torch.Size([64])
-layer1.0.conv2.weight torch.Size([64, 64, 3, 3])
-layer1.0.bn2.weight torch.Size([64])
-layer1.0.bn2.bias torch.Size([64])
-layer1.0.conv3.weight torch.Size([256, 64, 1, 1])
-layer1.0.bn3.weight torch.Size([256])
-layer1.0.bn3.bias torch.Size([256])
-layer1.0.downsample.0.weight torch.Size([256, 64, 1, 1])
-layer1.0.downsample.1.weight torch.Size([256])
-layer1.0.downsample.1.bias torch.Size([256])
-layer1.1.conv1.weight torch.Size([64, 256, 1, 1])
-layer1.1.bn1.weight torch.Size([64])
-layer1.1.bn1.bias torch.Size([64])
-layer1.1.conv2.weight torch.Size([64, 64, 3, 3])
-layer1.1.bn2.weight torch.Size([64])
-layer1.1.bn2.bias torch.Size([64])
-layer1.1.conv3.weight torch.Size([256, 64, 1, 1])
-layer1.1.bn3.weight torch.Size([256])
-layer1.1.bn3.bias torch.Size([256])
-layer1.2.conv1.weight torch.Size([64, 256, 1, 1])
-layer1.2.bn1.weight torch.Size([64])
-layer1.2.bn1.bias torch.Size([64])
-layer1.2.conv2.weight torch.Size([64, 64, 3, 3])
-layer1.2.bn2.weight torch.Size([64])
-layer1.2.bn2.bias torch.Size([64])
-layer1.2.conv3.weight torch.Size([256, 64, 1, 1])
-layer1.2.bn3.weight torch.Size([256])
-layer1.2.bn3.bias torch.Size([256])
-layer2.0.conv1.weight torch.Size([128, 256, 1, 1])
-layer2.0.bn1.weight torch.Size([128])
-layer2.0.bn1.bias torch.Size([128])
-layer2.0.conv2.weight torch.Size([128, 128, 3, 3])
-layer2.0.bn2.weight torch.Size([128])
-layer2.0.bn2.bias torch.Size([128])
-layer2.0.conv3.weight torch.Size([512, 128, 1, 1])
-layer2.0.bn3.weight torch.Size([512])
-layer2.0.bn3.bias torch.Size([512])
-layer2.0.downsample.0.weight torch.Size([512, 256, 1, 1])
-layer2.0.downsample.1.weight torch.Size([512])
-layer2.0.downsample.1.bias torch.Size([512])
-layer2.1.conv1.weight torch.Size([128, 512, 1, 1])
-layer2.1.bn1.weight torch.Size([128])
-layer2.1.bn1.bias torch.Size([128])
-layer2.1.conv2.weight torch.Size([128, 128, 3, 3])
-layer2.1.bn2.weight torch.Size([128])
-layer2.1.bn2.bias torch.Size([128])
-layer2.1.conv3.weight torch.Size([512, 128, 1, 1])
-layer2.1.bn3.weight torch.Size([512])
-layer2.1.bn3.bias torch.Size([512])
-layer2.2.conv1.weight torch.Size([128, 512, 1, 1])
-layer2.2.bn1.weight torch.Size([128])
-layer2.2.bn1.bias torch.Size([128])
-layer2.2.conv2.weight torch.Size([128, 128, 3, 3])
-layer2.2.bn2.weight torch.Size([128])
-layer2.2.bn2.bias torch.Size([128])
-layer2.2.conv3.weight torch.Size([512, 128, 1, 1])
-layer2.2.bn3.weight torch.Size([512])
-layer2.2.bn3.bias torch.Size([512])
-layer2.3.conv1.weight torch.Size([128, 512, 1, 1])
-layer2.3.bn1.weight torch.Size([128])
-layer2.3.bn1.bias torch.Size([128])
-layer2.3.conv2.weight torch.Size([128, 128, 3, 3])
-layer2.3.bn2.weight torch.Size([128])
-layer2.3.bn2.bias torch.Size([128])
-layer2.3.conv3.weight torch.Size([512, 128, 1, 1])
-layer2.3.bn3.weight torch.Size([512])
-layer2.3.bn3.bias torch.Size([512])
-layer3.0.conv1.weight torch.Size([256, 512, 1, 1])
-layer3.0.bn1.weight torch.Size([256])
-layer3.0.bn1.bias torch.Size([256])
-layer3.0.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.0.bn2.weight torch.Size([256])
-layer3.0.bn2.bias torch.Size([256])
-layer3.0.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.0.bn3.weight torch.Size([1024])
-layer3.0.bn3.bias torch.Size([1024])
-layer3.0.downsample.0.weight torch.Size([1024, 512, 1, 1])
-layer3.0.downsample.1.weight torch.Size([1024])
-layer3.0.downsample.1.bias torch.Size([1024])
-layer3.1.conv1.weight torch.Size([256, 1024, 1, 1])
-layer3.1.bn1.weight torch.Size([256])
-layer3.1.bn1.bias torch.Size([256])
-layer3.1.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.1.bn2.weight torch.Size([256])
-layer3.1.bn2.bias torch.Size([256])
-layer3.1.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.1.bn3.weight torch.Size([1024])
-layer3.1.bn3.bias torch.Size([1024])
-layer3.2.conv1.weight torch.Size([256, 1024, 1, 1])
-layer3.2.bn1.weight torch.Size([256])
-layer3.2.bn1.bias torch.Size([256])
-layer3.2.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.2.bn2.weight torch.Size([256])
-layer3.2.bn2.bias torch.Size([256])
-layer3.2.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.2.bn3.weight torch.Size([1024])
-layer3.2.bn3.bias torch.Size([1024])
-layer3.3.conv1.weight torch.Size([256, 1024, 1, 1])
-layer3.3.bn1.weight torch.Size([256])
-layer3.3.bn1.bias torch.Size([256])
-layer3.3.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.3.bn2.weight torch.Size([256])
-layer3.3.bn2.bias torch.Size([256])
-layer3.3.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.3.bn3.weight torch.Size([1024])
-layer3.3.bn3.bias torch.Size([1024])
-layer3.4.conv1.weight torch.Size([256, 1024, 1, 1])
-layer3.4.bn1.weight torch.Size([256])
-layer3.4.bn1.bias torch.Size([256])
-layer3.4.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.4.bn2.weight torch.Size([256])
-layer3.4.bn2.bias torch.Size([256])
-layer3.4.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.4.bn3.weight torch.Size([1024])
-layer3.4.bn3.bias torch.Size([1024])
-layer3.5.conv1.weight torch.Size([256, 1024, 1, 1])
-layer3.5.bn1.weight torch.Size([256])
-layer3.5.bn1.bias torch.Size([256])
-layer3.5.conv2.weight torch.Size([256, 256, 3, 3])
-layer3.5.bn2.weight torch.Size([256])
-layer3.5.bn2.bias torch.Size([256])
-layer3.5.conv3.weight torch.Size([1024, 256, 1, 1])
-layer3.5.bn3.weight torch.Size([1024])
-layer3.5.bn3.bias torch.Size([1024])
-layer4.0.conv1.weight torch.Size([512, 1024, 1, 1])
-layer4.0.bn1.weight torch.Size([512])
-layer4.0.bn1.bias torch.Size([512])
-layer4.0.conv2.weight torch.Size([512, 512, 3, 3])
-layer4.0.bn2.weight torch.Size([512])
-layer4.0.bn2.bias torch.Size([512])
-layer4.0.conv3.weight torch.Size([2048, 512, 1, 1])
-layer4.0.bn3.weight torch.Size([2048])
-layer4.0.bn3.bias torch.Size([2048])
-layer4.0.downsample.0.weight torch.Size([2048, 1024, 1, 1])
-layer4.0.downsample.1.weight torch.Size([2048])
-layer4.0.downsample.1.bias torch.Size([2048])
-layer4.1.conv1.weight torch.Size([512, 2048, 1, 1])
-layer4.1.bn1.weight torch.Size([512])
-layer4.1.bn1.bias torch.Size([512])
-layer4.1.conv2.weight torch.Size([512, 512, 3, 3])
-layer4.1.bn2.weight torch.Size([512])
-layer4.1.bn2.bias torch.Size([512])
-layer4.1.conv3.weight torch.Size([2048, 512, 1, 1])
-layer4.1.bn3.weight torch.Size([2048])
-layer4.1.bn3.bias torch.Size([2048])
-layer4.2.conv1.weight torch.Size([512, 2048, 1, 1])
-layer4.2.bn1.weight torch.Size([512])
-layer4.2.bn1.bias torch.Size([512])
-layer4.2.conv2.weight torch.Size([512, 512, 3, 3])
-layer4.2.bn2.weight torch.Size([512])
-layer4.2.bn2.bias torch.Size([512])
-layer4.2.conv3.weight torch.Size([2048, 512, 1, 1])
-layer4.2.bn3.weight torch.Size([2048])
-layer4.2.bn3.bias torch.Size([2048])
-fc.weight torch.Size([1000, 2048])
-fc.bias torch.Size([1000])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>conv1.weight                 	 torch.Size([64, 3, 7, 7])
+bn1.weight                   	 torch.Size([64])
+bn1.bias                     	 torch.Size([64])
+layer1.0.conv1.weight        	 torch.Size([64, 64, 3, 3])
+layer1.0.bn1.weight          	 torch.Size([64])
+layer1.0.bn1.bias            	 torch.Size([64])
+layer1.0.conv2.weight        	 torch.Size([64, 64, 3, 3])
+layer1.0.bn2.weight          	 torch.Size([64])
+layer1.0.bn2.bias            	 torch.Size([64])
+layer1.1.conv1.weight        	 torch.Size([64, 64, 3, 3])
+layer1.1.bn1.weight          	 torch.Size([64])
+layer1.1.bn1.bias            	 torch.Size([64])
+layer1.1.conv2.weight        	 torch.Size([64, 64, 3, 3])
+layer1.1.bn2.weight          	 torch.Size([64])
+layer1.1.bn2.bias            	 torch.Size([64])
+layer2.0.conv1.weight        	 torch.Size([128, 64, 3, 3])
+layer2.0.bn1.weight          	 torch.Size([128])
+layer2.0.bn1.bias            	 torch.Size([128])
+layer2.0.conv2.weight        	 torch.Size([128, 128, 3, 3])
+layer2.0.bn2.weight          	 torch.Size([128])
+layer2.0.bn2.bias            	 torch.Size([128])
+layer2.0.downsample.0.weight 	 torch.Size([128, 64, 1, 1])
+layer2.0.downsample.1.weight 	 torch.Size([128])
+layer2.0.downsample.1.bias   	 torch.Size([128])
+layer2.1.conv1.weight        	 torch.Size([128, 128, 3, 3])
+layer2.1.bn1.weight          	 torch.Size([128])
+layer2.1.bn1.bias            	 torch.Size([128])
+layer2.1.conv2.weight        	 torch.Size([128, 128, 3, 3])
+layer2.1.bn2.weight          	 torch.Size([128])
+layer2.1.bn2.bias            	 torch.Size([128])
+layer3.0.conv1.weight        	 torch.Size([256, 128, 3, 3])
+layer3.0.bn1.weight          	 torch.Size([256])
+layer3.0.bn1.bias            	 torch.Size([256])
+layer3.0.conv2.weight        	 torch.Size([256, 256, 3, 3])
+layer3.0.bn2.weight          	 torch.Size([256])
+layer3.0.bn2.bias            	 torch.Size([256])
+layer3.0.downsample.0.weight 	 torch.Size([256, 128, 1, 1])
+layer3.0.downsample.1.weight 	 torch.Size([256])
+layer3.0.downsample.1.bias   	 torch.Size([256])
+layer3.1.conv1.weight        	 torch.Size([256, 256, 3, 3])
+layer3.1.bn1.weight          	 torch.Size([256])
+layer3.1.bn1.bias            	 torch.Size([256])
+layer3.1.conv2.weight        	 torch.Size([256, 256, 3, 3])
+layer3.1.bn2.weight          	 torch.Size([256])
+layer3.1.bn2.bias            	 torch.Size([256])
+layer4.0.conv1.weight        	 torch.Size([512, 256, 3, 3])
+layer4.0.bn1.weight          	 torch.Size([512])
+layer4.0.bn1.bias            	 torch.Size([512])
+layer4.0.conv2.weight        	 torch.Size([512, 512, 3, 3])
+layer4.0.bn2.weight          	 torch.Size([512])
+layer4.0.bn2.bias            	 torch.Size([512])
+layer4.0.downsample.0.weight 	 torch.Size([512, 256, 1, 1])
+layer4.0.downsample.1.weight 	 torch.Size([512])
+layer4.0.downsample.1.bias   	 torch.Size([512])
+layer4.1.conv1.weight        	 torch.Size([512, 512, 3, 3])
+layer4.1.bn1.weight          	 torch.Size([512])
+layer4.1.bn1.bias            	 torch.Size([512])
+layer4.1.conv2.weight        	 torch.Size([512, 512, 3, 3])
+layer4.1.bn2.weight          	 torch.Size([512])
+layer4.1.bn2.bias            	 torch.Size([512])
+fc.weight                    	 torch.Size([1000, 512])
+fc.bias                      	 torch.Size([1000])
 </pre></div>
 </div>
 </div>
 </div>
+<p>Each line in the output represents a layer in ResNet, showing:</p>
+<ul class="simple">
+<li><p><strong>Layer Name</strong>: Identifies the layer (e.g., <code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code> refers to the weights in the first convolutional layer).</p></li>
+<li><p><strong>Shape</strong>: The dimensions of each parameter tensor, which indicates how data is transformed as it passes through the model.</p></li>
+</ul>
+<p>This information can help you understand the model’s structure and the size of data transformations at each stag</p>
 </section>
 <section id="loading-an-image">
-<h2>Loading an image<a class="headerlink" href="#loading-an-image" title="Link to this heading">#</a></h2>
-<p>We download one image with a URl and show its content. Please note that by default PyTorch expects PIL images, but the corresponding functions can be written in numpy as well.</p>
+<h2>Loading an Image<a class="headerlink" href="#loading-an-image" title="Link to this heading">#</a></h2>
+<p>Let’s download an example image from a URL and display its content. Note that PyTorch expects images in the PIL format by default, but similar functions can be implemented using NumPy if preferred.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download an example image from the pytorch website</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download an example image</span>
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/pytorch/hub/raw/master/images/dog.jpg&quot;</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>  <span class="c1"># Load and convert to PIL format</span>
 
-<span class="c1"># Openning the image and visualising it</span>
-<span class="n">input_image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
-<span class="n">input_image</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">input_image</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">input_image</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">5</span><span class="p">))</span>
+<span class="c1"># Resize and display the image for easy viewing</span>
+<span class="n">input_image</span> <span class="o">=</span> <span class="n">input_image</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="n">input_image</span><span class="o">.</span><span class="n">width</span> <span class="o">//</span> <span class="mi">5</span><span class="p">,</span> <span class="n">input_image</span><span class="o">.</span><span class="n">height</span> <span class="o">//</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">input_image</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f60ccdc8148763b25e2b3a1487e714d82c6c9ed1c563ab9ed6fa6a360e94ccf3.png" src="../../_images/f60ccdc8148763b25e2b3a1487e714d82c6c9ed1c563ab9ed6fa6a360e94ccf3.png" />
+<img alt="../../_images/39aa64c5be63a4a02a47a4a6a40a3b119c7a201cca9990130a68163cfe2c92ea.png" src="../../_images/39aa64c5be63a4a02a47a4a6a40a3b119c7a201cca9990130a68163cfe2c92ea.png" />
 </div>
 </div>
 </section>
-<section id="transforming-the-image-to-tensor">
-<h2>Transforming the image to tensor.<a class="headerlink" href="#transforming-the-image-to-tensor" title="Link to this heading">#</a></h2>
-<p>All pre-trained models expect input images normalized in the same way,
-i.e. mini-batches of 3-channel RGB images of shape <code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">x</span> <span class="pre">H</span> <span class="pre">x</span> <span class="pre">W)</span></code>, where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> are expected to be at least <code class="docutils literal notranslate"><span class="pre">224</span></code>.
-The images have to be loaded in to a range of <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code> and then normalized using <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0.485,</span> <span class="pre">0.456,</span> <span class="pre">0.406]</span></code>
-and <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">=</span> <span class="pre">[0.229,</span> <span class="pre">0.224,</span> <span class="pre">0.225]</span></code>.</p>
-<p>Here’s a sample execution.</p>
+<section id="transforming-the-image-into-a-tensor">
+<h2>Transforming the Image into a Tensor<a class="headerlink" href="#transforming-the-image-into-a-tensor" title="Link to this heading">#</a></h2>
+<p>Pretrained models expect input images in a specific format:</p>
+<ul class="simple">
+<li><p>Images are typically mini-batches of 3-channel RGB images with shape <code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">x</span> <span class="pre">H</span> <span class="pre">x</span> <span class="pre">W)</span></code>, where <code class="docutils literal notranslate"><span class="pre">H</span></code> and <code class="docutils literal notranslate"><span class="pre">W</span></code> should be at least 224.</p></li>
+<li><p>The image values should be in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>, then normalised with <code class="docutils literal notranslate"><span class="pre">mean</span> <span class="pre">=</span> <span class="pre">[0.485,</span> <span class="pre">0.456,</span> <span class="pre">0.406]</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span> <span class="pre">=</span> <span class="pre">[0.229,</span> <span class="pre">0.224,</span> <span class="pre">0.225]</span></code>.</p></li>
+</ul>
+<p>Here’s a sample transformation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sample execution (requires torchvision)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define preprocessing steps</span>
 <span class="n">preprocess</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
     <span class="n">transforms</span><span class="o">.</span><span class="n">Resize</span><span class="p">(</span><span class="mi">256</span><span class="p">),</span>
     <span class="n">transforms</span><span class="o">.</span><span class="n">CenterCrop</span><span class="p">(</span><span class="mi">224</span><span class="p">),</span>
     <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
     <span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="o">=</span><span class="p">[</span><span class="mf">0.485</span><span class="p">,</span> <span class="mf">0.456</span><span class="p">,</span> <span class="mf">0.406</span><span class="p">],</span> <span class="n">std</span><span class="o">=</span><span class="p">[</span><span class="mf">0.229</span><span class="p">,</span> <span class="mf">0.224</span><span class="p">,</span> <span class="mf">0.225</span><span class="p">]),</span>
 <span class="p">])</span>
+
+<span class="c1"># Apply preprocessing and create a mini-batch</span>
 <span class="n">input_tensor</span> <span class="o">=</span> <span class="n">preprocess</span><span class="p">(</span><span class="n">input_image</span><span class="p">)</span>
-<span class="n">input_batch</span> <span class="o">=</span> <span class="n">input_tensor</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># create a mini-batch as expected by the model</span>
+<span class="n">input_batch</span> <span class="o">=</span> <span class="n">input_tensor</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Create a batch dimension</span>
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="running-the-model">
+<h2>Running the Model<a class="headerlink" href="#running-the-model" title="Link to this heading">#</a></h2>
+<p>In evaluation mode, we use <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">torch.no_grad()</span></code> to prevent the computation of gradients, making processing more efficient as we won’t need backpropagation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># move the input and model to GPU for speed if available</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Move to GPU if available for faster computation</span>
 <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
     <span class="n">input_batch</span> <span class="o">=</span> <span class="n">input_batch</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
     <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="executing-the-model">
-<h2>Executing the model<a class="headerlink" href="#executing-the-model" title="Link to this heading">#</a></h2>
-<p>In evaluation model we always call the <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">torch.no_grad()</span></code> to tell to the framework not to compute gradients, the graph is very heavy and in test time we don’t use it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+
+<span class="c1"># Run the model in evaluation mode</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
     <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_batch</span><span class="p">)</span>
-<span class="c1"># Tensor of shape 1000, with confidence scores over Imagenet&#39;s 1000 classes</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output size&quot;</span><span class="p">,</span> <span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="c1"># The output has unnormalized scores. To get probabilities, you can run a softmax on it.</span>
+
+<span class="c1"># Output size should match the 1000 ImageNet classes</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;Output size:&quot;</span><span class="si">:</span><span class="s1">&lt;20</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">output</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># Convert output scores to probabilities using softmax</span>
 <span class="n">probabilities</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">output</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Probabilites size&quot;</span><span class="p">,</span> <span class="n">probabilities</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="s2">&quot;Probabilities size:&quot;</span><span class="si">:</span><span class="s1">&lt;20</span><span class="si">}</span><span class="s1"> </span><span class="se">\t</span><span class="s1"> </span><span class="si">{</span><span class="n">probabilities</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output size torch.Size([1, 1000])
-Probabilites size torch.Size([1000])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Output size:         	 torch.Size([1, 1000])
+Probabilities size:  	 torch.Size([1000])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="assesing-the-output">
-<h2>Assesing the output<a class="headerlink" href="#assesing-the-output" title="Link to this heading">#</a></h2>
+<section id="assessing-the-output">
+<h2>Assessing the Output<a class="headerlink" href="#assessing-the-output" title="Link to this heading">#</a></h2>
+<p>To interpret the model’s output, we need the labels corresponding to the 1000 ImageNet classes. We’ll retrieve these labels online.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download ImageNet labels</span>
-<span class="o">!</span>wget<span class="w"> </span>https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">imagenet_classes</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>  <span class="c1"># Convert the text to a list</span>
+
+<span class="c1"># Verify the labels list</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">imagenet_classes</span><span class="p">))</span>  <span class="c1"># Should be 1000</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">imagenet_classes</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>  <span class="c1"># Show the first 10 classes</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2023-04-20 09:31:27--  https://raw.githubusercontent.com/pytorch/hub/master/imagenet_classes.txt
-Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 185.199.110.133, 185.199.108.133, 185.199.111.133, ...
-Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|185.199.110.133|:443... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 10472 (10K) [text/plain]
-Saving to: ‘imagenet_classes.txt’
-
-imagenet_classes.tx 100%[===================&gt;]  10,23K  --.-KB/s    in 0s      
-
-2023-04-20 09:31:27 (25,2 MB/s) - ‘imagenet_classes.txt’ saved [10472/10472]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000
+[&#39;tench&#39;, &#39;goldfish&#39;, &#39;great white shark&#39;, &#39;tiger shark&#39;, &#39;hammerhead&#39;, &#39;electric ray&#39;, &#39;stingray&#39;, &#39;cock&#39;, &#39;hen&#39;, &#39;ostrich&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+<p>Now, let’s display the top 5 predicted categories for our image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the categories</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;imagenet_classes.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()]</span>
-<span class="c1"># Show top categories per image</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the top 5 categories</span>
 <span class="n">top5_prob</span><span class="p">,</span> <span class="n">top5_catid</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">probabilities</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">top5_prob</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">categories</span><span class="p">[</span><span class="n">top5_catid</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">top5_prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">imagenet_classes</span><span class="p">[</span><span class="n">top5_catid</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="si">:</span><span class="s1">&lt;17</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">top5_prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Samoyed 0.455370157957077
-white wolf 0.03246971592307091
-Pomeranian 0.02825578674674034
-Great Pyrenees 0.009267075918614864
-Eskimo dog 0.007829354144632816
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Samoyed           0.859
+Arctic fox        0.055
+white wolf        0.049
+Pomeranian        0.008
+Great Pyrenees    0.007
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<hr class="docutils" />
 <section id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Link to this heading">#</a></h2>
-<p>Please do the following questions and submit it by <strong>Thursday, April 27 at 23h59 O’clock</strong>.
-The submission is a <strong>notebook (.ipynb)</strong> it can include code, comments, written texts, and plots.</p>
-<section id="plot-all-the-kernels-of-the-first-layer">
-<h3>1. Plot all the kernels of the first layer.<a class="headerlink" href="#plot-all-the-kernels-of-the-first-layer" title="Link to this heading">#</a></h3>
-<p>You can access the wights of the first layer from the parameters <code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code> whose size is <code class="docutils literal notranslate"><span class="pre">torch.Size([64,</span> <span class="pre">3,</span> <span class="pre">7,</span> <span class="pre">7])</span></code>.
-Therefore the visualisation should include 64 kernels of size 7x7 in colour.</p>
+<p>For this assignment, please address the following tasks. Submit your responses in a single <strong>notebook (.ipynb)</strong> that includes code, comments, written text, and plots. Ensure that the notebook is self-contained and can be run on other machines.</p>
+<section id="visualise-kernels-of-the-first-layer">
+<h3>1. Visualise Kernels of the First Layer<a class="headerlink" href="#visualise-kernels-of-the-first-layer" title="Link to this heading">#</a></h3>
+<p>Access the weights of the first layer using <code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code>, which has a shape of <code class="docutils literal notranslate"><span class="pre">torch.Size([64,</span> <span class="pre">3,</span> <span class="pre">7,</span> <span class="pre">7])</span></code>. Your visualisation should display 64 colour kernels of size <span class="math notranslate nohighlight">\(7 \times 7\)</span>.</p>
 </section>
-<section id="change-input-batch-to-load-4-different-images">
-<h3>2. Change <code class="docutils literal notranslate"><span class="pre">input_batch</span></code> to load 4 different images.<a class="headerlink" href="#change-input-batch-to-load-4-different-images" title="Link to this heading">#</a></h3>
-<p>Run the model with all 4 images at the same time, print the obtained classes for each image.</p>
+<section id="load-multiple-images">
+<h3>2. Load Multiple Images<a class="headerlink" href="#load-multiple-images" title="Link to this heading">#</a></h3>
+<p>Modify <code class="docutils literal notranslate"><span class="pre">input_batch</span></code> to load 4 different images, run the model on all 4 simultaneously, and display the predicted classes for each image.</p>
 </section>
+<section id="explore-a-different-architecture">
+<h3>3. Explore a Different Architecture<a class="headerlink" href="#explore-a-different-architecture" title="Link to this heading">#</a></h3>
+<p>Visualise the first-layer kernels of a different network such as AlexNet (<code class="docutils literal notranslate"><span class="pre">models.alexnet</span></code>), VGG (<code class="docutils literal notranslate"><span class="pre">models.vgg16</span></code>), or ViT-B16 (<code class="docutils literal notranslate"><span class="pre">models.vit_b_16</span></code>). Compare these kernels with what you know about the receptive fields in the mammalian visual cortex. Discuss any similarities and differences.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="bonus-questions-optional">
+<h2>Bonus Questions (Optional)<a class="headerlink" href="#bonus-questions-optional" title="Link to this heading">#</a></h2>
+<p>These questions will provide extra points.</p>
 <section id="add-noise-to-the-first-layer">
-<h3>3. Add noise to the first layer.<a class="headerlink" href="#add-noise-to-the-first-layer" title="Link to this heading">#</a></h3>
-<p>Add some sort of noise (e.g., from Gaussian or Poisson distribution) to the weights of the first layer (i.e., either, <code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code>  or <code class="docutils literal notranslate"><span class="pre">conv1.bias</span></code> ). How sensitive is the network to such noise.</p>
+<h3>4. Add Noise to the First Layer<a class="headerlink" href="#add-noise-to-the-first-layer" title="Link to this heading">#</a></h3>
+<p>Add a type of noise (e.g., Gaussian or Poisson) to the weights of the first layer (<code class="docutils literal notranslate"><span class="pre">conv1.weight</span></code> or <code class="docutils literal notranslate"><span class="pre">conv1.bias</span></code>). Evaluate how sensitive the network is to this noise.</p>
 </section>
-<section id="add-noise-to-input-image">
-<h3>4. Add noise to input image.<a class="headerlink" href="#add-noise-to-input-image" title="Link to this heading">#</a></h3>
-<p>Add some sort of noise (e.g., from Gaussian or Poisson distribution) the input images. How sensitive is the network to such noise.</p>
+<section id="add-noise-to-the-input-image">
+<h3>5. Add Noise to the Input Image<a class="headerlink" href="#add-noise-to-the-input-image" title="Link to this heading">#</a></h3>
+<p>Add noise to the input images and observe how the network’s predictions are affected.</p>
+</section>
+<section id="convolve-with-a-single-kernel">
+<h3>6. Convolve with a Single Kernel<a class="headerlink" href="#convolve-with-a-single-kernel" title="Link to this heading">#</a></h3>
+<p>Convolve the input image with the first kernel in the first layer and visualise the resulting output.</p>
+</section>
+<section id="apply-an-activation-function">
+<h3>7. Apply an Activation Function<a class="headerlink" href="#apply-an-activation-function" title="Link to this heading">#</a></h3>
+<p>Apply an activation function, like ReLU, to the output of the convolution in the previous step.</p>
+</section>
+<section id="pooling-operation">
+<h3>8. Pooling Operation<a class="headerlink" href="#pooling-operation" title="Link to this heading">#</a></h3>
+<p>Apply a pooling function (e.g., max pooling with a <span class="math notranslate nohighlight">\(2 \times 2\)</span> window) to the convolution output from the previous step.</p>
+</section>
+<section id="linear-layer">
+<h3>9. Linear Layer<a class="headerlink" href="#linear-layer" title="Link to this heading">#</a></h3>
+<p>Apply a linear layer with an output node size of 1000 to the convolution output from the previous steps.</p>
 </section>
 </section>
 </section>
@@ -1122,7 +985,7 @@ Therefore the visualisation should include 64 kernels of size 7x7 in colour.</p>
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. Dataloaders</p>
+        <p class="prev-next-title">A2. Dataloaders</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1142,16 +1005,25 @@ Therefore the visualisation should include 64 kernels of size 7x7 in colour.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resnet">ResNet</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image">Loading an image</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-image-to-tensor">Transforming the image to tensor.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executing-the-model">Executing the model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assesing-the-output">Assesing the output</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-resnet">Working with ResNet</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-s-parameters">Model’s Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-an-image">Loading an Image</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-the-image-into-a-tensor">Transforming the Image into a Tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-the-model">Running the Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assessing-the-output">Assessing the Output</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-all-the-kernels-of-the-first-layer">1. Plot all the kernels of the first layer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-input-batch-to-load-4-different-images">2. Change <code class="docutils literal notranslate"><span class="pre">input_batch</span></code> to load 4 different images.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-first-layer">3. Add noise to the first layer.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-input-image">4. Add noise to input image.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-kernels-of-the-first-layer">1. Visualise Kernels of the First Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-multiple-images">2. Load Multiple Images</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-a-different-architecture">3. Explore a Different Architecture</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-questions-optional">Bonus Questions (Optional)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-first-layer">4. Add Noise to the First Layer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-noise-to-the-input-image">5. Add Noise to the Input Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convolve-with-a-single-kernel">6. Convolve with a Single Kernel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apply-an-activation-function">7. Apply an Activation Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pooling-operation">8. Pooling Operation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-layer">9. Linear Layer</a></li>
 </ul>
 </li>
 </ul>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -198,14 +198,20 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. Network’s Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.2. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.3. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
 </ul>
 </li>
@@ -256,9 +262,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student projects</span></p>
 <ul class="nav bd-sidenav">
@@ -273,6 +279,8 @@
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/moduleObjects.html">Modules and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/inheritance.html">Inheritance</a></li>
 </ul>
 </li>
 </ul>
@@ -522,7 +530,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="network-s-building-blocks">
 <h1>1. Network’s Building Blocks<a class="headerlink" href="#network-s-building-blocks" title="Link to this heading">#</a></h1>
-<p>A deep neural network consists of multiple layers of linear and nonlinear operations. For instance, let’s print the layers of <code class="docutils literal notranslate"><span class="pre">AlexNet</span></code> to check what constitutes its architectures:</p>
+<p>A deep neural network is composed of multiple layers that perform both linear and nonlinear
+operations. Let’s take a look at the layers of <code class="docutils literal notranslate"><span class="pre">AlexNet</span></code> to see what makes up its architecture
+by printing them out:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">torchvision</span>
@@ -562,21 +572,23 @@ document.write(`
 </div>
 </div>
 </div>
-<p>We can notice that the entire architecture consists of six different types of layers:</p>
+<p>We can observe that <code class="docutils literal notranslate"><span class="pre">AlexNet</span></code>’s architecture is made up of six different types of layers:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Conv2d</span></code> (a convolution layer)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ReLU</span></code> (a type of activation function)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">MaxPool2d</span></code> (a type of pooling operation)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">AdaptiveAvgPool2d</span></code> (a type of pooling operation)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Dropout</span></code> (a dropout layer)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Linear</span></code> (a linear layer)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Conv2d</span></code>: A convolutional layer that extracts features from the input image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ReLU</span></code>: An activation function that introduces non-linearity into the model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">MaxPool2d</span></code>: A pooling layer that reduces the spatial dimensions of the feature maps.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AdaptiveAvgPool2d</span></code>: A pooling layer that adjusts the output size, averaging spatial dimensions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Dropout</span></code>: A regularisation layer that helps prevent overfitting by randomly setting some activations to zero.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Linear</span></code>: A fully connected layer that maps features to the output classes.</p></li>
 </ul>
-<p>The goal of this chapter is to familiarise you with these basic operations that appear in all deep neural networks and how you can use them to design your architecture.
-In the coming notebooks, we will learn about these operations:</p>
+<p>The goal of this chapter is to familiarise you with these basic operations that are common to all
+deep neural networks and show you how to use them to design your own architectures. In the
+following notebooks, we will explore these operations in detail:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="convolution.html"><span class="std std-doc">Convolution</span></a></p></li>
-<li><p><a class="reference internal" href="pooling.html"><span class="std std-doc">Pooling</span></a></p></li>
 <li><p><a class="reference internal" href="activation_function.html"><span class="std std-doc">Activation function</span></a></p></li>
+<li><p><a class="reference internal" href="pooling.html"><span class="std std-doc">Pooling</span></a></p></li>
+<li><p><a class="reference internal" href="linear.html"><span class="std std-doc">Linear</span></a></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>

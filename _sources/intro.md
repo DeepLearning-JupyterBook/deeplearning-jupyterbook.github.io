@@ -1,34 +1,39 @@
 # Welcome
 
-This Jupyter Book explores a range of deep learning topics, gradually progressing from fundamental 
-concepts to more advanced applications. The material was initially developed for the deep learning 
-course in the [Brain and Behaviour Master's programme](https://www.uni-giessen.de/de/studium/studienangebot/master/mbb?set_language=de) 
-at [Justus-Liebig University of Giessen](https://www.uni-giessen.de/jlyou/en/index.html). 
-While some examples are specifically designed for *Experimental Psychologists* and *Cognitive 
-Neuroscientists*, the content is valuable for anyone interested in deep learning.
-
-```{tableofcontents}
-```
+Welcome to this Jupyter Book on deep learning, designed for students from all around the 
+world. The content covers a broad spectrum of deep learning topics, starting from foundational 
+principles and gradually advancing to more complex applications. Originally developed for the deep 
+learning course in the [Brain and Behaviour Master's programme](https://www.uni-giessen.de/de/studium/studienangebot/master/mbb?set_language=de)
+at [Justus-Liebig University of Giessen](https://www.uni-giessen.de/jlyou/en/index.html), 
+this material is not only tailored for Experimental Psychologists* and *Cognitive 
+Neuroscientists* but is also suitable for anyone interested in deep learning. Whether you are new to 
+the field or looking to deepen your understanding, this book offers valuable insights and practical 
+examples to enhance your learning experience.
 
 ```{admonition} Play with notebooks!
-The best way to learn the presented materials is by getting your hands dirty! All Jupyter Notebooks 
-can be executed on Google Colab by directly clicking on the <i class="fa-sharp fa-solid fa-rocket"></i> 
-icon on top of each notebook. All materials are also available in our
+The best way to master the material is through hands-on practice! Each Jupyter Notebook can be 
+executed directly in Google Colab by clicking the <i class="fa fa-rocket"></i> icon 
+at the top of the notebook. You can also access all materials in our 
 [GitHub repository <i class="fab fa-github"></i>](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io), 
-clone it to run it locally on your computer.
+which you can clone to run locally on your own computer.
 ```
 
 ```{admonition} Please give feedback!
 :class: tip
-Please report any issues/bugs/typos/etc. you notice. Either go the
-<i class="fab fa-github"></i> [issue tracker](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues) 
-or directly click on the  <i class="fab fa-github"></i> icon on top of each page and then 
-"open issue". We also accept requests for new materials, and of course, we highly appreciate it if you
-decide to contribute by pull requests <i class="fa-regular fa-face-smile"></i>.
+If you come across any issues, bugs, typos, or anything else, please let us know! You can report 
+them through the <i class="fab fa-github"></i> [issue tracker](https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues) 
+or simply click the <i class="fab fa-github"></i> icon at the top of any page and select 
+“open issue”. We also welcome requests for new materials, and if you’d like to contribute, 
+pull requests <i class="fa-regular fa-face-smile"></i> are highly appreciated.
 ```
 
+## Table of contents
+```{tableofcontents}
+```
 
-## Background materials
+## External materials
+
+Below is a list of materials that can complement the course content.
 
 ### Python tutorials
 

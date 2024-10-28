@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -76,7 +76,7 @@
     <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="1.2. Pooling" href="pooling.html" />
+    <link rel="next" title="1.2. Activation Functions" href="activation_function.html" />
     <link rel="prev" title="1. Network’s Building Blocks" href="networks_building_blocks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -200,14 +200,20 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="networks_building_blocks.html">1. Network’s Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">1.1. Convolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.3. Activation Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.2. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.3. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
 </ul>
 </li>
@@ -258,9 +264,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student projects</span></p>
 <ul class="nav bd-sidenav">
@@ -275,6 +281,8 @@
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/moduleObjects.html">Modules and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/inheritance.html">Inheritance</a></li>
 </ul>
 </li>
 </ul>
@@ -521,29 +529,34 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-rgb-channels">Visualising RGB Channels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-cv">1. Open-CV</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image blurring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opencv">1. OpenCV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image Blurring</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">2. PyTorch</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Edge detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tensors">Working with Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection-with-pytorch">Edge Detection with PyTorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-output-tensors">Visualise Output Tensors</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-size">3. Kernel size</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#times-1-convolution"><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-size-in-convolutions">3. Kernel Size in Convolutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#times-1-convolution"><span class="math notranslate nohighlight">\(1 \times 1\)</span> Convolution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padding">4. Padding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padding-in-convolution">4. Padding in Convolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downsampling">5. Downsampling</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stride">Stride</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilation">6. Dilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposed-convolution">7. Transposed convolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
@@ -559,55 +572,72 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="convolution">
 <h1>1.1. Convolution<a class="headerlink" href="#convolution" title="Link to this heading">#</a></h1>
-<p>Convolution is a ubiquitous operation in deep networks, therefore the popular term convolutional neural networks (CNN). This notebook provides a short introduction to convolution.</p>
-<p>Convolution is the process of adding each element of the signal (e.g., image) to its local neighbours, weighted by the kernel. A kernel defines the dimension of a window that is slid across all elements of the input, therefore the convolution of a signal with a kernel is referred to as <strong>sliding window</strong> operation.</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif" >
-<p>Convolution is a popular operation in signal processing (e.g., classical image processing algorithms), and therefore its implemented in several libraries. We explore a few of those implementations in this notebook.</p>
+<p>The remarkable success of modern deep learning models began with
+<strong>Convolutional Neural Networks (CNNs)</strong>. In this notebook, we will introduce the fundamental
+concept of the convolution operation, which is at the core of CNNs.</p>
+<p>In mathematical terms, the <strong>discrete convolution</strong> of two functions, <span class="math notranslate nohighlight">\( f \)</span> and <span class="math notranslate nohighlight">\( g \)</span>, is expressed as:</p>
+<p><span class="math notranslate nohighlight">\(
+(f * g)[n] = \sum_{m=-M}^{M} f[n-m] g[m]
+\)</span></p>
+<p>Here, <span class="math notranslate nohighlight">\( M \)</span> represents the size of the window that slides across the input, applying the operation at each step. This sliding action is why convolution is often referred to as a <strong>sliding window</strong> operation. Simply put, convolution involves calculating a weighted sum of neighbouring elements within a signal or image.</p>
+<p>Convolution is a widely-used technique in <strong>signal processing</strong> and <strong>image analysis</strong>. For instance, classical image processing algorithms often rely on this operation to filter or transform images. Given its importance, convolution is implemented in many popular programming libraries, making it easier to apply in practice.</p>
+<a href="https://en.wikipedia.org/wiki/Convolution#Discrete_convolution" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/2D_Convolution_Animation.gif" />
+</a>
+<p>To visualise the process, think of convolution as involving three matrices:</p>
+<ol class="arabic simple">
+<li><p><strong>Input</strong>: The original data or signal (e.g., an image).</p></li>
+<li><p><strong>Kernel (Filter)</strong>: A smaller matrix, defining the neighbouring weights, that is slid over the input.</p></li>
+<li><p><strong>Output</strong>: The resulting matrix after applying the kernel to the input.</p></li>
+</ol>
+<p>As the kernel moves across the input, at each position, it computes a weighted sum of the values under it, which is then placed in the corresponding position of the output matrix. This process repeats until every element of the input has been covered.</p>
+<p>In this notebook, we will explore different ways of implementing the convolution operation using common libraries. By the end of this section, you will have a hands-on understanding of how convolution works, along with the practical details required to apply it in various contexts.</p>
 <section id="preparation">
 <h2>0. Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<section id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h3>
-<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<p>Before we dive into the main content of this notebook, let’s start by preparing all the necessary materials.</p>
+<section id="required-packages">
+<h3>Required Packages<a class="headerlink" href="#required-packages" title="Link to this heading">#</a></h3>
+<p>We will need several libraries to implement this tutorial, each serving a specific purpose:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
-<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
-<li><p><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> is a leading computer vision library.</p></li>
-<li><p><a class="reference external" href="https://scikit-image.org/">skimage</a> is a collection of image processing algorithms.</p></li>
+<li><p><strong><a class="reference external" href="https://numpy.org/">numpy</a>:</strong> The main package for scientific computing in Python. It’s commonly imported with the alias <code class="docutils literal notranslate"><span class="pre">np</span></code> to simplify its use in code.</p></li>
+<li><p><strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a>:</strong> A library for plotting graphs and visualising data in Python.</p></li>
+<li><p><strong><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a>:</strong> A deep learning framework that helps us define neural networks, manage datasets, optimise loss functions, and more.</p></li>
+<li><p><strong><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> (OpenCV):</strong> A widely-used computer vision library for image processing and computer vision tasks.</p></li>
+<li><p><strong><a class="reference external" href="https://scikit-image.org/">skimage</a>:</strong> A collection of algorithms for image processing, ideal for various transformation and analysis tasks.</p></li>
 </ul>
+<p>Now, let’s go ahead and import these packages:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">cv2</span>
-<span class="kn">import</span> <span class="nn">skimage</span>
-<span class="kn">import</span> <span class="nn">torch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the necessary packages/libraries</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># The &quot;as&quot; keyword allows us to give the package a shorthand name</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>  <span class="c1"># For plotting graphs</span>
+<span class="kn">import</span> <span class="nn">cv2</span>  <span class="c1"># OpenCV for computer vision tasks</span>
+<span class="kn">import</span> <span class="nn">skimage</span>  <span class="c1"># For image processing</span>
+<span class="kn">import</span> <span class="nn">torch</span>  <span class="c1"># PyTorch for deep learning</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="input-image">
-<h3>Input image<a class="headerlink" href="#input-image" title="Link to this heading">#</a></h3>
-<p>In our example, we work with images to see the effect of convolution on them. First, we read
-two images by their URL using the <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function. Next, we visualise the images
-using <code class="docutils literal notranslate"><span class="pre">matplotlibt</span></code> routines.</p>
+<h3>Input Image<a class="headerlink" href="#input-image" title="Link to this heading">#</a></h3>
+<p>In this section, we will work with images to observe the effect of convolution on them. We begin by loading two images from URLs using the <code class="docutils literal notranslate"><span class="pre">skimage.io.imread</span></code> function. After loading the images, we will visualise them using routines from the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># URLs of the images we will load</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/295087.jpg&#39;</span><span class="p">,</span>
     <span class="s1">&#39;https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/bsds/BSDS300/html/images/plain/normal/color/35008.jpg&#39;</span>
 <span class="p">]</span>
 
-<span class="c1"># we use list comprehensions to quickly load images</span>
+<span class="c1"># Load the images using list comprehension</span>
 <span class="n">imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">skimage</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">]</span>
 
-<span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="c1"># Visualise the two images side by side</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Create a figure with a custom size</span>
 <span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add subplots for each image</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>  <span class="c1"># Display the image</span>
 </pre></div>
 </div>
 </div>
@@ -615,10 +645,11 @@ using <code class="docutils literal notranslate"><span class="pre">matplotlibt</
 <img alt="../_images/a702dd60629edfd8559d359ddd1ce49107b43f98c296e9b2c32d4a1645e25dab.png" src="../_images/a702dd60629edfd8559d359ddd1ce49107b43f98c296e9b2c32d4a1645e25dab.png" />
 </div>
 </div>
-<p>An RGB image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h,</span> <span class="pre">3)</span></code>, and the third dimension corresponds to RGB (colour) channels). A grey-scale image has the size <code class="docutils literal notranslate"><span class="pre">(w,</span> <span class="pre">h)</span></code>.</p>
+<p>Next, let’s check the <strong>shape</strong> and <strong>data type</strong> of the images to better understand their structure.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image size:&quot;</span><span class="p">,</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print the size (shape) and data type of the first image</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image size:&quot;</span><span class="p">,</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Image type:&quot;</span><span class="p">,</span> <span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -630,25 +661,37 @@ Image type: uint8
 </div>
 </div>
 </div>
-<p>Plotting each RGB channel separately. We define a function so we can call it for each image easily.</p>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> (plt) to create a figure and add three subplots to it.</p>
+<p>In most cases:</p>
+<ul class="simple">
+<li><p><strong>RGB images</strong> have three dimensions: <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width,</span> <span class="pre">channels=3)</span></code>, where the third dimension represents the Red, Green, and Blue (RGB) channels.</p></li>
+<li><p><strong>Greyscale images</strong> only have two dimensions: <code class="docutils literal notranslate"><span class="pre">(height,</span> <span class="pre">width)</span></code>.</p></li>
+</ul>
+<p>In this example, the images have a height of <span class="math notranslate nohighlight">\(h = 321\)</span> and a width of <span class="math notranslate nohighlight">\(w = 481\)</span>.</p>
+<p>Most images, including the ones we are working with, are stored in the <strong>unsigned integer format</strong> <code class="docutils literal notranslate"><span class="pre">uint8</span></code>, meaning pixel values range from 0 to 255</p>
+</section>
+<section id="visualising-rgb-channels">
+<h3>Visualising RGB Channels<a class="headerlink" href="#visualising-rgb-channels" title="Link to this heading">#</a></h3>
+<p>To gain a better understanding of how images are represented, let’s plot each individual RGB channel (Red, Green, and Blue) separately. This will allow us to see the contribution of each colour channel to the overall image.</p>
+<p>We will define a function to visualise the three channels of an image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_3channels</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
-    <span class="n">channel_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">]</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
-        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">channel_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to plot the three colour channels separately</span>
+<span class="k">def</span> <span class="nf">plot_3channels</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+    <span class="n">channel_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Red&#39;</span><span class="p">,</span> <span class="s1">&#39;Green&#39;</span><span class="p">,</span> <span class="s1">&#39;Blue&#39;</span><span class="p">]</span>  <span class="c1"># Labels for each channel</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Create a wide figure</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>  <span class="c1"># Loop through the three channels</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Create three subplots</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">i</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>  <span class="c1"># Display each channel as a greyscale image</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  <span class="c1"># Turn off axes for clarity</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">channel_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>  <span class="c1"># Set the title to the channel&#39;s name</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># showing the first image</span>
+<span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -658,7 +701,8 @@ Image type: uint8
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># showing the second image</span>
+<span class="n">plot_3channels</span><span class="p">(</span><span class="n">imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -668,21 +712,25 @@ Image type: uint8
 </div>
 </section>
 </section>
-<section id="open-cv">
-<h2>1. Open-CV<a class="headerlink" href="#open-cv" title="Link to this heading">#</a></h2>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">filter2D</span></code> function of the OpenCV (<code class="docutils literal notranslate"><span class="pre">cv2</span></code>) that implements the convolution.</p>
+<section id="opencv">
+<h2>1. OpenCV<a class="headerlink" href="#opencv" title="Link to this heading">#</a></h2>
+<p>Now that we have loaded our input images, we will use the <strong>OpenCV</strong> library (<code class="docutils literal notranslate"><span class="pre">cv2</span></code>) to explore the convolution operation. In particular, we will use the <code class="docutils literal notranslate"><span class="pre">filter2D</span></code> function, which performs convolution, to investigate two key applications of convolution in image processing: <strong>edge detection</strong> and <strong>image blurring</strong>.</p>
 <section id="edge-detection">
-<h3>Edge detection<a class="headerlink" href="#edge-detection" title="Link to this heading">#</a></h3>
-<p>First, we design a simple edge kernel sensitive to vertical edges.</p>
+<h3>Edge Detection<a class="headerlink" href="#edge-detection" title="Link to this heading">#</a></h3>
+<p>First, we will design a simple <strong>edge detection kernel</strong> that is sensitive to vertical edges. A kernel (or filter) is typically a small matrix used to detect certain features in an image, such as edges or textures. These small matrices make convolution computationally efficient and widely used in image processing.</p>
+<p>In this example, we define a <strong>3x3 edge detection kernel</strong>. The matrix has opposite (antagonistic) signs in the first and third columns, making it sensitive to vertical edges in the image.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defining a simple 3x3 edge detection kernel</span>
+<span class="n">edge_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
     <span class="p">[</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Detects vertical changes in pixel intensity</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span>  <span class="c1"># Rows are identical, looking for vertical edges</span>
+        <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="p">]</span>
 <span class="p">)</span>
+
+<span class="c1"># Printing the kernel to understand its structure</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">edge_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -695,21 +743,33 @@ Image type: uint8
 </div>
 </div>
 </div>
+<p>Here:</p>
+<ul class="simple">
+<li><p>Positive values (<code class="docutils literal notranslate"><span class="pre">1</span></code>) on the left and negative values (<code class="docutils literal notranslate"><span class="pre">-1</span></code>) on the right help detect changes in pixel intensity from left to right.</p></li>
+<li><p>When this kernel slides over the image, it highlights vertical edges by calculating the difference in intensity between neighbouring pixels.</p></li>
+</ul>
+<p>Next, we apply the <code class="docutils literal notranslate"><span class="pre">cv2.filter2D</span></code> function, which performs convolution, to each image using the edge detection kernel.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edge_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">edge_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Applying the edge detection kernel to each image using OpenCV&#39;s filter2D function</span>
+<span class="n">edge_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">edge_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Showing the obtained edges. The output might appear visually distorted because the edges in all RGB channels might not coincide.</p>
+<p>In this code:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">filter2D()</span></code></strong>: This function convolves the image with the given kernel. The parameter <code class="docutils literal notranslate"><span class="pre">ddepth=-1</span></code> ensures the output image has the same depth (or data type) as the input image.</p></li>
+<li><p>We apply the edge detection filter to both images and store the results in <code class="docutils literal notranslate"><span class="pre">edge_imgs</span></code>.</p></li>
+</ul>
+<p>Let’s now visualise the edges detected in both images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualising the edge-detected images</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Create a figure for displaying images</span>
 <span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add a subplot for each image</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>  <span class="c1"># Display the edge-detected image</span>
 </pre></div>
 </div>
 </div>
@@ -717,10 +777,11 @@ Image type: uint8
 <img alt="../_images/3b2147b2c44e61884eaa326ce72e4cea8f7be35718015c21d367c8ab2d394a1b.png" src="../_images/3b2147b2c44e61884eaa326ce72e4cea8f7be35718015c21d367c8ab2d394a1b.png" />
 </div>
 </div>
-<p>We can show the edges at each channel separately.</p>
+<p>The output may look distorted because the edges in the RGB colour channels may not align perfectly. To better understand the results, we can display the detected edges for each colour channel separately (Red, Green, and Blue).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the edges in the first image</span>
+<span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -730,7 +791,8 @@ Image type: uint8
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the edges in the second image</span>
+<span class="n">plot_3channels</span><span class="p">(</span><span class="n">edge_imgs</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -738,15 +800,22 @@ Image type: uint8
 <img alt="../_images/c8c4871f680cafc0769b04ffccec5df852c76ed6558d557297ca67d029a4cbf6.png" src="../_images/c8c4871f680cafc0769b04ffccec5df852c76ed6558d557297ca67d029a4cbf6.png" />
 </div>
 </div>
-<p><strong>Question</strong>: play with different kernel sizes (instead of current 3x3), what is the effect of larger kernel size?</p>
+<p><strong>Question:</strong> What happens if we increase the size of the kernel (e.g., from 3x3 to 5x5 or larger)?</p>
+<p>You can experiment with different kernel sizes by modifying the <code class="docutils literal notranslate"><span class="pre">edge_kernel</span></code> matrix. Larger kernels will affect a larger neighbourhood of pixels, which might result in different edges.</p>
 </section>
 <section id="image-blurring">
-<h3>Image blurring<a class="headerlink" href="#image-blurring" title="Link to this heading">#</a></h3>
-<p>We define a kernel whose output is the average of the window.</p>
+<h3>Image Blurring<a class="headerlink" href="#image-blurring" title="Link to this heading">#</a></h3>
+<p>To blur an image, we can use a convolution operation with an “averaging” kernel. This kernel smooths the image by averaging the pixel values within a sliding window, reducing sharp edges and fine details.</p>
+<p>We will start by creating a <strong>5x5 averaging kernel</strong>. Each element in this kernel has an equal weight, meaning that the convolution will compute the mean value of the pixel intensities within the window it slides over.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the size of the kernel (5x5)</span>
+<span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># Create the averaging kernel with equal weights (normalised by the total number of elements)</span>
 <span class="n">avg_kernel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">kernel_size</span><span class="p">,</span> <span class="n">kernel_size</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="n">kernel_size</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Print the kernel to understand its structure</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">avg_kernel</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -761,21 +830,31 @@ Image type: uint8
 </div>
 </div>
 </div>
+<p>In the code above:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.ones((kernel_size,</span> <span class="pre">kernel_size))</span></code></strong> creates a matrix where all values are <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
+<li><p>We then divide each element by <code class="docutils literal notranslate"><span class="pre">kernel_size</span> <span class="pre">**</span> <span class="pre">2</span></code> (in this case, 25) to normalise the values, ensuring the sum of the kernel elements is <code class="docutils literal notranslate"><span class="pre">1</span></code>. This ensures that the average of the pixel values in the window is computed.</p></li>
+</ul>
+<p>Now, we will apply this blurring kernel to our input images using the same <code class="docutils literal notranslate"><span class="pre">cv2.filter2D</span></code> function as before. This will smooth out details and make the images appear less sharp.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">blurred_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">avg_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the blurring kernel to each image using OpenCV&#39;s filter2D function</span>
+<span class="n">blurred_imgs</span> <span class="o">=</span> <span class="p">[</span><span class="n">cv2</span><span class="o">.</span><span class="n">filter2D</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">ddepth</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="n">avg_kernel</span><span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Showing the blurred images.</p>
+<ul class="simple">
+<li><p>As with edge detection, <strong><code class="docutils literal notranslate"><span class="pre">filter2D()</span></code></strong> performs convolution. Here, the kernel computes the average of the pixel values in a 5x5 neighbourhood for each pixel, producing a blurred version of the image.</p></li>
+</ul>
+<p>Let’s visualise the results to observe how the images have been blurred.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># visualising both images we loaded</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualising the blurred images</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  <span class="c1"># Create a figure to display the images</span>
 <span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">blurred_imgs</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add subplots for each image</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>  <span class="c1"># Display the blurred image</span>
 </pre></div>
 </div>
 </div>
@@ -783,24 +862,38 @@ Image type: uint8
 <img alt="../_images/4836b876211a01a2edbed8f1bfc1b0fe0f0b4185f60b2817050ee399213497b2.png" src="../_images/4836b876211a01a2edbed8f1bfc1b0fe0f0b4185f60b2817050ee399213497b2.png" />
 </div>
 </div>
+<p>In this visualisation:</p>
+<ul class="simple">
+<li><p>The images will appear smoother and less sharp compared to the original versions, as the averaging kernel reduces the intensity of edges and fine details.</p></li>
+</ul>
+<p>These two simple examples—<strong>edge detection</strong> and <strong>image blurring</strong>—demonstrate the power of the convolution operation. Despite being a basic operation, convolution is foundational in many image processing tasks. CNNs leverage this operation by combining thousands of convolutional layers to detect complex patterns in data, ultimately forming powerful models for tasks such as image recognition and classification.</p>
+<p>In the next section, we will explore how convolution operations are implemented in the <strong>PyTorch</strong> library, which we will be using throughout this course for deep learning applications.</p>
 </section>
 </section>
 <section id="pytorch">
 <h2>2. PyTorch<a class="headerlink" href="#pytorch" title="Link to this heading">#</a></h2>
-<p>Now we check similar operations in <code class="docutils literal notranslate"><span class="pre">torch</span></code>. Note, torch functions are designed to be integrated into a network, but we use them here on single images to learn better basic operations.</p>
-<section id="tensor">
-<h3>Tensor<a class="headerlink" href="#tensor" title="Link to this heading">#</a></h3>
-<p>In this tutorial, we’ll use <code class="docutils literal notranslate"><span class="pre">torch</span></code> as one of the frameworks that implement convolution.</p>
-<p><code class="docutils literal notranslate"><span class="pre">torch</span></code> expects images in a different format, the type should be <code class="docutils literal notranslate"><span class="pre">float</span></code> and channels should proceed the spatial dimension, i.e., <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>.</p>
-<p>Furthermore, <code class="docutils literal notranslate"><span class="pre">torch</span></code> functions are designed for Tensors of 4D, where the first dimension corresponds to different images <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">w,</span> <span class="pre">h)</span></code>. In our example, b equals 2 as we have loaded two images.</p>
+<p>In this section, we will explore how to perform similar convolution operations using <strong>PyTorch</strong>. While PyTorch functions are designed to be used within neural networks, here we will use them on single images to help you better understand the fundamental operations. In this tutorial, we will focus on <strong>edge detection</strong>, but you can try image blurring on your own as an exercise.</p>
+<section id="working-with-tensors">
+<h3>Working with Tensors<a class="headerlink" href="#working-with-tensors" title="Link to this heading">#</a></h3>
+<p>PyTorch uses a different format for images compared to libraries like OpenCV. Specifically:</p>
+<ul class="simple">
+<li><p>The image type should be <code class="docutils literal notranslate"><span class="pre">float</span></code> (not <code class="docutils literal notranslate"><span class="pre">uint8</span></code>).</p></li>
+<li><p>The <strong>channel dimension</strong> (representing colour channels) must come before the <strong>spatial dimensions</strong> (width and height), i.e., the shape should be <code class="docutils literal notranslate"><span class="pre">(3,</span> <span class="pre">h,</span> <span class="pre">w)</span></code> for an RGB image.</p></li>
+<li><p>PyTorch functions typically expect 4D tensors, where the first dimension corresponds to a batch of images. In our case, since we have two images, the shape will be <code class="docutils literal notranslate"><span class="pre">(b,</span> <span class="pre">3,</span> <span class="pre">h,</span> <span class="pre">w)</span></code> with <code class="docutils literal notranslate"><span class="pre">b=2</span></code>.</p></li>
+</ul>
+<p>Let’s begin by converting our images to the format expected by PyTorch.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converting the images from uint8 to float and create a torch tensor</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the images from uint8 (0-255) to float32 and scale to [0, 1]</span>
 <span class="n">torch_tensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float32&#39;</span><span class="p">))</span> <span class="o">/</span> <span class="mi">255</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">imgs</span><span class="p">]</span>
-<span class="c1"># permuting the tensor to place the RGB channles as the first dimension</span>
+
+<span class="c1"># Permute the dimensions to move the colour channels (RGB) first</span>
 <span class="n">torch_tensors</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">permute</span><span class="p">(</span><span class="n">torch_tensor</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="k">for</span> <span class="n">torch_tensor</span> <span class="ow">in</span> <span class="n">torch_tensors</span><span class="p">]</span>
-<span class="c1"># stacking both images into one 4D tensor</span>
+
+<span class="c1"># Stack both images into one 4D tensor (batch_size, channels, height, width)</span>
 <span class="n">torch_tensors</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Check the size of the resulting tensor</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tensor size:&quot;</span><span class="p">,</span> <span class="n">torch_tensors</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -811,17 +904,24 @@ Image type: uint8
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.from_numpy()</span></code></strong> converts the NumPy array to a PyTorch tensor.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.permute()</span></code></strong> rearranges the dimensions to put the colour channels first.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.stack()</span></code></strong> combines both images into a single tensor with a batch dimension.</p></li>
+</ul>
 </section>
-<section id="id1">
-<h3>Edge detection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>We use the <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function to convolve a tensor with a kernel. Please note at this stage we only have defined the convolution function that we call a few lines below.</p>
-<p>We set <code class="docutils literal notranslate"><span class="pre">requires_grad</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code> as we don’t want to update the parameters.</p>
-<p>After printing the <code class="docutils literal notranslate"><span class="pre">weights</span></code> of the kernel, we see that they are from a random distribution.</p>
-<p><code class="docutils literal notranslate"><span class="pre">torch_conv.weight.shape</span></code> returns a 4D shape, (1, 3, 3, 3) corresponding to (out_channels, in_channels, kernel_size, kernel_size).</p>
+<section id="edge-detection-with-pytorch">
+<h3>Edge Detection with PyTorch<a class="headerlink" href="#edge-detection-with-pytorch" title="Link to this heading">#</a></h3>
+<p>We will now apply a convolution operation in PyTorch using the <code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d</span></code> function. This function will convolve the input tensor with a kernel, similar to what we did in OpenCV.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Conv2d layer with 3 input channels (RGB) and 1 output channel (for edges)</span>
+<span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Disable gradient computation since we&#39;re not training a model</span>
 <span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Print the initial random weights of the kernel</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
@@ -829,26 +929,40 @@ Image type: uint8
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameter containing:
-tensor([[[[ 0.1333, -0.0069,  0.0270],
-          [ 0.0636, -0.0737, -0.0363],
-          [ 0.0291, -0.0627,  0.1502]],
+tensor([[[[-0.1393,  0.1269,  0.1215],
+          [ 0.0989, -0.1230, -0.1475],
+          [ 0.0788, -0.1871, -0.1472]],
 
-         [[ 0.1045,  0.1899, -0.1410],
-          [ 0.0315, -0.1463, -0.0082],
-          [-0.1500,  0.1781,  0.1124]],
+         [[ 0.0840, -0.1888, -0.0002],
+          [ 0.1656, -0.0563, -0.1842],
+          [ 0.1522, -0.0847,  0.0265]],
 
-         [[-0.1232,  0.1289,  0.1335],
-          [-0.1755,  0.0696,  0.0701],
-          [-0.0548,  0.0966, -0.1682]]]])
+         [[ 0.1698,  0.1811, -0.1898],
+          [ 0.1823,  0.0958, -0.0037],
+          [-0.1371,  0.1908, -0.0690]]]])
 torch.Size([1, 3, 3, 3])
 </pre></div>
 </div>
 </div>
 </div>
-<p>We fill in the weights with the edge kernel we defined earlier.</p>
+<p>In the code above:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.nn.Conv2d()</span></code></strong> creates a convolution layer. We specify:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_channels=3</span></code>: The number of input channels (RGB).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">out_channels=1</span></code>: We want to produce a single channel (edge detection).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(3,</span> <span class="pre">3)</span></code>: The size of the kernel.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">requires_grad=False</span></code></strong> ensures the weights won’t be updated, as we’re not training a network.</p></li>
+</ul>
+<p>The initial weights of the kernel we created above are random. We will replace them with the <strong>edge detection kernel</strong> we used earlier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fill the convolution kernel with the predefined edge detection kernel</span>
+<span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Print the updated kernel to verify the change</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -870,16 +984,17 @@ tensor([[[[ 1.,  0., -1.],
 </div>
 </div>
 </div>
-<p>We call the <code class="docutils literal notranslate"><span class="pre">torch_conv</span></code> function we defined to obtain edges in the torch.</p>
-<p>The output size is <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">W,</span> <span class="pre">H)</span></code>:</p>
 <ul class="simple">
-<li><p>2 corresponds to two input images,</p></li>
-<li><p>1 corresponds to the number of output channels.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.from_numpy()</span></code></strong> converts the edge kernel to a PyTorch tensor.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.stack()</span></code></strong> replicates the edge kernel across all three colour channels (R, G, B).</p></li>
 </ul>
-<p><strong>Question</strong> Why is the output’s width and height smaller than the input’s dimensions which were <span class="math notranslate nohighlight">\(321 \times 481\)</span>?</p>
+<p>Now, we can apply the convolution operation to detect edges in the images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_edges</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply the convolution function to the tensor containing the images</span>
+<span class="n">torch_edges</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">torch_edges</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -890,65 +1005,89 @@ tensor([[[[ 1.,  0., -1.],
 </div>
 </div>
 </div>
-<p>Converting the torch outputs to numpy for visualisation.</p>
-<p><strong>Question</strong> Why do the results look quite different from what we obtained from open-cv?</p>
+<ul class="simple">
+<li><p>The output tensor will have the shape <code class="docutils literal notranslate"><span class="pre">(2,</span> <span class="pre">1,</span> <span class="pre">W,</span> <span class="pre">H)</span></code>, where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> corresponds to the two input images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span></code> is the number of output channels (edges).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> and <code class="docutils literal notranslate"><span class="pre">H</span></code> are the width and height of the resulting images.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Question</strong>: Why is the output’s width and height smaller than the input’s original dimensions (<span class="math notranslate nohighlight">\(321 \times 481\)</span>)?</p>
+</section>
+<section id="visualise-output-tensors">
+<h3>Visualise Output Tensors<a class="headerlink" href="#visualise-output-tensors" title="Link to this heading">#</a></h3>
+<p>To visualise the results, we will convert the PyTorch tensor back to NumPy and display the images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">torch_edges</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-<span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">torch_edges_np</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the tensor back to NumPy for visualisation</span>
+<span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">torch_edges</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>  <span class="c1"># detach from the computational graph</span>
+<span class="n">torch_edges_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">torch_edges_np</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Rearrange dimensions for plotting</span>
 
-<span class="c1"># visualising both images we loaded</span>
+<span class="c1"># Visualising the edge-detected images</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">torch_edges_np</span><span class="p">):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">matshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>  <span class="c1"># Display the edges in grayscale</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6faf1574dd5afd8a7c117d767f89b28a3d2cde25f29fec77db8ae8cf7d53942d.png" src="../_images/6faf1574dd5afd8a7c117d767f89b28a3d2cde25f29fec77db8ae8cf7d53942d.png" />
+<img alt="../_images/3ea1a6e56ede44531eb4a08fec2d56c445383215d24896baf9f5af50ca68f415.png" src="../_images/3ea1a6e56ede44531eb4a08fec2d56c445383215d24896baf9f5af50ca68f415.png" />
 </div>
 </div>
-</section>
-</section>
-<section id="kernel-size">
-<h2>3. Kernel size<a class="headerlink" href="#kernel-size" title="Link to this heading">#</a></h2>
-<p>Kernels often have a window of an odd size to facilitate the centring of the kernel on top of each pixel.
-The size of the kernel at each dimension can be specified accordingly by passing a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> to the <code class="docutils literal notranslate"><span class="pre">kernel_size</span></code> argument. For instance:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(3,</span> <span class="pre">3)</span></code> defines a square window.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(11,</span> <span class="pre">3)</span></code> has a window spanning over 11 rows and 3 columns.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(5,</span> <span class="pre">1)</span></code> performs convolution only over rows.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">torch.detach()</span></code></strong> detaches the tensor from the computation graph, allowing us to convert it to NumPy without gradients.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">np.transpose()</span></code></strong> reorders the dimensions to make it compatible for plotting with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>.</p></li>
 </ul>
+<p><strong>Question</strong>: Why do the results look different from what we obtained using OpenCV?</p>
+</section>
+</section>
+<section id="kernel-size-in-convolutions">
+<h2>3. Kernel Size in Convolutions<a class="headerlink" href="#kernel-size-in-convolutions" title="Link to this heading">#</a></h2>
+<p>Convolutional kernels typically have an odd-sized window. This makes it easier to centre the kernel over each pixel in the input image during the convolution process. The size of the kernel can be specified for each dimension independently by passing a <code class="docutils literal notranslate"><span class="pre">tuple</span></code> to the <code class="docutils literal notranslate"><span class="pre">kernel_size</span></code> argument.</p>
+<p>For example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(3,</span> <span class="pre">3)</span></code> defines a square window of 3 rows and 3 columns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(11,</span> <span class="pre">3)</span></code> defines a rectangular window spanning 11 rows and 3 columns.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kernel_size=(5,</span> <span class="pre">1)</span></code> applies convolution only along the rows.</p></li>
+</ul>
+<p>As the kernel size increases, the computational cost also increases. This is because the number of computations needed for the convolution grows <strong>quadratically</strong> with the kernel size. For instance, if we increase the kernel size from <code class="docutils literal notranslate"><span class="pre">3x3</span></code> to <code class="docutils literal notranslate"><span class="pre">5x5</span></code>, the number of calculations increases by a factor of 2.25 (since <span class="math notranslate nohighlight">\(5^2 / 3^2 = 2.25\)</span>). Critically, this increase in computational time occurs at every pixel. This can significantly impact both the time and memory required to perform the operation, especially on large images.</p>
 <section id="times-1-convolution">
-<h3><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution<a class="headerlink" href="#times-1-convolution" title="Link to this heading">#</a></h3>
-<p>A <span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution ignores the spatial resolution and only convolves over the depth of
-the input signal. This is a very useful convolution to expand/shrink the number of channels/kernels
-without affecting the spatial resolution.</p>
+<h3><span class="math notranslate nohighlight">\(1 \times 1\)</span> Convolution<a class="headerlink" href="#times-1-convolution" title="Link to this heading">#</a></h3>
+<p>A <strong><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution</strong> does not perform any spatial convolution. Instead, it only convolves across the depth (i.e., the colour channels). This is useful for increasing or decreasing the number of channels without changing the image’s spatial resolution. It’s commonly used in deep learning to adjust the number of feature maps.</p>
 </section>
 </section>
-<section id="padding">
-<h2>4. Padding<a class="headerlink" href="#padding" title="Link to this heading">#</a></h2>
-<p>Computing convolution for border pixels is not possible without padding. Remember convolution
-is computed by overlaying the centre of the kernel on top of each pixel. This causes an issue for
-border pixels because part of the kernels goes beyond the spatial resolution of the input image.
-To avoid this issue we can pad the image using different values:</p>
+<section id="padding-in-convolution">
+<h2>4. Padding in Convolution<a class="headerlink" href="#padding-in-convolution" title="Link to this heading">#</a></h2>
+<p>When applying convolution, an issue arises at the <strong>border pixels</strong> because part of the convolution kernel may fall outside the input image. To handle this, we use <strong>padding</strong>, which adds extra pixels around the edges of the image. There are several types of padding:</p>
 <ul class="simple">
-<li><p>‘constant’</p></li>
-<li><p>‘reflect’</p></li>
-<li><p>‘replicate’</p></li>
-<li><p>‘circular’.</p></li>
+<li><p><strong>‘constant’</strong>: Pads with a constant value (e.g., zeros).</p></li>
+<li><p><strong>‘reflect’</strong>: Reflects the edge of the image.</p></li>
+<li><p><strong>‘replicate’</strong>: Replicates the border pixel values.</p></li>
+<li><p><strong>‘circular’</strong>: Wraps the image in a circular manner.</p></li>
 </ul>
-<p>If we want to have an output with the same spatial resolution as the input, we should pad the image
-with <span class="math notranslate nohighlight">\(\frac{kernel\_size}{2} - 1\)</span>. For instance, for our example with <code class="docutils literal notranslate"><span class="pre">kernel_size=(3,</span> <span class="pre">3)</span></code>, we
-add <code class="docutils literal notranslate"><span class="pre">padding=1</span></code>.</p>
+<p>If we want the output image to have the same size as the input, we need to add padding of size <span class="math notranslate nohighlight">\(\frac{kernel\_size}{2}\)</span> (rounded down). For example, for a <code class="docutils literal notranslate"><span class="pre">3x3</span></code> kernel, we add <code class="docutils literal notranslate"><span class="pre">padding=1</span></code> to ensure the output dimensions match the input dimensions.</p>
+<p>Here’s an example of applying convolution with padding:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Conv2D layer with padding to maintain the same output size as the input</span>
+<span class="n">torch_conv_pad</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
     <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span>
 <span class="p">)</span>
-<span class="n">torch_edges</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">torch_edges</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Disable gradient computation since we&#39;re not training a model</span>
+<span class="n">torch_conv_pad</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the convolution kernel with the predefined edge detection kernel</span>
+<span class="n">torch_conv_pad</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the convolution to the image tensor</span>
+<span class="n">torch_edges_pad</span> <span class="o">=</span> <span class="n">torch_conv_pad</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">torch_edges_pad</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -958,27 +1097,40 @@ add <code class="docutils literal notranslate"><span class="pre">padding=1</span
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">padding=1</span></code></strong> adds one layer of padding around the image, allowing the convolution to include the border pixels.</p></li>
+</ul>
 </section>
 <section id="downsampling">
 <h2>5. Downsampling<a class="headerlink" href="#downsampling" title="Link to this heading">#</a></h2>
-<p>One way to gradually downsample the input signal is to perform convolution without padding
-which reduces the spatial resolution by <span class="math notranslate nohighlight">\(\frac{kernel\_size}{2} + 1\)</span> as we saw in our example
-without padding.</p>
+<p>One common use of convolution is to <strong>downsample</strong> the input image, reducing its spatial resolution. One way to achieve this is by <strong>not using padding</strong>. When no padding is applied, the output size is reduced by <span class="math notranslate nohighlight">\(\frac{kernel\_size}{2} + 1\)</span> because the convolution cannot process the border pixels.</p>
 <section id="stride">
 <h3>Stride<a class="headerlink" href="#stride" title="Link to this heading">#</a></h3>
-<p>In the convolution operation, we can systematically skip input pixels (e.g., every other one) to
-downsample the input. This is used in several seminal architectures such as <code class="docutils literal notranslate"><span class="pre">ResNet</span></code>.</p>
-<p>Similar to kernel size the value of stride (jumping pixels) can be defined
-for each dimension independently.</p>
-<p>If we perform convolution with <code class="docutils literal notranslate"><span class="pre">stride=2</span></code>, we downsample the spatial resolution by a factor of
-two at both dimensions.</p>
+<p>Another way to downsample the input is by using the <strong>stride</strong> parameter in the convolution operation. <strong>Stride</strong> refers to the number of pixels skipped during the convolution process. For instance, if <code class="docutils literal notranslate"><span class="pre">stride=2</span></code>, the convolution jumps every other pixel, effectively downsampling the image by a factor of two.</p>
+<p>The stride can also be set independently for each dimension, much like the kernel size. For example:</p>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">stride=2</span></code></strong> will downsample both dimensions by a factor of two.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">stride=(2,</span> <span class="pre">1)</span></code></strong> will downsample only the rows, while the columns remain unaffected.</p></li>
+</ul>
+<p>Here’s an example of applying convolution with <code class="docutils literal notranslate"><span class="pre">stride=2</span></code> to downsample the image:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply convolution with stride=2 to downsample both dimensions</span>
+<span class="n">torch_conv_stride</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
     <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span>
 <span class="p">)</span>
-<span class="n">out_conv</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">out_conv</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Disable gradient computation since we&#39;re not training a model</span>
+<span class="n">torch_conv_stride</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the convolution kernel with the predefined edge detection kernel</span>
+<span class="n">torch_conv_stride</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the convolution to the image tensor</span>
+<span class="n">out_conv_stride</span> <span class="o">=</span> <span class="n">torch_conv_stride</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_conv_stride</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -988,14 +1140,28 @@ two at both dimensions.</p>
 </div>
 </div>
 </div>
-<p>Let’s downsample only the rows by specifying <code class="docutils literal notranslate"><span class="pre">stride=(2,</span> <span class="pre">1)</span></code>:</p>
+<ul class="simple">
+<li><p>In this case, the output will have half the resolution of the input in both the width and height due to <code class="docutils literal notranslate"><span class="pre">stride=2</span></code>.</p></li>
+</ul>
+<p>Let’s see how we can downsample <strong>only the rows</strong> by setting <code class="docutils literal notranslate"><span class="pre">stride=(2,</span> <span class="pre">1)</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">torch_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Apply convolution with stride=(2, 1) to downsample only the rows</span>
+<span class="n">torch_conv_stride</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
     <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="p">)</span>
-<span class="n">out_conv</span> <span class="o">=</span> <span class="n">torch_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">out_conv</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># Disable gradient computation since we&#39;re not training a model</span>
+<span class="n">torch_conv_stride</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the convolution kernel with the predefined edge detection kernel</span>
+<span class="n">torch_conv_stride</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the convolution to the image tensor</span>
+<span class="n">out_conv_stride</span> <span class="o">=</span> <span class="n">torch_conv_stride</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_conv_stride</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1005,22 +1171,149 @@ two at both dimensions.</p>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Here, <code class="docutils literal notranslate"><span class="pre">stride=(2,</span> <span class="pre">1)</span></code> means we downsample only the rows by a factor of two, while the columns remain at the same resolution.</p></li>
+</ul>
 </section>
+</section>
+<section id="dilation">
+<h2>6. Dilation<a class="headerlink" href="#dilation" title="Link to this heading">#</a></h2>
+<p>A useful way to expand the <strong>receptive field</strong> of a convolutional layer without significantly increasing computational cost is by using the <code class="docutils literal notranslate"><span class="pre">dilation</span></code> parameter in the <code class="docutils literal notranslate"><span class="pre">Conv2d</span></code> function. Known as the <strong>à trous algorithm</strong> (meaning “with holes”), <code class="docutils literal notranslate"><span class="pre">dilation</span></code> adjusts the spacing between kernel elements, allowing the convolutional layer to cover a larger area of the input image. This is different from <code class="docutils literal notranslate"><span class="pre">stride</span></code>, which controls the spacing between the points where the convolution is applied.</p>
+<p>Below is an illustration showing how dilation works by adding gaps between elements in the kernel.</p>
+<img src="https://raw.githubusercontent.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/refs/heads/master/imgs/convolution_dilation.png" />
+<p>Let’s use <code class="docutils literal notranslate"><span class="pre">dilation=3</span></code> for edge detection to see how this influences the output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Conv2D layer with a dilation parameter to expand the receptive field</span>
+<span class="n">torch_conv_dilation</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">3</span>
+<span class="p">)</span>
+
+<span class="c1"># Disable gradient computation as we’re not training a model</span>
+<span class="n">torch_conv_dilation</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the kernel with a predefined edge detection kernel</span>
+<span class="n">torch_conv_dilation</span><span class="o">.</span><span class="n">weight</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the convolution to the image tensor</span>
+<span class="n">out_conv_dilation</span> <span class="o">=</span> <span class="n">torch_conv_dilation</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_conv_dilation</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 1, 321, 481])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Notice that <code class="docutils literal notranslate"><span class="pre">padding=3</span></code> is used here to ensure the output image has the same spatial resolution as the input.</p></li>
+</ul>
+<p>Let’s visualise the edges detected with the dilated kernel.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the tensor back to a NumPy array for visualisation</span>
+<span class="n">out_conv_np</span> <span class="o">=</span> <span class="n">out_conv_dilation</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>  <span class="c1"># Detach from computational graph</span>
+<span class="n">out_conv_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">out_conv_np</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Rearrange for plotting</span>
+
+<span class="c1"># Displaying the images with detected edges</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">img_ind</span><span class="p">,</span> <span class="n">img</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">out_conv_np</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">img_ind</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>  <span class="c1"># Show edges in grayscale</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/5f12b20efba186382841ecc341dfd09a442a3ba6eb614b7d56a5db1db00d288d.png" src="../_images/5f12b20efba186382841ecc341dfd09a442a3ba6eb614b7d56a5db1db00d288d.png" />
+</div>
+</div>
+<p><strong>Question</strong>: Compare this output with the result when <code class="docutils literal notranslate"><span class="pre">dilation=1</span></code>. How has dilation affected the output edges?</p>
+</section>
+<section id="transposed-convolution">
+<h2>7. Transposed convolution<a class="headerlink" href="#transposed-convolution" title="Link to this heading">#</a></h2>
+<p>The convolutional layers we have discussed so far typically reduce the spatial dimensions of the input, a process known as <strong>downsampling</strong>. In certain tasks, however, we may want to <strong>increase the spatial resolution</strong>. For example, in <strong>semantic segmentation</strong>, the model’s output often needs to match the spatial resolution of the input image. As convolutional layers typically downsample the input, <strong>transposed convolution</strong> offers a method to increase the resolution of feature maps in the network.</p>
+<p>Though it is sometimes referred to as “deconvolution”, transposed convolution is not a true inverse operation to convolution. Instead, it uses a process that expands the spatial dimensions.</p>
+<p>Let’s explore a basic example of transposed convolution with <code class="docutils literal notranslate"><span class="pre">ConvTranspose2d</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a ConvTranspose2D layer to increase spatial dimensions</span>
+<span class="n">torch_transpose_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Disable gradient computation as we’re not training a model</span>
+<span class="n">torch_transpose_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the kernel with the edge detection kernel</span>
+<span class="n">torch_transpose_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the transposed convolution to the image tensor</span>
+<span class="n">out_transpose_conv</span> <span class="o">=</span> <span class="n">torch_transpose_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_transpose_conv</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 1, 323, 483])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We observe that the spatial resolution of the output tensor (i.e., <span class="math notranslate nohighlight">\(323 \times 483\)</span>) is slightly larger than the input tensor (<span class="math notranslate nohighlight">\(321 \times 481\)</span>). In general, for an input size of <span class="math notranslate nohighlight">\(n_h \times n_w\)</span> and a kernel size of <span class="math notranslate nohighlight">\(k_h \times k_w\)</span>, the output size will be <span class="math notranslate nohighlight">\((n_h + k_h -1) \times (n_w + k_w -1)\)</span>.</p>
+<p>Parameters like <code class="docutils literal notranslate"><span class="pre">padding</span></code> and <code class="docutils literal notranslate"><span class="pre">stride</span></code> also impact transposed convolution but in the opposite way compared to standard convolution. Here, they are applied to the output rather than the input, so setting <code class="docutils literal notranslate"><span class="pre">stride=2</span></code> increases the spatial resolution by a factor of 2.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a ConvTranspose2D layer with stride=2 to increase spatial dimensions</span>
+<span class="n">torch_transpose_conv</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span>
+    <span class="n">in_channels</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">out_channels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span>
+<span class="p">)</span>
+
+<span class="c1"># Disable gradient computation</span>
+<span class="n">torch_transpose_conv</span><span class="o">.</span><span class="n">weight</span><span class="o">.</span><span class="n">requires_grad</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># Fill the kernel with the edge detection kernel</span>
+<span class="n">torch_transpose_conv</span><span class="o">.</span><span class="n">weight</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">from_numpy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">edge_kernel</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Apply the transposed convolution to the image tensor</span>
+<span class="n">out_transpose_conv</span> <span class="o">=</span> <span class="n">torch_transpose_conv</span><span class="p">(</span><span class="n">torch_tensors</span><span class="p">)</span>
+
+<span class="c1"># Print the shape of the output tensor</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">out_transpose_conv</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>torch.Size([2, 1, 643, 963])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion">
+<h2>Discussion<a class="headerlink" href="#discussion" title="Link to this heading">#</a></h2>
+<p>The discovery of <strong>simple cells</strong> in the visual cortex by Nobel Prize laureates <a class="reference external" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC1363130/pdf/jphysiol01298-0128.pdf">Hubel and Wiesel (1962)</a> marked a major breakthrough in our understanding of how the brain interprets visual information. They demonstrated that specific neurons in the <strong>primary visual cortex (V1)</strong> respond selectively to certain patterns within the visual field, such as edges, lines, or specific orientations. <strong>Convolutional kernels</strong> such as <strong>Gabor</strong> and <strong>Difference-of-Gaussian (DoG)</strong> filters effectively model these <strong>receptive fields</strong> and early stages of visual processing.</p>
+<p>These biologically inspired models have not only enhanced our understanding of the visual system but have also influenced the design of <strong>CNNs</strong> that <a class="reference external" href="https://link.springer.com/content/pdf/10.1007/BF00344251.pdf">mimic the process of visual recognition in the brain</a>, progressively extracting hierarchical features from images. This transformation of visual information aligns with the layered processing seen in biological vision.</p>
+<p>To see these ideas in action, an <strong>interesting exercise</strong> is to visualise the initial convolutional kernels in different neural network architectures, such as <strong>AlexNet</strong>, <strong>ResNet</strong>, and <strong>Vision Transformers (ViT)</strong>. By comparing these kernels to the receptive field models in biological vision, such as oriented Gabors or double-opponent DoG filters, we can observe how neural networks align well with the properties of the visual cortex.</p>
 </section>
 <hr class="docutils" />
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
-<p>Below is a list of exercises helping you to practice what we learnt above.</p>
+<p>Practise what we’ve covered with the following exercises:</p>
 <ol class="arabic simple">
-<li><p>Implement the image deblurring in the <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p></li>
-<li><p>Convert a colourful image to grey scale using a convolution with <code class="docutils literal notranslate"><span class="pre">kernel_size=(1,</span> <span class="pre">1)</span></code>.</p></li>
+<li><p>Implement image blurring using <code class="docutils literal notranslate"><span class="pre">torch</span></code>.</p></li>
+<li><p>Convert a colour image to greyscale by applying a convolution with <code class="docutils literal notranslate"><span class="pre">kernel_size=(1,</span> <span class="pre">1)</span></code></p></li>
 </ol>
 </section>
 <hr class="docutils" />
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kernel_(image_processing)">Wikipedia Kernel (image processing)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vdumoulin/conv_arithmetic/blob/master/README.md">Animated Visualisation of Convolutional Operation</a></p></li>
+<li><p><a class="reference external" href="https://d2l.ai/chapter_computer-vision/transposed-conv.html">Transposed Convolution Explanation</a></p></li>
 </ol>
 </section>
 </section>
@@ -1065,11 +1358,11 @@ two at both dimensions.</p>
       </div>
     </a>
     <a class="right-next"
-       href="pooling.html"
+       href="activation_function.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">1.2. Pooling</p>
+        <p class="prev-next-title">1.2. Activation Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1090,29 +1383,34 @@ two at both dimensions.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">Packages</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-image">Input Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualising-rgb-channels">Visualising RGB Channels</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#open-cv">1. Open-CV</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge detection</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image blurring</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opencv">1. OpenCV</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection">Edge Detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#image-blurring">Image Blurring</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch">2. PyTorch</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor">Tensor</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Edge detection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-tensors">Working with Tensors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#edge-detection-with-pytorch">Edge Detection with PyTorch</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualise-output-tensors">Visualise Output Tensors</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-size">3. Kernel size</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#times-1-convolution"><span class="math notranslate nohighlight">\(1 \times 1\)</span> convolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kernel-size-in-convolutions">3. Kernel Size in Convolutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#times-1-convolution"><span class="math notranslate nohighlight">\(1 \times 1\)</span> Convolution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padding">4. Padding</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#padding-in-convolution">4. Padding in Convolution</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#downsampling">5. Downsampling</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stride">Stride</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dilation">6. Dilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transposed-convolution">7. Transposed convolution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion">Discussion</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
