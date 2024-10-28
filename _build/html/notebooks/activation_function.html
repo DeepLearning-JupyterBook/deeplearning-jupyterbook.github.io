@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.3. Activation Function &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
+    <title>1.2. Activation Functions &#8212; Deep Learning for Experimental Psychologists and Cognitive Neuroscientists</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -76,8 +76,8 @@
     <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2. Quick Start" href="quick_start.html" />
-    <link rel="prev" title="1.2. Pooling" href="pooling.html" />
+    <link rel="next" title="1.3. Pooling" href="pooling.html" />
+    <link rel="prev" title="1.1. Convolution" href="convolution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,14 +200,20 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="networks_building_blocks.html">1. Network’s Building Blocks</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.2. Pooling</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.3. Activation Function</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1.2. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pooling.html">1.3. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">2. Quick Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="optimisation_learning.html">3. Optimisation and Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="vision.html">4. Vision</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="image_classification.html">4.1. Image Classification</a></li>
+
+
+
+
+
 <li class="toctree-l2"><a class="reference internal" href="image_segmentation.html">4.2. Image Segmentation</a></li>
 </ul>
 </li>
@@ -275,6 +281,8 @@
 <li class="toctree-l2"><a class="reference internal" href="python_course/loops.html">Loops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/plotting.html">Plotting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python_course/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/moduleObjects.html">Modules and Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python_course/inheritance.html">Inheritance</a></li>
 </ul>
 </li>
 </ul>
@@ -510,7 +518,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1.3. Activation Function</h1>
+    <h1>1.2. Activation Functions</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -521,12 +529,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-tensor">Input tensor</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relu-rectifier-linear-unit">1. ReLU (Rectifier Linear Unit)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-non-linear-functions">2. Other Non-linear functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relu-rectified-linear-unit">1. ReLU (Rectified Linear Unit)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-non-linear-functions">2. Other Non-linear Functions</a></li>
 </ul>
             </nav>
         </div>
@@ -538,24 +546,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="activation-function">
-<h1>1.3. Activation Function<a class="headerlink" href="#activation-function" title="Link to this heading">#</a></h1>
-<p>Non-linear activation functions are an important part of deep neural networks that allow them to
-learn non-linear problems. Activation functions are <strong>elementwise</strong> (e.g., at each pixel independently).</p>
-<p>Pytorch has implemented several non-linear activation function, please check their <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity">documentation</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="activation-functions">
+<h1>1.2. Activation Functions<a class="headerlink" href="#activation-functions" title="Link to this heading">#</a></h1>
+<p>Activation functions are essential components of artificial neural networks, and modern architectures—such as convolutional neural networks (CNNs) and vision transformers (ViTs)—use them extensively across various data domains. <a class="reference external" href="https://en.wikipedia.org/wiki/Activation_function#Table_of_activation_functions">Activation functions</a> bring several benefits:</p>
+<ol class="arabic simple">
+<li><p><strong>Stabilising the optimisation process</strong>: Many activation functions restrict output values to a finite range, which can help keep the network’s behaviour stable during training.</p></li>
+<li><p><strong>Adding non-linearity</strong>: Like <a class="reference external" href="https://en.wikipedia.org/wiki/Complex_cell"><strong>complex cells</strong></a> in the visual cortex that cannot be represented by simple linear operations, artificial neural networks also rely on non-linear activation functions to solve non-linear problems. These functions enable the network to learn complex patterns in the data.</p></li>
+</ol>
+<p>Most activation functions operate on each element of the input independently—known as <strong>elementwise</strong> operations. PyTorch provides a variety of non-linear activation functions, which you can explore in their <a class="reference external" href="https://pytorch.org/docs/stable/nn.html#non-linear-activations-weighted-sum-nonlinearity">documentation</a>.</p>
 <section id="preparation">
 <h2>0. Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
-<section id="packages">
-<h3>Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h3>
-<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<p>Before we dive into the main content of this notebook, let’s start by preparing all the necessary materials.</p>
+<section id="required-packages">
+<h3>Required Packages<a class="headerlink" href="#required-packages" title="Link to this heading">#</a></h3>
+<p>We will need several libraries to implement this tutorial, each serving a specific purpose:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
-<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
+<li><p><strong><a class="reference external" href="https://numpy.org/">numpy</a>:</strong> The main package for scientific computing in Python. It’s commonly imported with the alias <code class="docutils literal notranslate"><span class="pre">np</span></code> to simplify its use in code.</p></li>
+<li><p><strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a>:</strong> A library for plotting graphs and visualising data in Python.</p></li>
+<li><p><strong><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a>:</strong> A deep learning framework that helps us define neural networks, manage datasets, optimise loss functions, and more.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing the necessary libraries</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">torch</span>
@@ -566,17 +578,17 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
 </section>
 <section id="input-tensor">
 <h3>Input tensor<a class="headerlink" href="#input-tensor" title="Link to this heading">#</a></h3>
-<p>In this notebook, we compute different activation functions for an input tensor ranging between
-<span class="math notranslate nohighlight">\([-10, 10]\)</span>.</p>
+<p>For this notebook, we’ll use an input tensor ranging from <span class="math notranslate nohighlight">\(-10\)</span> to <span class="math notranslate nohighlight">\(10\)</span> to explore how different activation functions respond to various input values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">input_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating a tensor with values ranging from -10 to 10</span>
+<span class="n">input_tensor</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Input tensor:&quot;</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>tensor([-10.,  -9.,  -8.,  -7.,  -6.,  -5.,  -4.,  -3.,  -2.,  -1.,   0.,   1.,
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Input tensor: tensor([-10.,  -9.,  -8.,  -7.,  -6.,  -5.,  -4.,  -3.,  -2.,  -1.,   0.,   1.,
           2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.])
 </pre></div>
 </div>
@@ -584,13 +596,17 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
 </div>
 </section>
 </section>
-<section id="relu-rectifier-linear-unit">
-<h2>1. ReLU (Rectifier Linear Unit)<a class="headerlink" href="#relu-rectifier-linear-unit" title="Link to this heading">#</a></h2>
-<p>ReLU is probably the most famous and widely used non-linear function that clips the negative values:</p>
+<section id="relu-rectified-linear-unit">
+<h2>1. ReLU (Rectified Linear Unit)<a class="headerlink" href="#relu-rectified-linear-unit" title="Link to this heading">#</a></h2>
+<p><strong>ReLU</strong> (Rectified Linear Unit) is one of the most popular activation functions. It’s defined as:</p>
 <p><span class="math notranslate nohighlight">\(ReLU(x)=(x)^+=max(0,x)\)</span></p>
+<p>This function sets any negative values to zero, allowing only positive values to pass through. ReLU introduces non-linearity to the network while keeping computations efficient.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">relu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialising the ReLU activation function</span>
+<span class="n">relu</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+
+<span class="c1"># Plotting ReLU to visualise its behaviour</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">relu</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Input&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Output&#39;</span><span class="p">)</span>
@@ -600,21 +616,24 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/58ed588efba0a649e003b7d5cbcd4da1bb5c35e6a4bfefa582cb58dd86318535.png" src="../_images/58ed588efba0a649e003b7d5cbcd4da1bb5c35e6a4bfefa582cb58dd86318535.png" />
+<img alt="../_images/5b3e1340bf7f6e8e7f9fd1064f690ca939dd01558fb093cbd8ad415424d055e0.png" src="../_images/5b3e1340bf7f6e8e7f9fd1064f690ca939dd01558fb093cbd8ad415424d055e0.png" />
 </div>
 </div>
 </section>
 <section id="other-non-linear-functions">
-<h2>2. Other Non-linear functions<a class="headerlink" href="#other-non-linear-functions" title="Link to this heading">#</a></h2>
+<h2>2. Other Non-linear Functions<a class="headerlink" href="#other-non-linear-functions" title="Link to this heading">#</a></h2>
+<p>Now, let’s explore a variety of other non-linear activation functions in PyTorch. Each activation function has unique properties and behaviours. Here, we will plot a selection of functions and examine their outputs across our input tensor.</p>
+<p>We define several popular non-linear functions in a dictionary and iterate over them to plot each one:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">non_linear_funs</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;ELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ELU</span><span class="p">(),</span>
-    <span class="s1">&#39;LeakyReLU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span>
-    <span class="s1">&#39;PReLU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">PReLU</span><span class="p">(),</span>
-    <span class="s1">&#39;ReLU6&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU6</span><span class="p">(),</span> 
-    <span class="s1">&#39;SELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">SELU</span><span class="p">(),</span>
-    <span class="s1">&#39;CELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CELU</span><span class="p">(),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defining a dictionary of different non-linear activation functions</span>
+<span class="n">non_linear_funs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;ELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ELU</span><span class="p">(),</span>         <span class="c1"># Exponential Linear Unit</span>
+    <span class="s1">&#39;LeakyReLU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span> <span class="c1"># Allows a small gradient when input is negative</span>
+    <span class="s1">&#39;PReLU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">PReLU</span><span class="p">(),</span>     <span class="c1"># Parametric ReLU with learnable parameter for the slope</span>
+    <span class="s1">&#39;ReLU6&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">ReLU6</span><span class="p">(),</span>     <span class="c1"># ReLU with an upper limit at 6</span>
+    <span class="s1">&#39;SELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">SELU</span><span class="p">(),</span>       <span class="c1"># Scaled ELU, which maintains a self-normalising effect</span>
+    <span class="s1">&#39;CELU&#39;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">CELU</span><span class="p">(),</span>       <span class="c1"># Continuously Differentiable ELU</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -622,20 +641,37 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Setting up a figure to plot each activation function’s behaviour</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">fun</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">non_linear_funs</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Applying the activation function and plotting its output</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">input_tensor</span><span class="p">)</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">())</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>  <span class="c1"># Title of the plot is the function&#39;s name</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Input&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Output&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/da03b58c6a5bdb6ec27ae07d588901f071e5bdcb934b7ec7f9c5ab13f4b0b375.png" src="../_images/da03b58c6a5bdb6ec27ae07d588901f071e5bdcb934b7ec7f9c5ab13f4b0b375.png" />
+<img alt="../_images/4ce39a5cd402b8cc14b4d4400b4189c81c62efbd27b4dbb95c71cc792c55f0c6.png" src="../_images/4ce39a5cd402b8cc14b4d4400b4189c81c62efbd27b4dbb95c71cc792c55f0c6.png" />
 </div>
 </div>
+<p>In this visualisation:</p>
+<ul class="simple">
+<li><p>Each subplot represents one of the activation functions, showing its effect across the input range.</p></li>
+<li><p>Note how different functions handle negative values and how some functions have upper limits on the output, which can impact the overall behaviour of the network. For example:</p>
+<ul>
+<li><p><strong>ELU</strong> gradually allows negative values, avoiding sharp transitions.</p></li>
+<li><p><strong>LeakyReLU</strong> introduces a small slope for negative values, allowing some gradient flow even when inputs are negative.</p></li>
+<li><p><strong>ReLU6</strong> has an upper limit, restricting the output to the range <span class="math notranslate nohighlight">\([0, 6]\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<p>These unique characteristics allow you to choose the most appropriate activation function based on the network’s needs and the nature of the data.</p>
 </section>
 </section>
 
@@ -670,20 +706,20 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="pooling.html"
+       href="convolution.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1.2. Pooling</p>
+        <p class="prev-next-title">1.1. Convolution</p>
       </div>
     </a>
     <a class="right-next"
-       href="quick_start.html"
+       href="pooling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">2. Quick Start</p>
+        <p class="prev-next-title">1.3. Pooling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -704,12 +740,12 @@ learn non-linear problems. Activation functions are <strong>elementwise</strong>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">Packages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#input-tensor">Input tensor</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relu-rectifier-linear-unit">1. ReLU (Rectifier Linear Unit)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-non-linear-functions">2. Other Non-linear functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relu-rectified-linear-unit">1. ReLU (Rectified Linear Unit)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-non-linear-functions">2. Other Non-linear Functions</a></li>
 </ul>
   </nav></div>
 

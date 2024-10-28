@@ -199,8 +199,9 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="notebooks/networks_building_blocks.html">1. Network’s Building Blocks</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="notebooks/convolution.html">1.1. Convolution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/pooling.html">1.2. Pooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="notebooks/activation_function.html">1.3. Activation Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/activation_function.html">1.2. Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/pooling.html">1.3. Pooling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="notebooks/linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/quick_start.html">2. Quick Start</a></li>
@@ -262,9 +263,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/warmup.html">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student projects</span></p>
 <ul class="nav bd-sidenav">
@@ -495,7 +496,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-materials">Background materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-materials">External materials</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutorials">Python tutorials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-resources">Recommended resources</a></li>
 </ul>
@@ -513,12 +517,33 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="welcome">
 <h1>Welcome<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
-<p>This Jupyter Book explores a range of deep learning topics, gradually progressing from fundamental
-concepts to more advanced applications. The material was initially developed for the deep learning
-course in the <a class="reference external" href="https://www.uni-giessen.de/de/studium/studienangebot/master/mbb?set_language=de">Brain and Behaviour Master’s programme</a>
-at <a class="reference external" href="https://www.uni-giessen.de/jlyou/en/index.html">Justus-Liebig University of Giessen</a>.
-While some examples are specifically designed for <em>Experimental Psychologists</em> and <em>Cognitive
-Neuroscientists</em>, the content is valuable for anyone interested in deep learning.</p>
+<p>Welcome to this Jupyter Book on deep learning, designed for students from all around the
+world. The content covers a broad spectrum of deep learning topics, starting from foundational
+principles and gradually advancing to more complex applications. Originally developed for the deep
+learning course in the <a class="reference external" href="https://www.uni-giessen.de/de/studium/studienangebot/master/mbb?set_language=de">Brain and Behaviour Master’s programme</a>
+at <a class="reference external" href="https://www.uni-giessen.de/jlyou/en/index.html">Justus-Liebig University of Giessen</a>,
+this material is not only tailored for Experimental Psychologists* and <em>Cognitive
+Neuroscientists</em> but is also suitable for anyone interested in deep learning. Whether you are new to
+the field or looking to deepen your understanding, this book offers valuable insights and practical
+examples to enhance your learning experience.</p>
+<div class="admonition-play-with-notebooks admonition">
+<p class="admonition-title">Play with notebooks!</p>
+<p>The best way to master the material is through hands-on practice! Each Jupyter Notebook can be
+executed directly in Google Colab by clicking the <i class="fa fa-rocket"></i> icon
+at the top of the notebook. You can also access all materials in our
+<a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io">GitHub repository <i class="fab fa-github"></i></a>,
+which you can clone to run locally on your own computer.</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Please give feedback!</p>
+<p>If you come across any issues, bugs, typos, or anything else, please let us know! You can report
+them through the <i class="fab fa-github"></i> <a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues">issue tracker</a>
+or simply click the <i class="fab fa-github"></i> icon at the top of any page and select
+“open issue”. We also welcome requests for new materials, and if you’d like to contribute,
+pull requests <i class="fa-regular fa-face-smile"></i> are highly appreciated.</p>
+</div>
+<section id="table-of-contents">
+<h2>Table of contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Prerequisites</span></p>
 <ul>
@@ -542,9 +567,9 @@ Neuroscientists</em>, the content is valuable for anyone interested in deep lear
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/warmup.html">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -559,24 +584,10 @@ Neuroscientists</em>, the content is valuable for anyone interested in deep lear
 <li class="toctree-l1"><a class="reference internal" href="notebooks/python_course/beginners.html">Beginners</a></li>
 </ul>
 </div>
-<div class="admonition-play-with-notebooks admonition">
-<p class="admonition-title">Play with notebooks!</p>
-<p>The best way to learn the presented materials is by getting your hands dirty! All Jupyter Notebooks
-can be executed on Google Colab by directly clicking on the <i class="fa-sharp fa-solid fa-rocket"></i>
-icon on top of each notebook. All materials are also available in our
-<a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io">GitHub repository <i class="fab fa-github"></i></a>,
-clone it to run it locally on your computer.</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Please give feedback!</p>
-<p>Please report any issues/bugs/typos/etc. you notice. Either go the
-<i class="fab fa-github"></i> <a class="reference external" href="https://github.com/DeepLearning-JupyterBook/deeplearning-jupyterbook.github.io/issues">issue tracker</a>
-or directly click on the  <i class="fab fa-github"></i> icon on top of each page and then
-“open issue”. We also accept requests for new materials, and of course, we highly appreciate it if you
-decide to contribute by pull requests <i class="fa-regular fa-face-smile"></i>.</p>
-</div>
-<section id="background-materials">
-<h2>Background materials<a class="headerlink" href="#background-materials" title="Link to this heading">#</a></h2>
+</section>
+<section id="external-materials">
+<h2>External materials<a class="headerlink" href="#external-materials" title="Link to this heading">#</a></h2>
+<p>Below is a list of materials that can complement the course content.</p>
 <section id="python-tutorials">
 <h3>Python tutorials<a class="headerlink" href="#python-tutorials" title="Link to this heading">#</a></h3>
 <p>While the tutorials explain Python codes in great detail, familiarity with Python is required to
@@ -654,7 +665,10 @@ follow the course. Useful materials for inexperienced Python programmers:</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-materials">Background materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#external-materials">External materials</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-tutorials">Python tutorials</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-resources">Recommended resources</a></li>
 </ul>

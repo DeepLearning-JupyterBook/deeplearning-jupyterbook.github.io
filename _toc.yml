@@ -12,8 +12,9 @@ parts:
     - file: notebooks/networks_building_blocks
       sections:
       - file: notebooks/convolution
-      - file: notebooks/pooling
       - file: notebooks/activation_function
+      - file: notebooks/pooling
+      - file: notebooks/linear
     - file: notebooks/quick_start
     - file: notebooks/optimisation_learning
     - file: notebooks/vision
