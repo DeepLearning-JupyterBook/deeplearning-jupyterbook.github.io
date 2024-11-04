@@ -75,7 +75,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="3. Optimisation and Learning" href="optimisation_learning.html" />
-    <link rel="prev" title="1.4 Linear Layer" href="linear.html" />
+    <link rel="prev" title="1.4. Linear Layer" href="linear.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -200,7 +200,7 @@
 <li class="toctree-l2"><a class="reference internal" href="convolution.html">1.1. Convolution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="activation_function.html">1.2. Activation Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pooling.html">1.3. Pooling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="linear.html">1.4 Linear Layer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear.html">1.4. Linear Layer</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Quick Start</a></li>
@@ -262,9 +262,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">A1. Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">A2. Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student projects</span></p>
 <ul class="nav bd-sidenav">
@@ -526,31 +526,38 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">dataset-utility functions.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-sets">train/test sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">dataset visualisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-functions">transform functions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloaders">Dataloaders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">Dataset Utility Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-sets">Training and Testing Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">Dataset Visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformations">Data Transformations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloader-managing-data-batches">DataLoader: Managing Data Batches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">2. Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">Network</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-routines">3. Train/test routines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizer">optimizer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functoin">loss-functoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-utility-functions">training utility functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-routines">3. Training and Testing Routines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimiser">Optimiser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-testing-utility-functions">Training-testing Utility Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-programme">4. Starting the programme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-learning">4. Actual Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-results">5. Reporting Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-a-dataloader-to-load-images-from-disk">1. Implementing a Dataloader to Load Images from Disk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-effect-of-background-colour-in-training-and-testing">2. Exploring the Effect of Background Colour in Training and Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-geometrical-shapes-to-the-dataset">3. Adding New Geometrical Shapes to the Dataset</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -564,23 +571,27 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="quick-start">
 <h1>2. Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">#</a></h1>
-<p>In this notebook, we learn how to create a full deep learning project in PyTorch. Broadly speaking, a project consists of four components:</p>
+<p>In this notebook, we’ll learn how to create a complete deep learning project in PyTorch. Broadly, a project consists of three main components:</p>
 <ul class="simple">
-<li><p>Defining the task</p></li>
-<li><p>Preparing the dataset</p></li>
-<li><p>Designing the network</p></li>
-<li><p>Train, validation and testing routines</p></li>
+<li><p>Preparing the dataset and defining the task</p></li>
+<li><p>Designing the architecture of the neural network</p></li>
+<li><p>Implementing the training and testing routines</p></li>
 </ul>
-<p>In this toy example we want a network to classify geometrical shapes in images, i.e., whether an image contain a circle, square, triangle, etc.</p>
-<section id="packages">
-<h2>0. Packages<a class="headerlink" href="#packages" title="Link to this heading">#</a></h2>
-<p>Let’s start with all the necessary packages to implement this tutorial.</p>
+<p>To keep things clear, we’ll work on a simple example where the network classifies basic geometric shapes (like circles, squares, and triangles) in images. This will help us focus on the main steps without overwhelming details.</p>
+<section id="preparation">
+<h2>0. Preparation<a class="headerlink" href="#preparation" title="Link to this heading">#</a></h2>
+<p>Before we dive into the project, let’s start by preparing the necessary materials.</p>
+<section id="required-packages">
+<h3>Required Packages<a class="headerlink" href="#required-packages" title="Link to this heading">#</a></h3>
+<p>We will use several Python libraries, each serving a specific role:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/">numpy</a> is the main package for scientific computing with Python. It’s often imported with the <code class="docutils literal notranslate"><span class="pre">np</span></code> shortcut.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/">matplotlib</a> is a library to plot graphs in Python.</p></li>
-<li><p><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a> is a deep learning framework that allows us to define networks, handle datasets, optimise a loss function, etc.</p></li>
-<li><p><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> is a leading computer vision library.</p></li>
+<li><p><strong><a class="reference external" href="https://numpy.org/">numpy</a>:</strong> The main library for scientific computing in Python, commonly imported as <code class="docutils literal notranslate"><span class="pre">np</span></code>.</p></li>
+<li><p><strong><a class="reference external" href="https://matplotlib.org/">matplotlib</a>:</strong> Useful for plotting graphs and visualising data.</p></li>
+<li><p><strong><a class="reference external" href="https://pytorch.org/docs/stable/index.html">torch</a>:</strong> The core library in PyTorch for deep learning, helping us define and manage neural networks.</p></li>
+<li><p><strong><a class="reference external" href="https://pytorch.org/vision/stable/index.html">torchvision</a>:</strong> Contains tools and datasets for computer vision tasks.</p></li>
+<li><p><strong><a class="reference external" href="https://docs.opencv.org/4.x/index.html">cv2</a> (OpenCV):</strong> A widely-used library for image processing.</p></li>
 </ul>
+<p>Let’s import these libraries now:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importing the necessary packages/libraries</span>
@@ -597,26 +608,31 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Choosing CPU or GPU based on the availability of the hardware.</p>
+<p>Deep learning tasks can be computationally demanding. GPUs are often used because they are designed to handle complex calculations efficiently. In this case, if a <strong>GPU</strong> is available, PyTorch will use it; otherwise, it will default to using the <strong>CPU</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Automatically selects GPU if available, else defaults to CPU</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;cuda&#39;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+</section>
 <section id="dataset">
 <h2>1. Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
-<p>The first step is to get the data ready. In this tutorial, we create our dataset on the fly, i.e., we generate images containing simple geometrical shapes. Our dataset contains three types of shapes:</p>
-<ul class="simple">
-<li><p>circle</p></li>
-<li><p>ellipse</p></li>
-<li><p>rectangle.</p></li>
-</ul>
+<p>In deep learning, it’s often practical to start by considering the dataset and task you’re working with. In many real-world projects, we already have a dataset that we load from disk. However, in this example, we’ll create a small dataset on the fly within the notebook.</p>
+<p>We will create images containing one of three geometric shapes:</p>
+<ol class="arabic simple">
+<li><p>Circle</p></li>
+<li><p>Ellipse</p></li>
+<li><p>Rectangle</p></li>
+</ol>
+<p>Each image will contain only one shape on a background, and our task is to classify the shape in each image. This task is known as <strong>image classification</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels_map</span> <span class="o">=</span> <span class="p">{</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the labels for our shapes</span>
+<span class="n">labels_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span>
     <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;ellipse&quot;</span><span class="p">,</span>
     <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;rectangle&quot;</span>
@@ -626,78 +642,117 @@ document.write(`
 </div>
 </div>
 <section id="dataset-utility-functions">
-<h3>dataset-utility functions.<a class="headerlink" href="#dataset-utility-functions" title="Link to this heading">#</a></h3>
-<p>First we create all the ulitiy functions to generate a set of images.</p>
+<h3>Dataset Utility Functions<a class="headerlink" href="#dataset-utility-functions" title="Link to this heading">#</a></h3>
+<p>We’ll now write helper functions to generate our dataset. Specifically, we’ll create two functions:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">create_random_background</span></code> simply creates a square matrix of size <code class="docutils literal notranslate"><span class="pre">(s,</span> <span class="pre">s,</span> <span class="pre">3)</span></code>, the third dimension corresponds to RGB channels.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">create_random_shape</span></code>uses <code class="docutils literal notranslate"><span class="pre">cv2</span></code> functions to draw geometrical shapes on top of an image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">create_random_background</span></code>: This function will generate a background for each image.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">create_random_shape</span></code>: This function will add a shape to the background.</p></li>
 </ul>
+<p>Let’s look at each function in detail.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_random_background</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions creates a background image.&quot;&quot;&quot;</span>
-    <span class="c1"># if the random value larger than 0.5, the background will be random noise, otherwise, random uniform</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a background for an image. </span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        img_size (int): Size of the background (image will be square).</span>
+<span class="sd">        p (float): Probability of generating a random noise background.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        numpy array: Background image of size (img_size, img_size, 3).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If a randomly generated number is above p, create a noise background; otherwise, use a uniform colour</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">:</span>
+        <span class="c1"># Random noise background: random pixel values for each RGB channel</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Uniform background: same colour for each pixel</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">img_size</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">256</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;uint8&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">create_random_shape</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filled</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;This functions generates geometrical shapes on top of a background image.&quot;&quot;&quot;</span>
-    <span class="c1"># choosing a colour for the shape, there is a slim chance of being identical to the background,</span>
-    <span class="c1"># we can consider this the noise in our dataset!</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>This function creates a random background for our image. Sometimes it’s just a uniform colour (like a single shade), while other times it’s a random noise background (each pixel has a random colour).</p></li>
+<li><p>By creating different types of backgrounds, we introduce some <strong>variation</strong> to make the task slightly more challenging.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_random_shape</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filled</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Draws a random shape (circle, ellipse, or rectangle) on the given background image.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        img (numpy array): Background image on which to draw the shape.</span>
+<span class="sd">        filled (bool): If True, shapes will be filled; otherwise, they will be outlined.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        tuple: Modified image with shape and shape label (int).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Generate a random colour for the shape</span>
     <span class="n">colour</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
     <span class="n">thickness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
     <span class="n">point1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
-    
-    <span class="c1"># drawing a random geomterical shape</span>
+
+    <span class="c1"># Select a random shape (circle, ellipse, or rectangle)</span>
     <span class="n">shape_ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span>
-    <span class="c1"># when the tickness is negative, the shape is drawn filled</span>
+    <span class="c1"># Set shape to be filled if `filled` is True</span>
     <span class="n">thickness</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span> <span class="k">if</span> <span class="n">filled</span> <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
-    
-    <span class="k">if</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># circle</span>
+
+    <span class="k">if</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Circle</span>
         <span class="n">radius</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># ellipse</span>
-        <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
-            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)</span>
-        <span class="p">]</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">point1</span><span class="p">),</span> <span class="n">radius</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">shape_ind</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Ellipse</span>
+        <span class="n">axes</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">//</span> <span class="mi">4</span><span class="p">)]</span>
         <span class="n">angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> <span class="c1"># rectangle</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ellipse</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">point1</span><span class="p">),</span> <span class="n">axes</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># Rectangle</span>
         <span class="n">point2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">point1</span><span class="p">,</span> <span class="n">point2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">point1</span><span class="p">),</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">point2</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="n">colour</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
+    
     <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">shape_ind</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="train-test-sets">
-<h3>train/test sets<a class="headerlink" href="#train-test-sets" title="Link to this heading">#</a></h3>
-<p>Usually, a dataset contains three sets:</p>
 <ul class="simple">
-<li><p><strong>Training</strong>: the set in which the knowledge of a network is learnt from.</p></li>
-<li><p><strong>Validation</strong>: this set is usually used for hyper parameter tunning.</p></li>
-<li><p><strong>Testing</strong>: evaluating the model based on various metrics.</p></li>
+<li><p>This function draws a randomly chosen shape on the background.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shape_ind</span></code> specifies which shape to draw (circle, ellipse, or rectangle), and <code class="docutils literal notranslate"><span class="pre">filled</span></code> determines whether the shape is filled or just outlined.</p></li>
+<li><p>The function returns both the modified image and the label of the shape (used later for training).</p></li>
 </ul>
-<p>A rule of thumb to split your data: 70% training, 15% validation, 15% testing.</p>
-<p><img alt="train/validation/test" src="https://blog.kakaocdn.net/dn/UenrJ/btrk6fXBfbJ/4iGSlrWj4mVJxzmup2KVr1/img.png" /></p>
-<p>In our example, we create two sets of images. One for training another for testing. We skipped the validation, because we’re not doing any hyper parameter tunning.</p>
-<p><code class="docutils literal notranslate"><span class="pre">make_image_set</span></code> is a utility functoin to create a dataset of images containing geometrical shapes.</p>
-<p><strong>Note</strong>: this functoins cannot be scaled to large datasets as it loads all images into a large list. For instance, if we want to have one million images, we run out of memory.</p>
-<p><strong>Exercise</strong>: this is one part of assignment 2, how to change this notebook to handle an arbitrary large dataset.</p>
+</section>
+<section id="training-and-testing-sets">
+<h3>Training and Testing Sets<a class="headerlink" href="#training-and-testing-sets" title="Link to this heading">#</a></h3>
+<p>We usually divide data into three parts: <strong>training</strong>, <strong>validation</strong>, and <strong>testing</strong>:</p>
+<ul class="simple">
+<li><p><strong>Training Set</strong>: Used for learning.</p></li>
+<li><p><strong>Validation Set</strong>: Used to fine-tune parameters.</p></li>
+<li><p><strong>Test Set</strong>: Used to evaluate the model.</p></li>
+</ul>
+<p>To ensure the model generalises well, a rule of thumb is 70% training, 15% validation, and 15% testing.
+Validation data can be utilised for hyperparameter tuning, such as identifying the best optimiser algorithm and the optimal learning rate. The test set must never be used in any part of the training process.</p>
+<p><img alt="Dataset Split" src="https://blog.kakaocdn.net/dn/UenrJ/btrk6fXBfbJ/4iGSlrWj4mVJxzmup2KVr1/img.png" /></p>
+<p>In our case, we’ll create two sets of images: one for training and one for testing. We skipped the validation, because we’re not doing any hyper parameter tunning.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">make_image_set</span><span class="p">(</span><span class="n">num_imgs</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_p</span><span class="p">,</span> <span class="n">filled</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Creating the set of images.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generates a dataset of images containing random shapes.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        num_imgs (int): Number of images to create.</span>
+<span class="sd">        img_size (int): Size of each image (square).</span>
+<span class="sd">        bg_p (float): Probability of a uniform background.</span>
+<span class="sd">        filled (bool): Whether shapes are filled or outlined.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        list: Images and corresponding shape labels.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">imgs</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">gts</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_imgs</span><span class="p">):</span>
-        <span class="c1"># creating the background, either a random uniform colour, or random noise</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_imgs</span><span class="p">):</span>
         <span class="n">img</span> <span class="o">=</span> <span class="n">create_random_background</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span> <span class="n">bg_p</span><span class="p">)</span>
-        <span class="c1"># drawing a random shape</span>
         <span class="n">img</span><span class="p">,</span> <span class="n">gt</span> <span class="o">=</span> <span class="n">create_random_shape</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">filled</span><span class="p">)</span>
         <span class="n">imgs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
         <span class="n">gts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gt</span><span class="p">)</span>
@@ -706,17 +761,22 @@ document.write(`
 </div>
 </div>
 </div>
-<p>In this example we create a trarin set of 1000 images and a test set of 100 images.</p>
+<p>Here, <code class="docutils literal notranslate"><span class="pre">make_image_set</span></code> generates a set of images based on the specified number and size.</p>
+<p><strong>Note</strong>: this functoins cannot be scaled to large datasets as it loads all images into a large list. For instance, if we want to have one million images, we run out of memory.</p>
+<p><strong>Exercise:</strong> Consider how this function could be modified to handle very large datasets.</p>
+<p>Next, we create a trarin set of 1000 images and a test set of 100 images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># definying the parametrs of the dataset</span>
-<span class="n">img_size</span> <span class="o">=</span> <span class="mi">128</span>
-<span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># whether the geometrical shapes are only the contour or filled</span>
-<span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># the probability of the backgroud being a uniform colour or a noisy image</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Parameters for the dataset</span>
+<span class="n">img_size</span> <span class="o">=</span> <span class="mi">128</span>  <span class="c1"># Image size (128 x 128 pixels)</span>
+<span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Choose whether shapes are filled or outlined</span>
+<span class="n">bg_uniform_vs_noise</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Probability of uniform background</span>
 
-<span class="n">number_trains</span> <span class="o">=</span> <span class="mi">1000</span>
-<span class="n">number_test</span> <span class="o">=</span> <span class="n">number_trains</span> <span class="o">//</span> <span class="mi">10</span>
+<span class="c1"># Create training and test sets</span>
+<span class="n">number_trains</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># Number of training images</span>
+<span class="n">number_test</span> <span class="o">=</span> <span class="n">number_trains</span> <span class="o">//</span> <span class="mi">10</span>  <span class="c1"># Number of test images</span>
 
+<span class="c1"># Generate image datasets</span>
 <span class="n">train_imgs</span><span class="p">,</span> <span class="n">train_gts</span> <span class="o">=</span> <span class="n">make_image_set</span><span class="p">(</span><span class="n">number_trains</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_p</span><span class="o">=</span><span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="n">filled</span><span class="p">)</span>
 <span class="n">test_imgs</span><span class="p">,</span> <span class="n">test_gts</span> <span class="o">=</span> <span class="n">make_image_set</span><span class="p">(</span><span class="n">number_test</span><span class="p">,</span> <span class="n">img_size</span><span class="p">,</span> <span class="n">bg_p</span><span class="o">=</span><span class="n">bg_uniform_vs_noise</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="n">filled</span><span class="p">)</span>
 </pre></div>
@@ -725,14 +785,14 @@ document.write(`
 </div>
 </section>
 <section id="dataset-visualisation">
-<h3>dataset visualisation<a class="headerlink" href="#dataset-visualisation" title="Link to this heading">#</a></h3>
-<p>Let’s have a loot at the generated images. We use <code class="docutils literal notranslate"><span class="pre">plt</span></code> from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> libraryto create a figure and a grid of 10x10 subplots. On top of each image we write its corresponding ground-truth.</p>
+<h3>Dataset Visualisation<a class="headerlink" href="#dataset-visualisation" title="Link to this heading">#</a></h3>
+<p>Let’s look at a sample of our generated images to verify they appear as expected. Using <code class="docutils literal notranslate"><span class="pre">plt</span></code> from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, we’ll create a grid of images with their corresponding shape label (ground truth).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 100 of the images</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">18</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot 50 of the images</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">18</span><span class="p">,</span> <span class="mi">9</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">train_imgs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;GT=</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">labels_map</span><span class="p">[</span><span class="n">train_gts</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
@@ -740,104 +800,128 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4f58a6de403d5f99d9083a1d52625f6789ca21decf561d8f34ad3ce85d8bfbf1.png" src="../_images/4f58a6de403d5f99d9083a1d52625f6789ca21decf561d8f34ad3ce85d8bfbf1.png" />
+<img alt="../_images/72bb9515f6e1570bc021a41de340974deb60444186d44dfdee4844b331b2abaa.png" src="../_images/72bb9515f6e1570bc021a41de340974deb60444186d44dfdee4844b331b2abaa.png" />
 </div>
 </div>
 </section>
 <section id="pytorch-data-pipeline">
 <h3>PyTorch Data Pipeline<a class="headerlink" href="#pytorch-data-pipeline" title="Link to this heading">#</a></h3>
-<p>Now, that we have created our dataset, we have to create PyTorch dataloaders.</p>
-<p>In this example, we’re creating a simple dataloader class <code class="docutils literal notranslate"><span class="pre">ShapeDataset</span></code> that inherits the <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code> class. It has to implement two functioons:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">__len__</span></code> (return the number of samples in the dataset)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> that yield the approperiate data.</p></li>
-</ul>
-<p>Usually, the datasets used in deep-learning projects are huge (e.g., ImageNet contains 1.5 million images). Therefore, we cannot load all images in the memory and we read each image dynamically in the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function.</p>
-<p>One can create any sort of custom datasets with the same structure as our toy example. The initialisatoin function (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>) recevies all the necessary parameters to create a dataset. Usually the passes variables are stored as class variables to use later on in the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function. Sometimes the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function has to prepare data paths, e.g., to read the name of all image files in folder (<strong>important</strong> not the images themseveles that are heavy for the memory but ony their paths to load later).</p>
-<p>The argument <code class="docutils literal notranslate"><span class="pre">transform</span></code> is typically part of any dataset. <code class="docutils literal notranslate"><span class="pre">transform</span></code> contains a predefined set of functoins that are sequentially exectures on an image. Typical examples of such functions include:</p>
-<ul class="simple">
-<li><p>Conversion to torch tensor</p></li>
-<li><p>Normalising the input image</p></li>
-<li><p>Data augmentions such as random cropping or flipping of an image.</p></li>
-<li><p>etc.</p></li>
-</ul>
+<p>Now that we have created our dataset, we need to create <strong>PyTorch dataloaders</strong> to efficiently manage and load our data during model training and evaluation. PyTorch dataloaders make it easier to handle large datasets by loading small batches of data sequentially, which is essential for efficient memory usage and faster processing.</p>
+<p>In this example, we define a custom dataloader class, <code class="docutils literal notranslate"><span class="pre">ShapeDataset</span></code>, by inheriting from <code class="docutils literal notranslate"><span class="pre">torch.utils.data.Dataset</span></code>. Custom datasets in PyTorch should implement two main functions:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">__len__</span></code></strong>: Returns the number of samples in the dataset.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">__getitem__</span></code></strong>: Retrieves a specific sample from the dataset, based on the provided index.</p></li>
+</ol>
+<p>In deep learning, datasets are often very large (for example, ImageNet contains 1.5 million images). Loading all images into memory at once would require a vast amount of memory, so instead, we load each image dynamically within the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function. This approach helps us manage memory effectively, especially when working with limited computational resources.</p>
+<p>With this structure, you can customise datasets for any purpose by creating similar classes with a defined initialisation (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>), length (<code class="docutils literal notranslate"><span class="pre">__len__</span></code>), and retrieval (<code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>) functionality.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PyTorch dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PyTorch Dataset Class for Shape Data</span>
 <span class="k">class</span> <span class="nc">ShapeDataset</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">imgs</span><span class="p">,</span> <span class="n">gts</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">imgs</span> <span class="o">=</span> <span class="n">imgs</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">gts</span> <span class="o">=</span> <span class="n">gts</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialise the dataset with images, ground-truth labels, and optional transformations.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            imgs (list or array): List of images.</span>
+<span class="sd">            gts (list or array): Ground-truth labels associated with each image.</span>
+<span class="sd">            transform (callable, optional): Transformations to be applied to each image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imgs</span> <span class="o">=</span> <span class="n">imgs</span>        <span class="c1"># Store images</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gts</span> <span class="o">=</span> <span class="n">gts</span>          <span class="c1"># Store ground-truth labels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>  <span class="c1"># Store transformations (if any)</span>
 
     <span class="k">def</span> <span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the total number of samples in the dataset.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imgs</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">idx</span><span class="p">):</span>
-        <span class="c1"># idx is the sample number</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retrieves a sample and its ground-truth label by index.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            idx (int): Index of the sample.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: Transformed image and its corresponding ground-truth label.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Get image and label for the given index</span>
         <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">imgs</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
-        <span class="n">gt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gts</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="c1"># the ground-truth for the image, i.e. shape-ID</span>
+        <span class="n">gt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">gts</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>  <span class="c1"># gt = ground truth, representing the shape&#39;s ID here</span>
 
-        <span class="c1"># </span>
+        <span class="c1"># Apply transformation if specified</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">:</span>
             <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 
+        <span class="c1"># Return the image and its label as a tuple</span>
         <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">gt</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section id="transform-functions">
-<h4>transform functions<a class="headerlink" href="#transform-functions" title="Link to this heading">#</a></h4>
-<p>In this toy example we define only two necessary transformation functions:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ToTensor</span></code> The data must be converted to torch tensors by calling <code class="docutils literal notranslate"><span class="pre">ToTensor</span></code> function.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Ǹormalize</span></code> Deep networks are trained betetr and faster when the data is centered at 0. For this reason, we apply the <code class="docutils literal notranslate"><span class="pre">Normalize</span></code>functions with specific <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code>.</p></li>
+<li><p><strong>Initialisation (<code class="docutils literal notranslate"><span class="pre">__init__</span></code>)</strong>: This function sets up the dataset. It typically receives and stores all the necessary data (e.g., <code class="docutils literal notranslate"><span class="pre">imgs</span></code> for images, <code class="docutils literal notranslate"><span class="pre">gts</span></code> for ground-truth labels). It also takes in a <code class="docutils literal notranslate"><span class="pre">transform</span></code> parameter to allow for optional transformations on each sample. In practice, only paths to the images might be loaded, while the actual image data is loaded dynamically in <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code>.</p></li>
+<li><p><strong>Data Transformations (<code class="docutils literal notranslate"><span class="pre">transform</span></code>)</strong>: Transformations are critical in deep learning workflows to ensure data is processed consistently and to improve model performance by applying operations such as normalisation and data augmentation. Let’s discuss transformations in more detail.</p></li>
 </ul>
-<p>In our exmple we have only used the functoins defined by the <code class="docutils literal notranslate"><span class="pre">torchvision.transforms</span></code> package, but one can (and will need to) implement its own set of transform functions as well.</p>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">torchvision.transforms.Compose</span></code> receives a list of functoins that will be exceuted sequentially.</p>
+</section>
+<section id="data-transformations">
+<h3>Data Transformations<a class="headerlink" href="#data-transformations" title="Link to this heading">#</a></h3>
+<p>In this example, we use two standard transformations:</p>
+<ol class="arabic simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ToTensor</span></code></strong>: Converts an image into a PyTorch tensor. PyTorch models work with tensors, so we must apply this transformation before feeding data into our model.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Normalize</span></code></strong>: Scales image pixel values so they are centred around zero. This is important because many deep learning models perform better when the data has a mean of zero and a standard deviation close to one. We specify the <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">std</span></code> values for normalisation, tailored to our dataset.</p></li>
+</ol>
+<p>Transformations are applied sequentially using <code class="docutils literal notranslate"><span class="pre">torchvision.transforms.Compose</span></code>, which allows chaining multiple transformations together.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make the pytorch datasets</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set mean and standard deviation for normalisation</span>
 <span class="n">mean</span> <span class="o">=</span> <span class="mf">0.5</span>
 <span class="n">std</span> <span class="o">=</span> <span class="mf">0.25</span>
+
+<span class="c1"># Compose transformations</span>
 <span class="n">transform</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
-    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>
-    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span>
+    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">(),</span>               <span class="c1"># Convert to tensor</span>
+    <span class="n">torchvision</span><span class="o">.</span><span class="n">transforms</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">std</span><span class="p">),</span>     <span class="c1"># Normalise with mean and std</span>
 <span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="dataloaders">
-<h4>Dataloaders<a class="headerlink" href="#dataloaders" title="Link to this heading">#</a></h4>
-<p>The dataloaders (<code class="docutils literal notranslate"><span class="pre">torch.utils.data.DataLoader</span></code>) allow us to handle large datasets in several batches.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> class receives a numebr of parameters, such as:</p>
+<section id="dataloader-managing-data-batches">
+<h3>DataLoader: Managing Data Batches<a class="headerlink" href="#dataloader-managing-data-batches" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">DataLoader</span></code> in PyTorch enables efficient batch processing, which is crucial for training and evaluation. Here are some important parameters for <code class="docutils literal notranslate"><span class="pre">DataLoader</span></code>:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">batch_size</span></code> how many samples (images) to process at every batch. Batches are useful to speed up the processing pipeline as they are computed in one go in GPU. Batches are also important to compute the Stochastic gradient descent.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">num_workers</span></code> defines the numebr of CPU threads to preprocess the data before inputing it to GPU. Typically for large batches, we need more CPU threads to speed up the preprocessing. In practice, one has to find the balance between the computational efficiency of its GPU and CPU.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">batch_size</span></code></strong>: Defines how many samples are processed in each batch. Processing in batches allows efficient use of GPU resources and is necessary for stochastic gradient descent (SGD).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">num_workers</span></code></strong>: Specifies the number of CPU threads to load and preprocess the data before sending it to the GPU. Using multiple workers can speed up data loading, especially with larger datasets.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">shuffle</span></code></strong>: Randomly shuffles the data at each epoch. This is usually set to <code class="docutils literal notranslate"><span class="pre">True</span></code> during training to prevent the model from learning the order of the data.</p></li>
 </ul>
-<p><strong>Note</strong>: these parameters don’t have to be identical in train/test scenarios. For example,</p>
-<ul class="simple">
-<li><p>We often can afford larger <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> in test time because gradients don’t need to be computed.</p></li>
-<li><p>We also don’t want to <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> the data at test time, contraray to this, we often want to <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> the training samples.</p></li>
-</ul>
+<blockquote>
+<div><p><strong>Note</strong>: <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> and <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> settings can vary between training and testing. For example, we may set a larger <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> and avoid shuffling during testing since we do not need to update model weights.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">train_imgs</span><span class="p">,</span> <span class="n">train_gts</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate dataset for training</span>
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">train_imgs</span><span class="p">,</span> <span class="n">train_gts</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
 
+<span class="c1"># Set batch size</span>
 <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">8</span>
+
+<span class="c1"># Create DataLoader for training</span>
 <span class="n">train_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
     <span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 
-<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">test_imgs</span><span class="p">,</span> <span class="n">test_gts</span><span class="p">,</span> <span class="n">transform</span><span class="p">)</span>
+<span class="c1"># Instantiate dataset for validation</span>
+<span class="n">val_dataset</span> <span class="o">=</span> <span class="n">ShapeDataset</span><span class="p">(</span><span class="n">test_imgs</span><span class="p">,</span> <span class="n">test_gts</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+<span class="c1"># Create DataLoader for validation</span>
 <span class="n">val_loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span>
     <span class="n">val_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="kc">None</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">pin_memory</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -845,64 +929,115 @@ document.write(`
 </div>
 </section>
 </section>
-</section>
 <section id="model">
 <h2>2. Model<a class="headerlink" href="#model" title="Link to this heading">#</a></h2>
-<p>Now that we have sucessfully generated our images and created approperiate PyTorch dataloaders, we can define our network.</p>
-<section id="architecture">
-<h3>architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
-<p>The task we’re modelling is relativeley simple and we don’t need a complex network. Our model inherits the <code class="docutils literal notranslate"><span class="pre">torch.nn.Module</span></code> class and has to at least implement one function <code class="docutils literal notranslate"><span class="pre">forward</span></code>.</p>
-<p><code class="docutils literal notranslate"><span class="pre">forward</span></code> function is calles when we input a network with data. In our example, the network receives only one input (a batch of images), but the <code class="docutils literal notranslate"><span class="pre">forward</span></code> functoin can receive multiple arguments which is necessary in several usecases, e.g.,</p>
+<p>With our images generated and PyTorch dataloaders ready, we can now move on to building our neural network model.</p>
+<p>Since our task is relatively straightforward, we don’t need a highly complex model. In this example, we define a simple convolutional neural network (CNN) that will perform well on basic image classification tasks. Our model will inherit from <code class="docutils literal notranslate"><span class="pre">torch.nn.Module</span></code>, a base class in PyTorch used for creating neural network models. Any model that inherits from this class must implement at least a <code class="docutils literal notranslate"><span class="pre">forward</span></code> function, which defines how data will pass through the network layers.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">forward</span></code> function is automatically called whenever we pass data through the network. Here, it receives a batch of images, but it could take multiple inputs if needed, such as:</p>
 <ul class="simple">
-<li><p>pairs of images to compare whether they are similar,</p></li>
-<li><p>triple images to find the odd-one-out.</p></li>
+<li><p>Image pairs to check if they are similar</p></li>
+<li><p>Triple images to identify the one that differs from the others</p></li>
 </ul>
-<p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, we define the architecure. In this case, the feature processing part consists of three convolutional blocks followed by batch normalisation, ReLU rectification and max pooling. The classifier is a linear function.</p>
+<section id="architecture">
+<h3>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h3>
+<p>In the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> function, we set up our model’s architecture. This example (<code class="docutils literal notranslate"><span class="pre">SimpleNet</span></code>) consists of three main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Feature Processing</strong> (<code class="docutils literal notranslate"><span class="pre">self.features</span></code>): This part is made up of three convolutional blocks. Each block includes:</p>
+<ul class="simple">
+<li><p><strong>Convolutional Layer</strong>: Extracts features by applying filters to the input images.</p></li>
+<li><p><strong>Batch Normalisation</strong>: Stabilises training by normalising activations.</p></li>
+<li><p><strong>ReLU Activation</strong>: Introduces non-linearity, helping the model to learn complex patterns.</p></li>
+<li><p><strong>Max Pooling</strong>: Reduces the spatial dimensions (height and width), keeping the most important features.</p></li>
+</ul>
+</li>
+<li><p><strong>Global Average Pooling</strong> (<code class="docutils literal notranslate"><span class="pre">self.avgpool</span></code>): This layer pools the features across the entire spatial resolution, producing a summary of each feature map.</p></li>
+<li><p><strong>Classifier</strong> (<code class="docutils literal notranslate"><span class="pre">self.classifier</span></code>): This fully connected (linear) layer maps the extracted features to the number of classes, providing the final predictions.</p></li>
+</ol>
+<p>Let’s dive into the code to see how this structure is implemented.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## creating model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define the Simple CNN Model</span>
 <span class="k">class</span> <span class="nc">SimpleNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialises the layers of the network.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            num_classes (int): Number of output classes for classification.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        
+        <span class="c1"># Feature extraction layers</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># in=3, out=16</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span> <span class="c1"># it must be the same as out of prvious layer</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># in=16 (it must be the same as out of previous layer)</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>  <span class="c1"># Input channels=3 (RGB), Output channels=16</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">16</span><span class="p">),</span>                                    <span class="c1"># Batch normalisation for 16 channels</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>                                 <span class="c1"># Activation function</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>                 <span class="c1"># Max pooling with 3x3 filter and stride of 2</span>
+
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># Increase channels to 32</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+
+            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="c1"># Further increase channels to 64</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span>
             <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
         <span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">avgpool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">AdaptiveAvgPool2d</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="c1"># global average across the entire spatial resolution</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">1</span><span class="o">*</span><span class="mi">64</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span> <span class="c1"># input=64 (must be the same size as out of previous layer after vectorisation)</span>
+        
+        <span class="c1"># Global average pooling to reduce spatial dimensions to 1x1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">avgpool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">AdaptiveAvgPool2d</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        
+        <span class="c1"># Classification layer (fully connected layer)</span>
+        <span class="c1"># Input size is 64, as it matches the output channels of the last convolution layer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">64</span><span class="p">,</span> <span class="n">num_classes</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
-        <span class="c1"># the input x is processed with the network</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Defines the forward pass through the network.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            x (torch.Tensor): Input batch of images.</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            torch.Tensor: Output predictions for each input image.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Pass the input through the feature extraction layers</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+        <span class="c1"># Apply global average pooling</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">avgpool</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="c1"># we vectorise the x, classifier expect a 1D array.</span>
+        
+        <span class="c1"># Flatten the output from the feature extraction to 1D (required by classifier)</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Pass through the classification layer to get the final output</span>
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
         <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Explanation of Key Components:</p>
+<ol class="arabic simple">
+<li><p><strong>Feature Extraction Layers (<code class="docutils literal notranslate"><span class="pre">self.features</span></code>)</strong>: Each convolutional block in <code class="docutils literal notranslate"><span class="pre">self.features</span></code> extracts increasingly complex patterns from the images. The convolutional layers increase the depth (number of channels) of the feature maps from 3 (RGB channels) to 16, 32, and finally 64. Batch normalisation stabilises the activations, and ReLU introduces non-linearities that help the model learn complex features.</p></li>
+<li><p><strong>Global Average Pooling (<code class="docutils literal notranslate"><span class="pre">self.avgpool</span></code>)</strong>: By reducing the feature maps to a single value per channel, global average pooling summarises the features and allows the classifier to operate on a fixed-size input, regardless of the image dimensions.</p></li>
+<li><p><strong>Fully Connected Layer (<code class="docutils literal notranslate"><span class="pre">self.classifier</span></code>)</strong>: This layer maps the processed features to the number of classes, producing the final predictions. Here, <code class="docutils literal notranslate"><span class="pre">num_classes</span></code> represents the number of categories we want to classify.</p></li>
+</ol>
 </section>
 <section id="network">
-<h3>network<a class="headerlink" href="#network" title="Link to this heading">#</a></h3>
-<p>Next we make an instance of our previously defined architecture.
-We move the model to GPU and print the model.</p>
+<h3>Network<a class="headerlink" href="#network" title="Link to this heading">#</a></h3>
+<p>Now that we’ve defined the model architecture, we’ll create an instance of <code class="docutils literal notranslate"><span class="pre">SimpleNet</span></code>, specifying the number of output classes. We then move the model to the GPU for faster computation if available, and print out the model’s structure to verify.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## makign the model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instantiate the model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="n">num_classes</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">labels_map</span><span class="p">))</span>
+
+<span class="c1"># Move the model to the GPU if available</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+
+<span class="c1"># Print the model architecture to review</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -932,55 +1067,74 @@ We move the model to GPU and print the model.</p>
 </div>
 </section>
 </section>
-<section id="train-test-routines">
-<h2>3. Train/test routines<a class="headerlink" href="#train-test-routines" title="Link to this heading">#</a></h2>
-<p>We have our dataset and model ready. It’s time to start the training and validate what the network learns.</p>
-<section id="optimizer">
-<h3>optimizer<a class="headerlink" href="#optimizer" title="Link to this heading">#</a></h3>
-<p>First, we define what parameters we want to optimise.
-<strong>Note</strong>: we neither have to optimise all the parameters, nor optimise all with the same <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>.</p>
-<p>For our purpose, the most important parameter is the <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>.
-<img alt="learning-rate" src="https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png" /></p>
-<p>In our example we use the <code class="docutils literal notranslate"><span class="pre">SGD</span></code> algoithm to optimise all parameters of the network.</p>
+<section id="training-and-testing-routines">
+<h2>3. Training and Testing Routines<a class="headerlink" href="#training-and-testing-routines" title="Link to this heading">#</a></h2>
+<p>Now that we’ve prepared our dataset and built our model, it’s time to start training and evaluating our neural network. This section explains each component of the training process, including optimisation, loss calculation, and accuracy evaluation.</p>
+<section id="optimiser">
+<h3>Optimiser<a class="headerlink" href="#optimiser" title="Link to this heading">#</a></h3>
+<p>The optimiser is responsible for updating the model’s parameters to minimise the loss during training. When defining an optimiser, we choose which parameters to optimise, the optimisation algorithm, and a key parameter called the <strong>learning rate</strong>. The learning rate controls how much to adjust the model’s parameters with each step.</p>
+<p>In our case, we use <strong>Stochastic Gradient Descent (SGD)</strong> with parameters for <code class="docutils literal notranslate"><span class="pre">momentum</span></code>, <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code>, and <code class="docutils literal notranslate"><span class="pre">weight_decay</span></code>. Each plays an important role:</p>
+<ul class="simple">
+<li><p><strong>Learning Rate</strong>: Controls the step size in each update; too large a value might skip over optimal values, and too small a value could result in slow learning.</p></li>
+<li><p><strong>Momentum</strong>: Helps accelerate gradients to optimise faster and avoid oscillations.</p></li>
+<li><p><strong>Weight Decay</strong>: Adds a penalty to large weights to prevent overfitting.</p></li>
+</ul>
+<p><img alt="learning-rate" src="https://www.jeremyjordan.me/content/images/2018/02/Screen-Shot-2018-02-24-at-11.47.09-AM.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># optimizer and criterion</span>
-<span class="n">params_to_optimize</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define optimiser and criterion</span>
+<span class="n">params_to_optimise</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;params&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">()]}]</span>
 <span class="n">momentum</span> <span class="o">=</span> <span class="mf">0.9</span>
 <span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.01</span>
 <span class="n">weight_decay</span> <span class="o">=</span> <span class="mf">1e-4</span>
-<span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
-    <span class="n">params_to_optimize</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
-    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
+
+<span class="c1"># Initialising the SGD optimiser with specified parameters</span>
+<span class="n">optimiser</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span>
+    <span class="n">params</span><span class="o">=</span><span class="n">params_to_optimise</span><span class="p">,</span>
+    <span class="n">lr</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span>
+    <span class="n">momentum</span><span class="o">=</span><span class="n">momentum</span><span class="p">,</span>
+    <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="loss-functoin">
-<h3>loss-functoin<a class="headerlink" href="#loss-functoin" title="Link to this heading">#</a></h3>
-<p>Loss functoins defines how good is the network output with respect to the ground-truth. In our toy example, the ground-truth is <strong>semi-supervised</strong> (i.e., we have defined it but indirectly by means of the quations for geometrical shapes; we didn’t have to labarously label each image ourself).</p>
-<p>Our ground-truth is a set of categories (i.e., three classes of geometrical shapes). A suitable loss function for this scenario is the categorical cross entropy. We create <code class="docutils literal notranslate"><span class="pre">nn.CrossEntropyLoss</span></code>and move it to device (CPU or CUDA).</p>
+<section id="loss-function">
+<h3>Loss Function<a class="headerlink" href="#loss-function" title="Link to this heading">#</a></h3>
+<p>The <strong>loss function</strong> quantifies how well the model’s predictions match the ground truth. In this example, we use <strong>categorical cross-entropy</strong> (<code class="docutils literal notranslate"><span class="pre">nn.CrossEntropyLoss</span></code>) as our loss function, which is well-suited for classification tasks where the goal is to correctly categorise inputs into discrete classes (like recognising different shapes).</p>
+<p>We can consider the learning paradigm in this example to be <strong>semi-supervised</strong>. The ground-truth labels for our shapes were not manually annotated by humans. Instead, we automatically generated these labels using mathematical equations to define the geometrical shapes. This approach allowed us to skip the laborious process of manually labelling each image, providing labelled data in a more efficient way.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initialise the loss function (categorical cross-entropy)</span>
+<span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="training-utility-functions">
-<h3>training utility functions<a class="headerlink" href="#training-utility-functions" title="Link to this heading">#</a></h3>
-<p>We define a function to compute the <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> of the output with respect to ground truth.</p>
+<section id="training-testing-utility-functions">
+<h3>Training-testing Utility Functions<a class="headerlink" href="#training-testing-utility-functions" title="Link to this heading">#</a></h3>
+<p>To evaluate model performance, we use an <code class="docutils literal notranslate"><span class="pre">accuracy</span></code> function that calculates how many predictions match the ground truth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">topk</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,)):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes the accuracy over the k top predictions for the specified values of k&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Computes the accuracy over the top k predictions.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        output (torch.Tensor): Model predictions.</span>
+<span class="sd">        target (torch.Tensor): Ground truth labels.</span>
+<span class="sd">        topk (tuple): Top k values to compute accuracy for.</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        List of accuracies for specified top k values.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
         <span class="n">maxk</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">topk</span><span class="p">)</span>
-        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="n">Executing</span> <span class="n">the</span> <span class="n">Programme</span>
 
+        <span class="c1"># Get top k predictions</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="n">pred</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
         <span class="n">correct</span> <span class="o">=</span> <span class="n">pred</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">expand_as</span><span class="p">(</span><span class="n">pred</span><span class="p">))</span>
@@ -994,45 +1148,60 @@ We move the model to GPU and print the model.</p>
 </div>
 </div>
 </div>
-<p>Next, we define a utility function <code class="docutils literal notranslate"><span class="pre">epoch_loop</span></code> that can be called at each epoch (epoch informally means processing all samples in the dataset one time).</p>
-<p>Typically, a large portion of code is identical for training and testing, therefore it’s recommendable to have one single function for both. Exclusive code for training or testing can be easily separated by an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. In our example, only at training do the following three steps:</p>
+<p>To train and evaluate our model, we define a utility function called <code class="docutils literal notranslate"><span class="pre">epoch_loop</span></code>, which performs the operations required in each epoch. An <strong>epoch</strong> refers to one complete pass through the entire dataset—essentially, processing all samples in the dataset once.</p>
+<p>Since much of the code for training and testing is similar, it’s efficient to combine both procedures into a single function. The parts that differ for training and testing can be separated within the function using conditional statements. For example, during training, we need to perform additional steps to update the model’s parameters:</p>
 <ol class="arabic simple">
-<li><p>computing the gradient <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad</span></code></p></li>
-<li><p>backpropagating the loss <code class="docutils literal notranslate"><span class="pre">loss.backward</span></code></p></li>
-<li><p>Optimising the weights <code class="docutils literal notranslate"><span class="pre">optimizer.step</span></code></p></li>
+<li><p><strong>Compute the Gradient</strong>: We reset the gradients with <code class="docutils literal notranslate"><span class="pre">optimizer.zero_grad()</span></code>, ensuring that previous gradients do not interfere with the current update.</p></li>
+<li><p><strong>Backpropagate the Loss</strong>: We calculate the gradients with <code class="docutils literal notranslate"><span class="pre">loss.backward()</span></code>, which backpropagates the loss to update each parameter in the network.</p></li>
+<li><p><strong>Optimise the Weights</strong>: Finally, <code class="docutils literal notranslate"><span class="pre">optimizer.step()</span></code> adjusts the weights based on the computed gradients, helping the model learn from the errors.</p></li>
 </ol>
-<p><font color='red'><strong>Important</strong></font>: when evaluating a model <code class="docutils literal notranslate"><span class="pre">eval()</span></code> function must be called, otherwise the parameters of the model will be updated!</p>
-<p><font color='red'><strong>Important</strong></font>: <code class="docutils literal notranslate"><span class="pre">torch.set_grad_enabled</span></code> must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> during training and <code class="docutils literal notranslate"><span class="pre">False</span></code> during testing.</p>
+<p><font color='red'><strong>Important</strong></font>: When evaluating (or testing) a model, it’s essential to call the <code class="docutils literal notranslate"><span class="pre">.eval()</span></code> method. This prevents certain layers (like dropout or batch normalisation) from updating, ensuring a consistent evaluation.</p>
+<p><font color='red'><strong>Important</strong></font>: Also, use <code class="docutils literal notranslate"><span class="pre">torch.set_grad_enabled()</span></code> to specify whether gradients should be calculated (<code class="docutils literal notranslate"><span class="pre">True</span></code> during training and <code class="docutils literal notranslate"><span class="pre">False</span></code> during testing).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">db_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="p">):</span>
-    <span class="c1"># usually the code for train/test has a large overlap.</span>
-    <span class="n">is_train</span> <span class="o">=</span> <span class="kc">False</span> <span class="k">if</span> <span class="n">optimiser</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">True</span>
-
-    <span class="c1"># model should be in train/eval model accordingly</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">db_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Run a single epoch for training or testing.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        model (torch.nn.Module): The model to train/test.</span>
+<span class="sd">        db_loader (DataLoader): Data loader for training or testing data.</span>
+<span class="sd">        criterion (Loss Function): Loss function for computing the error.</span>
+<span class="sd">        optimiser (torch.optim.Optimizer): Optimiser for training; if None, evaluation mode is assumed.</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        accuracies (list): List of accuracies for each batch.</span>
+<span class="sd">        losses (list): List of losses for each batch.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Determine whether in training mode</span>
+    <span class="n">is_train</span> <span class="o">=</span> <span class="n">optimiser</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
     <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span> <span class="k">if</span> <span class="n">is_train</span> <span class="k">else</span> <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
     
     <span class="n">accuracies</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Disable gradient computation for evaluation</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">set_grad_enabled</span><span class="p">(</span><span class="n">is_train</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">batch_ind</span><span class="p">,</span> <span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">db_loader</span><span class="p">):</span>
-            <span class="c1"># moving the image and GT to device</span>
+            <span class="c1"># Move images and targets to device (GPU or CPU)</span>
             <span class="n">img</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
             <span class="n">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+            
+            <span class="c1"># Forward pass: compute output and loss</span>
             <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
-            
-            <span class="c1"># computing the loss function</span>
             <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
-            <span class="n">losses</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
-            <span class="c1"># computing the accuracy</span>
+            <span class="n">losses</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
+
+            <span class="c1"># Compute accuracy</span>
             <span class="n">acc</span> <span class="o">=</span> <span class="n">accuracy</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
-            <span class="n">accuracies</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">acc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
+            <span class="n">accuracies</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">acc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">))])</span>
             
+            <span class="c1"># Backward pass and optimisation step for training</span>
             <span class="k">if</span> <span class="n">is_train</span><span class="p">:</span>
-                <span class="c1"># compute gradient and do SGD step</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
-                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-                <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+                <span class="n">optimiser</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>   <span class="c1"># Reset gradients</span>
+                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>         <span class="c1"># Backpropagate loss</span>
+                <span class="n">optimiser</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>        <span class="c1"># Update parameters</span>
+    
     <span class="k">return</span> <span class="n">accuracies</span><span class="p">,</span> <span class="n">losses</span>
 </pre></div>
 </div>
@@ -1040,27 +1209,35 @@ We move the model to GPU and print the model.</p>
 </div>
 </section>
 </section>
-<section id="starting-the-programme">
-<h2>4. Starting the programme<a class="headerlink" href="#starting-the-programme" title="Link to this heading">#</a></h2>
-<p>We have everything (dataset, model, loss/optimiser), so we can start the training/testing loop.</p>
-<p>In this toy example, we perform 10 epochs (i.e., we process each sample in the dataset 10 times).</p>
+<section id="actual-learning">
+<h2>4. Actual Learning<a class="headerlink" href="#actual-learning" title="Link to this heading">#</a></h2>
+<p>With all components set up (data, model, loss, and optimiser), we can start the training and testing loop. In this example, we train the model for 10 epochs, meaning the model will go through all data points 10 times.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># doing epoch</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set the number of epochs for training</span>
 <span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">initial_epoch</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Logs for tracking accuracy and loss over time</span>
 <span class="n">train_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
 <span class="n">val_logs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;acc&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+
 <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">initial_epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">):</span>
-    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">)</span>
+    <span class="c1"># Run a training epoch</span>
+    <span class="n">train_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="p">)</span>
     
-    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># Run a validation epoch (no optimiser, so the model is in evaluation mode)</span>
+    <span class="n">val_log</span> <span class="o">=</span> <span class="n">epoch_loop</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">val_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">optimiser</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%.2d</span><span class="s1">] Train     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">    [</span><span class="si">%.2d</span><span class="s1">] Test     loss=</span><span class="si">%.4f</span><span class="s1">     acc=</span><span class="si">%0.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
+    <span class="c1"># Print training and validation results for this epoch</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[Epoch </span><span class="si">%02d</span><span class="s1">] Train loss=</span><span class="si">%.4f</span><span class="s1">, acc=</span><span class="si">%.2f</span><span class="s1">  |  Test loss=</span><span class="si">%.4f</span><span class="s1">, acc=</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> 
           <span class="p">(</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
-              <span class="n">epoch</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+              <span class="n">epoch</span><span class="p">,</span> 
+              <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+              <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
           <span class="p">))</span>
+    
+    <span class="c1"># Log the results for plotting later</span>
     <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">train_log</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
     <span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">val_log</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
@@ -1069,49 +1246,111 @@ We move the model to GPU and print the model.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[00] Train     loss=1.1494     acc=37.30    [00] Test     loss=1.1510     acc=37.00
-[01] Train     loss=1.1292     acc=38.70    [01] Test     loss=1.0655     acc=38.00
-[02] Train     loss=1.1050     acc=41.70    [02] Test     loss=1.1118     acc=44.00
-[03] Train     loss=1.0698     acc=44.00    [03] Test     loss=1.1082     acc=46.00
-[04] Train     loss=0.9908     acc=51.20    [04] Test     loss=1.3766     acc=35.00
-[05] Train     loss=0.9078     acc=53.80    [05] Test     loss=1.0856     acc=42.00
-[06] Train     loss=0.8200     acc=58.50    [06] Test     loss=0.9332     acc=57.00
-[07] Train     loss=0.6947     acc=64.80    [07] Test     loss=1.1290     acc=49.00
-[08] Train     loss=0.7689     acc=59.80    [08] Test     loss=0.8735     acc=52.00
-[09] Train     loss=0.6892     acc=62.50    [09] Test     loss=0.7471     acc=54.00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Epoch 00] Train loss=1.0931, acc=42.50  |  Test loss=1.5249, acc=39.00
+[Epoch 01] Train loss=0.9635, acc=52.00  |  Test loss=1.8905, acc=46.00
+[Epoch 02] Train loss=0.9573, acc=53.20  |  Test loss=0.8564, acc=60.00
+[Epoch 03] Train loss=0.8676, acc=54.40  |  Test loss=0.8282, acc=63.00
+[Epoch 04] Train loss=0.7738, acc=60.30  |  Test loss=0.7517, acc=57.00
+[Epoch 05] Train loss=0.8479, acc=57.40  |  Test loss=0.9288, acc=54.00
+[Epoch 06] Train loss=0.7364, acc=60.50  |  Test loss=0.7228, acc=56.00
+[Epoch 07] Train loss=0.6657, acc=62.00  |  Test loss=0.6452, acc=59.00
+[Epoch 08] Train loss=0.5996, acc=65.50  |  Test loss=0.5780, acc=71.00
+[Epoch 09] Train loss=0.5852, acc=65.80  |  Test loss=0.5408, acc=70.00
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="results">
-<h2>5. Results<a class="headerlink" href="#results" title="Link to this heading">#</a></h2>
-<p>Let’s look at the accuracies and losses by plotting them as a function of epoch numbers.
-These figures can help us to evaluate whether the hyperparameters are good.</p>
+<section id="reporting-results">
+<h2>5. Reporting Results<a class="headerlink" href="#reporting-results" title="Link to this heading">#</a></h2>
+<p>Finally, we’ll plot the accuracy and loss over the training epochs to evaluate the model’s performance. These plots can reveal if the model is improving over time or if adjustments are needed to hyperparameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot accuracy and loss over epochs</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Plot accuracy</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">],</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">],</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model Accuracy&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch Number&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 
+<span class="c1"># Plot loss</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">train_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Train&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">val_logs</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">],</span> <span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Validation&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Model Loss&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch Number&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2eb5d3db40&gt;
-</pre></div>
-</div>
-<img alt="../_images/cbd276fdd5fa51d0850af9ae2fc4b20c561318383fafa89fa25ca814385af003.png" src="../_images/cbd276fdd5fa51d0850af9ae2fc4b20c561318383fafa89fa25ca814385af003.png" />
+<img alt="../_images/d6b56f1bec151ce35d370f58aafdb3d394f98baee8d0c896aff4ba4e1fe3cdeb.png" src="../_images/d6b56f1bec151ce35d370f58aafdb3d394f98baee8d0c896aff4ba4e1fe3cdeb.png" />
 </div>
 </div>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>These exercises are designed to help you extend and test the concepts covered in this chapter. Each exercise challenges you to apply your knowledge to adjust the data handling, background properties, and shape complexity of the dataset.</p>
+<section id="implementing-a-dataloader-to-load-images-from-disk">
+<h3>1. Implementing a Dataloader to Load Images from Disk<a class="headerlink" href="#implementing-a-dataloader-to-load-images-from-disk" title="Link to this heading">#</a></h3>
+<p>As discussed, we generally cannot load all images into memory due to limitations, especially when working with large datasets.</p>
+<p><strong>Objective</strong>: Modify the code to load images on the fly from a specified directory structure.</p>
+<ol class="arabic simple">
+<li><p>Download this <a class="reference external" href="https://www.dropbox.com/s/rltbecab0zx1zep/shape_set.zip?dl=0">zip file</a> and extract it. The directory contains:</p>
+<ul class="simple">
+<li><p>Two subfolders: <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code>, holding the training and test images, respectively.</p></li>
+<li><p>Two CSV files with ground truth labels for the images in <code class="docutils literal notranslate"><span class="pre">train</span></code> and <code class="docutils literal notranslate"><span class="pre">test</span></code>.</p></li>
+</ul>
+</li>
+<li><p>Update the dataloader to accept a directory path as an argument.</p></li>
+<li><p>Instead of loading all images at once, adjust the <code class="docutils literal notranslate"><span class="pre">__getitem__</span></code> function in your <code class="docutils literal notranslate"><span class="pre">Dataset</span></code> class to load each image directly from disk. This function should read each image and return it with its associated label.</p></li>
+</ol>
+<p>This approach enables efficient memory usage and prepares you to work with real-world datasets that cannot fit into memory.</p>
+</section>
+<section id="exploring-the-effect-of-background-colour-in-training-and-testing">
+<h3>2. Exploring the Effect of Background Colour in Training and Testing<a class="headerlink" href="#exploring-the-effect-of-background-colour-in-training-and-testing" title="Link to this heading">#</a></h3>
+<p>In this exercise, you will experiment with the background colour of images in the training and test sets. By changing background properties, you can investigate how well the model generalises under different conditions.</p>
+<ol class="arabic simple">
+<li><p><strong>Achromatic vs Colourful Backgrounds</strong>:</p>
+<ul class="simple">
+<li><p>Update the dataloader to accept an argument specifying the type of background (achromatic or colourful).</p></li>
+<li><p>For the training set, use only <strong>achromatic (greyscale) backgrounds</strong>.</p></li>
+<li><p>For the test set, use <strong>colourful backgrounds</strong>.</p></li>
+<li><p>Train the model and observe if it can generalise to images with colourful backgrounds in the test set.</p></li>
+</ul>
+</li>
+<li><p><strong>Swap Background Colours</strong>:</p>
+<ul class="simple">
+<li><p>Switch the backgrounds so that the training set has <strong>colourful backgrounds</strong> and the test set has <strong>greyscale backgrounds</strong>.</p></li>
+<li><p>Observe how this impacts the model’s performance.</p></li>
+</ul>
+</li>
+<li><p><strong>Experiments with Foreground Colours</strong>:</p>
+<ul class="simple">
+<li><p>Conduct similar experiments by modifying the colours of the foreground shapes instead of the background.</p></li>
+</ul>
+</li>
+</ol>
+<p><strong>Bonus</strong>: If the model struggles to learn the task with these manipulations, experiment with additional training epochs, or modify the network architecture to improve test accuracy. This challenge will help you understand how to tune model complexity and training duration for more complex tasks.</p>
+</section>
+<section id="adding-new-geometrical-shapes-to-the-dataset">
+<h3>3. Adding New Geometrical Shapes to the Dataset<a class="headerlink" href="#adding-new-geometrical-shapes-to-the-dataset" title="Link to this heading">#</a></h3>
+<p>Our current dataset contains only three types of geometrical shapes. This exercise involves expanding the dataset by adding one or more new shapes, such as squares or triangles.</p>
+<ol class="arabic simple">
+<li><p>Modify the data generation function to add at least one new shape.</p></li>
+<li><p>Visualise a few examples of your updated dataset to confirm the new shapes are included.</p></li>
+<li><p>Update the network and training code to accommodate the expanded set of classes, then train the model with the new dataset.</p></li>
+</ol>
+<p>By extending the dataset, you’ll learn how to adapt your data generation and model design to recognise an increased number of classes. This is useful practice for scaling models to handle more complex data.</p>
+</section>
 </section>
 </section>
 
@@ -1151,7 +1390,7 @@ These figures can help us to evaluate whether the hyperparameters are good.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">1.4 Linear Layer</p>
+        <p class="prev-next-title">1.4. Linear Layer</p>
       </div>
     </a>
     <a class="right-next"
@@ -1179,31 +1418,38 @@ These figures can help us to evaluate whether the hyperparameters are good.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#packages">0. Packages</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">dataset-utility functions.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-sets">train/test sets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">dataset visualisation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#transform-functions">transform functions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloaders">Dataloaders</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparation">0. Preparation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-packages">Required Packages</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1. Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-utility-functions">Dataset Utility Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-sets">Training and Testing Sets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-visualisation">Dataset Visualisation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pytorch-data-pipeline">PyTorch Data Pipeline</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transformations">Data Transformations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dataloader-managing-data-batches">DataLoader: Managing Data Batches</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model">2. Model</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">architecture</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture">Architecture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network">Network</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-routines">3. Train/test routines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizer">optimizer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-functoin">loss-functoin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-utility-functions">training utility functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-testing-routines">3. Training and Testing Routines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimiser">Optimiser</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loss-function">Loss Function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-testing-utility-functions">Training-testing Utility Functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-programme">4. Starting the programme</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">5. Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#actual-learning">4. Actual Learning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reporting-results">5. Reporting Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#implementing-a-dataloader-to-load-images-from-disk">1. Implementing a Dataloader to Load Images from Disk</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exploring-the-effect-of-background-colour-in-training-and-testing">2. Exploring the Effect of Background Colour in Training and Testing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-geometrical-shapes-to-the-dataset">3. Adding New Geometrical Shapes to the Dataset</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
