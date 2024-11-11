@@ -1,4 +1,4 @@
-# 7.3. Working with Servers
+# 8.3. Working with Servers
 
 In a real deep learning project, we often need to run our code on a server computer with powerful 
 GPUs.

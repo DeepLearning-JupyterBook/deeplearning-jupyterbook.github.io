@@ -1,4 +1,4 @@
-# 7.1. Python Scripting
+# 8.1. Python Scripting
 
 Jupyter Notebook provides an interactive programming environment. This is very useful in several 
 scenarios such as:

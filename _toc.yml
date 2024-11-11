@@ -21,11 +21,17 @@ parts:
       sections:
       - file: notebooks/image_classification
       - file: notebooks/image_segmentation
+    - file: notebooks/other_modalities
+      sections:
+      - file: notebooks/audio_classification
+      - file: notebooks/text_classification
+      - file: notebooks/clip
     - file: notebooks/generative_models
       sections:
       - file: notebooks/gan
       - file: notebooks/vae
       - file: notebooks/dpm
+      - file: notebooks/llm
     - file: notebooks/interpretation_techniques
       sections:
       - file: notebooks/activation
@@ -36,21 +42,16 @@ parts:
       - file: markdowns/python_scripting
       - file: notebooks/tensorboard
       - file: markdowns/server
-    - file: notebooks/other_modalities
-      sections:
-      - file: notebooks/audio_classification
-      - file: notebooks/text_classification
-      - file: notebooks/clip
     - file: notebooks/reinforcement_learning
   - caption: Assignments
     chapters:
     - file: notebooks/assignments/warmup
     - file: notebooks/assignments/dataloader
     - file: notebooks/assignments/optimisation_learning
-  - caption: Student projects
+  - caption: Student Projects
     chapters:
     - file: notebooks/student_projects/deep-learning-with-dobble
-  - caption: Python course
+  - caption: Complementary Materials
     chapters:
       - file: notebooks/python_course/beginners.ipynb
         sections:
