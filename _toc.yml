@@ -48,6 +48,7 @@ parts:
     - file: notebooks/assignments/warmup
     - file: notebooks/assignments/dataloader
     - file: notebooks/assignments/optimisation_learning
+    - file: notebooks/assignments/llm_assignment
   - caption: Student Projects
     chapters:
     - file: notebooks/student_projects/deep-learning-with-dobble

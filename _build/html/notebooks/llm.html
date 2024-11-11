@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -265,9 +265,10 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">A1. Warming-up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">A2. Dataloaders</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">A3. Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">Warming-up</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">Dataloaders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">Optimisation and Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/llm_assignment.html">Large Language Model Assignment</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
 <ul class="nav bd-sidenav">
@@ -1121,9 +1122,9 @@ uMTClnrk,AaIagaUx &#39;zkl,ATe
 </section>
 <section id="transformer-architecture-and-self-attention">
 <h3>Transformer Architecture and Self-Attention<a class="headerlink" href="#transformer-architecture-and-self-attention" title="Link to this heading">#</a></h3>
-<p>To create a modern language model like GPT, we need to use a <strong>transformer architecture</strong>. Introduced in 2017 in the influential paper <a class="reference external" href="https://arxiv.org/abs/1706.03762">“Attention is All You Need”</a>, transformers have become a versatile architecture applied across various types of data, from text to images and beyond. The key operation in transformers is <strong>self-attention</strong>, which is referred to as “Scaled Dot-Product Attention” in the original paper, defines as:
-$<span class="math notranslate nohighlight">\(Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V,\)</span><span class="math notranslate nohighlight">\(
-where \)</span>Q<span class="math notranslate nohighlight">\(, \)</span>K<span class="math notranslate nohighlight">\(, and \)</span>V<span class="math notranslate nohighlight">\( denote the query, key and value, respectively, and \)</span>d_k$ is the dimensionality of keys.</p>
+<p>To create a modern language model like GPT, we need to use a <strong>transformer architecture</strong>. Introduced in 2017 in the influential paper <a class="reference external" href="https://arxiv.org/abs/1706.03762">“Attention is All You Need”</a>, transformers have become a versatile architecture applied across various types of data, from text to images and beyond. The key operation in transformers is <strong>self-attention</strong>, which is referred to as “Scaled Dot-Product Attention” in the original paper, defines as:</p>
+<p><span class="math notranslate nohighlight">\(Attention(Q, K, V) = softmax(\frac{QK^T}{\sqrt{d_k}})V,\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span>, <span class="math notranslate nohighlight">\(K\)</span>, and <span class="math notranslate nohighlight">\(V\)</span> denote the query, key and value, respectively, and <span class="math notranslate nohighlight">\(d_k\)</span> is the dimensionality of keys.</p>
 <p><strong>Attention</strong> can be thought of as a communication system where tokens in a sequence “look” at each other and learn to focus on certain tokens based on relevance. Imagine each token as a node in a directed graph, where each node collects information from the others, weighted by how important each connection is. This weighted communication allows the model to learn relationships between tokens in a sequence, forming the basis of powerful language models.</p>
 <p>The following code implements key components of the transformer architecture: <code class="docutils literal notranslate"><span class="pre">SelfAttention</span></code>, <code class="docutils literal notranslate"><span class="pre">MultiHeadAttention</span></code>, <code class="docutils literal notranslate"><span class="pre">MLP</span></code>, and <code class="docutils literal notranslate"><span class="pre">TransformerBlock</span></code>. Let’s go through each one.</p>
 <section id="self-attention">
@@ -1437,11 +1438,6 @@ where \)</span>Q<span class="math notranslate nohighlight">\(, \)</span>K<span c
             <span class="n">input_ids</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">((</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">next_token_id</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Updated shape: (batch_size, current_length + 1)</span>
         
         <span class="k">return</span> <span class="n">input_ids</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The history saving thread hit an unexpected error (OperationalError(&#39;attempt to write a readonly database&#39;)).History will not be written to the database.
 </pre></div>
 </div>
 </div>
