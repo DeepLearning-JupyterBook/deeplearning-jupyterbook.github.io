@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -266,7 +266,7 @@
 <li class="toctree-l1"><a class="reference internal" href="assignments/warmup.html">Warming-up</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignments/dataloader.html">Dataloaders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="assignments/optimisation_learning.html">Optimisation and Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="assignments/llm_assignment.html">Large Language Model Assignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignments/llm_assignment.html">LLM Calculator</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Student Projects</span></p>
 <ul class="nav bd-sidenav">
@@ -802,7 +802,7 @@ Validation data can be utilised for hyperparameter tuning, such as identifying t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/72bb9515f6e1570bc021a41de340974deb60444186d44dfdee4844b331b2abaa.png" src="../_images/72bb9515f6e1570bc021a41de340974deb60444186d44dfdee4844b331b2abaa.png" />
+<img alt="../_images/637185db4dc55488658b355559bc6448a5c936a11c3bc15c733eb8a543521a93.png" src="../_images/637185db4dc55488658b355559bc6448a5c936a11c3bc15c733eb8a543521a93.png" />
 </div>
 </div>
 </section>
@@ -1134,7 +1134,7 @@ Validation data can be utilised for hyperparameter tuning, such as identifying t
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
         <span class="n">maxk</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">topk</span><span class="p">)</span>
-        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="n">Executing</span> <span class="n">the</span> <span class="n">Programme</span>
+        <span class="n">batch_size</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
         <span class="c1"># Get top k predictions</span>
         <span class="n">_</span><span class="p">,</span> <span class="n">pred</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">topk</span><span class="p">(</span><span class="n">maxk</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
@@ -1248,16 +1248,16 @@ Validation data can be utilised for hyperparameter tuning, such as identifying t
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Epoch 00] Train loss=1.0931, acc=42.50  |  Test loss=1.5249, acc=39.00
-[Epoch 01] Train loss=0.9635, acc=52.00  |  Test loss=1.8905, acc=46.00
-[Epoch 02] Train loss=0.9573, acc=53.20  |  Test loss=0.8564, acc=60.00
-[Epoch 03] Train loss=0.8676, acc=54.40  |  Test loss=0.8282, acc=63.00
-[Epoch 04] Train loss=0.7738, acc=60.30  |  Test loss=0.7517, acc=57.00
-[Epoch 05] Train loss=0.8479, acc=57.40  |  Test loss=0.9288, acc=54.00
-[Epoch 06] Train loss=0.7364, acc=60.50  |  Test loss=0.7228, acc=56.00
-[Epoch 07] Train loss=0.6657, acc=62.00  |  Test loss=0.6452, acc=59.00
-[Epoch 08] Train loss=0.5996, acc=65.50  |  Test loss=0.5780, acc=71.00
-[Epoch 09] Train loss=0.5852, acc=65.80  |  Test loss=0.5408, acc=70.00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Epoch 00] Train loss=1.1124, acc=40.90  |  Test loss=1.2221, acc=42.00
+[Epoch 01] Train loss=1.1025, acc=41.10  |  Test loss=1.2636, acc=38.00
+[Epoch 02] Train loss=1.0391, acc=46.90  |  Test loss=1.0798, acc=48.00
+[Epoch 03] Train loss=0.9091, acc=54.70  |  Test loss=0.8103, acc=59.00
+[Epoch 04] Train loss=0.8988, acc=53.10  |  Test loss=1.0602, acc=47.00
+[Epoch 05] Train loss=0.7880, acc=58.10  |  Test loss=0.6772, acc=66.00
+[Epoch 06] Train loss=0.8650, acc=56.50  |  Test loss=1.1552, acc=46.00
+[Epoch 07] Train loss=0.7641, acc=61.60  |  Test loss=0.6309, acc=64.00
+[Epoch 08] Train loss=0.6566, acc=62.60  |  Test loss=0.6128, acc=61.00
+[Epoch 09] Train loss=0.6392, acc=62.90  |  Test loss=0.9192, acc=49.00
 </pre></div>
 </div>
 </div>
@@ -1294,7 +1294,7 @@ Validation data can be utilised for hyperparameter tuning, such as identifying t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d6b56f1bec151ce35d370f58aafdb3d394f98baee8d0c896aff4ba4e1fe3cdeb.png" src="../_images/d6b56f1bec151ce35d370f58aafdb3d394f98baee8d0c896aff4ba4e1fe3cdeb.png" />
+<img alt="../_images/06bebb09584084b90652f5ec47819966dcfdd5374e20282954cc6dae2eb37e0c.png" src="../_images/06bebb09584084b90652f5ec47819966dcfdd5374e20282954cc6dae2eb37e0c.png" />
 </div>
 </div>
 </section>
