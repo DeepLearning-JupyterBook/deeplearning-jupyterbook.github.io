@@ -21,6 +21,7 @@ parts:
       sections:
       - file: notebooks/image_classification
       - file: notebooks/image_segmentation
+      - file: notebooks/transfer_learning
     - file: notebooks/other_modalities
       sections:
       - file: notebooks/audio_classification
@@ -37,6 +38,7 @@ parts:
       - file: notebooks/activation
       - file: notebooks/lesion
       - file: notebooks/linear_classifier_probe
+      - file: notebooks/intro-to-rsa
     - file: notebooks/big_projects
       sections:
       - file: markdowns/python_scripting
@@ -46,9 +48,9 @@ parts:
   - caption: Assignments
     chapters:
     - file: notebooks/assignments/warmup
-    - file: notebooks/assignments/dataloader
     - file: notebooks/assignments/optimisation_learning
     - file: notebooks/assignments/llm_assignment
+    - file: notebooks/assignments/zeroshot_evaluation
   - caption: Student Projects
     chapters:
     - file: notebooks/student_projects/deep-learning-with-dobble

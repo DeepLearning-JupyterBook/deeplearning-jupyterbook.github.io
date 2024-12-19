@@ -1,0 +1,5 @@
+out/
+gan_out/
+data/
+
+.ipynb_checkpoints/
