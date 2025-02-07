@@ -74,7 +74,7 @@
     <link rel="icon" href="../_static/icon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. Other Modalities" href="other_modalities.html" />
+    <link rel="next" title="4.3. Transfer Learning" href="transfer_learning.html" />
     <link rel="prev" title="4.1. Image Classification" href="image_classification.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -213,6 +213,7 @@
 
 
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">4.2. Image Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transfer_learning.html">4.3. Transfer Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="other_modalities.html">5. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -251,7 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="activation.html">7.1. Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lesion.html">7.2. Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linear_classifier_probe.html">7.3. Probing by linear classifiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="intro-to-rsa.html">7.4. Introduction to Representational Similarity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro-to-rsa.html">7.4. Representational Similarity Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="big_projects.html">8. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -1115,7 +1116,7 @@ Instead of a fully connected (linear) layer, we use a <strong>convolutional laye
         <span class="c1"># x shape is &lt;B, 16, 128, 128&gt;</span>
         
         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="c1"># x shape is &lt;1, 16, 128, 128&gt;</span>
+        <span class="c1"># x shape is &lt;B, 4, 128, 128&gt;</span>
         <span class="k">return</span> <span class="n">x</span>
 </pre></div>
 </div>
@@ -1722,11 +1723,11 @@ Instead of ignoring background pixels entirely, you can assign different weights
       </div>
     </a>
     <a class="right-next"
-       href="other_modalities.html"
+       href="transfer_learning.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">5. Other Modalities</p>
+        <p class="prev-next-title">4.3. Transfer Learning</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
