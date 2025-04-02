@@ -215,6 +215,7 @@
 
 
 <li class="toctree-l2"><a class="reference internal" href="../image_segmentation.html">4.2. Image Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../transfer_learning.html">4.3. Transfer Learning</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../other_modalities.html">5. Other Modalities</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -253,7 +254,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../activation.html">7.1. Activation Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lesion.html">7.2. Kernel Lesioning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../linear_classifier_probe.html">7.3. Probing by linear classifiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../intro-to-rsa.html">7.4. Introduction to Representational Similarity Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro-to-rsa.html">7.4. Representational Similarity Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../big_projects.html">8. Big Projects</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -630,7 +631,7 @@ document.write(`
 <p><strong>Important</strong>: Together, the checkpoints make up 1.34 GB. Depending on your connection, downloading these may take a while.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dl.dropboxusercontent.com/scl/fi/e9r8kppvzrgt8jt6d8zi2/models.tar.gz?rlkey=q49hftmdwgwm2yc4njpy6f094&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dl.dropboxusercontent.com/scl/fi/mxtzxib6pm4l5242ngx2o/models.tar.gz?rlkey=6cu2mpk2e4b4etly0oswyf2co&amp;st=8782mxgo&#39;</span>
 <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_and_extract_archive</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">download_root</span><span class="o">=</span><span class="n">MODELS_DIR</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;models.tar.gz&#39;</span><span class="p">,</span> <span class="n">remove_finished</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -866,7 +867,7 @@ First, we need to generate images of individual cards. To do so, we first have t
 <p>We have curated a set of emojis that is (somewhat) close to the images used in the original <em>Dobble</em> card game. Before we move on, we download this set of emojis along with some data on circle packings that we’ll turn to later.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dl.dropboxusercontent.com/scl/fi/stwr2l6zxjz70nfyfzhyh/external.tar.gz?rlkey=su4p0xlhx774mjqfum3duvdaw&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dl.dropboxusercontent.com/scl/fi/7ir4atwx7rj9ag0bprsa0/external.tar.gz?rlkey=rvuvkojrz15rx2164gko26ca4&amp;st=r0mb8wgy&#39;</span>
 <span class="n">datasets</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">download_and_extract_archive</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">download_root</span><span class="o">=</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;external.tar.gz&#39;</span><span class="p">,</span> <span class="n">remove_finished</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
