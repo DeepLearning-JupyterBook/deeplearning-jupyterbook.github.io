@@ -18,7 +18,7 @@ You can start a `jupyter notebook/lab` on the server and open it on your local b
 
 On the server run:
 
-    jupyter notebook --no-browser --port=<REMOTE_PORT>
+    jupyter lab --no-browser --port=<REMOTE_PORT>
 
 This is similar to how we start a `jupyter notebook/lab` on a local machine with an extra argument of
 `--no-browser`  that starts the notebook without opening a browser.
@@ -35,7 +35,7 @@ On your local terminal:
 
 This command links the `<REMOTE_PORT>` to the specified `<LOCAL_PORT>`.
 
-Once the connection is set up, you can open `jupyter notebook` in your browser by entering: 
+Once the connection is set up, you can open `jupyter notebook/lab` in your browser by entering: 
 
     http://localhost:<LOCAL_PORT>/
 

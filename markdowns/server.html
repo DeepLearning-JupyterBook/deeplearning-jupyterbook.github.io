@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -540,7 +540,7 @@ the terminal of the server computer where you can execute different commands.</p
 <h2>Jupyter<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h2>
 <p>You can start a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook/lab</span></code> on the server and open it on your local browser.</p>
 <p>On the server run:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter notebook --no-browser --port=&lt;REMOTE_PORT&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>jupyter lab --no-browser --port=&lt;REMOTE_PORT&gt;
 </pre></div>
 </div>
 <p>This is similar to how we start a <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook/lab</span></code> on a local machine with an extra argument of
@@ -554,7 +554,7 @@ need to open the notebook in your local browser.</p>
 </pre></div>
 </div>
 <p>This command links the <code class="docutils literal notranslate"><span class="pre">&lt;REMOTE_PORT&gt;</span></code> to the specified <code class="docutils literal notranslate"><span class="pre">&lt;LOCAL_PORT&gt;</span></code>.</p>
-<p>Once the connection is set up, you can open <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> in your browser by entering:</p>
+<p>Once the connection is set up, you can open <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook/lab</span></code> in your browser by entering:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>http://localhost:&lt;LOCAL_PORT&gt;/
 </pre></div>
 </div>
