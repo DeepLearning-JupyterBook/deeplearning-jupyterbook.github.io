@@ -33,6 +33,7 @@ src/
 │   ├── models.py           # the architecture of the network
 │   └── utils.py            # common utility functions
 └── main.py                 # executable script
+└── requirements.txt        # the required python packages
 ```
 
 Essentially, we have split the code in our notebook into several Python modules each containing 
@@ -44,6 +45,10 @@ This tutorial contains a single Python package and a single script, a more compl
 often contains several packages and scripts. This is an easy process: split out the functionality 
 you want into separate folders and include an empty \_\_init\_\_.py file.
 ```
+
+### Installation
+It is a good proactive to contain all necessary packages in a file named `equirements.txt`. 
+This allows easy installation of all necessary packages by running `pip install -r requirements.txt`
 
 ### Execution
 
